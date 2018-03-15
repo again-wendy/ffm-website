@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: $font-normal;
+    font-size: 16px;
+    color: $dark-grey;
+}
+
+img {
+    max-width: 100%;
+}
+
+strong {
+    font-family: $font-bold;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    @media (max-width: 1100px) {
+        width: 65%;
+    }
+    @media (max-width: 900px) {
+        width: 70%;
+    }
+    @media (max-width: 768px) {
+        width: 85%;
+    }
+}
+
+h1 {
+    font-family: $font-xbold;
+    font-size: 3rem;
+}
+h2 {
+    font-family: $font-xbold;
+    font-size: 2.5rem;
+}
+h3 {
+    font-family: $font-xbold;
+    font-size: 2rem;
+}
+h4 {
+    font-family: $font-bold;
+    font-size: 2rem;
+}
+h5 {
+    font-family: $font-bold;
+    font-size: 1.8rem;
+}
+h6 {
+    font-family: $font-bold;
+    font-size: 1.5rem;
+}
+
+a, a:visited {
+    color: $primary;
+    font-family: $font-bold;
+}
+
+a:hover, a:focus, a:active {
+    color: $primary-hover;
+}
+
+label {
+    font-family: $font-bold;
+}
+
+input, textarea {
+    padding: 6px;
+    border: 1px solid $light-grey;
+    width: 100%;
+    margin: 6px 0 8px 0;
+}
+
+%btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-family: $font-bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: all 0.8s;
+    text-decoration: none;
+}
+
+.btn-primary {
+    @extend %btn;
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $primary-hover;
+    }
+    &:disabled, 
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: rgba(60, 191, 237, 0.6);
+    }
+}
+
+.btn-primary-xl {
+    @extend .btn-primary;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
+
+.btn-dark-grey {
+    @extend %btn;
+    background-color: $dark-grey;
+    border: 1px solid $dark-grey;
+    color: white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $dark-grey-hover;
+    }
+    &:disabled, 
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: rgba(43, 43, 43, 0.6);
+    }
+}
+
+.btn-dark-grey-xl {
+    @extend .btn-dark-grey;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
+
+.btn-light-grey {
+    @extend %btn;
+    background-color: $light-grey;
+    border: 1px solid $light-grey;
+    color: $dark-grey;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $light-grey-hover;
+    }
+    &:disabled, 
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: rgba(236, 236, 236, 0.6);
+    }
+}
+
+.btn-light-grey-xl {
+    @extend .btn-light-grey;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+    .column {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.entire-width {
+    width: 100%;
+}

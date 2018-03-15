@@ -1,0 +1,23 @@
+#footer {
+    background: $gradient;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        .footer-block {
+            padding: 25px 15px;
+        }
+        .right-footer {
+            .mailchimp-title {
+                text-align: center;
+                p {
+                    margin: 0 0 5px 0;
+                    font-family: $font-bold;
+                }
+                .indicates-required {
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}

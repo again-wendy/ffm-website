@@ -1,0 +1,139 @@
+#navbar {
+    height: $navheight;
+    background-color: $light-grey;
+    z-index: 99;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .left-menu {
+        width: 35%;
+        padding: 2.5vh 0 8px 35px;
+        height: $navheight;
+        float: left;
+        @media (max-width: 768px) {
+            width: 49%;
+        }
+        .logo {
+            text-decoration: none;
+            h2 {
+                font-family: $font-logo;
+                margin: 0;
+                font-size: 2rem;
+            }
+        }
+    }
+    .right-menu {
+        display: inline-block;
+        width: 64%;
+        height: $navheight;
+        padding-right: 20px;
+        @media (max-width: 768px) {
+            width: 49%;
+        }
+        .mobile-toggle {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: $navheight;
+            font-size: 1.4rem;
+            @media (min-width: 769px) {
+                display: none;
+            }
+            .nav-icon {
+                width: 40px;
+                height: 25px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: 0.5s ease-in-out;
+                cursor: pointer;
+                span {
+                    display: block;
+                    position: absolute;
+                    height: 4px;
+                    width: 100%;
+                    background: $dark-grey;
+                    border-radius: 9px;
+                    opacity: 1;
+                    left: 0;
+                    transform: rotate(0deg);
+                    transition: .25s ease-in-out;
+                    &:nth-child(1) {
+                        top: 0px;
+                        transform-origin: left center;
+                    }
+                    &:nth-child(2) {
+                        top: 10px;
+                        transform-origin: left center;
+                    }
+                    &:nth-child(3) {
+                        top: 20px;
+                        transform-origin: left center;
+                    }
+                }
+            }
+            .nav-icon.open span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: -3px;
+                    left: 8px;
+                }
+                &:nth-child(2) {
+                    width: 0%;
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: 26px;
+                    left: 8px;
+                }
+            }
+        }
+        .menu-items {
+            height: $navheight;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style-type: none;
+            position: relative;
+            padding-left: 0;
+            @media (max-width: 768px) {
+                position: absolute;
+                background: $light-grey;
+                flex-direction: column;
+                height: auto;
+                align-items: stretch;
+                right: 25px;
+                z-index: 99;
+                padding-left: 40px;
+            }
+            .menu-item {
+                @media (max-width: 768px) {
+                    padding: 12px 35px 12px 0;
+                    &:last-child {
+                        padding-bottom: 16px;
+                    }
+                }
+                a {
+                    color: $dark-grey;
+                    font-family: $font-bold;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    height: 100%;
+                    padding: 3vh 15px;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover, &:focus, &:active {
+                        background: $dark-grey;
+                        color: white;
+                    }
+                    @media (max-width: 850px) {
+                        font-size: 1rem;
+                    }
+                    @media (max-width: 768px) {
+                        text-align: left;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

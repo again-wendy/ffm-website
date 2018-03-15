@@ -1,0 +1,23 @@
+// COLORS
+$primary: #3CBFED;
+$primary-hover: #13A5D8;
+
+$secondary: #0482B3;
+$secondary-hover: #0F718E;
+
+$light-grey: #ECECEC;
+$light-grey-hover: darken($light-grey, 15%);
+
+$dark-grey: #2B2B2B;
+$dark-grey-hover: lighten($dark-grey, 15%);
+
+$gradient: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+
+//NUMBERS
+$navheight: 9vh;
+
+//FONTS
+$font-normal: 'ZwoOT', Helvetica, Arial, sans-serif;
+$font-bold: 'ZwoOT-SemiBd', Helvetica, Arial, sans-serif;
+$font-xbold: 'ZwoOT-Xbold', Helvetica, Arial, sans-serif;
+$font-logo: 'Fredoka One', Helvetica, Arial, sans-serif;
