@@ -10,7 +10,7 @@ const app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// Static folder
+// Static folders
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Body Parser Middleware
