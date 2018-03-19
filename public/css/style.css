@@ -130,7 +130,7 @@ input, textarea {
 }
 
 /* line 82, ../sass/_partials/_base.scss */
-.btn-primary, .btn-primary-xl, .btn-dark-grey, .btn-dark-grey-xl, .btn-light-grey, .btn-light-grey-xl {
+.btn-primary, .btn-primary-xl, .btn-secondary, .btn-secondary-xl, .btn-dark-grey, .btn-dark-grey-xl, .btn-light-grey, .btn-light-grey-xl {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -173,57 +173,79 @@ input, textarea {
 }
 
 /* line 125, ../sass/_partials/_base.scss */
-.btn-dark-grey, .btn-dark-grey-xl {
-  background-color: #2B2B2B;
-  border: 1px solid #2B2B2B;
+.btn-secondary, .btn-secondary-xl {
+  background-color: #0482B3;
+  border: 1px solid #0482B3;
   color: white;
 }
 /* line 130, ../sass/_partials/_base.scss */
-.btn-dark-grey:hover, .btn-dark-grey-xl:hover, .btn-dark-grey:focus, .btn-dark-grey-xl:focus, .btn-dark-grey:active, .btn-dark-grey-xl:active {
-  background-color: #515151;
+.btn-secondary:hover, .btn-secondary-xl:hover, .btn-secondary:focus, .btn-secondary-xl:focus, .btn-secondary:active, .btn-secondary-xl:active {
+  background-color: #0F718E;
 }
 /* line 135, ../sass/_partials/_base.scss */
-.btn-dark-grey:disabled, .btn-dark-grey-xl:disabled, .btn-dark-grey[disabled], [disabled].btn-dark-grey-xl {
+.btn-secondary:disabled, .btn-secondary-xl:disabled, .btn-secondary[disabled], [disabled].btn-secondary-xl {
   cursor: not-allowed;
-  background-color: rgba(43, 43, 43, 0.6);
+  background-color: rgba(4, 130, 179, 0.6);
 }
 
 /* line 142, ../sass/_partials/_base.scss */
-.btn-dark-grey-xl {
+.btn-secondary-xl {
   padding: 15px 20px;
   font-size: 1.4rem;
 }
 
 /* line 148, ../sass/_partials/_base.scss */
-.btn-light-grey, .btn-light-grey-xl {
-  background-color: #ECECEC;
-  border: 1px solid #ECECEC;
-  color: #2B2B2B;
+.btn-dark-grey, .btn-dark-grey-xl {
+  background-color: #2B2B2B;
+  border: 1px solid #2B2B2B;
+  color: white;
 }
 /* line 153, ../sass/_partials/_base.scss */
-.btn-light-grey:hover, .btn-light-grey-xl:hover, .btn-light-grey:focus, .btn-light-grey-xl:focus, .btn-light-grey:active, .btn-light-grey-xl:active {
-  background-color: #c6c6c6;
+.btn-dark-grey:hover, .btn-dark-grey-xl:hover, .btn-dark-grey:focus, .btn-dark-grey-xl:focus, .btn-dark-grey:active, .btn-dark-grey-xl:active {
+  background-color: #515151;
 }
 /* line 158, ../sass/_partials/_base.scss */
-.btn-light-grey:disabled, .btn-light-grey-xl:disabled, .btn-light-grey[disabled], [disabled].btn-light-grey-xl {
+.btn-dark-grey:disabled, .btn-dark-grey-xl:disabled, .btn-dark-grey[disabled], [disabled].btn-dark-grey-xl {
   cursor: not-allowed;
-  background-color: rgba(236, 236, 236, 0.6);
+  background-color: rgba(43, 43, 43, 0.6);
 }
 
 /* line 165, ../sass/_partials/_base.scss */
-.btn-light-grey-xl {
+.btn-dark-grey-xl {
   padding: 15px 20px;
   font-size: 1.4rem;
 }
 
 /* line 171, ../sass/_partials/_base.scss */
+.btn-light-grey, .btn-light-grey-xl {
+  background-color: #ECECEC;
+  border: 1px solid #ECECEC;
+  color: #2B2B2B;
+}
+/* line 176, ../sass/_partials/_base.scss */
+.btn-light-grey:hover, .btn-light-grey-xl:hover, .btn-light-grey:focus, .btn-light-grey-xl:focus, .btn-light-grey:active, .btn-light-grey-xl:active {
+  background-color: #c6c6c6;
+}
+/* line 181, ../sass/_partials/_base.scss */
+.btn-light-grey:disabled, .btn-light-grey-xl:disabled, .btn-light-grey[disabled], [disabled].btn-light-grey-xl {
+  cursor: not-allowed;
+  background-color: rgba(236, 236, 236, 0.6);
+}
+
+/* line 188, ../sass/_partials/_base.scss */
+.btn-light-grey-xl {
+  padding: 15px 20px;
+  font-size: 1.4rem;
+}
+
+/* line 194, ../sass/_partials/_base.scss */
 .row {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   width: 100%;
 }
-/* line 176, ../sass/_partials/_base.scss */
+/* line 199, ../sass/_partials/_base.scss */
 .row .column {
   flex-basis: 0;
   flex-grow: 1;
@@ -231,14 +253,35 @@ input, textarea {
   padding: 15px;
 }
 
-/* line 184, ../sass/_partials/_base.scss */
+/* line 207, ../sass/_partials/_base.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 188, ../sass/_partials/_base.scss */
+/* line 211, ../sass/_partials/_base.scss */
 .entire-width {
   width: 100%;
+}
+
+/* line 1, ../sass/_partials/_panel.scss */
+.panel {
+  background: white;
+  width: 100%;
+}
+/* line 4, ../sass/_partials/_panel.scss */
+.panel .panel-heading {
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  color: white;
+  text-align: center;
+}
+/* line 8, ../sass/_partials/_panel.scss */
+.panel .panel-heading .panel-title {
+  margin: 0;
+  padding: 20px 10px;
+}
+/* line 13, ../sass/_partials/_panel.scss */
+.panel .panel-body {
+  padding: 25px;
 }
 
 /* line 1, ../sass/_partials/_navbar.scss */
@@ -414,6 +457,10 @@ input, textarea {
     padding: 0;
   }
 }
+/* line 138, ../sass/_partials/_navbar.scss */
+#navbar .right-menu .menu-items .lang img {
+  width: 35px;
+}
 
 /* line 1, ../sass/_partials/_footer.scss */
 #footer {
@@ -441,4 +488,48 @@ input, textarea {
 #footer .container .right-footer .mailchimp-title .indicates-required {
   font-size: 14px;
   margin-bottom: 15px;
+}
+
+/* line 1, ../sass/_partials/_choice-page.scss */
+#choice-page {
+  width: 100%;
+  height: 0px;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../images/laptop.jpg") no-repeat center;
+  background-size: cover;
+}
+/* line 13, ../sass/_partials/_choice-page.scss */
+#choice-page .container {
+  position: relative;
+  height: 100vh;
+}
+/* line 16, ../sass/_partials/_choice-page.scss */
+#choice-page .container .panel {
+  position: relative;
+  top: 20%;
+}
+/* line 19, ../sass/_partials/_choice-page.scss */
+#choice-page .container .panel .panel-body {
+  padding: 25px 25px 15px 25px;
+}
+/* line 21, ../sass/_partials/_choice-page.scss */
+#choice-page .container .panel .panel-body h5 {
+  margin: 20px 0 35px 0;
+}
+/* line 24, ../sass/_partials/_choice-page.scss */
+#choice-page .container .panel .panel-body .choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* line 28, ../sass/_partials/_choice-page.scss */
+#choice-page .container .panel .panel-body .choices a {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* line 1, ../sass/_partials/_cookieconsent.scss */
+.cc-window {
+  bottom: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
 }

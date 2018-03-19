@@ -1,0 +1,33 @@
+{
+    "choice": {
+        "WELCOME": "Welcome to FlexForceMonkey!",
+        "CHOOSE_TEXT": "We want to give you the most optimal information. So we ask you to make a choice from the following roles:",
+        "HIRER": "I'm a hirer",
+        "SUPPLIER": "I'm a supplier",
+        "INTERIM": "I supply interim workers",
+        "FREELANCE": "I'm a freelancer",
+        "CURIOUS": "I'm curious"
+    },
+    "menu-items": {
+        "PROMISES": "What we promise",
+        "STORY": "Our story",
+        "HOW_WORK": "How it works",
+        "BLOG": "Blog",
+        "CONTACT": "Contact"
+    },
+    "home-intro": {
+        "WHAT_WE_PROMISE": "What we promise? Carefree collaboration!",
+        "PROMISE_TEXT": "FlexForceMonkey allows borrowers and senders to collaborate more easily. Our intelligent software ensures that the administration between both seamlessly connects. Digital tuning of hours and invoices is live in no time. Without discussions about which process is leading. Without hourly rates in the customer system that deviate from the collective labor agreement. Without reference issues because the broadcaster had not recorded the last PO-number for a moment ... Just send orders, justify time, match invoices and pay as you have agreed together. And all that without having to adjust their own primary work process!",
+        "IN_THE_CLOUD": "In the cloud",
+        "IN_THE_CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
+        "CLA_DATA": "Manage CLA Data",
+        "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
+        "MESSAGE_STANDARDS": "Message standards",
+        "MESSAGE_STANDARDS_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
+    },
+    "cookie": {
+        "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website.",
+        "DISMISS": "Got it!",
+        "LEARN_MORE": "Learn more"
+    }
+}

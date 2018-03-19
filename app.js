@@ -1,10 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const i18n = require('i18n-express');
 
 const app = express();
+
+// Setup language
+app.use(i18n({
+    translationsPath: path.join(__dirname, 'i18n'),
+    siteLangs: ['en', 'nl'],
+    textsVarName: 'translation'
+}));
 
 // View engine setup
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -17,10 +26,31 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// Cookie Parser Middleware
+app.use(cookieParser());
+
 app.get('/', (req, res) => {
-    res.render('home');
+    if (req.cookies.role) {
+        res.redirect('/' + req.cookies.role)
+    } else {
+        res.render('choice', {layout: false});
+    }
 });
 
+app.get('/hirer', (req, res) => { 
+    res.cookie('role', 'hirer').render('hirer');
+});
+app.get('/supplier', (req, res) => { 
+    res.cookie('role', 'supplier').render('supplier');
+});
+app.get('/interim', (req, res) => { 
+    res.cookie('role', 'interim').render('interim'); 
+});
+app.get('/freelancer', (req, res) => { 
+    res.cookie('role', 'freelance').render('freelance');
+});
+
+// Send contactform
 app.post('/send', (req, res) => {
     let output = `
         <h1>Contact Form AGAIN.nl</h1>

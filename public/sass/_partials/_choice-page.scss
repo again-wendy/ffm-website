@@ -1,0 +1,36 @@
+#choice-page {
+    width: 100%;
+    height: 0px;
+    background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.4)
+        ),
+        url('../images/laptop.jpg')
+        no-repeat
+        center;
+    background-size: cover;
+    .container {
+        position: relative;
+        height: 100vh;
+        .panel {
+            position: relative;
+            top: 20%;
+            .panel-body {
+                padding: 25px 25px 15px 25px;
+                h5 {
+                    margin: 20px 0 35px 0;
+                }
+                .choices {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    a {
+                        font-size: 1.2rem;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.panel {
+    background: white;
+    width: 100%;
+    .panel-heading {
+        background: $gradient;
+        color: white;
+        text-align: center;
+        .panel-title {
+            margin: 0;
+            padding: 20px 10px;
+        }
+    }
+    .panel-body {
+        padding: 25px;
+    }
+}

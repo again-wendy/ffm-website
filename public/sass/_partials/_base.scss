@@ -122,6 +122,29 @@ input, textarea {
     font-size: 1.4rem;
 }
 
+.btn-secondary {
+    @extend %btn;
+    background-color: $secondary;
+    border: 1px solid $secondary;
+    color: white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $secondary-hover;
+    }
+    &:disabled, 
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: rgba(4, 130, 179, 0.6);
+    }
+}
+
+.btn-secondary-xl {
+    @extend .btn-secondary;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
+
 .btn-dark-grey {
     @extend %btn;
     background-color: $dark-grey;

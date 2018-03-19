@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexForceMonkey</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    <link rel="stylesheet" href="./public/css/normalize.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./public/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./public/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./public/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="./public/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- OPEN GRAPH SOCIAL MEDIA -->
+    <!-- COOKIE CONSENT -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#2b2b2b",
+                    "text": "#ffffff"
+                },
+                "button": {
+                    "background": "#0482b3",
+                    "text": "#ffffff"
+                }
+            },
+            "theme": "edgeless",
+            "position": "bottom-left",
+            "content": {
+                "message": "//lang.cookie.BANNER_TEXT",
+                "dismiss": "Got it!",
+                "link": "Learn more"
+            }
+        });
+    });
+    </script>
+</head>
+<body id="choice-page">
+    <div class="container">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ translation.choice.WELCOME }}</h3>
+            </div>
+            <div class="panel-body">
+                <h5>{{ translation.choice.CHOOSE_TEXT }}</h5>
+                <div class="choices">
+                    <a href="/hirer" class="btn-light-grey-xl">{{ translation.choice.HIRER }}</a>
+                    <a href="/supplier" class="btn-light-grey-xl">{{ translation.choice.SUPPLIER }}</a>
+                    <a href="/interim" class="btn-light-grey-xl">{{ translation.choice.INTERIM }}</a>
+                    <a href="/freelancer" class="btn-light-grey-xl">{{ translation.choice.FREELANCE }}</a>
+                    <a href="/" class="btn-light-grey-xl">{{ translation.choice.CURIOUS }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./public/js/script.js"></script>
+</body>
+</html>

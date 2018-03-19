@@ -35,20 +35,21 @@
             </div>
             <ul class="menu-items">
                 <li class="menu-item menu-item-1">
-                    <a href="">Wat we beloven</a>
+                    <a onclick="menuScroll('promises')">{{ translation.menu-items.PROMISES }}</a>
                 </li>
                 <li class="menu-item menu-item-2">
-                    <a href="">Ons Verhaal</a>
+                    <a onclick="menuScroll('our-story')">{{ translation.menu-items.STORY }}</a>
                 </li>
                 <li class="menu-item menu-item-3">
-                    <a href="">Hoe het werkt</a>
+                    <a onclick="menuScroll('how-it-works')">{{ translation.menu-items.HOW_WORK }}</a>
                 </li>
                 <li class="menu-item menu-item-4">
-                    <a href="">Blog</a>
+                    <a href="http://flexjungle.flexforcemonkey.com" target="_blank">{{ translation.menu-items.BLOG }} <span class="fa fa-external-link-alt"></span></a>
                 </li>
                 <li class="menu-item menu-item-5">
-                    <a href="">Contact</a>
+                    <a onclick="menuScroll('contact')">{{ translation.menu-items.CONTACT }}</a>
                 </li>
+                <li id="language" class="menu-item menu-item-6 lang"></li>
             </ul>
         </div>
     </nav>
