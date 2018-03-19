@@ -25,22 +25,22 @@
     <script>
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#2b2b2b",
-                    "text": "#ffffff"
+            palette: {
+                popup: {
+                    background: "#2b2b2b",
+                    text: "#ffffff"
                 },
-                "button": {
-                    "background": "#0482b3",
-                    "text": "#ffffff"
+                button: {
+                    background: "#0482b3",
+                    text: "#ffffff"
                 }
             },
-            "theme": "edgeless",
-            "position": "bottom-left",
-            "content": {
-                "message": "//lang.cookie.BANNER_TEXT",
-                "dismiss": "Got it!",
-                "link": "Learn more"
+            theme: "edgeless",
+            position: "bottom-left",
+            content: {
+                message: "{{ translation.cookie.BANNER_TEXT }}",
+                dismiss: "{{ translation.cookie.DISMISS }}",
+                link: "{{ translation.cookie.LEARN_MORE }}"
             }
         });
     });

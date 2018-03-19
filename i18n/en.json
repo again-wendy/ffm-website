@@ -29,5 +29,13 @@
         "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website.",
         "DISMISS": "Got it!",
         "LEARN_MORE": "Learn more"
+    },
+    "mailchimp": {
+        "SUBSCRIBE_TO": "Subscribe to our mailing list",
+        "INDICATES_REQUIRED": "* indicates required",
+        "EMAIL_ADDRESS": "Email Address",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "SUBSCRIBE": "Subscribe"
     }
 }

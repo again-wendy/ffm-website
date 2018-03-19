@@ -29,5 +29,13 @@
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
         "DISMISS": "Oké!",
         "LEARN_MORE": "Lees meer"
+    },
+    "mailchimp": {
+        "SUBSCRIBE_TO": "Schrijf je in op onze nieuwsbrief",
+        "INDICATES_REQUIRED": "Velden met een * zijn vereist",
+        "EMAIL_ADDRESS": "Email adres",
+        "FIRST_NAME": "Voornaam",
+        "LAST_NAME": "Achternaam",
+        "SUBSCRIBE": "Inschrijven"
     }
 }

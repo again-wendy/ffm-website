@@ -528,7 +528,15 @@ input, textarea {
 }
 
 /* line 1, ../sass/_partials/_cookieconsent.scss */
-.cc-window {
+#cookie {
+  width: 100%;
+  height: 100vh;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+}
+/* line 7, ../sass/_partials/_cookieconsent.scss */
+#cookie .cc-window {
   bottom: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%);

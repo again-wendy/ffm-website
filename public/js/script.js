@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Load right flag in menu to set language
     if(checkLang().indexOf("nl") != -1) {
         $("#language").append('<a onclick="setLang(\'en\')"><img src="./public/images/en.png" alt="English"></a>');
     } else {
