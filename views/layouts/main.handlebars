@@ -110,36 +110,7 @@
                 
             </div>
             <div class="footer-block right-footer">
-                <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup">
-                <form action="https://flexforcemonkey.us8.list-manage.com/subscribe/post?u=53785b16e31b45f83200436f2&amp;id=d236da223f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <div class="mailchimp-title">
-                            <p>{{ translation.mailchimp.SUBSCRIBE_TO }}</p>
-                            <div class="indicates-required">{{ translation.mailchimp.INDICATES_REQUIRED }}</div>
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-EMAIL">{{ translation.mailchimp.EMAIL_ADDRESS }}  <span class="asterisk">*</span></label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-FNAME">{{ translation.mailchimp.FIRST_NAME }} </label>
-                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-LNAME">{{ translation.mailchimp.LAST_NAME }} </label>
-                            <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-                        </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_53785b16e31b45f83200436f2_d236da223f" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="{{ translation.mailchimp.SUBSCRIBE }}" name="subscribe" id="mc-embedded-subscribe" class="button btn-light-grey"></div>
-                    </div>
-                </form>
-                </div>
-                <!--End mc_embed_signup-->
+                {{> newsletter }}
             </div>
         </div>
     </footer>

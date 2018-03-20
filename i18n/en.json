@@ -41,10 +41,7 @@
     },
     "mailchimp": {
         "SUBSCRIBE_TO": "Subscribe to our mailing list",
-        "INDICATES_REQUIRED": "* indicates required",
         "EMAIL_ADDRESS": "Email Address",
-        "FIRST_NAME": "First Name",
-        "LAST_NAME": "Last Name",
         "SUBSCRIBE": "Subscribe"
     }
 }

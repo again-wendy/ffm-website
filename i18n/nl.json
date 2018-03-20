@@ -31,10 +31,7 @@
     },
     "mailchimp": {
         "SUBSCRIBE_TO": "Schrijf je in op onze nieuwsbrief",
-        "INDICATES_REQUIRED": "Velden met een * zijn vereist",
         "EMAIL_ADDRESS": "Email adres",
-        "FIRST_NAME": "Voornaam",
-        "LAST_NAME": "Achternaam",
         "SUBSCRIBE": "Inschrijven"
     }
 }
