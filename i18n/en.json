@@ -5,7 +5,7 @@
         "HIRER": "I'm a hirer",
         "SUPPLIER": "I'm a supplier",
         "INTERIM": "I supply interim workers",
-        "FREELANCE": "I'm a freelancer",
+        "FREELANCER": "I'm a freelancer",
         "CURIOUS": "I'm curious"
     },
     "menu-items": {
@@ -13,7 +13,8 @@
         "STORY": "Our story",
         "HOW_WORK": "How it works",
         "BLOG": "Blog",
-        "CONTACT": "Contact"
+        "CONTACT": "Contact",
+        "ROLES": "Roles"
     },
     "home-intro": {
         "WHAT_WE_PROMISE": "What we promise? Carefree collaboration!",
@@ -29,6 +30,14 @@
         "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website.",
         "DISMISS": "Got it!",
         "LEARN_MORE": "Learn more"
+    },
+    "contact-section": {
+        "INTRO": "Interested in FlexForceMonkey? Or are you interested in a demo? Fill in the following form and we will contact you as soon as possible.",
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "SUBJECT": "Subject",
+        "MSG": "Message",
+        "SUBMIT": "Submit"
     },
     "mailchimp": {
         "SUBSCRIBE_TO": "Subscribe to our mailing list",

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
     <link rel="stylesheet" href="./public/css/normalize.css">
     <link rel="stylesheet" href="./public/css/style.css">
+    <!-- FONT AWESOME -->
+    <script defer src="./public/js/fontawesome-all.min.js"></script>
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="./public/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/favicons/favicon-32x32.png">
@@ -25,29 +27,36 @@
     <script>
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#2b2b2b",
-                    "text": "#ffffff"
+            palette: {
+                popup: {
+                    background: "#2b2b2b",
+                    text: "#ffffff"
                 },
-                "button": {
-                    "background": "#0482b3",
-                    "text": "#ffffff"
+                button: {
+                    background: "#0482b3",
+                    text: "#ffffff"
                 }
             },
-            "theme": "edgeless",
-            "position": "bottom-left",
-            "window": "<div id=\"cookie\"><div role=\"dialog\" aria-label=\"cookieconsent\" aria-describedby=\"cookieconsent:desc\" class=\"cc-window {{classes}}\">{{children}}</div></div>",
-            "content": {
-                "message": "{{ translation.cookie.BANNER_TEXT }}",
-                "dismiss": "{{ translation.cookie.DISMISS }}",
-                "link": "{{ translation.cookie.LEARN_MORE }}"
+            container: document.getElementById("cookie"),
+            theme: "edgeless",
+            position: "bottom-left",
+            content: {
+                message: "{{ translation.cookie.BANNER_TEXT }}",
+                dismiss: "{{ translation.cookie.DISMISS }}",
+                link: "{{ translation.cookie.LEARN_MORE }}"
+            },
+            onPopupOpen: function() {
+                document.getElementById("cookie").style.display = "block";
+            },
+            onPopupClose: function() {
+                document.getElementById("cookie").style.display = "none";
             }
         });
     });
     </script>
 </head>
 <body>
+    <div id="cookie"></div>
     <nav id="navbar">
         <div class="left-menu">
             <a class="logo" href=""><h2>FlexForceMonkey</h2></a>
@@ -76,7 +85,19 @@
                 <li class="menu-item menu-item-5">
                     <a onclick="menuScroll('contact')">{{ translation.menu-items.CONTACT }}</a>
                 </li>
-                <li id="language" class="menu-item menu-item-6 lang"></li>
+                <li class="menu-item menu-item-6">
+                    <div class="dropdown">
+                        <a>{{ translation.menu-items.ROLES }} <span class="fa fa-caret-down"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="item hirer"><a href="./hirer">{{ translation.choice.HIRER }}</a></li>
+                            <li class="item supplier"><a href="./supplier">{{ translation.choice.SUPPLIER }}</a></li>
+                            <li class="item interim"><a href="./interim">{{ translation.choice.INTERIM }}</a></li>
+                            <li class="item freelancer"><a href="./freelancer">{{ translation.choice.FREELANCER }}</a></li>
+                            <li class="item curious"><a href="./curious">{{ translation.choice.CURIOUS }}</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="language" class="menu-item menu-item-7 lang"></li>
             </ul>
         </div>
     </nav>
@@ -86,7 +107,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-block left-footer">
-                left
+                
             </div>
             <div class="footer-block right-footer">
                 <!-- Begin MailChimp Signup Form -->

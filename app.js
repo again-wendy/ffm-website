@@ -31,23 +31,26 @@ app.use(cookieParser());
 
 app.get('/', (req, res) => {
     if (req.cookies.role) {
-        res.redirect('/' + req.cookies.role)
+        res.render('home', {role: req.cookies.role});
     } else {
         res.render('choice', {layout: false});
     }
 });
 
 app.get('/hirer', (req, res) => { 
-    res.cookie('role', 'hirer').render('hirer');
+    res.cookie('role', 'hirer').redirect('/');
 });
 app.get('/supplier', (req, res) => { 
-    res.cookie('role', 'supplier').render('supplier');
+    res.cookie('role', 'supplier').redirect('/');
 });
 app.get('/interim', (req, res) => { 
-    res.cookie('role', 'interim').render('interim'); 
+    res.cookie('role', 'interim').redirect('/');
 });
 app.get('/freelancer', (req, res) => { 
-    res.cookie('role', 'freelance').render('freelance');
+    res.cookie('role', 'freelancer').redirect('/');
+});
+app.get('/curious', (req, res) => {
+    res.cookie('role', 'curious').redirect('/');
 });
 
 // Send contactform
@@ -78,7 +81,7 @@ app.post('/send', (req, res) => {
     });
     
     let HelperOptions = {
-        from: '"Contact Form AGAIN website" <wendy.dimmendaal@again.nl>',
+        from: '"Contact Form FFM website" <wendy.dimmendaal@again.nl>',
         to: 'wendy.dimmendaal@again.nl',
         subject: 'Hello World',
         text: 'Test 123',
