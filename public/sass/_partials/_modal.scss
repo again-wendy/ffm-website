@@ -21,7 +21,7 @@
             width: 95%;
         }
         .modal-header {
-            display: flex;
+            @include displayFlex;
             justify-content: space-between;
             .modal-title {
                 margin: 5px 0;
@@ -40,7 +40,7 @@
             }
         }
         .modal-footer {
-            display: flex;
+            @include displayFlex;
             justify-content: flex-end;
             button:first-child {
                 margin-right: 8px;

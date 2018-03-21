@@ -152,14 +152,22 @@ input, textarea {
   font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
   line-height: 1.42857143;
   text-align: center;
+  -moz-white-space: nowrap;
+  -o-white-space: nowrap;
   white-space: nowrap;
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
   border-radius: 0;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
   transition: all 0.8s;
   text-decoration: none;
 }
@@ -303,25 +311,31 @@ input, textarea {
 
 /* line 202, ../sass/_partials/_base.scss */
 .row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
   width: 100%;
 }
 /* line 207, ../sass/_partials/_base.scss */
 .row .column {
-  flex-basis: 0;
-  flex-grow: 1;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
   max-width: 100%;
   padding: 15px;
 }
 
-/* line 215, ../sass/_partials/_base.scss */
+/* line 214, ../sass/_partials/_base.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 219, ../sass/_partials/_base.scss */
+/* line 218, ../sass/_partials/_base.scss */
 .entire-width {
   width: 100%;
 }
@@ -391,8 +405,13 @@ input, textarea {
 }
 /* line 31, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: flex-end;
+  -webkit-align-items: center;
   align-items: center;
   height: 9vh;
   font-size: 1.4rem;
@@ -408,7 +427,13 @@ input, textarea {
   width: 40px;
   height: 25px;
   position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
@@ -422,26 +447,44 @@ input, textarea {
   border-radius: 9px;
   opacity: 1;
   left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 /* line 58, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle .nav-icon span:nth-child(1) {
   top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 /* line 62, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle .nav-icon span:nth-child(2) {
   top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 /* line 66, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle .nav-icon span:nth-child(3) {
   top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 /* line 73, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle .nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: -3px;
   left: 8px;
@@ -453,6 +496,9 @@ input, textarea {
 }
 /* line 82, ../sass/_partials/_navbar.scss */
 #navbar .right-menu .mobile-toggle .nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 26px;
   left: 8px;
@@ -461,8 +507,13 @@ input, textarea {
 #navbar .right-menu .menu-items {
   height: 9vh;
   margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: flex-end;
+  -webkit-align-items: center;
   align-items: center;
   list-style-type: none;
   position: relative;
@@ -473,8 +524,10 @@ input, textarea {
   #navbar .right-menu .menu-items {
     position: absolute;
     background: #ECECEC;
+    -webkit-flex-direction: column;
     flex-direction: column;
     height: auto;
+    -webkit-align-items: stretch;
     align-items: stretch;
     right: 25px;
     z-index: 99;
@@ -594,6 +647,10 @@ section .section-title {
 }
 /* line 3, ../sass/_partials/_footer.scss */
 #footer .container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
 }
@@ -601,19 +658,41 @@ section .section-title {
 #footer .container .footer-block {
   padding: 25px 15px;
 }
-/* line 10, ../sass/_partials/_footer.scss */
-#footer .container .right-footer .mailchimp-title {
-  text-align: center;
+/* line 9, ../sass/_partials/_footer.scss */
+#footer .container .right-footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
 }
 /* line 12, ../sass/_partials/_footer.scss */
-#footer .container .right-footer .mailchimp-title p {
-  margin: 0 0 5px 0;
-  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+#footer .container .right-footer .newsletter-info {
+  background: #ECECEC;
+  padding: 15px;
+  position: relative;
 }
 /* line 16, ../sass/_partials/_footer.scss */
-#footer .container .right-footer .mailchimp-title .indicates-required {
-  font-size: 14px;
-  margin-bottom: 15px;
+#footer .container .right-footer .newsletter-info .arrow-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #ECECEC;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 29, ../sass/_partials/_footer.scss */
+#footer .container .right-footer .mailchimp-form {
+  background: #0482B3;
+  padding: 15px 15px 15px 45px;
 }
 
 /* line 1, ../sass/_partials/_choice-page.scss */
@@ -643,8 +722,13 @@ section .section-title {
 }
 /* line 24, ../sass/_partials/_choice-page.scss */
 #choice-page .container .panel .panel-body .choices {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 /* line 28, ../sass/_partials/_choice-page.scss */
@@ -666,6 +750,10 @@ section .section-title {
 #cookie .cc-window {
   bottom: 50% !important;
   left: 50% !important;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -740,6 +828,10 @@ form .form-group input, form .form-group textarea {
 }
 /* line 23, ../sass/_partials/_modal.scss */
 .modal .modal-content .modal-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
 }
@@ -764,6 +856,10 @@ form .form-group input, form .form-group textarea {
 }
 /* line 42, ../sass/_partials/_modal.scss */
 .modal .modal-content .modal-footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: flex-end;
 }

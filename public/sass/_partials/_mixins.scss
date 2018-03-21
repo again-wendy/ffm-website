@@ -1,0 +1,30 @@
+@mixin primaryRGBA($num) {
+    background-color: rgba(60, 191, 237, $num);
+}
+
+@mixin secondaryRGBA($num) {
+    background-color: rgba(4, 130, 179, $num);
+}
+
+@mixin lightGreyRGBA($num) {
+    background-color: rgba(236, 236, 236, $num);
+}
+
+@mixin darkGreyRGBA($num) {
+    background-color: rgba(43, 43, 43, $num);
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin displayFlex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}

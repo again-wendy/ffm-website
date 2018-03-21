@@ -90,15 +90,15 @@ input, textarea {
     font-family: $font-bold;
     line-height: 1.42857143;
     text-align: center;
-    white-space: nowrap;
+    @include prefix(white-space, nowrap, moz o);
     vertical-align: middle;
     touch-action: manipulation;
     cursor: pointer;
-    user-select: none;
+    @include prefix(user-select, none, ms moz webkit);
     background-image: none;
     border: 1px solid transparent;
     border-radius: 0;
-    transition: all 0.8s;
+    @include prefix(transition, all 0.8s, webkit moz o);
     text-decoration: none;
 }
 
@@ -116,7 +116,7 @@ input, textarea {
     &:disabled, 
     &[disabled] {
         cursor: not-allowed;
-        background-color: rgba(60, 191, 237, 0.6);
+        @include primaryRGBA(0.6);
     }
 }
 
@@ -140,7 +140,7 @@ input, textarea {
     &:disabled, 
     &[disabled] {
         cursor: not-allowed;
-        background-color: rgba(4, 130, 179, 0.6);
+        @include secondaryRGBA(0.6);
     }
 }
 
@@ -164,7 +164,7 @@ input, textarea {
     &:disabled, 
     &[disabled] {
         cursor: not-allowed;
-        background-color: rgba(43, 43, 43, 0.6);
+        @include darkGreyRGBA(0.6);
     }
 }
 
@@ -189,7 +189,7 @@ input, textarea {
     &:disabled, 
     &[disabled] {
         cursor: not-allowed;
-        background-color: rgba(236, 236, 236, 0.6);
+        @include lightGreyRGBA(0.6);
     }
 }
 
@@ -200,13 +200,12 @@ input, textarea {
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+    @include displayFlex;
+    @include prefix(flex-wrap, wrap, webkit);
     margin: 0;
     width: 100%;
     .column {
-        flex-basis: 0;
-        flex-grow: 1;
+        @include prefix(flex, 1 1 0, webkit ms);
         max-width: 100%;
         padding: 15px;
     }

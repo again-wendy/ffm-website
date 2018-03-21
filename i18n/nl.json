@@ -30,6 +30,11 @@
         "SUBMIT": "Verstuur"
     },
     "mailchimp": {
+        "HIRER_TEXT": "Als inlener op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
+        "SUPPLIER_TEXT": "Als uitzender op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
+        "INTERIM_TEXT": "Als leveraar van interimmers op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief",
+        "FREELANCER_TEXT": "Als ZZP'er op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
+        "CURIOUS_TEXT": "Op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
         "SUBSCRIBE_TO": "Schrijf je in op onze nieuwsbrief",
         "EMAIL_ADDRESS": "Email adres",
         "SUBSCRIBE": "Inschrijven"

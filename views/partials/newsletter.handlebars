@@ -1,10 +1,11 @@
 <div class="newsletter-info">
-    {{> ..(lookup . 'role' . /newsletter-text) }}
+    <span class="fa fa-envelope"></span>
+    {{> (lookup . 'roleNews') }}
+    <div class="arrow-right"></div>
 </div>
-<div id="mc_embed_signup">
+<div id="mc_embed_signup" class="mailchimp-form">
     <form action="https://flexforcemonkey.us8.list-manage.com/subscribe/post?u=53785b16e31b45f83200436f2&amp;id=d236da223f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
-            <h2>{{ translation.mailchimp.SUBSCRIBE_TO }}</h2>
             <div class="mc-field-group">
                 <label for="mce-EMAIL">{{ translation.mailchimp.EMAIL_ADDRESS }}</label>
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
@@ -15,7 +16,7 @@
             </div>    
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_53785b16e31b45f83200436f2_d236da223f" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="{{ translation.mailchimp.SUBSCRIBE }}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            <div class="clear"><input type="submit" value="{{ translation.mailchimp.SUBSCRIBE }}" name="subscribe" id="mc-embedded-subscribe" class="button btn-light-grey"></div>
         </div>
     </form>
 </div>

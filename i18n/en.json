@@ -40,6 +40,11 @@
         "SUBMIT": "Submit"
     },
     "mailchimp": {
+        "HIRER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a hirer? Sign up for our newsletter!",
+        "SUPPLIER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a supplier? Sign up for our newsletter!",
+        "INTERIM_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a supplier of interim workers? Sign up for our newsletter!",
+        "FREELANCER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a freelancer? Sign up for our newsletter!",
+        "CURIOUS_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey? Sign up for our newsletter!",
         "SUBSCRIBE_TO": "Subscribe to our mailing list",
         "EMAIL_ADDRESS": "Email Address",
         "SUBSCRIBE": "Subscribe"

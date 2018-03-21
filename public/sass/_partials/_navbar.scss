@@ -29,9 +29,9 @@
             width: 49%;
         }
         .mobile-toggle {
-            display: flex;
+            @include displayFlex;
             justify-content: flex-end;
-            align-items: center;
+            @include prefix(align-items, center, webkit);
             height: $navheight;
             font-size: 1.4rem;
             @media (min-width: 769px) {
@@ -41,8 +41,8 @@
                 width: 40px;
                 height: 25px;
                 position: relative;
-                transform: rotate(0deg);
-                transition: 0.5s ease-in-out;
+                @include prefix(transform, rotate(0deg), webkit moz o);
+                @include prefix(transition, 0.5s ease-in-out, webkit moz o);
                 cursor: pointer;
                 span {
                     display: block;
@@ -53,25 +53,25 @@
                     border-radius: 9px;
                     opacity: 1;
                     left: 0;
-                    transform: rotate(0deg);
-                    transition: .25s ease-in-out;
+                    @include prefix(transform, rotate(0deg), webkit moz o);
+                    @include prefix(transition, 0.25s ease-in-out, webkit moz o);
                     &:nth-child(1) {
                         top: 0px;
-                        transform-origin: left center;
+                        @include prefix(transform-origin, left center, webkit moz o);
                     }
                     &:nth-child(2) {
                         top: 10px;
-                        transform-origin: left center;
+                        @include prefix(transform-origin, left center, webkit moz o);
                     }
                     &:nth-child(3) {
                         top: 20px;
-                        transform-origin: left center;
+                        @include prefix(transform-origin, left center, webkit moz o);
                     }
                 }
             }
             .nav-icon.open span {
                 &:nth-child(1) {
-                    transform: rotate(45deg);
+                    @include prefix(transform, rotate(45deg), webkit moz o);
                     top: -3px;
                     left: 8px;
                 }
@@ -80,7 +80,7 @@
                     opacity: 0;
                 }
                 &:nth-child(3) {
-                    transform: rotate(-45deg);
+                    @include prefix(transform, rotate(-45deg), webkit moz o);
                     top: 26px;
                     left: 8px;
                 }
@@ -89,18 +89,18 @@
         .menu-items {
             height: $navheight;
             margin: 0;
-            display: flex;
+            @include displayFlex;
             justify-content: flex-end;
-            align-items: center;
+            @include prefix(align-items, center, webkit);
             list-style-type: none;
             position: relative;
             padding-left: 0;
             @media (max-width: 768px) {
                 position: absolute;
                 background: $light-grey;
-                flex-direction: column;
+                @include prefix(flex-direction, column, webkit);
                 height: auto;
-                align-items: stretch;
+                @include prefix(align-items, stretch, webkit);
                 right: 25px;
                 z-index: 99;
                 padding-left: 40px;

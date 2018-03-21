@@ -22,9 +22,9 @@
                     margin: 20px 0 35px 0;
                 }
                 .choices {
-                    display: flex;
+                    @include displayFlex;
                     justify-content: space-between;
-                    flex-wrap: wrap;
+                    @include prefix(flex-wrap, wrap, webkit);
                     a {
                         font-size: 1.2rem;
                         margin-bottom: 10px;

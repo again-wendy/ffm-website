@@ -41,7 +41,11 @@ app.use(cookieParser());
 
 app.get('/', (req, res) => {
     if (req.cookies.role) {
-        res.render('home', {role: req.cookies.role});
+        res.render('home', {
+            role: req.cookies.role, 
+            roleIntro: req.cookies.role + "/intro", 
+            roleNews: req.cookies.role + "/newsletter-text"
+        });
     } else {
         res.render('choice', {layout: false});
     }
