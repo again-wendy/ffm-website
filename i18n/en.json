@@ -37,7 +37,8 @@
         "EMAIL": "Email",
         "SUBJECT": "Subject",
         "MSG": "Message",
-        "SUBMIT": "Submit"
+        "SUBMIT": "Submit",
+        "SEND_SUCCESS": "Your form has been sent successfully. We will contact you as soon as possible!"
     },
     "mailchimp": {
         "HIRER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a hirer? Sign up for our newsletter!",
