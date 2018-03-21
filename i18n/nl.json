@@ -28,8 +28,7 @@
         "SUBJECT": "Onderwerp",
         "MSG": "Bericht",
         "SUBMIT": "Verstuur",
-        "SEND_SUCCESS": "Je formulier is succesvol verzonden. We nemen zo spoedig mogelijk contact met je op!",
-        "ERROR": "Helaas! Er is iets misgegaan, probeer het later nog eens of mail direct naar <a href='mailto:nieuwsgierig@flexforcemonkey.com'>nieuwsgierig@flexforcemonkey.com</>"
+        "SEND_SUCCESS": "Je formulier is succesvol verzonden. We nemen zo spoedig mogelijk contact met je op!"
     },
     "mailchimp": {
         "HIRER_TEXT": "Als inlener op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",

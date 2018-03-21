@@ -88,13 +88,14 @@ app.get('/curious', (req, res) => {
 });
 
 // Save contactform to database
-function writeContactForm(name, email, subject, msg) {
+function writeContactForm(name, email, subject, msg, role) {
     db.ref('contactform').push({
         timestamp: firebase.database.ServerValue.TIMESTAMP,
         contactName: name,
         contactEmail: email,
         contactSubject: subject,
-        contactMsg: msg
+        contactMsg: msg,
+        contactRole: role
     });
 }
 
@@ -109,9 +110,10 @@ app.post('/send', (req, res) => {
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
         <ul>
-            <li>Name: ${req.body.name}</li>
+            <li>Naam: ${req.body.name}</li>
             <li>Email: <a href="mailto:${req.body.email}">${req.body.email}</a></li>
-            <li>Subject: ${req.body.subject}</li>
+            <li>Onderwerp: ${req.body.subject}</li>
+            <li>Gekozen rol: ${req.cookies.role}</li>
         </ul>
         <h4 style="margin-bottom:0;">Message:</h4> 
         <p>${req.body.msg}</p>
@@ -142,7 +144,7 @@ app.post('/send', (req, res) => {
         if(error) {
             req.flash('error', 'Something went wrong: ' + error);
         } else {
-            writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg);
+            writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
             req.flash('success', 'Thanks for the message! We\'ll be in touch');
             res.redirect('/');
         }

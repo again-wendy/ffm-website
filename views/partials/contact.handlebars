@@ -4,8 +4,6 @@
         <div class="section-container">
             {{#if messages.success}}
                 <p class="flash flash-success">{{ translation.contact-section.SEND_SUCCESS }}</p>
-            {{else}}
-                <p class="flash flash-error">{{ translation.contact-section.ERROR }}</p>
             {{/if}}
             <p>{{ translation.contact-section.INTRO }}</p>
             <form id="contactform" method="POST" action="send">
