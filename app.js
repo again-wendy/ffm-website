@@ -71,6 +71,10 @@ app.get('/', (req, res) => {
     }
 });
 
+app.get('/database', (req, res) => {
+    res.render('data');
+});
+
 app.get('/hirer', (req, res) => { 
     res.cookie('role', 'hirer').redirect('/');
 });
