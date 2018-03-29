@@ -6,7 +6,8 @@
         "SUPPLIER": "Ik ben uitzender",
         "INTERIM": "Ik lever interimmers",
         "FREELANCER": "Ik ben ZZP'er",
-        "CURIOUS": "Ik ben nieuwsgierig"
+        "CURIOUS": "Ik ben alleen nieuwsgierig",
+        "GO_TO_WEBSITE": "Ga naar website"
     },
     "menu-items": {
         "PROMISES": "Wat we beloven",
@@ -15,6 +16,15 @@
         "BLOG": "Blog",
         "CONTACT": "Contact",
         "ROLES": "Rollen"
+    },
+    "home-intro": {
+        "YOU_ARE_HIRER": "Ben jij de tijd en moeite rondom inlenen van flexkrachten ook zat?",
+        "YOU_ARE_SUPPLIER": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
+        "YOU_ARE_INTERIM": "Jouw mensen werken hard bij jullie klanten, maar daarna begint het pas.",
+        "YOU_ARE_FREELANCER": "Als een ZZP'er wil je alles beheren vanuit één applicatie",
+        "YOU_ARE_CURIOUS": "Foutloze facturen in de uitzendwereld?",
+        "THING_OF_PAST": "Wij beloven je dat dit verleden tijd is.",
+        "WHAT_WE_PROMISE": "Wat we beloven"
     },
     "cookie": {
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",

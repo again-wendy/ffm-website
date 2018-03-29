@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexForceMonkey</title>
+    <title>Choose you role</title>
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
     <link rel="stylesheet" href="./public/css/normalize.css">
@@ -60,7 +60,7 @@
 </head>
 <body id="choice-page">
     <div id="cookie"></div>
-    <div class="container">
+    {{!-- <div class="container">
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">{{ translation.choice.WELCOME }}</h3>
@@ -74,6 +74,39 @@
                     <a href="/freelancer" class="btn-light-grey-xl">{{ translation.choice.FREELANCER }}</a>
                     <a href="/" class="btn-light-grey-xl">{{ translation.choice.CURIOUS }}</a>
                 </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="choices">
+        <div class="choice hirer">
+            <div class="content">
+                <h4>{{ translation.choice.HIRER }}</h4>
+                <a href="/hirer" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+            </div>
+        </div>
+        <div class="choice supplier">
+            <div class="content">
+                <h4>{{ translation.choice.SUPPLIER }}</h4>
+                <a href="/supplier" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+            </div>
+        </div>
+        <div class="choice interim">
+            <div class="content">
+                <h4>{{ translation.choice.INTERIM }}</h4>
+                <a href="/interim" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+            </div>
+        </div>
+        <div class="choice freelancer">
+            <div class="content">
+                <h4>{{ translation.choice.FREELANCER }}</h4>
+                <a href="/freelancer" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+            </div>
+        </div>
+        <div class="choice curious">
+            <div class="content">
+                <h4>{{ translation.choice.CURIOUS }}</h4>
+                <a href="/curious" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
             </div>
         </div>
     </div>

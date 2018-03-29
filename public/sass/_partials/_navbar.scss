@@ -1,7 +1,9 @@
 #navbar {
     height: $navheight;
-    background-color: $light-grey;
+    background-color: $dark-grey;
     z-index: 99;
+    position: fixed;
+    width: 100%;
     //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .left-menu {
         width: 35%;
@@ -17,6 +19,7 @@
                 font-family: $font-logo;
                 margin: 0;
                 font-size: 2rem;
+                color: white;
             }
         }
     }
@@ -97,7 +100,7 @@
             padding-left: 0;
             @media (max-width: 768px) {
                 position: absolute;
-                background: $light-grey;
+                background: $dark-grey;
                 @include prefix(flex-direction, column, webkit);
                 height: auto;
                 @include prefix(align-items, stretch, webkit);
@@ -113,7 +116,7 @@
                     }
                 }
                 a {
-                    color: $dark-grey;
+                    color: white;
                     font-family: $font-bold;
                     font-size: 1.2rem;
                     text-decoration: none;
@@ -122,7 +125,7 @@
                     text-align: center;
                     cursor: pointer;
                     &:hover, &:focus, &:active {
-                        background: $dark-grey;
+                        background: $dark-grey-hover;
                         color: white;
                     }
                     @media (max-width: 850px) {
@@ -144,7 +147,7 @@
                 .dropdown-menu {
                     display: none;
                     position: absolute;
-                    background-color: $light-grey;
+                    background-color: $dark-grey;
                     min-width: 200px;
                     z-index: 1;
                     list-style-type: none;

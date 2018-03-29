@@ -5,12 +5,14 @@
         justify-content: space-between;
         .footer-block {
             padding: 25px 15px;
+            width: 100%;
+            color: white;
         }
         .right-footer {
             @include displayFlex;
             justify-content: space-between;
             .newsletter-info {
-                background: $light-grey;
+                @include lightGreyRGBA(0.4);
                 padding: 15px;
                 position: relative;
                 .arrow-right {
@@ -19,7 +21,7 @@
                     height: 0;
                     border-top: 30px solid transparent;
                     border-bottom: 30px solid transparent;
-                    border-left: 30px solid $light-grey;
+                    border-left: 30px solid rgba(236, 236, 236, 0.4);
                     top: 50%;
                     right: -30px;
                     transform: translateY(-50%);
@@ -27,7 +29,7 @@
                 }
             }
             .mailchimp-form {
-                background: $secondary;
+                @include secondaryRGBA(0.4);
                 padding: 15px 15px 15px 45px;
             }
         }

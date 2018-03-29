@@ -1,0 +1,23 @@
+.table {
+    width: 100%;
+    thead {
+        background: $light-grey;
+        color: $dark-grey;
+        text-align: left;
+        font-family: $font-bold;
+        th {
+            padding: 10px 5px;
+        }
+    }
+    tbody {
+        tr:nth-child(even) {
+            background: lighten($light-grey, 5%);
+        }
+        tr:nth-child(odd) {
+            background: white;
+        }
+        td, th {
+            padding: 10px 5px;
+        }
+    }
+}

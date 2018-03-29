@@ -1,0 +1,15 @@
+#database {
+    padding-top: calc(#{$navheight} + 50px);
+    .table-title {
+        margin: 15px 0;
+        width: 60%;
+        float: left;
+    }
+    button {
+        margin: 15px 0;
+        float: right;
+    }
+    #contactTable {
+        display: none;
+    }
+}

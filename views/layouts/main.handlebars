@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexForceMonkey</title>
+    <title>Time to innovate your Flex Force - FlexForceMonkey</title>
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
     <link rel="stylesheet" href="./public/css/normalize.css">
@@ -71,19 +71,19 @@
             </div>
             <ul class="menu-items">
                 <li class="menu-item menu-item-1">
-                    <a onclick="menuScroll('promises')">{{ translation.menu-items.PROMISES }}</a>
+                    <a onclick="menuScroll('#promises')">{{ translation.menu-items.PROMISES }}</a>
                 </li>
                 <li class="menu-item menu-item-2">
-                    <a onclick="menuScroll('our-story')">{{ translation.menu-items.STORY }}</a>
+                    <a onclick="menuScroll('#our-story')">{{ translation.menu-items.STORY }}</a>
                 </li>
                 <li class="menu-item menu-item-3">
-                    <a onclick="menuScroll('how-it-works')">{{ translation.menu-items.HOW_WORK }}</a>
+                    <a onclick="menuScroll('#how-it-works')">{{ translation.menu-items.HOW_WORK }}</a>
                 </li>
                 <li class="menu-item menu-item-4">
                     <a href="http://flexjungle.flexforcemonkey.com" target="_blank">{{ translation.menu-items.BLOG }} <span class="fa fa-external-link-alt"></span></a>
                 </li>
                 <li class="menu-item menu-item-5">
-                    <a onclick="menuScroll('contact')">{{ translation.menu-items.CONTACT }}</a>
+                    <a onclick="menuScroll('#contact')">{{ translation.menu-items.CONTACT }}</a>
                 </li>
                 <li class="menu-item menu-item-6">
                     <div class="dropdown">
@@ -104,19 +104,19 @@
 
     {{{body}}}
 
+    {{> newsletter}}
+
     <footer id="footer">
         <div class="container">
-            <div class="footer-block left-footer">
-                <p>Eerste helft footer</p>
-            </div>
-            <div class="footer-block right-footer">
-                {{> newsletter }}
+            <div class="footer-block text-center">
+                <p>FlexForceMonkey is powered by AGAIN by LAKRAN</p>
             </div>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./public/js/js-cookie.js"></script>
     <script src="./public/js/script.js"></script>
 </body>
 </html>

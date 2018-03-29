@@ -8,7 +8,41 @@ $(document).ready(function() {
 
     // Set active role
     setActiveRoleLink();
+
+    // Open newsletter popup
+    newsletterBlock();
 });
+
+function getContactData() {
+    $.get("http://localhost:3000/database/contact", function(data) {
+        for (var i = 0; i < data.length; i++) {
+            $("#contactTable").fadeIn();
+            $("#contactTable tbody").append("<tr><td>" + data[i].contactName + "</td><td>" + data[i].contactEmail + "</td><td>" + data[i].date + "</td><td>" + data[i].contactSubject + "</td><td>" + data[i].contactMsg + "</td></tr>")
+        }
+    });
+}
+
+// Open newsletter popup when user hasn't closed it in the last 7 days
+function newsletterBlock() {
+    if( Cookies.get("newsletter" !== "closed") ) {
+        window.setTimeout(function() {
+            $("#newsletter").fadeIn();
+        }, 6000);
+    } 
+}
+
+// Close newsletter popup and set cookie so it doesn't show for 7 days
+function closeNewsletterBlock() {
+    Cookies.set("newsletter", "closed", { expires: 7 });
+    $("#newsletter").fadeOut();
+}
+
+// Menu scroll to section
+function menuScroll(name) {
+    $("html, body").animate({
+        scrollTop: $(name).offset().top
+    }, 1000);
+}
 
 // Check for hover on dropdown menu
 $('.dropdown').hover(

@@ -1,0 +1,54 @@
+#newsletter {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 35%;
+    background: $gradient;
+    display: none;
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        font-size: 24px;
+        color: white;
+        span {
+            cursor: pointer;
+        }
+    }
+    .subscribe {
+        padding: 40px 15px 15px 15px;
+        color: white;
+        .newsletter-title {
+            font-size: 1.1rem;
+            margin: 0;
+            width: 80%;
+            float: left;
+            padding-right: 15px;
+            border-right: 2px solid $light-grey;
+        }
+        .icon {
+            width: 20%;
+            display: inline-block;
+            text-align: right;
+            position: relative;
+            top: -4px;
+            .svg-inline--fa {
+                width: 4.5em;
+                height: 4.5em;
+            }
+        }
+        form {
+            .mc-field-group {
+                margin-bottom: 15px;
+                width: 70%;
+                float: left;
+                input {
+                    height: 39px;
+                }
+            }
+            #mc-embedded-subscribe {
+                width: 30%;
+            }
+        }
+    }
+}

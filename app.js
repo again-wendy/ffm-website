@@ -1,14 +1,14 @@
 require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const flash = require('express-flash');
-const exphbs = require('express-handlebars');
-const path = require('path');
-const nodemailer = require('nodemailer');
-const i18n = require('i18n-express');
-const firebase = require('firebase');
+const express           = require('express');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const session           = require('express-session');
+const flash             = require('express-flash');
+const exphbs            = require('express-handlebars');
+const path              = require('path');
+const nodemailer        = require('nodemailer');
+const i18n              = require('i18n-express');
+const firebase          = require('firebase');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -22,6 +22,10 @@ var config = {
 }
 firebase.initializeApp(config);
 const db = firebase.database();
+app.use((req, res, next) => {
+    req.db = db;
+    next();
+});
 
 // Setup language
 app.use(i18n({
@@ -71,8 +75,65 @@ app.get('/', (req, res) => {
     }
 });
 
+function getContactForms() {
+    var forms = db.ref('contactform');
+    var formsArr = [];
+    forms.on('value', (snapshot) => {
+        snapshot.forEach(function(item) {
+            var itemVal = item.val();
+            formsArr.push(itemVal);
+        });
+        return formsArr;
+    });
+}
+
+function convertTimestamp(timestamp) {
+    var newDate = new Date(timestamp);
+    var date = smallerThanTen(newDate.getDate());
+    var month = smallerThanTen(newDate.getMonth() + 1);
+    var year = smallerThanTen(newDate.getFullYear());
+    var hours = smallerThanTen(newDate.getHours() + 1);
+    var sec = smallerThanTen(newDate.getSeconds());
+    return date + "-" + month + "-" + year + " " + hours + ":" + sec;
+}
+
+function smallerThanTen(num) {
+    return num < 10 ? "0" + num : num;
+}
+
 app.get('/database', (req, res) => {
-    res.render('data');
+    var user = firebase.auth().currentUser;
+    if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
+        res.render('data', {
+            roleNews: req.cookies.role + "/newsletter-text"
+        });
+    } else if (user === null) {
+        res.render('login', {
+            roleNews: req.cookies.role + "/newsletter-text"
+        });
+    } else {
+        res.render('error', {
+            roleNews: req.cookies.role + "/newsletter-text",
+            errormsg: "Only an admin can see this page"
+        });
+    }
+});
+
+app.get('/database/contact', (req, res) => {
+    var user = firebase.auth().currentUser;
+    if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
+        var formsArr = [];
+        req.db.ref('contactform').on('value', (snapshot) => {
+            snapshot.forEach(function(item) {
+                var itemVal = item.val();
+                itemVal.date = convertTimestamp(itemVal.timestamp);
+                formsArr.push(itemVal);
+            });
+            res.send(formsArr);
+        });
+    } else {
+        res.status(500).send({error: "You have no rights to get this data!"});
+    }
 });
 
 app.get('/hirer', (req, res) => { 
@@ -103,13 +164,43 @@ function writeContactForm(name, email, subject, msg, role) {
     });
 }
 
-// Log in standard user
-function login() {
-    firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
+// Log in user
+function login(email, password, res) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+        res.redirect('/database');
+    }).catch((err) => {
+        // Sign-in went wrong
+        res.render('error', {
+            roleNews: req.cookies.role + "/newsletter-text",
+            errormsg: "Sorry, something went wrong! Error: " + err
+        });
+    });
 }
+
+// Log out user
+function logout(res) {
+    firebase.auth().signOut().then(() => {
+        res.redirect('/');
+    }).catch((err) => {
+        // Sign-out went wrong
+        res.render('error', {
+            roleNews: req.cookies.role + "/newsletter-text",
+            errormsg: "Sorry, something went wrong! Error: " + err
+        });
+    })
+}
+
+app.post('/login', (req, res) => {
+    login(req.body.email, req.body.password, res);
+});
+
+app.post('/logout', (req, res) => {
+    logout(res);
+})
 
 // Send contactform
 app.post('/send', (req, res) => {
+    login(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
@@ -157,6 +248,5 @@ app.post('/send', (req, res) => {
 
 var port = process.env.port || 3000;
 app.listen(port, () => {
-    login();
     console.log('Server started...');
 });
