@@ -40,6 +40,12 @@
         "SUBMIT": "Submit",
         "SEND_SUCCESS": "Your form has been sent successfully. We will contact you as soon as possible!"
     },
+    "database": {
+        "LOG_IN_INTRO": "Only an admin can see this page.",
+        "CONTACTFORMS": "Contact forms",
+        "GET_CONTACT_DATA": "Get contact data",
+        "DATE": "Date"
+    },
     "mailchimp": {
         "HIRER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a hirer? Sign up for our newsletter!",
         "SUPPLIER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a supplier? Sign up for our newsletter!",

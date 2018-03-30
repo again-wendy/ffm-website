@@ -11,14 +11,44 @@ $(document).ready(function() {
 
     // Open newsletter popup
     newsletterBlock();
+
+    // Set height elements on page load and when screen size changes
+    heightElements();
+    $(window).resize(function() {
+        heightElements();
+    });
 });
 
+function heightElements() {
+    // Height content on databasepages
+    var fHeight = $("#footer").height();
+    var bHeight = $("body").height();
+    var dbHeight = bHeight - fHeight;
+    $("#database").css("height", dbHeight + "px");
+}
+
+// Get all the contact data and show it in a table
 function getContactData() {
     $.get("http://localhost:3000/database/contact", function(data) {
         for (var i = 0; i < data.length; i++) {
             $("#contactTable").fadeIn();
-            $("#contactTable tbody").append("<tr><td>" + data[i].contactName + "</td><td>" + data[i].contactEmail + "</td><td>" + data[i].date + "</td><td>" + data[i].contactSubject + "</td><td>" + data[i].contactMsg + "</td></tr>")
+            $("#contactTable tbody").append("<tr><td>" + data[i].contactName + "</td><td>" + data[i].contactEmail + "</td><td>" + data[i].date + "</td><td>" + data[i].contactSubject + "</td><td>" + data[i].contactMsg + "</td></tr>");
+            setWidthTableColums("#contactTable");
         }
+    });
+}
+
+// For tables with fixed header it's needed to set the width of the header th
+function setWidthTableColums(tableId) {
+    var thead = $(tableId + " thead tr");
+    var tbody = $(tableId + " tbody tr:first-child");
+    var widths = [];
+    tbody.children('td').each(function() {
+        var w = $(this).width() + 10;
+        widths.push(w);
+    });
+    thead.children('th').each(function(i) {
+        $(this).css("width", widths[i] + "px");
     });
 }
 

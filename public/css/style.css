@@ -368,6 +368,37 @@ input, textarea {
   padding: 10px 5px;
 }
 
+/* line 26, ../sass/_partials/_table.scss */
+.fixed-table-header {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+/* line 31, ../sass/_partials/_table.scss */
+.fixed-table-header thead tr {
+  display: block;
+  position: relative;
+}
+/* line 36, ../sass/_partials/_table.scss */
+.fixed-table-header tbody {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 250px;
+}
+
+/* line 44, ../sass/_partials/_table.scss */
+.old_ie_wrapper {
+  height: 250px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* line 49, ../sass/_partials/_table.scss */
+.old_ie_wrapper tbody {
+  height: auto;
+}
+
 /* line 1, ../sass/_partials/_panel.scss */
 .panel {
   background: white;
@@ -691,7 +722,7 @@ section {
 }
 /* line 3, ../sass/_partials/_home-sections.scss */
 section .section-title {
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 0;
   text-align: center;
 }
@@ -1020,18 +1051,31 @@ section .section-title {
   padding-top: calc(9vh + 50px);
 }
 /* line 3, ../sass/_partials/_database-page.scss */
-#database .table-title {
+#database .section-title {
+  margin-bottom: 25px;
+}
+/* line 8, ../sass/_partials/_database-page.scss */
+#database .section-container p {
+  text-align: center;
+  margin: 15px 0;
+}
+/* line 12, ../sass/_partials/_database-page.scss */
+#database .section-container form {
+  margin-top: 30px;
+}
+/* line 16, ../sass/_partials/_database-page.scss */
+#database .section-container .table-title {
   margin: 15px 0;
   width: 60%;
   float: left;
 }
-/* line 8, ../sass/_partials/_database-page.scss */
-#database button {
+/* line 21, ../sass/_partials/_database-page.scss */
+#database .section-container button {
   margin: 15px 0;
   float: right;
 }
-/* line 12, ../sass/_partials/_database-page.scss */
-#database #contactTable {
+/* line 25, ../sass/_partials/_database-page.scss */
+#database .section-container #contactTable {
   display: none;
 }
 
