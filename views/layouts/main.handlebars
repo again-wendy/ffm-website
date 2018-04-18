@@ -57,54 +57,8 @@
 </head>
 <body>
     <div id="cookie"></div>
-    <nav id="navbar">
-        <div class="left-menu">
-            <a class="logo" href=""><h2>FlexForceMonkey</h2></a>
-        </div>
-        <div class="right-menu">
-            <div class="mobile-toggle">
-                <div class="nav-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <ul class="menu-items">
-                <li class="menu-item menu-item-1">
-                    <a onclick="menuScroll('#promises')">{{ translation.menu-items.PROMISES }}</a>
-                </li>
-                <li class="menu-item menu-item-2">
-                    <a onclick="menuScroll('#our-story')">{{ translation.menu-items.STORY }}</a>
-                </li>
-                <li class="menu-item menu-item-3">
-                    <a onclick="menuScroll('#how-it-works')">{{ translation.menu-items.HOW_WORK }}</a>
-                </li>
-                <li class="menu-item menu-item-4">
-                    <a onclick="menuScroll('#contact')">{{ translation.menu-items.CONTACT }}</a>
-                </li>
-                <li class="menu-item menu-item-5">
-                    <a href="http://flexjungle.flexforcemonkey.com" target="_blank">{{ translation.menu-items.BLOG }} <span class="fa fa-external-link-alt"></span></a>
-                </li>
-                <li class="menu-item menu-item-6">
-                    <div class="dropdown">
-                        <a>{{ translation.menu-items.ROLES }} <span class="fa fa-caret-down"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="item hirer"><a href="./hirer">{{ translation.choice.HIRER }}</a></li>
-                            <li class="item supplier"><a href="./supplier">{{ translation.choice.SUPPLIER }}</a></li>
-                            <li class="item interim"><a href="./interim">{{ translation.choice.INTERIM }}</a></li>
-                            <li class="item freelancer"><a href="./freelancer">{{ translation.choice.FREELANCER }}</a></li>
-                            <li class="item curious"><a href="./curious">{{ translation.choice.CURIOUS }}</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="language" class="menu-item menu-item-7 lang"></li>
-            </ul>
-        </div>
-    </nav>
 
     {{{body}}}
-
-    {{> newsletter}}
 
     <footer id="footer">
         <div class="container">

@@ -65,13 +65,9 @@ app.use(flash());
 
 app.get('/', (req, res) => {
     if (req.cookies.role) {
-        res.render('home', {
-            role: req.cookies.role, 
-            roleIntro: req.cookies.role + "/intro", 
-            roleNews: req.cookies.role + "/newsletter-text"
-        });
+        res.redirect('/' + req.cookies.role);
     } else {
-        res.render('choice', {layout: false});
+        res.render('home');
     }
 });
 
@@ -104,16 +100,11 @@ function smallerThanTen(num) {
 app.get('/database', (req, res) => {
     var user = firebase.auth().currentUser;
     if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
-        res.render('data', {
-            roleNews: req.cookies.role + "/newsletter-text"
-        });
+        res.render('data');
     } else if (user === null) {
-        res.render('login', {
-            roleNews: req.cookies.role + "/newsletter-text"
-        });
+        res.render('login');
     } else {
         res.render('error', {
-            roleNews: req.cookies.role + "/newsletter-text",
             errormsg: "Only an admin can see this page"
         });
     }
@@ -137,19 +128,13 @@ app.get('/database/contact', (req, res) => {
 });
 
 app.get('/hirer', (req, res) => { 
-    res.cookie('role', 'hirer').redirect('/');
+    res.cookie('role', 'hirer').render('hirer');
 });
 app.get('/supplier', (req, res) => { 
-    res.cookie('role', 'supplier').redirect('/');
-});
-app.get('/interim', (req, res) => { 
-    res.cookie('role', 'interim').redirect('/');
+    res.cookie('role', 'supplier').render('supplier');
 });
 app.get('/freelancer', (req, res) => { 
-    res.cookie('role', 'freelancer').redirect('/');
-});
-app.get('/curious', (req, res) => {
-    res.cookie('role', 'curious').redirect('/');
+    res.cookie('role', 'freelancer').render('freelancer');
 });
 
 // Save contactform to database

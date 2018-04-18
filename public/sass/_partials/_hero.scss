@@ -10,6 +10,34 @@
     }
 }
 
+#hero.home {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/home.jpg') 
+        no-repeat 
+        center;
+    .hero-title {
+        width: 35%;
+        left: 5%;
+        top: 10%;
+        text-align: left;
+        position: relative;
+        float: left;
+    }
+    .monkey {
+        position: relative;
+        width: 59%;
+        top: 30%;
+        float: right;
+        svg {
+            height: 100%;
+        }
+    }
+}
+
 #hero.hirer {
     background: 
         linear-gradient(

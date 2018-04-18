@@ -17,61 +17,19 @@
         "CONTACT": "Contact",
         "ROLES": "Roles"
     },
-    "home-intro": {
-        "YOU_ARE_HIRER": "Are you tired of the time and effort involved in hiring flex workers?",
-        "YOU_ARE_SUPPLIER": "If an invoice is correct we simply have to make sure it's made payable",
-        "YOU_ARE_INTERIM": "Your people work hard at your customers, then it starts",
-        "YOU_ARE_FREELANCER": "As a freelancer you want to control everything in one application",
-        "YOU_ARE_CURIOUS": "Error-free invoices in the supplierworld?",
-        "THING_OF_PAST": "We promise you that's a thing of the past.",
-        "WHAT_WE_PROMISE": "What we promise? Systemintegration-as-a-Service in Flex!",
-        "hirer": {
-            "IN_THE_CLOUD": "In the cloud",
-            "CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
-            "CLA_DATA": "Managing CLA data",
-            "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
-            "MSG_STANDARD": "Message standards",
-            "MSG_STANDARD_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
-        },
-        "supplier": {
-            "IN_THE_CLOUD": "In the cloud",
-            "CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
-            "CLA_DATA": "Managing CLA data",
-            "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
-            "MSG_STANDARD": "Message standards",
-            "MSG_STANDARD_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
-        },
-        "interim": {
-            "IN_THE_CLOUD": "In the cloud",
-            "CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
-            "CLA_DATA": "Managing CLA data",
-            "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
-            "MSG_STANDARD": "Message standards",
-            "MSG_STANDARD_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
-        },
-        "freelancer": {
-            "IN_THE_CLOUD": "In the cloud",
-            "CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
-            "CLA_DATA": "Managing CLA data",
-            "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
-            "MSG_STANDARD": "Message standards",
-            "MSG_STANDARD_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
-        },
-        "curious": {
-            "IN_THE_CLOUD": "In the cloud",
-            "CLOUD_TEXT": "FlexForceMonkey has been developed as a public cloud integration platform. A seamless cooperation between the supplier and the supplier. This is possible through the integration of regular ERP, VMS and P2P packages with the digital administration of employment agencies, but also through the use of our user-friendly portal. Secure as it should be, flexible as you wish.",
-            "CLA_DATA": "Managing CLA data",
-            "CLA_DATA_TEXT": "If you say 'purchasing temporary employees', then you also have CAO data directly. In addition to integration software, FlexForceMonkey is also a service. With this we maintain the complex calculations needed to merge purchase and broadcast data in one process. All CAs used are available, but we can always process specific conditions.",
-            "MSG_STANDARD": "Message standards",
-            "MSG_STANDARD_TEXT": "For system integration of hirers, we have various scenarios available and we use various interfaces. These are entirely based on message standards. This includes formats such as OCI (indeed, we also integrate temporary staff through a punch-out link), UBL and cXML. We link employment agencies mainly via SETU (HR-XML)."
-        }
+    "hirer": {
+        "HERO_TEXT": "Are you tired of the time and effort involved in hiring flex workers?"
     },
-    "our-story": {
-        "OUR_STORY": "Our story",
-        "STORY": "As consultants, we have helped many customers further in the digitization of purchase invoices, but after 10 years of customized services to automate temporary staffing, we were fed up with it. We noticed that every success at the hirer led to an extra cost item at the broadcaster. More and more often we asked ourselves the question: 'why should we keep busy with the same sub-optimization every time?' The conviction grew that it had to be better. It was a major puzzle, connecting 'thinking in purchase orders' as recipients do with 'thinking in collective labor agreements' to the nature of employment agencies, but it has succeeded. We have managed to integrate system integration in the flexible labor market into a complete model of unburdening. FlexForceMonkey is live and brings success for both users and lenders."
+    "supplier": {
+        "HERO_TEXT": "If an invoice is correct we simply have to make sure it's made payable"
     },
-    "how-it-works": {
-        "HOW_IT_WORKS": "How it works"
+    "freelancer": {
+        "HERO_TEXT": "As a freelancer you want to control everything in one application"
+    },
+    "home": {
+        "HERO_TEXT": "Error-free invoices in the supplierworld?",
+        "HERO_PARAGRAPH": "Scroll down to choose your role",
+        "CHOOSE_ROLE": "Choose your role:"
     },
     "cookie": {
         "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website.",

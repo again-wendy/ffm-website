@@ -17,61 +17,19 @@
         "CONTACT": "Contact",
         "ROLES": "Rollen"
     },
-    "home-intro": {
-        "YOU_ARE_HIRER": "Ben jij de tijd en moeite rondom inlenen van flexkrachten ook zat?",
-        "YOU_ARE_SUPPLIER": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
-        "YOU_ARE_INTERIM": "Jouw mensen werken hard bij jullie klanten, maar daarna begint het pas.",
-        "YOU_ARE_FREELANCER": "Als een ZZP'er wil je alles beheren vanuit één applicatie",
-        "YOU_ARE_CURIOUS": "Foutloze facturen in de uitzendwereld?",
-        "THING_OF_PAST": "Wij beloven je dat dit verleden tijd is.",
-        "WHAT_WE_PROMISE": "Wat we beloven? Systeemintegratie-as-a-Service in Flex!",
-        "hirer": {
-            "IN_THE_CLOUD": "In de cloud",
-            "CLOUD_TEXT": "FlexForceMonkey is ontwikkeld als public cloud integratieplatform. Een naadloze samenwerking tussen inlener en leverancier. Dat kan door integratie van reguliere ERP, VMS en P2P pakketten met de digitale administratie van uitzendbureaus, maar ook door inzet van onze gebruiksvriendelijke portal. Secure zoals het hoort, flexibel zoals je wenst.",
-            "CLA_DATA": "CAO data beheren",
-            "CLA_DATA_TEXT": "Zeg je 'inkopen van uitzendkrachten', dan heb je het ook direct over cao gegevens. Naast integratiesoftware, is FlexForceMonkey ook een dienst. Hiermee onderhouden we de complexe berekeningen die nodig zijn om inkoop- en uitzenddata in één proces samen te smelten. Alle gebruikte cao's zijn beschikbaar, maar specifieke condities kunnen we altijd verwerken.",
-            "MSG_STANDARD": "Berichtstandaarden",
-            "MSG_STANDARD_TEXT": "Voor systeemintegratie van inleners hebben we verschillende scenario's beschikbaar en gebruiken we diverse koppelvlakken. Deze zijn volledig gebaseerd op berichtstandaarden. Hierin zitten formaten als OCI (inderdaad, we integreren uitzendkrachten ook via een punch out koppeling), UBL en cXML. Met uitzendbureau's koppelen wij vooral via SETU (HR-XML)."
-        },
-        "supplier": {
-            "IN_THE_CLOUD": "In de cloud",
-            "CLOUD_TEXT": "FlexForceMonkey is ontwikkeld als public cloud integratieplatform. Een naadloze samenwerking tussen inlener en leverancier. Dat kan door integratie van reguliere ERP, VMS en P2P pakketten met de digitale administratie van uitzendbureaus, maar ook door inzet van onze gebruiksvriendelijke portal. Secure zoals het hoort, flexibel zoals je wenst.",
-            "CLA_DATA": "CAO data beheren",
-            "CLA_DATA_TEXT": "Zeg je 'inkopen van uitzendkrachten', dan heb je het ook direct over cao gegevens. Naast integratiesoftware, is FlexForceMonkey ook een dienst. Hiermee onderhouden we de complexe berekeningen die nodig zijn om inkoop- en uitzenddata in één proces samen te smelten. Alle gebruikte cao's zijn beschikbaar, maar specifieke condities kunnen we altijd verwerken.",
-            "MSG_STANDARD": "Berichtstandaarden",
-            "MSG_STANDARD_TEXT": "Voor systeemintegratie van inleners hebben we verschillende scenario's beschikbaar en gebruiken we diverse koppelvlakken. Deze zijn volledig gebaseerd op berichtstandaarden. Hierin zitten formaten als OCI (inderdaad, we integreren uitzendkrachten ook via een punch out koppeling), UBL en cXML. Met uitzendbureau's koppelen wij vooral via SETU (HR-XML)."
-        },
-        "interim": {
-            "IN_THE_CLOUD": "In de cloud",
-            "CLOUD_TEXT": "FlexForceMonkey is ontwikkeld als public cloud integratieplatform. Een naadloze samenwerking tussen inlener en leverancier. Dat kan door integratie van reguliere ERP, VMS en P2P pakketten met de digitale administratie van uitzendbureaus, maar ook door inzet van onze gebruiksvriendelijke portal. Secure zoals het hoort, flexibel zoals je wenst.",
-            "CLA_DATA": "CAO data beheren",
-            "CLA_DATA_TEXT": "Zeg je 'inkopen van uitzendkrachten', dan heb je het ook direct over cao gegevens. Naast integratiesoftware, is FlexForceMonkey ook een dienst. Hiermee onderhouden we de complexe berekeningen die nodig zijn om inkoop- en uitzenddata in één proces samen te smelten. Alle gebruikte cao's zijn beschikbaar, maar specifieke condities kunnen we altijd verwerken.",
-            "MSG_STANDARD": "Berichtstandaarden",
-            "MSG_STANDARD_TEXT": "Voor systeemintegratie van inleners hebben we verschillende scenario's beschikbaar en gebruiken we diverse koppelvlakken. Deze zijn volledig gebaseerd op berichtstandaarden. Hierin zitten formaten als OCI (inderdaad, we integreren uitzendkrachten ook via een punch out koppeling), UBL en cXML. Met uitzendbureau's koppelen wij vooral via SETU (HR-XML)."
-        },
-        "freelancer": {
-            "IN_THE_CLOUD": "In de cloud",
-            "CLOUD_TEXT": "FlexForceMonkey is ontwikkeld als public cloud integratieplatform. Een naadloze samenwerking tussen inlener en leverancier. Dat kan door integratie van reguliere ERP, VMS en P2P pakketten met de digitale administratie van uitzendbureaus, maar ook door inzet van onze gebruiksvriendelijke portal. Secure zoals het hoort, flexibel zoals je wenst.",
-            "CLA_DATA": "CAO data beheren",
-            "CLA_DATA_TEXT": "Zeg je 'inkopen van uitzendkrachten', dan heb je het ook direct over cao gegevens. Naast integratiesoftware, is FlexForceMonkey ook een dienst. Hiermee onderhouden we de complexe berekeningen die nodig zijn om inkoop- en uitzenddata in één proces samen te smelten. Alle gebruikte cao's zijn beschikbaar, maar specifieke condities kunnen we altijd verwerken.",
-            "MSG_STANDARD": "Berichtstandaarden",
-            "MSG_STANDARD_TEXT": "Voor systeemintegratie van inleners hebben we verschillende scenario's beschikbaar en gebruiken we diverse koppelvlakken. Deze zijn volledig gebaseerd op berichtstandaarden. Hierin zitten formaten als OCI (inderdaad, we integreren uitzendkrachten ook via een punch out koppeling), UBL en cXML. Met uitzendbureau's koppelen wij vooral via SETU (HR-XML)."
-        },
-        "curious": {
-            "IN_THE_CLOUD": "In de cloud",
-            "CLOUD_TEXT": "FlexForceMonkey is ontwikkeld als public cloud integratieplatform. Een naadloze samenwerking tussen inlener en leverancier. Dat kan door integratie van reguliere ERP, VMS en P2P pakketten met de digitale administratie van uitzendbureaus, maar ook door inzet van onze gebruiksvriendelijke portal. Secure zoals het hoort, flexibel zoals je wenst.",
-            "CLA_DATA": "CAO data beheren",
-            "CLA_DATA_TEXT": "Zeg je 'inkopen van uitzendkrachten', dan heb je het ook direct over cao gegevens. Naast integratiesoftware, is FlexForceMonkey ook een dienst. Hiermee onderhouden we de complexe berekeningen die nodig zijn om inkoop- en uitzenddata in één proces samen te smelten. Alle gebruikte cao's zijn beschikbaar, maar specifieke condities kunnen we altijd verwerken.",
-            "MSG_STANDARD": "Berichtstandaarden",
-            "MSG_STANDARD_TEXT": "Voor systeemintegratie van inleners hebben we verschillende scenario's beschikbaar en gebruiken we diverse koppelvlakken. Deze zijn volledig gebaseerd op berichtstandaarden. Hierin zitten formaten als OCI (inderdaad, we integreren uitzendkrachten ook via een punch out koppeling), UBL en cXML. Met uitzendbureau's koppelen wij vooral via SETU (HR-XML)."
-        }
+    "hirer": {
+        "HERO_TEXT": "Ben jij de tijd en moeite rondom inlenen van flexkrachten ook zat?"
     },
-    "our-story": {
-        "OUR_STORY": "Ons verhaal",
-        "STORY": "Als consultants hebben we vele klanten verder geholpen in het digitaliseren van inkoopfacturen, maar na 10 jaar maatwerk-dienstverlening op het automatiseren van uitzendprocessen waren we het zat. We merkten dat ieder succes bij de inlener leidde tot een extra kostenpost bij de uitzender. Steeds vaker stelden we onszelf de vraag: “waarom zouden we bezig blijven met iedere keer dezelfde sub optimalisatie doorvoeren?” De overtuiging groeide dat het beter moest kunnen. Het was een forse puzzel, het aan elkaar knopen van 'denken in inkooporders' zoals inleners dat doen met 'denken in cao’s' naar de natuur van uitzendbureaus, maar het is gelukt. Wij hebben systeemintegratie in de flexmarkt weten door te ontwikkelen naar een volledig model van ontzorging. FlexForceMonkey is live en brengt zowel inleners als uitleners succes."
+    "supplier": {
+        "HERO_TEXT": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld."
     },
-    "how-it-works": {
-        "HOW_IT_WORKS": "Hoe het werkt"
+    "freelancer": {
+        "HERO_TEXT": "Als een ZZP'er wil je alles beheren vanuit één applicatie"
+    },
+    "home": {
+        "HERO_TEXT": "Foutloze facturen in de uitzendwereld?",
+        "HERO_PARAGRAPH": "Scroll naar beneden om je rol te kiezen",
+        "CHOOSE_ROLE": "Kies je rol:"
     },
     "cookie": {
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",

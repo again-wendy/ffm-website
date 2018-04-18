@@ -1,11 +1,37 @@
-{{> (lookup . 'roleIntro') }}
+<section id="hero" class="home">
+    <div class="hero-title">
+        <h1>
+            {{ translation.home.HERO_TEXT }}
+        </h1>
+        <p>{{ translation.home.HERO_PARAGRAPH }}</p>
+    </div>
+    <div class="monkey">
+        {{> monkey}}
+    </div>
+</section>
 
-{{> our-story }}
-
-{{> how-it-works }}
-
-{{!-- <button onclick="getBlogs()">Get blogs</button> --}}
-
-<div class="banner banner-1"></div>
-
-{{> contact }}
+<section id="choose">
+    <h2 class="section-title">{{ translation.home.CHOOSE_ROLE }}</h2>
+    <div class="section-container">
+        <div class="choices">
+            <div class="choice hirer">
+                <div class="content">
+                    <h4>{{ translation.choice.HIRER }}</h4>
+                    <a href="/hirer" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+                </div>
+            </div>
+            <div class="choice supplier">
+                <div class="content">
+                    <h4>{{ translation.choice.SUPPLIER }}</h4>
+                    <a href="/supplier" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+                </div>
+            </div>
+            <div class="choice freelancer">
+                <div class="content">
+                    <h4>{{ translation.choice.FREELANCER }}</h4>
+                    <a href="/freelancer" class="btn-light-grey">{{ translation.choice.GO_TO_WEBSITE }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

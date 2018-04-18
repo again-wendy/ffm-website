@@ -684,6 +684,42 @@ input, textarea {
   width: 25px;
 }
 
+/* line 1, ../sass/_partials/_sections.scss */
+section {
+  padding: 50px 0;
+  border-bottom: 1px solid #ECECEC;
+}
+/* line 4, ../sass/_partials/_sections.scss */
+section:last-child {
+  border-bottom: 0;
+}
+/* line 7, ../sass/_partials/_sections.scss */
+section .section-title {
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 15, ../sass/_partials/_sections.scss */
+#contact .section-container {
+  width: 60%;
+  margin-left: 20%;
+}
+@media (max-width: 1200px) {
+  /* line 15, ../sass/_partials/_sections.scss */
+  #contact .section-container {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+}
+@media (max-width: 991px) {
+  /* line 15, ../sass/_partials/_sections.scss */
+  #contact .section-container {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 /* line 1, ../sass/_partials/_hero.scss */
 #hero {
   height: 100vh;
@@ -699,117 +735,229 @@ input, textarea {
 }
 
 /* line 13, ../sass/_partials/_hero.scss */
-#hero.hirer {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hirer.jpg") no-repeat center;
+#hero.home {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/home.jpg") no-repeat center;
 }
-
-/* line 24, ../sass/_partials/_hero.scss */
-#hero.hirer {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hirer.jpg") no-repeat center;
+/* line 22, ../sass/_partials/_hero.scss */
+#hero.home .hero-title {
+  width: 35%;
+  left: 5%;
+  top: 10%;
+  text-align: left;
+  position: relative;
+  float: left;
 }
-
+/* line 30, ../sass/_partials/_hero.scss */
+#hero.home .monkey {
+  position: relative;
+  width: 59%;
+  top: 30%;
+  float: right;
+}
 /* line 35, ../sass/_partials/_hero.scss */
+#hero.home .monkey svg {
+  height: 100%;
+}
+
+/* line 41, ../sass/_partials/_hero.scss */
+#hero.hirer {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hirer.jpg") no-repeat center;
+}
+
+/* line 52, ../sass/_partials/_hero.scss */
+#hero.hirer {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hirer.jpg") no-repeat center;
+}
+
+/* line 63, ../sass/_partials/_hero.scss */
 #hero.supplier {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/supplier.jpg") no-repeat center;
 }
 
-/* line 46, ../sass/_partials/_hero.scss */
+/* line 74, ../sass/_partials/_hero.scss */
 #hero.interim {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/interim.jpg") no-repeat center;
 }
 
-/* line 57, ../sass/_partials/_hero.scss */
+/* line 85, ../sass/_partials/_hero.scss */
 #hero.freelancer {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/freelancer.jpg") no-repeat center;
 }
 
-/* line 68, ../sass/_partials/_hero.scss */
+/* line 96, ../sass/_partials/_hero.scss */
 #hero.curious {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/curious.jpg") no-repeat center;
 }
 
-/* line 1, ../sass/_partials/_home-sections.scss */
-section {
-  padding: 50px 0;
-  border-bottom: 1px solid #ECECEC;
+/* line 1, ../sass/_partials/_home.scss */
+#choose {
+  padding-bottom: 0;
 }
-/* line 4, ../sass/_partials/_home-sections.scss */
-section:last-child {
-  border-bottom: 0;
+/* line 3, ../sass/_partials/_home.scss */
+#choose .section-title {
+  margin-bottom: 50px;
 }
-/* line 7, ../sass/_partials/_home-sections.scss */
-section .section-title {
-  margin: 0 0 10px 0;
-  padding: 0;
-  text-align: center;
-}
-
-/* line 15, ../sass/_partials/_home-sections.scss */
-#promises .section-title {
-  color: #3CBFED;
-}
-/* line 21, ../sass/_partials/_home-sections.scss */
-#promises .section-container .icon-columns .column .svg-inline--fa {
-  color: #3CBFED;
-  height: 4em;
-  width: 4em;
-  display: block;
-  margin: 0 auto;
-}
-/* line 28, ../sass/_partials/_home-sections.scss */
-#promises .section-container .icon-columns .column h3 {
-  text-align: center;
-  color: #3CBFED;
-}
-
-/* line 39, ../sass/_partials/_home-sections.scss */
-#our-story .section-container h2 {
-  color: #3CBFED;
-}
-/* line 42, ../sass/_partials/_home-sections.scss */
-#our-story .section-container .column:last-child {
+/* line 6, ../sass/_partials/_home.scss */
+#choose .choices {
+  height: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: flex-end;
-  -moz-align-items: flex-end;
-  -o-align-items: flex-end;
-  align-items: flex-end;
-}
-
-/* line 50, ../sass/_partials/_home-sections.scss */
-#how-it-works .section-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -o-flex-wrap: wrap;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-direction: row;
 }
-
-/* line 58, ../sass/_partials/_home-sections.scss */
-#contact .section-container {
-  width: 60%;
-  margin-left: 20%;
-}
-@media (max-width: 1200px) {
-  /* line 58, ../sass/_partials/_home-sections.scss */
-  #contact .section-container {
-    width: 75%;
-    margin-left: 12.5%;
+@media (max-width: 1250px) {
+  /* line 6, ../sass/_partials/_home.scss */
+  #choose .choices {
+    flex-direction: column;
+    height: auto;
   }
 }
-@media (max-width: 991px) {
-  /* line 58, ../sass/_partials/_home-sections.scss */
-  #contact .section-container {
-    width: 100%;
-    margin-left: 0;
+/* line 15, ../sass/_partials/_home.scss */
+#choose .choices .choice {
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+}
+@media (max-width: 1250px) {
+  /* line 15, ../sass/_partials/_home.scss */
+  #choose .choices .choice {
+    padding: 30px 35%;
+  }
+}
+@media (max-width: 715px) {
+  /* line 15, ../sass/_partials/_home.scss */
+  #choose .choices .choice {
+    padding: 30px 20%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 15, ../sass/_partials/_home.scss */
+  #choose .choices .choice {
+    padding: 20px;
+  }
+}
+/* line 30, ../sass/_partials/_home.scss */
+#choose .choices .choice .content {
+  position: relative;
+  top: 30%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+/* line 37, ../sass/_partials/_home.scss */
+#choose .choices .hirer {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/hirer.jpg") no-repeat 50% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 37, ../sass/_partials/_home.scss */
+  #choose .choices .hirer {
+    background-position: 50% 60%;
+  }
+}
+/* line 49, ../sass/_partials/_home.scss */
+#choose .choices .hirer:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hirer.jpg") no-repeat 50% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 49, ../sass/_partials/_home.scss */
+  #choose .choices .hirer:hover {
+    background-position: 50% 60%;
+  }
+}
+/* line 63, ../sass/_partials/_home.scss */
+#choose .choices .supplier {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/supplier.jpg") no-repeat 70% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 63, ../sass/_partials/_home.scss */
+  #choose .choices .supplier {
+    background-position: 50% 30%;
+  }
+}
+@media (max-width: 715px) {
+  /* line 63, ../sass/_partials/_home.scss */
+  #choose .choices .supplier {
+    background-position: 60% 30%;
+  }
+}
+/* line 78, ../sass/_partials/_home.scss */
+#choose .choices .supplier:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/supplier.jpg") no-repeat 70% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 78, ../sass/_partials/_home.scss */
+  #choose .choices .supplier:hover {
+    background-position: 50% 30%;
+  }
+}
+@media (max-width: 715px) {
+  /* line 78, ../sass/_partials/_home.scss */
+  #choose .choices .supplier:hover {
+    background-position: 60% 30%;
+  }
+}
+/* line 95, ../sass/_partials/_home.scss */
+#choose .choices .interim {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/interim.jpg") no-repeat 20% 50%;
+}
+/* line 104, ../sass/_partials/_home.scss */
+#choose .choices .interim:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/interim.jpg") no-repeat 20% 50%;
+}
+/* line 115, ../sass/_partials/_home.scss */
+#choose .choices .freelancer {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/freelancer.jpg") no-repeat 40% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 115, ../sass/_partials/_home.scss */
+  #choose .choices .freelancer {
+    background-position: 20% 40%;
+  }
+}
+@media (max-width: 715px) {
+  /* line 115, ../sass/_partials/_home.scss */
+  #choose .choices .freelancer {
+    background-position: 30% 50%;
+  }
+}
+/* line 130, ../sass/_partials/_home.scss */
+#choose .choices .freelancer:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/freelancer.jpg") no-repeat 20% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 130, ../sass/_partials/_home.scss */
+  #choose .choices .freelancer:hover {
+    background-position: 20% 40%;
+  }
+}
+/* line 144, ../sass/_partials/_home.scss */
+#choose .choices .curious {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/curious.jpg") no-repeat 50% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 144, ../sass/_partials/_home.scss */
+  #choose .choices .curious {
+    background-position: 50% 30%;
+  }
+}
+/* line 156, ../sass/_partials/_home.scss */
+#choose .choices .curious:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/curious.jpg") no-repeat 50% 50%;
+}
+@media (max-width: 1250px) {
+  /* line 156, ../sass/_partials/_home.scss */
+  #choose .choices .curious:hover {
+    background-position: 50% 30%;
   }
 }
 
@@ -930,186 +1078,6 @@ section .section-title {
 #footer .container .right-footer .mailchimp-form {
   background-color: rgba(4, 130, 179, 0.4);
   padding: 15px 15px 15px 45px;
-}
-
-/* line 2, ../sass/_partials/_choice-page.scss */
-#choice-page .choices {
-  height: 100%;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-@media (max-width: 1250px) {
-  /* line 2, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices {
-    flex-direction: column;
-    height: auto;
-  }
-}
-/* line 11, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .choice {
-  padding: 20px;
-  text-align: center;
-  height: 100%;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -o-flex: 1;
-  flex: 1;
-}
-/* line 17, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .choice:hover {
-  -webkit-flex-grow: 2;
-  -moz-flex-grow: 2;
-  -o-flex-grow: 2;
-  flex-grow: 2;
-}
-@media (max-width: 1250px) {
-  /* line 17, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .choice:hover {
-    -webkit-flex-grow: 1;
-    -moz-flex-grow: 1;
-    -o-flex-grow: 1;
-    flex-grow: 1;
-  }
-}
-@media (max-width: 1250px) {
-  /* line 11, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .choice {
-    padding: 30px 35%;
-  }
-}
-@media (max-width: 715px) {
-  /* line 11, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .choice {
-    padding: 30px 20%;
-  }
-}
-@media (max-width: 600px) {
-  /* line 11, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .choice {
-    padding: 20px;
-  }
-}
-/* line 32, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .choice .content {
-  position: relative;
-  top: 30%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.4);
-}
-/* line 39, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .hirer {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/hirer.jpg") no-repeat 50% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 39, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .hirer {
-    background-position: 50% 60%;
-  }
-}
-/* line 51, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .hirer:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hirer.jpg") no-repeat 50% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 51, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .hirer:hover {
-    background-position: 50% 60%;
-  }
-}
-/* line 65, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .supplier {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/supplier.jpg") no-repeat 70% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 65, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .supplier {
-    background-position: 50% 30%;
-  }
-}
-@media (max-width: 715px) {
-  /* line 65, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .supplier {
-    background-position: 60% 30%;
-  }
-}
-/* line 80, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .supplier:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/supplier.jpg") no-repeat 70% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 80, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .supplier:hover {
-    background-position: 50% 30%;
-  }
-}
-@media (max-width: 715px) {
-  /* line 80, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .supplier:hover {
-    background-position: 60% 30%;
-  }
-}
-/* line 97, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .interim {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/interim.jpg") no-repeat 20% 50%;
-}
-/* line 106, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .interim:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/interim.jpg") no-repeat 20% 50%;
-}
-/* line 117, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .freelancer {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/freelancer.jpg") no-repeat 40% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 117, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .freelancer {
-    background-position: 20% 40%;
-  }
-}
-@media (max-width: 715px) {
-  /* line 117, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .freelancer {
-    background-position: 30% 50%;
-  }
-}
-/* line 132, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .freelancer:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/freelancer.jpg") no-repeat 20% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 132, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .freelancer:hover {
-    background-position: 20% 40%;
-  }
-}
-/* line 146, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .curious {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/curious.jpg") no-repeat 50% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 146, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .curious {
-    background-position: 50% 30%;
-  }
-}
-/* line 158, ../sass/_partials/_choice-page.scss */
-#choice-page .choices .curious:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/curious.jpg") no-repeat 50% 50%;
-}
-@media (max-width: 1250px) {
-  /* line 158, ../sass/_partials/_choice-page.scss */
-  #choice-page .choices .curious:hover {
-    background-position: 50% 30%;
-  }
 }
 
 /* line 1, ../sass/_partials/_database-page.scss */
@@ -1290,4 +1258,93 @@ form .form-group input, form .form-group textarea {
 /* line 11, ../sass/_partials/_banner.scss */
 .banner-1 {
   background-image: url("../images/curious.jpg");
+}
+
+@keyframes blink-eyes {
+  0% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  47% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  48% {
+    -webkit-transform: scale(1.3, 0.1);
+    -moz-transform: scale(1.3, 0.1);
+    -ms-transform: scale(1.3, 0.1);
+    -o-transform: scale(1.3, 0.1);
+    transform: scale(1.3, 0.1);
+  }
+  52% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+/* line 39, ../sass/_partials/_monkey.scss */
+.svg-monkey * {
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+/* line 47, ../sass/_partials/_monkey.scss */
+.svg-monkey {
+  /* Set transform-origin of the eyes to fix bug in FireFox */
+}
+/* line 49, ../sass/_partials/_monkey.scss */
+.svg-monkey .eye-left {
+  -webkit-transform-origin: 325px 189.5px;
+  -moz-transform-origin: 325px 189.5px;
+  -ms-transform-origin: 325px 189.5px;
+  -o-transform-origin: 325px 189.5px;
+  transform-origin: 325px 189.5px;
+}
+/* line 56, ../sass/_partials/_monkey.scss */
+.svg-monkey .eye-right {
+  -webkit-transform-origin: 405.8px 189.5px;
+  -moz-transform-origin: 405.8px 189.5px;
+  -ms-transform-origin: 405.8px 189.5px;
+  -o-transform-origin: 405.8px 189.5px;
+  transform-origin: 405.8px 189.5px;
+}
+/* line 63, ../sass/_partials/_monkey.scss */
+.svg-monkey .eye {
+  display: block;
+  -webkit-animation: blink-eyes 3s infinite;
+  -moz-animation: blink-eyes 3s infinite;
+  -o-animation: blink-eyes 3s infinite;
+  animation: blink-eyes 3s infinite;
+}
+
+/* Don't show monkey SVG in IE, because it's changing the layout of the page */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 74, ../sass/_partials/_monkey.scss */
+  #admin-monkey {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  /* line 80, ../sass/_partials/_monkey.scss */
+  #admin-monkey {
+    display: none;
+  }
 }
