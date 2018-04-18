@@ -19,6 +19,25 @@ $(document).ready(function() {
     });
 });
 
+function getBlogs() {
+    var url = 'http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/';
+    $.ajax({
+        type: 'GET',
+        url: url,
+        crossDomain: true,
+        headers: {
+            'Access-Control-Allow-Origin': 'http://flexjungle.flexforcemonkey.com',
+            'Access-Control-Allow-Headers' : 'access-control-allow-headers,access-control-allow-origin,content-type'
+        },
+        dataType: "json",
+        contentType: "application/json",
+        success: function(res) {
+            console.log("Success");
+            console.log(res);
+        }
+    })
+}
+
 function heightElements() {
     // Height content on databasepages
     var fHeight = $("#footer").height();

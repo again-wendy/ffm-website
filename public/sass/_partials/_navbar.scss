@@ -124,7 +124,7 @@
                     padding: 3vh 15px;
                     text-align: center;
                     cursor: pointer;
-                    &:hover, &:focus, &:active {
+                    &:hover, &:focus, &:active, &.active {
                         background: $dark-grey-hover;
                         color: white;
                     }
@@ -156,7 +156,7 @@
                     li {
                         &.active {
                             a {
-                                background: $dark-grey;
+                                background: $dark-grey-hover;
                                 color: white;
                             }
                         }
