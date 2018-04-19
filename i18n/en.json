@@ -18,7 +18,10 @@
         "ROLES": "Roles"
     },
     "hirer": {
-        "HERO_TEXT": "Are you tired of the time and effort involved in hiring flex workers?"
+        "HERO_TEXT": "Are you tired of the time and effort involved in hiring flex workers?",
+        "HIRER_INTRO_TITLE": "When you're hiring flex workers",
+        "HIRER_INTRO_SUBTITLE": "Are you tired of the time and effort involved in lending flex workers? We promise you that this is past time.",
+        "HIRER_INTRO_TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
     },
     "supplier": {
         "HERO_TEXT": "If an invoice is correct we simply have to make sure it's made payable"
@@ -29,6 +32,7 @@
     "home": {
         "HERO_TEXT": "Error-free invoices in the supplierworld?",
         "HERO_PARAGRAPH": "Scroll down to choose your role",
+        "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier to work together. It ensures a seamless connection between administrations. To show you how we can help you, we want to know what you are. Click on one of the following options to go the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
     },
     "cookie": {
@@ -37,6 +41,8 @@
         "LEARN_MORE": "Learn more"
     },
     "contact-section": {
+        "INTERESTED": "Interested?",
+        "MAKE_CONTACT": "Contact us!",
         "INTRO": "Interested in FlexForceMonkey? Or are you interested in a demo? Fill in the following form and we will contact you as soon as possible.",
         "NAME": "Name",
         "EMAIL": "Email",

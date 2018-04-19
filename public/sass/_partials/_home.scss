@@ -8,7 +8,7 @@
         @include displayFlex;
         justify-content: space-between;
         flex-direction: row;
-        @media (max-width: 1250px) {
+        @media (max-width: 991px) {
             flex-direction: column;
             height: auto;
         }
@@ -18,11 +18,11 @@
             height: 100%;
             @include prefix(transition, all 0.5s, webkit moz o);
             @include prefix(flex, 1, webkit moz o);
-            @media (max-width: 1250px) {
-                padding: 30px 35%;
+            @media (max-width: 991px) {
+                padding: 30px 25%;
             }
-            @media (max-width: 715px) {
-                padding: 30px 20%;
+            @media (max-width: 767px) {
+                padding: 30px 10%;
             }
             @media (max-width: 600px) {
                 padding: 20px;
@@ -43,7 +43,7 @@
                 url('../images/hirer.jpg')
                 no-repeat
                 50% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 50% 60%;
                 }
             &:hover {
@@ -55,7 +55,7 @@
                 url('../images/hirer.jpg')
                 no-repeat
                 50% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 50% 60%;
                 }
             }
@@ -69,7 +69,7 @@
                 url('../images/supplier.jpg')
                 no-repeat
                 70% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 50% 30%;
                 }
                 @media (max-width: 715px) {
@@ -84,32 +84,12 @@
                 url('../images/supplier.jpg')
                 no-repeat
                 70% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 50% 30%;
                 }
                 @media (max-width: 715px) {
                     background-position: 60% 30%;
                 }
-            }
-        }
-        .interim {
-            background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.5),
-                    rgba(255, 255, 255, 0.5)
-                ),
-                url('../images/interim.jpg')
-                no-repeat
-                20% 50%;
-            &:hover {
-                background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.2)
-                ),
-                url('../images/interim.jpg')
-                no-repeat
-                20% 50%;
             }
         }
         .freelancer {
@@ -121,7 +101,7 @@
                 url('../images/freelancer.jpg')
                 no-repeat
                 40% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 20% 40%;
                 }
                 @media (max-width: 715px) {
@@ -136,35 +116,9 @@
                 url('../images/freelancer.jpg')
                 no-repeat
                 20% 50%;
-                @media (max-width: 1250px) {
+                @media (max-width: 991px) {
                     background-position: 20% 40%;
                 }
-            }
-        }
-        .curious {
-            background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.5),
-                    rgba(255, 255, 255, 0.5)
-                ),
-                url('../images/curious.jpg')
-                no-repeat
-                50% 50%;
-                @media (max-width: 1250px) {
-                    background-position: 50% 30%;
-                }
-            &:hover {
-                background: 
-                    linear-gradient(
-                        rgba(255, 255, 255, 0.2),
-                        rgba(255, 255, 255, 0.2)
-                    ),
-                    url('../images/curious.jpg')
-                    no-repeat
-                    50% 50%;
-                    @media (max-width: 1250px) {
-                        background-position: 50% 30%;
-                    }
             }
         }
     }

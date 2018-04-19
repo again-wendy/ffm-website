@@ -1,0 +1,53 @@
+#hirer-intro-1 {
+    .section-container {
+        .section-text {
+            width: 70%;
+            float: left;
+        }
+        img {
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+#hirer-intro-2 {
+    .section-container {
+        img {
+            width: 35%;
+            display: inline-block;
+        }
+        .section-text {
+            width: 60%;
+            float: right;
+        }
+    }
+}
+
+#hirer-options-1 {
+    .section-container {
+        img {
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+        }
+        .section-text {
+            width: 70%;
+            float: left;
+        }
+    }
+}
+
+#hirer-options-2 {
+    .section-container {
+        img {
+            width: 35%;
+            display: inline-block;
+        }
+        .section-text {
+            width: 60%;
+            float: right;
+        }
+    }
+}

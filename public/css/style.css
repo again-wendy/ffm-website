@@ -53,37 +53,37 @@ strong {
 
 /* line 28, ../sass/_partials/_base.scss */
 .container {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 }
 @media (max-width: 1400px) {
   /* line 28, ../sass/_partials/_base.scss */
   .container {
-    width: 65%;
+    width: 70%;
   }
 }
 @media (max-width: 1250px) {
   /* line 28, ../sass/_partials/_base.scss */
   .container {
-    width: 70%;
+    width: 75%;
   }
 }
 @media (max-width: 1100px) {
   /* line 28, ../sass/_partials/_base.scss */
   .container {
-    width: 75%;
+    width: 80%;
   }
 }
 @media (max-width: 900px) {
   /* line 28, ../sass/_partials/_base.scss */
   .container {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (max-width: 768px) {
   /* line 28, ../sass/_partials/_base.scss */
   .container {
-    width: 85%;
+    width: 90%;
   }
 }
 
@@ -699,21 +699,27 @@ section .section-title {
   padding: 0;
   text-align: center;
 }
+/* line 12, ../sass/_partials/_sections.scss */
+section .sub-title {
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
 
-/* line 15, ../sass/_partials/_sections.scss */
+/* line 20, ../sass/_partials/_sections.scss */
 #contact .section-container {
   width: 60%;
   margin-left: 20%;
 }
 @media (max-width: 1200px) {
-  /* line 15, ../sass/_partials/_sections.scss */
+  /* line 20, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 75%;
     margin-left: 12.5%;
   }
 }
 @media (max-width: 991px) {
-  /* line 15, ../sass/_partials/_sections.scss */
+  /* line 20, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 100%;
     margin-left: 0;
@@ -808,7 +814,7 @@ section .section-title {
   justify-content: space-between;
   flex-direction: row;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 6, ../sass/_partials/_home.scss */
   #choose .choices {
     flex-direction: column;
@@ -829,16 +835,16 @@ section .section-title {
   -o-flex: 1;
   flex: 1;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 15, ../sass/_partials/_home.scss */
   #choose .choices .choice {
-    padding: 30px 35%;
+    padding: 30px 25%;
   }
 }
-@media (max-width: 715px) {
+@media (max-width: 767px) {
   /* line 15, ../sass/_partials/_home.scss */
   #choose .choices .choice {
-    padding: 30px 20%;
+    padding: 30px 10%;
   }
 }
 @media (max-width: 600px) {
@@ -858,7 +864,7 @@ section .section-title {
 #choose .choices .hirer {
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/hirer.jpg") no-repeat 50% 50%;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 37, ../sass/_partials/_home.scss */
   #choose .choices .hirer {
     background-position: 50% 60%;
@@ -868,7 +874,7 @@ section .section-title {
 #choose .choices .hirer:hover {
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hirer.jpg") no-repeat 50% 50%;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 49, ../sass/_partials/_home.scss */
   #choose .choices .hirer:hover {
     background-position: 50% 60%;
@@ -878,7 +884,7 @@ section .section-title {
 #choose .choices .supplier {
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/supplier.jpg") no-repeat 70% 50%;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 63, ../sass/_partials/_home.scss */
   #choose .choices .supplier {
     background-position: 50% 30%;
@@ -894,7 +900,7 @@ section .section-title {
 #choose .choices .supplier:hover {
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/supplier.jpg") no-repeat 70% 50%;
 }
-@media (max-width: 1250px) {
+@media (max-width: 991px) {
   /* line 78, ../sass/_partials/_home.scss */
   #choose .choices .supplier:hover {
     background-position: 50% 30%;
@@ -907,58 +913,76 @@ section .section-title {
   }
 }
 /* line 95, ../sass/_partials/_home.scss */
-#choose .choices .interim {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/interim.jpg") no-repeat 20% 50%;
-}
-/* line 104, ../sass/_partials/_home.scss */
-#choose .choices .interim:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/interim.jpg") no-repeat 20% 50%;
-}
-/* line 115, ../sass/_partials/_home.scss */
 #choose .choices .freelancer {
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/freelancer.jpg") no-repeat 40% 50%;
 }
-@media (max-width: 1250px) {
-  /* line 115, ../sass/_partials/_home.scss */
+@media (max-width: 991px) {
+  /* line 95, ../sass/_partials/_home.scss */
   #choose .choices .freelancer {
     background-position: 20% 40%;
   }
 }
 @media (max-width: 715px) {
-  /* line 115, ../sass/_partials/_home.scss */
+  /* line 95, ../sass/_partials/_home.scss */
   #choose .choices .freelancer {
     background-position: 30% 50%;
   }
 }
-/* line 130, ../sass/_partials/_home.scss */
+/* line 110, ../sass/_partials/_home.scss */
 #choose .choices .freelancer:hover {
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/freelancer.jpg") no-repeat 20% 50%;
 }
-@media (max-width: 1250px) {
-  /* line 130, ../sass/_partials/_home.scss */
+@media (max-width: 991px) {
+  /* line 110, ../sass/_partials/_home.scss */
   #choose .choices .freelancer:hover {
     background-position: 20% 40%;
   }
 }
-/* line 144, ../sass/_partials/_home.scss */
-#choose .choices .curious {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/curious.jpg") no-repeat 50% 50%;
+
+/* line 3, ../sass/_partials/_hirer.scss */
+#hirer-intro-1 .section-container .section-text {
+  width: 70%;
+  float: left;
 }
-@media (max-width: 1250px) {
-  /* line 144, ../sass/_partials/_home.scss */
-  #choose .choices .curious {
-    background-position: 50% 30%;
-  }
+/* line 7, ../sass/_partials/_hirer.scss */
+#hirer-intro-1 .section-container img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
 }
-/* line 156, ../sass/_partials/_home.scss */
-#choose .choices .curious:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/curious.jpg") no-repeat 50% 50%;
+
+/* line 17, ../sass/_partials/_hirer.scss */
+#hirer-intro-2 .section-container img {
+  width: 35%;
+  display: inline-block;
 }
-@media (max-width: 1250px) {
-  /* line 156, ../sass/_partials/_home.scss */
-  #choose .choices .curious:hover {
-    background-position: 50% 30%;
-  }
+/* line 21, ../sass/_partials/_hirer.scss */
+#hirer-intro-2 .section-container .section-text {
+  width: 60%;
+  float: right;
+}
+
+/* line 30, ../sass/_partials/_hirer.scss */
+#hirer-options-1 .section-container img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 35, ../sass/_partials/_hirer.scss */
+#hirer-options-1 .section-container .section-text {
+  width: 70%;
+  float: left;
+}
+
+/* line 44, ../sass/_partials/_hirer.scss */
+#hirer-options-2 .section-container img {
+  width: 35%;
+  display: inline-block;
+}
+/* line 48, ../sass/_partials/_hirer.scss */
+#hirer-options-2 .section-container .section-text {
+  width: 60%;
+  float: right;
 }
 
 /* line 1, ../sass/_partials/_newsletter.scss */
@@ -1247,15 +1271,29 @@ form .form-group input, form .form-group textarea {
 /* line 1, ../sass/_partials/_banner.scss */
 .banner {
   width: 100%;
-  height: 350px;
+  height: 300px;
+  padding: 20px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   background-attachment: fixed;
 }
+/* line 10, ../sass/_partials/_banner.scss */
+.banner .banner-container {
+  padding: 30px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+/* line 17, ../sass/_partials/_banner.scss */
+.banner .banner-container .banner-title {
+  margin: 0 0 15px 0;
+}
 
-/* line 11, ../sass/_partials/_banner.scss */
+/* line 23, ../sass/_partials/_banner.scss */
 .banner-1 {
   background-image: url("../images/curious.jpg");
 }
