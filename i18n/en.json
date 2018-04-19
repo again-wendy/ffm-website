@@ -15,16 +15,37 @@
         "HOW_WORK": "How it works",
         "BLOG": "Blog",
         "CONTACT": "Contact",
+        "NOT_A_HIRER": "Not a hirer?",
+        "NOT_A_SUPPLIER": "Not a supplier?",
         "ROLES": "Roles"
     },
     "hirer": {
-        "HERO_TEXT": "Are you tired of the time and effort involved in hiring flex workers?",
-        "HIRER_INTRO_TITLE": "When you're hiring flex workers",
-        "HIRER_INTRO_SUBTITLE": "Are you tired of the time and effort involved in lending flex workers? We promise you that this is past time.",
-        "HIRER_INTRO_TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+        "HERO_TEXT": "Are you tired of the time and effort involved in borrowing flex workers?",
+        "INTRO_TITLE": "If you hire flex workers",
+        "INTRO_SUBTITLE": "Are you tired of the time and effort involved in lending flex workers? We promise you that this is past time.",
+        "INTRO_TEXT_1": "We see huge amounts of money evaporating in unnecessary process and implementation costs for many recipients of temporary workers, payrollers and consultancy. Matching purchasing data requires a lot of time. In order to be able to check sharply on matters such as hours and conditions, processes and systems must work together. And still do not receive a matching invoice. What is that about? To the fact that sending people is a fundamentally different process than buying.",
+        "INTRO_TEXT_2": "Supplier integration is simple when you speak the same language. But when you vary standards of working and communicating, it suddenly becomes different.",
+        "INTRO_TEXT_3": "No matching puzzle.",
+        "INTRO_TEXT_4": "Except if you know how to fold the pieces in the right shape ...",
+        "INTRO_TEXT_5": "That is why we invented FlexForceMonkey. The intelligent supplier integration for purchasing temporary employees.",
+        "DIFFERENT_OPTIONS": "Various options",
+        "OPTIONS": "The system that is used is leading. We distinguish two options: P2P is leading and VMS / HCM is leading.",
+        "OPTION_1": "Do you use a purchasing system such as SAP, Ariba, Coupa or Zycus? Then you can consider our platform as the punch-out environment of an office supplies supplier. We offer the flex workers in a catalog environment and expect an order message from your P2P environment / supplier network. We send the invoices after we have checked them.",
+        "OPTION_2": "If you use a VMS system (such as Nétive or Fieldglass) or work from an HR system (such as SAP, Raet or Afas) and that system has to be leading, you can consider our platform as a source system for master data. We send the personal data of the flexworker to your system in such a way that an order can be made immediately and that time can be registered on this order, including all collective labor agreement complexities. Of course we expect a message back with written hours, so that we can check the invoice of the supplier before we send it."
     },
     "supplier": {
-        "HERO_TEXT": "If an invoice is correct we simply have to make sure it's made payable"
+        "HERO_TEXT": "We have to find money, so if an invoice is correct we simply have to make sure it is made affordable.",
+        "INTRO_TITLE": "If you broadcast flex workers",
+        "INTRO_SUBTITLE": "We have to find money, so if an invoice is correct we simply have to make sure it is made affordable.",
+        "INTRO_TEXT_1": "We see high costs at many temporary employment agencies because invoices from customers in the process come to a standstill. This provides process costs to provide information that ensures that it is released, but this also generates huge interest costs because money is simply transferred too late.",
+        "INTRO_TEXT_2": "What is that about? To the fact that sending people is a fundamentally different process than buying. Integration with customers is easy when you speak the same language. But when you vary standards of working and communicating, it suddenly becomes different.",
+        "INTRO_TEXT_3": "No matching puzzle.",
+        "INTRO_TEXT_4": "Except if you know how to fold the pieces in the right shape ...",
+        "INTRO_TEXT_5": "That is why we invented FlexForceMonkey. The intelligent customer integration for temporary workers.",
+        "DIFFERENT_OPTIONS": "Various options",
+        "OPTIONS": "The system that is used is leading. Here we distinguish two options: a SETU integration and via a portal.",
+        "OPTION_1": "You just work in your own back office system to manage contracts and placements for your customers. You only ensure that when you release a placement, you do not send it to the customer by PDF, but send it to us as a digital message. We ensure that this information, in the structure and momentum that is understandable to them in the purchasing process, reaches your customer.",
+        "OPTION_2": "When you are a size smaller as a temporary employment agency, or that it is about supporting a customer that you do not do so much business with, you can also opt for manual work with our portal. Then you prevent the one-time implementation of digital integration with our platform. The process is no different, only an intermediary of your company then manually keeps the data on our platform and we still ensure that this is correctly included in the process of your customer."
     },
     "freelancer": {
         "HERO_TEXT": "As a freelancer you want to control everything in one application"
