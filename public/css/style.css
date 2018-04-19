@@ -985,6 +985,52 @@ section .sub-title {
   float: right;
 }
 
+/* line 3, ../sass/_partials/_supplier.scss */
+#supplier-intro-1 .section-container .section-text {
+  width: 70%;
+  float: left;
+}
+/* line 7, ../sass/_partials/_supplier.scss */
+#supplier-intro-1 .section-container img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 17, ../sass/_partials/_supplier.scss */
+#supplier-intro-2 .section-container img {
+  width: 35%;
+  display: inline-block;
+}
+/* line 21, ../sass/_partials/_supplier.scss */
+#supplier-intro-2 .section-container .section-text {
+  width: 60%;
+  float: right;
+}
+
+/* line 30, ../sass/_partials/_supplier.scss */
+#supplier-options-1 .section-container img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 35, ../sass/_partials/_supplier.scss */
+#supplier-options-1 .section-container .section-text {
+  width: 70%;
+  float: left;
+}
+
+/* line 44, ../sass/_partials/_supplier.scss */
+#supplier-options-2 .section-container img {
+  width: 35%;
+  display: inline-block;
+}
+/* line 48, ../sass/_partials/_supplier.scss */
+#supplier-options-2 .section-container .section-text {
+  width: 60%;
+  float: right;
+}
+
 /* line 1, ../sass/_partials/_newsletter.scss */
 #newsletter {
   position: fixed;

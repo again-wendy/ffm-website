@@ -32,7 +32,18 @@
         "OPTION_2": "Wanneer jullie een VMS systeem gebruiken (zoals Nétive of Fieldglass) of vanuit een HR systeem werken (zoals SAP, Raet of Afas) en dat systeem moet leidend zijn, dan kun je ons platform beschouwen als een bronsysteem voor master data. Wij sturen de persoonsgegevens van de flexkracht naar jullie systeem op een dusdanige manier dat er direct een order kan worden gemaakt en dat er op deze order tijd kan worden geregistreerd, inclusief alle CAO complexiteiten. Natuurlijk verwachten wij dan wel een bericht terug met geschreven uren, zodat wij de factuur van de leverancier alvast kunnen controleren voordat we hem doorsturen."
     },
     "supplier": {
-        "HERO_TEXT": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld."
+        "HERO_TEXT": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
+        "INTRO_TITLE": "Als je flexkrachten uitzendt",
+        "INTRO_SUBTITLE": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
+        "INTRO_TEXT_1": "Wij zien bij veel uitzendbureaus hoge kosten doordat facturen bij klanten in het proces stil komen te staan. Dit levert proceskosten op om informatie te voorzien die ervoor zorgt dat hij wordt vrijgegeven, maar dit levert ook enorme rentelasten op doordat geld domweg veel te laat wordt overgemaakt.",
+        "INTRO_TEXT_2": "Waar dat aan ligt? Aan het feit dat uitzenden van mensen een wezenlijk ander proces is dan inkopen. Integratie met klanten is eenvoudig wanneer je dezelfde taal spreekt. Maar wanneer je standaarden van werken en communiceren verschillen wordt het ineens andere koek.",
+        "INTRO_TEXT_3": "Geen passende puzzel.",
+        "INTRO_TEXT_4": "Behalve als je weet hoe je de stukjes in de juiste vorm vouwt…",
+        "INTRO_TEXT_5": "En daarom hebben wij FlexForceMonkey uitgevonden. De intelligente klantintegratie voor uitzendkrachten.",
+        "DIFFERENT_OPTIONS": "Verschillende opties",
+        "OPTIONS": "Het systeem dat gebruikt wordt is leidend. Hierbij onderscheiden we twee opties: een SETU integratie en via een portal",
+        "OPTION_1": "Jullie werken gewoon lekker in je eigen backoffice systeem om contracten en plaatsingen te beheren voor je klanten. Je zorgt er alleen voor dat je bij het vrijgeven van een plaatsing deze niet per PDF naar de klant mailt maar deze als digitaal bericht naar ons toe stuurt. Wij zorgen ervoor dat deze informatie, in voor hen begrijpelijke structuur en momentum in het inkoopproces, bij jullie klant terecht komt.",
+        "OPTION_2": "Wanneer jullie een maatje kleiner zijn als uitzendbureau, of dat het hier gaat om het ondersteunen van een klant waar je niet zo heel veel zaken mee doet, dan kun je ook kiezen voor het handmatig werken met onze portal. Dan voorkom je het eenmalig implementeren van digitale integratie met ons platform. Het proces is niet anders, alleen houdt een intercedent van jullie bedrijf dan handmatig de data bij op ons platform en wij zorgen er nog steeds voor dat dit correct wordt meegenomen in het proces van je klant."
     },
     "freelancer": {
         "HERO_TEXT": "Als een ZZP'er wil je alles beheren vanuit één applicatie"
