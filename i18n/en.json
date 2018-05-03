@@ -18,10 +18,15 @@
         "NOT_A_HIRER": "Not a hirer?",
         "NOT_A_SUPPLIER": "Not a supplier?",
         "NOT_A_FREELANCER": "Not a freelancer?",
-        "ROLES": "Roles"
+        "ROLES": "Roles",
+        "KIT": "Connection kit",
+        "OPTIONS": "Options"
     },
     "hirer": {
         "HERO_TEXT": "Are you tired of the time and effort involved in borrowing flex workers?",
+        "KIT_INTRO": "De FlexForceMonkey connection kit!",
+        "KIT_TEXT": "After all the stories have become curious about FlexForceMonkey? Then ask for our connection kit. You can then connect your own system to ours and see what we can actually do for you.",
+        "GET_KIT": "Get the kit",
         "INTRO_TITLE": "If you hire flex workers",
         "INTRO_SUBTITLE": "Are you tired of the time and effort involved in lending flex workers? We promise you that this is past time.",
         "INTRO_TEXT_1": "We see huge amounts of money evaporating in unnecessary process and implementation costs for many recipients of temporary workers, payrollers and consultancy. Matching purchasing data requires a lot of time. In order to be able to check sharply on matters such as hours and conditions, processes and systems must work together. And still do not receive a matching invoice. What is that about? To the fact that sending people is a fundamentally different process than buying.",
@@ -36,6 +41,9 @@
     },
     "supplier": {
         "HERO_TEXT": "We have to find money, so if an invoice is correct we simply have to make sure it is made affordable.",
+        "KIT_INTRO": "De FlexForceMonkey connection kit!",
+        "KIT_TEXT": "After all the stories have become curious about FlexForceMonkey? Then ask for our connection kit. You can then connect your own system to ours and see what we can actually do for you.",
+        "GET_KIT": "Get the kit",
         "INTRO_TITLE": "If you employ flex workers",
         "INTRO_SUBTITLE": "We have to find money, so if an invoice is correct we simply have to make sure it is made affordable.",
         "INTRO_TEXT_1": "We see high costs at many temporary employment agencies because invoices from customers in the process come to a standstill. This provides process costs to provide information that ensures that it is released, but this also generates huge interest costs because money is simply transferred too late.",

@@ -16,6 +16,18 @@ section {
     }
 }
 
+section.full-screen {
+    height: 100vh;
+    padding: 0;
+    @include displayFlex;
+    @include prefix(flex-direction, column, webkit moz o);
+    @include prefix(justify-content, center, webkit moz o);
+    @include prefix(align-items, center, webkit moz o);
+    .container {
+        margin: 0;
+    }
+}
+
 #contact {
     .section-container {
         width: 60%;

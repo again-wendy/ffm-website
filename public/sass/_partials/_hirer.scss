@@ -1,8 +1,11 @@
-#hirer-intro-1 {
+#hirer-intro {
+    background: $secondary;
+    color: white;
     .section-container {
         .section-text {
             width: 70%;
             float: left;
+            padding-right: 20px;
         }
         img {
             width: 30%;
@@ -12,42 +15,35 @@
     }
 }
 
-#hirer-intro-2 {
+#kit {
+    background: $light-grey;
+    .section-title {
+        margin-bottom: 50px;
+    }
     .section-container {
         img {
-            width: 35%;
+            width: 55%;
             display: inline-block;
         }
         .section-text {
-            width: 60%;
+            width: 40%;
             float: right;
         }
     }
 }
 
-#hirer-options-1 {
+#hirer-options {
+    background: $primary;
     .section-container {
         img {
-            width: 30%;
+            width: 40%;
             display: block;
             margin: 0 auto;
         }
         .section-text {
-            width: 70%;
-            float: left;
-        }
-    }
-}
-
-#hirer-options-2 {
-    .section-container {
-        img {
-            width: 35%;
-            display: inline-block;
-        }
-        .section-text {
             width: 60%;
-            float: right;
+            float: left;
+            padding-right: 20px;
         }
     }
 }

@@ -18,10 +18,15 @@
         "NOT_A_HIRER": "Geen inkoper?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
         "NOT_A_FREELANCER": "Geen ZZP'er?",
-        "ROLES": "Rollen"
+        "ROLES": "Rollen",
+        "KIT": "Aansluitkit",
+        "OPTIONS": "Opties"
     },
     "hirer": {
         "HERO_TEXT": "Ben jij de tijd en moeite rondom inlenen van flexkrachten ook zat?",
+        "KIT_INTRO": "De FlexForceMonkey aansluitkit!",
+        "KIT_TEXT": "Na alle verhalen nieuwsgierig geworden naar FlexForceMonkey? Vraag dan onze aansluitkit aan. Je kunt dan je eigen systeem aansluiten op die van ons en zien wat wij daadwerkelijk voor jou kunnen betekenen.",
+        "GET_KIT": "Vraag de kit aan",
         "INTRO_TITLE": "Als je flexkrachten inhuurt",
         "INTRO_SUBTITLE": "Zijn jullie de tijd en moeite rondom inlenen van flexkrachten ook zat? Wij beloven je dat dit verleden tijd is.",
         "INTRO_TEXT_1": "Wij zien bij veel inleners van uitzendkrachten, payrollers en consultancy enorme hoeveelheden geld verdampen in onnodige proces- en implementatiekosten. Afstemmen van inkoopgegevens vraagt heel wat tijd. Om scherp te kunnen controleren op zaken als uren en voorwaarden moeten processen en systemen samenwerken. En dan nog steeds geen matchende factuur binnenkrijgen. Waar dat aan ligt? Aan het feit dat uitzenden van mensen een wezenlijk ander proces is dan inkopen.",
@@ -36,6 +41,9 @@
     },
     "supplier": {
         "HERO_TEXT": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
+        "KIT_INTRO": "De FlexForceMonkey aansluitkit!",
+        "KIT_TEXT": "Na alle verhalen nieuwsgierig geworden naar FlexForceMonkey? Vraag dan onze aansluitkit aan. Je kunt dan je eigen systeem aansluiten op die van ons en zien wat wij daadwerkelijk voor jou kunnen betekenen.",
+        "GET_KIT": "Vraag de kit aan",
         "INTRO_TITLE": "Als je flexkrachten uitzendt",
         "INTRO_SUBTITLE": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
         "INTRO_TEXT_1": "Wij zien bij veel uitzendbureaus hoge kosten doordat facturen bij klanten in het proces stil komen te staan. Dit levert proceskosten op om informatie te voorzien die ervoor zorgt dat hij wordt vrijgegeven, maar dit levert ook enorme rentelasten op doordat geld domweg veel te laat wordt overgemaakt.",
