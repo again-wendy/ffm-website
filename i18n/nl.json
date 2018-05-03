@@ -10,17 +10,15 @@
         "GO_TO_WEBSITE": "Ga naar website"
     },
     "menu-items": {
-        "PROMISES": "Wat we beloven",
-        "STORY": "Ons verhaal",
         "HOW_WORK": "Hoe het werkt",
         "BLOG": "Blog",
         "CONTACT": "Contact",
         "NOT_A_HIRER": "Geen inkoper?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
         "NOT_A_FREELANCER": "Geen ZZP'er?",
-        "ROLES": "Rollen",
         "KIT": "Aansluitkit",
-        "OPTIONS": "Opties"
+        "OPTIONS": "Opties",
+        "USE_FFM": "Zelf gebruiken"
     },
     "hirer": {
         "HERO_TEXT": "Ben jij de tijd en moeite rondom inlenen van flexkrachten ook zat?",
@@ -30,10 +28,6 @@
         "INTRO_TITLE": "Als je flexkrachten inhuurt",
         "INTRO_SUBTITLE": "Zijn jullie de tijd en moeite rondom inlenen van flexkrachten ook zat? Wij beloven je dat dit verleden tijd is.",
         "INTRO_TEXT_1": "Wij zien bij veel inleners van uitzendkrachten, payrollers en consultancy enorme hoeveelheden geld verdampen in onnodige proces- en implementatiekosten. Afstemmen van inkoopgegevens vraagt heel wat tijd. Om scherp te kunnen controleren op zaken als uren en voorwaarden moeten processen en systemen samenwerken. En dan nog steeds geen matchende factuur binnenkrijgen. Waar dat aan ligt? Aan het feit dat uitzenden van mensen een wezenlijk ander proces is dan inkopen.",
-        "INTRO_TEXT_2": "Leveranciersintegratie is eenvoudig wanneer je dezelfde taal spreekt. Maar wanneer je standaarden van werken en communiceren verschillen wordt het ineens andere koek.",
-        "INTRO_TEXT_3": "Geen passende puzzel.",
-        "INTRO_TEXT_4": "Behalve als je weet hoe je de stukjes in de juiste vorm vouwt…",
-        "INTRO_TEXT_5": "En daarom hebben wij FlexForceMonkey uitgevonden. De intelligente leveranciersintegratie voor het inkopen van uitzendkrachten.",
         "DIFFERENT_OPTIONS": "Verschillende opties",
         "OPTIONS": "Het systeem dat gebruikt wordt is leidend. Hierbij onderscheiden we twee opties: P2P is leidend en VMS/HCM is leidend.",
         "OPTION_1": "Gebruiken jullie een inkoopsysteem zoals SAP, Ariba, Coupa of Zycus? Dan kun je ons platform beschouwen als de punch-out omgeving van een kantoorartikelen leverancier. Wij bieden de flexkrachten aan in een catalogus omgeving en verwachten vanuit jullie P2P omgeving/supplier netwerk een order bericht terug. Wij sturen de facturen door nadat we deze hebben gecontroleerd.",
@@ -47,10 +41,6 @@
         "INTRO_TITLE": "Als je flexkrachten uitzendt",
         "INTRO_SUBTITLE": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
         "INTRO_TEXT_1": "Wij zien bij veel uitzendbureaus hoge kosten doordat facturen bij klanten in het proces stil komen te staan. Dit levert proceskosten op om informatie te voorzien die ervoor zorgt dat hij wordt vrijgegeven, maar dit levert ook enorme rentelasten op doordat geld domweg veel te laat wordt overgemaakt.",
-        "INTRO_TEXT_2": "Waar dat aan ligt? Aan het feit dat uitzenden van mensen een wezenlijk ander proces is dan inkopen. Integratie met klanten is eenvoudig wanneer je dezelfde taal spreekt. Maar wanneer je standaarden van werken en communiceren verschillen wordt het ineens andere koek.",
-        "INTRO_TEXT_3": "Geen passende puzzel.",
-        "INTRO_TEXT_4": "Behalve als je weet hoe je de stukjes in de juiste vorm vouwt…",
-        "INTRO_TEXT_5": "En daarom hebben wij FlexForceMonkey uitgevonden. De intelligente klantintegratie voor uitzendkrachten.",
         "DIFFERENT_OPTIONS": "Verschillende opties",
         "OPTIONS": "Het systeem dat gebruikt wordt is leidend. Hierbij onderscheiden we twee opties: een SETU integratie en via een portal",
         "OPTION_1": "Jullie werken gewoon lekker in je eigen backoffice systeem om contracten en plaatsingen te beheren voor je klanten. Je zorgt er alleen voor dat je bij het vrijgeven van een plaatsing deze niet per PDF naar de klant mailt maar deze als digitaal bericht naar ons toe stuurt. Wij zorgen ervoor dat deze informatie, in voor hen begrijpelijke structuur en momentum in het inkoopproces, bij jullie klant terecht komt.",
@@ -62,7 +52,10 @@
         "INTRO_SUBTITLE": "Als een ZZP'er wil je alles beheren vanuit één applicatie",
         "INTRO_TEXT_1": "Want werken bij verschillende opdrachtgevers en daardoor werken met verschillende systemen kan zeer onoverzichtelijk worden. FlexForceMonkey helpt daarbij door alles te integreren. Zo maken wij het zo makkelijk mogelijk voor jou.",
         "INTRO_TEXT_2": "Jij schrijft je tijd gewoon in FlexForceMonkey en je nodigt de personen uit die jouw timesheet moeten goedkeuren. Zo houd jij alles netjes op één plek.",
-        "CTA_1": "Registreer je nu!"
+        "CTA_1": "Registreer je nu!",
+        "TRY_TITLE": "FlexForceMonkey gebruiken?",
+        "TRY_SUBTITLE": "Is je interesse gewekt? Je kan FlexForceMonkey heel eenvoudig zelf gaan gebruiken!",
+        "TRY_TEXT": "Het is heel eenvoudig om FlexForceMonkey te gaan gebruiken. Je kunt heel eenvoudig een account aanmaken bij ons en daarna ben je klaar om je uren te schrijven via ons systeem! Je kunt ook personen uitnodigen die jouw timesheets moeten goedkeuren. Op deze manier heb jij alles in één applicatie."
     },
     "home": {
         "HERO_TEXT": "Foutloze facturen in de uitzendwereld?",

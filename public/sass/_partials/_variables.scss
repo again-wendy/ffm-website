@@ -1,9 +1,13 @@
 // COLORS
 $primary: #3CBFED;
 $primary-hover: #13A5D8;
+$primary-light: lighten($primary, 20%);
 
 $secondary: #0482B3;
 $secondary-hover: #0F718E;
+
+$complementary: #ffcf00;
+$complementary-hover: darken($complementary, 15%);
 
 $light-grey: #ECECEC;
 $light-grey-hover: darken($light-grey, 15%);

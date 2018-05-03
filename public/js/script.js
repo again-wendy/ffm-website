@@ -96,21 +96,12 @@ function menuScroll(name) {
 // Check for hover on dropdown menu
 $('.dropdown').hover(
     function() {
-        setTopDropdown();
         $(".dropdown > .dropdown-menu").slideDown();
     }, 
     function() {
         $(".dropdown > .dropdown-menu").slideUp();
     }
 );
-
-// Set top of drowndown menu
-function setTopDropdown() {
-    var navHeight = $("#navbar").height();
-    var ddOffset = $(".dropdown").offset().top;
-    var offsetTop = navHeight - ddOffset;
-    $(".dropdown .dropdown-menu").css("top", offsetTop + "px");
-}
 
 // Check for active role and set link to active
 function setActiveRoleLink() {

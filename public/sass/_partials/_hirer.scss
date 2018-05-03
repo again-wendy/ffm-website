@@ -17,9 +17,6 @@
 
 #kit {
     background: $light-grey;
-    .section-title {
-        margin-bottom: 50px;
-    }
     .section-container {
         img {
             width: 55%;
@@ -33,7 +30,7 @@
 }
 
 #hirer-options {
-    background: $primary;
+    background: $primary-light;
     .section-container {
         img {
             width: 40%;

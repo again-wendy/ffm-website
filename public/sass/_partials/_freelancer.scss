@@ -1,4 +1,5 @@
-#freelancer-intro-1 {
+#freelancer-intro {
+    background: $primary-light;
     .section-container {
         .section-text {
             width: 70%;
@@ -12,42 +13,10 @@
     }
 }
 
-#freelancer-intro-2 {
-    .section-container {
-        img {
-            width: 35%;
-            display: inline-block;
-        }
-        .section-text {
-            width: 60%;
-            float: right;
-        }
-    }
-}
-
-#freelancer-options-1 {
-    .section-container {
-        img {
-            width: 30%;
-            display: block;
-            margin: 0 auto;
-        }
-        .section-text {
-            width: 70%;
-            float: left;
-        }
-    }
-}
-
-#freelancer-options-2 {
-    .section-container {
-        img {
-            width: 35%;
-            display: inline-block;
-        }
-        .section-text {
-            width: 60%;
-            float: right;
-        }
+#try {
+    background: $light-grey;
+    .section-text {
+        text-align: center;
+        margin-bottom: 50px;
     }
 }
