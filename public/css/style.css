@@ -1051,6 +1051,54 @@ section.full-screen .container {
   }
 }
 
+/* line 127, ../sass/_partials/_home.scss */
+#home-intro {
+  background: #ECECEC;
+}
+/* line 129, ../sass/_partials/_home.scss */
+#home-intro .buttons {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+/* line 134, ../sass/_partials/_home.scss */
+#home-intro .small-screen {
+  display: none;
+}
+@media (max-width: 767px) {
+  /* line 134, ../sass/_partials/_home.scss */
+  #home-intro .small-screen {
+    display: block;
+  }
+}
+/* line 140, ../sass/_partials/_home.scss */
+#home-intro .normal-screen {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* line 140, ../sass/_partials/_home.scss */
+  #home-intro .normal-screen {
+    display: block;
+  }
+}
+/* line 146, ../sass/_partials/_home.scss */
+#home-intro .big-screen {
+  display: none;
+}
+@media (min-width: 1200px) {
+  /* line 146, ../sass/_partials/_home.scss */
+  #home-intro .big-screen {
+    display: block;
+  }
+}
+
 /* line 1, ../sass/_partials/_hirer.scss */
 #hirer-intro {
   background: #0482B3;
@@ -1070,16 +1118,16 @@ section.full-screen .container {
 }
 
 /* line 18, ../sass/_partials/_hirer.scss */
-#kit {
+#hirer-kit {
   background: #ECECEC;
 }
 /* line 21, ../sass/_partials/_hirer.scss */
-#kit .section-container img {
+#hirer-kit .section-container img {
   width: 55%;
   display: inline-block;
 }
 /* line 25, ../sass/_partials/_hirer.scss */
-#kit .section-container .section-text {
+#hirer-kit .section-container .section-text {
   width: 40%;
   float: right;
 }
@@ -1118,16 +1166,16 @@ section.full-screen .container {
 }
 
 /* line 16, ../sass/_partials/_supplier.scss */
-#kit {
+#supplier-kit {
   background: #ECECEC;
 }
 /* line 19, ../sass/_partials/_supplier.scss */
-#kit .section-container img {
+#supplier-kit .section-container img {
   width: 55%;
   display: inline-block;
 }
 /* line 23, ../sass/_partials/_supplier.scss */
-#kit .section-container .section-text {
+#supplier-kit .section-container .section-text {
   width: 40%;
   float: right;
 }
@@ -1174,6 +1222,36 @@ section.full-screen .container {
 #try .section-text {
   text-align: center;
   margin-bottom: 50px;
+}
+/* line 22, ../sass/_partials/_freelancer.scss */
+#try .small-screen {
+  display: none;
+}
+@media (max-width: 767px) {
+  /* line 22, ../sass/_partials/_freelancer.scss */
+  #try .small-screen {
+    display: block;
+  }
+}
+/* line 28, ../sass/_partials/_freelancer.scss */
+#try .normal-screen {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* line 28, ../sass/_partials/_freelancer.scss */
+  #try .normal-screen {
+    display: block;
+  }
+}
+/* line 34, ../sass/_partials/_freelancer.scss */
+#try .big-screen {
+  display: none;
+}
+@media (min-width: 1200px) {
+  /* line 34, ../sass/_partials/_freelancer.scss */
+  #try .big-screen {
+    display: block;
+  }
 }
 
 /* line 1, ../sass/_partials/_newsletter.scss */
@@ -1569,5 +1647,45 @@ form .form-group input, form .form-group textarea {
   /* line 74, ../sass/_partials/_monkey.scss */
   #admin-monkey {
     display: none;
+  }
+}
+/* line 1, ../sass/_partials/_scroll-in-view.scss */
+.come-in-right {
+  transform: translateX(350px);
+  animation: come-in 1s .1s ease forwards;
+}
+
+/* line 6, ../sass/_partials/_scroll-in-view.scss */
+.come-in-left {
+  transform: translateX(-350px);
+  animation: come-in 1s .1s ease forwards;
+}
+
+/* line 11, ../sass/_partials/_scroll-in-view.scss */
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+/* line 16, ../sass/_partials/_scroll-in-view.scss */
+.come-in {
+  transform: translateY(150px);
+  animation: come-up 1.6s .1s ease forwards;
+}
+
+/* line 20, ../sass/_partials/_scroll-in-view.scss */
+.come-in:nth-child(odd) {
+  animation-duration: 1.2s;
+  /* So they look staggered */
+}
+
+@keyframes come-in {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes come-up {
+  to {
+    transform: translateY(0);
   }
 }

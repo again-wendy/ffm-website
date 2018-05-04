@@ -1,0 +1,31 @@
+.come-in-right {
+    transform: translateX(350px);
+    animation: come-in 1s .1s ease forwards;
+}  
+
+.come-in-left {
+    transform: translateX(-350px);
+    animation: come-in 1s .1s ease forwards;
+}
+
+.already-visible {
+    transform: translateY(0);
+    animation: none;
+}
+
+.come-in {
+    transform: translateY(150px);
+    animation: come-up 1.6s .1s ease forwards;
+}
+.come-in:nth-child(odd) {
+    animation-duration: 1.2s; /* So they look staggered */
+}
+
+@keyframes come-in {
+    to { transform: translateX(0); }
+}
+
+@keyframes come-up {
+    to { transform: translateY(0); }
+}
+  
