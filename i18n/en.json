@@ -1,7 +1,11 @@
 {
     "general": {
         "VIEWTHE": "View the",
-        "TERMSCON": "Terms and Conditions"
+        "TERMSCON": "Terms and Conditions",
+        "FASTER": "Faster",
+        "FLEXIBLE": "More flexible",
+        "CAREFREE": "More carefree",
+        "OPTIMAL": "More optimal"
     },
     "choice": {
         "WELCOME": "Welcome to FlexForceMonkey!",

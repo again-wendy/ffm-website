@@ -1,7 +1,11 @@
 {
     "general": {
         "VIEWTHE": "Bekijk de",
-        "TERMSCON": "Algemene voorwaarden"
+        "TERMSCON": "Algemene voorwaarden",
+        "FASTER": "Sneller",
+        "FLEXIBLE": "Flexibeler",
+        "CAREFREE": "Zorgelozer",
+        "OPTIMAL": "Optimaler"
     },
     "choice": {
         "WELCOME": "Welkom bij FlexForceMonkey!",
