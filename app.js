@@ -137,6 +137,10 @@ app.get('/freelancer', (req, res) => {
     res.cookie('role', 'freelancer').render('freelancer');
 });
 
+app.get('/termsandconditions', (req, res) => {
+    res.render('termsandconditions');
+});
+
 // Save contactform to database
 function writeContactForm(name, email, subject, msg, role) {
     db.ref('contactform').push({

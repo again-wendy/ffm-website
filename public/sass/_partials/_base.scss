@@ -79,6 +79,15 @@ a:hover, a:focus, a:active {
     color: $primary-hover;
 }
 
+a.link-white,
+a.link-white:visited {
+    color: white;
+}
+
+a.link-white:hover, a.link-white:focus, a.link-white:active {
+    color: $white-hover;
+}
+
 label {
     font-family: $font-bold;
 }

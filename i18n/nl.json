@@ -1,4 +1,7 @@
 {
+    "general": {
+        "TERMSCON": "Algemene voorwaarden"
+    },
     "choice": {
         "WELCOME": "Welkom bij FlexForceMonkey!",
         "CHOOSE_TEXT": "Wij willen jou de meest optimale informatie geven. Daarom vragen wij jou een keuze te maken uit de volgende rollen:", 

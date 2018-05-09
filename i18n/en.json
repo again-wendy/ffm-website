@@ -1,4 +1,7 @@
 {
+    "general": {
+        "TERMSCON": "Terms and Conditions"
+    },
     "choice": {
         "WELCOME": "Welcome to FlexForceMonkey!",
         "CHOOSE_TEXT": "We want to give you the most optimal information. So we ask you to make a choice from the following roles:",
