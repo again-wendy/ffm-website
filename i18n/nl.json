@@ -8,7 +8,7 @@
         "HIRER": "Ik ben inlener",
         "SUPPLIER": "Ik ben uitzender",
         "INTERIM": "Ik lever interimmers",
-        "FREELANCER": "Ik ben ZZP'er",
+        "FREELANCER": "Ik ben zelfstandige",
         "CURIOUS": "Ik ben alleen nieuwsgierig",
         "GO_TO_WEBSITE": "Ga naar website"
     },
@@ -18,7 +18,7 @@
         "CONTACT": "Contact",
         "NOT_A_HIRER": "Geen inkoper?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
-        "NOT_A_FREELANCER": "Geen ZZP'er?",
+        "NOT_A_FREELANCER": "Geen zelfstandige?",
         "KIT": "Aansluitkit",
         "OPTIONS": "Opties",
         "USE_FFM": "Zelf gebruiken"
@@ -50,9 +50,9 @@
         "OPTION_2": "Wanneer jullie een maatje kleiner zijn als uitzendbureau, of dat het hier gaat om het ondersteunen van een klant waar je niet zo heel veel zaken mee doet, dan kun je ook kiezen voor het handmatig werken met onze portal. Dan voorkom je het eenmalig implementeren van digitale integratie met ons platform. Het proces is niet anders, alleen houdt een intercedent van jullie bedrijf dan handmatig de data bij op ons platform en wij zorgen er nog steeds voor dat dit correct wordt meegenomen in het proces van je klant."
     },
     "freelancer": {
-        "HERO_TEXT": "Als een ZZP'er wil je alles beheren vanuit één applicatie",
-        "INTRO_TITLE": "Als je ZZP'er bent of als MKB'er flexkrachten inhuurt",
-        "INTRO_SUBTITLE": "Als een ZZP'er wil je alles beheren vanuit één applicatie",
+        "HERO_TEXT": "Als zelfstandige wil je alles beheren vanuit één applicatie",
+        "INTRO_TITLE": "Als je zelfstandige bent of als MKB'er flexkrachten inhuurt",
+        "INTRO_SUBTITLE": "Als zelfstandige wil je alles beheren vanuit één applicatie",
         "INTRO_TEXT_1": "Want werken bij verschillende opdrachtgevers en daardoor werken met verschillende systemen kan zeer onoverzichtelijk worden. FlexForceMonkey helpt daarbij door alles te integreren. Zo maken wij het zo makkelijk mogelijk voor jou.",
         "INTRO_TEXT_2": "Jij schrijft je tijd gewoon in FlexForceMonkey en je nodigt de personen uit die jouw timesheet moeten goedkeuren. Zo houd jij alles netjes op één plek.",
         "CTA_1": "Registreer je nu!",
@@ -92,7 +92,7 @@
         "HIRER_TEXT": "Als inlener op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
         "SUPPLIER_TEXT": "Als uitzender op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
         "INTERIM_TEXT": "Als leveraar van interimmers op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief",
-        "FREELANCER_TEXT": "Als ZZP'er op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
+        "FREELANCER_TEXT": "Als zelfstandige op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
         "CURIOUS_TEXT": "Op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",
         "SUBSCRIBE_TO": "Schrijf je in op onze nieuwsbrief",
         "EMAIL_ADDRESS": "Email adres",

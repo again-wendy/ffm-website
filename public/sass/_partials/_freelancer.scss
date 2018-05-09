@@ -1,5 +1,13 @@
 #freelancer-intro {
-    background: $primary-light;
+    color: white;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/camping-laptop.jpg') 
+        no-repeat 
+        center;
     .section-container {
         .section-text {
             width: 70%;

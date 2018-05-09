@@ -78,17 +78,6 @@
         center;
 }
 
-#hero.hirer {
-    background: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-        ),
-        url('../images/hirer.jpg') 
-        no-repeat 
-        center;
-}
-
 #hero.supplier {
     background: 
         linear-gradient(
@@ -100,35 +89,13 @@
         center;
 }
 
-#hero.interim {
-    background: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-        ),
-        url('../images/interim.jpg') 
-        no-repeat 
-        center;
-}
-
 #hero.freelancer {
     background: 
         linear-gradient(
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
         ),
-        url('../images/freelancer.jpg') 
-        no-repeat 
-        center;
-}
-
-#hero.curious {
-    background: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-        ),
-        url('../images/curious.jpg') 
+        url('../images/motor-laptop.jpg') 
         no-repeat 
         center;
 }
