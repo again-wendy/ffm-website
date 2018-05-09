@@ -1567,7 +1567,8 @@ form .form-group input, form .form-group textarea {
 }
 
 /* line 26, ../sass/_partials/_banner.scss */
-.banner-supplier {
+.banner-supplier,
+.banner-hirer {
   background-image: url("../images/jungle.jpg");
 }
 
