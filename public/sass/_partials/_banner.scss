@@ -7,19 +7,26 @@
     background-size: cover;
     position: relative;
     background-attachment: fixed;
+    overflow: hidden;
     .banner-container {
         padding: 30px;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.4);
+        //background: rgba(255, 255, 255, 0.4);
         text-align: center;
         .banner-title {
             margin: 0 0 15px 0;
+            color: white;
+            font-size: 5rem;
         }
     }
 }
 
-.banner-1 {
-    background-image: url('../images/curious.jpg');
+.banner-supplier {
+    background-image: url('../images/jungle.jpg');
+}
+
+.animation-banner {
+    .banner-title {}
 }

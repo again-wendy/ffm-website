@@ -1,5 +1,6 @@
 {
     "general": {
+        "VIEWTHE": "Bekijk de",
         "TERMSCON": "Algemene voorwaarden"
     },
     "choice": {
@@ -7,9 +8,7 @@
         "CHOOSE_TEXT": "Wij willen jou de meest optimale informatie geven. Daarom vragen wij jou een keuze te maken uit de volgende rollen:", 
         "HIRER": "Ik ben inlener",
         "SUPPLIER": "Ik ben uitzender",
-        "INTERIM": "Ik lever interimmers",
         "FREELANCER": "Ik ben zelfstandige",
-        "CURIOUS": "Ik ben alleen nieuwsgierig",
         "GO_TO_WEBSITE": "Ga naar website"
     },
     "menu-items": {

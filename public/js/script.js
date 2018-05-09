@@ -6,6 +6,9 @@ $(document).ready(function() {
         $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
     }
 
+    // Animation banner
+    animationBanner();
+
     // Set active role
     setActiveRoleLink();
 
@@ -18,6 +21,13 @@ $(document).ready(function() {
         heightElements();
     });
 });
+
+function animationBanner() {
+    $(".animation-banner .banner-title:gt(0)").hide();
+    setInterval(function() {
+        $(".animation-banner :first-child").fadeOut(500).next(".banner-title").delay(1000).fadeIn(500).end().appendTo(".animation-banner");
+    }, 5000);
+}
 
 function getBlogs() {
     var url = 'http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/';
