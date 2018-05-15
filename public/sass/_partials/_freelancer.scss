@@ -46,3 +46,20 @@
         }
     }
 }
+
+#work {
+    background: $primary;
+    .section-container {
+        .fa-handshake {
+            width: 35%;
+            display: inline-block;
+            height: auto;
+            color: white;
+            padding: 0 40px;
+        }
+        .section-text {
+            width: 55%;
+            float: right;
+        }
+    }
+}

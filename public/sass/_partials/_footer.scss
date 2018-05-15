@@ -7,30 +7,11 @@
             padding: 25px 15px;
             width: 100%;
             color: white;
-        }
-        .right-footer {
-            @include displayFlex;
-            justify-content: space-between;
-            .newsletter-info {
-                @include lightGreyRGBA(0.4);
-                padding: 15px;
-                position: relative;
-                .arrow-right {
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    border-top: 30px solid transparent;
-                    border-bottom: 30px solid transparent;
-                    border-left: 30px solid rgba(236, 236, 236, 0.4);
-                    top: 50%;
-                    right: -30px;
-                    transform: translateY(-50%);
-                    @include prefix(transform, translateY(-50%), webkit moz o);
+            .choose-role {
+                margin-top: 35px;
+                p {
+                    font-size: 1.2rem;
                 }
-            }
-            .mailchimp-form {
-                @include secondaryRGBA(0.4);
-                padding: 15px 15px 15px 45px;
             }
         }
     }
