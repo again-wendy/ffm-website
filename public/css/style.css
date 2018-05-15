@@ -1694,3 +1694,61 @@ form .form-group input, form .form-group textarea {
     transform: translateY(0);
   }
 }
+/* line 1, ../sass/_partials/_terms.scss */
+#tab-section {
+  padding-top: 150px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+/* line 5, ../sass/_partials/_terms.scss */
+#tab-section .tabs {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 8, ../sass/_partials/_terms.scss */
+#tab-section .tabs .tab {
+  margin: 0 3px;
+  background: #ECECEC;
+  padding: 30px 0;
+  text-align: center;
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #2B2B2B;
+  text-decoration: none;
+  -webkit-flex: 1 1 auto;
+  -moz-flex: 1 1 auto;
+  -o-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+/* line 18, ../sass/_partials/_terms.scss */
+#tab-section .tabs .tab:first-child {
+  margin-left: 0;
+}
+/* line 21, ../sass/_partials/_terms.scss */
+#tab-section .tabs .tab:last-child {
+  margin-right: 0;
+}
+/* line 25, ../sass/_partials/_terms.scss */
+#tab-section .tabs .tab.active,
+#tab-section .tabs .tab:hover,
+#tab-section .tabs .tab:focus,
+#tab-section .tabs .tab:active {
+  background: #c6c6c6;
+}
+
+/* line 34, ../sass/_partials/_terms.scss */
+#termsandconditions {
+  padding-top: 0;
+}
+/* line 36, ../sass/_partials/_terms.scss */
+#termsandconditions .container {
+  border: 1px solid #ECECEC;
+  padding: 50px 30px 30px 30px;
+}

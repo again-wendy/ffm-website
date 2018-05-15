@@ -64,11 +64,12 @@ app.use(session({
 app.use(flash());
 
 app.get('/', (req, res) => {
-    if (req.cookies.role) {
-        res.redirect('/' + req.cookies.role);
-    } else {
-        res.render('home');
-    }
+    // if (req.cookies.role) {
+    //     res.redirect('/' + req.cookies.role);
+    // } else {
+    //     res.render('home');
+    // }
+    res.render('home');
 });
 
 function getContactForms() {
@@ -138,8 +139,14 @@ app.get('/freelancer', (req, res) => {
 });
 
 app.get('/termsandconditions', (req, res) => {
-    res.render('termsandconditions');
+    res.render('termsandconditions', {partial: 'terms'});
 });
+app.get('/gdpr', (req, res) => {
+    res.render('termsandconditions', {partial: 'gdpr'});
+});
+app.get('/generalconsiderations', (req, res) => {
+    res.render('termsandconditions', {partial: 'gencons'})
+})
 
 // Save contactform to database
 function writeContactForm(name, email, subject, msg, role) {

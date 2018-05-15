@@ -5,7 +5,10 @@
         "FASTER": "Faster",
         "FLEXIBLE": "More flexible",
         "CAREFREE": "More carefree",
-        "OPTIMAL": "More optimal"
+        "OPTIMAL": "More optimal",
+        "AND": "and",
+        "GDPR": "Provisions GDPR",
+        "GENCONS": "General Considerations"
     },
     "choice": {
         "WELCOME": "Welcome to FlexForceMonkey!",
@@ -18,8 +21,6 @@
         "GO_TO_WEBSITE": "Go to website"
     },
     "menu-items": {
-        "PROMISES": "What we promise",
-        "STORY": "Our story",
         "HOW_WORK": "How it works",
         "BLOG": "Blog",
         "CONTACT": "Contact",

@@ -11,17 +11,27 @@
             </div>
         </div>
         <ul class="menu-items">
-            <li class="menu-item menu-item-1">
-                <a href="/hirer">{{ translation.choice.HIRER }}</a>
+            {{!-- <li class="menu-item menu-item-1">
+                <a href="/generalconsiderations">{{ translation.general.GENCONS }}</a>
             </li>
             <li class="menu-item menu-item-2">
-                <a href="/supplier">{{ translation.choice.SUPPLIER }}</a>
+                <a href="/termsandconditions">{{ translation.general.TERMSCON }}</a>
             </li>
             <li class="menu-item menu-item-3">
-                <a href="/freelancer">{{ translation.choice.FREELANCER }}</a>
-            </li>
+                <a href="/gdpr">{{ translation.general.GDPR }}</a>
+            </li> --}}
             <li class="menu-item menu-item-4">
                 <a href="http://flexjungle.flexforcemonkey.com/" target="_blank">Content</a>
+            </li>
+            <li class="menu-item menu-item-5">
+                <div class="dropdown">
+                    <a>{{ translation.menu-items.ROLES }} <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="item hirer"><a href="./hirer">{{ translation.choice.HIRER }}</a></li>
+                        <li class="item supplier"><a href="./supplier">{{ translation.choice.SUPPLIER }}</a></li>
+                        <li class="item freelancer"><a href="./freelancer">{{ translation.choice.FREELANCER }}</a></li>
+                    </ul>
+                </div>
             </li>
             <li id="language" class="menu-item menu-item-7 lang"></li>
         </ul>

@@ -5,7 +5,10 @@
         "FASTER": "Sneller",
         "FLEXIBLE": "Flexibeler",
         "CAREFREE": "Zorgelozer",
-        "OPTIMAL": "Optimaler"
+        "OPTIMAL": "Optimaler",
+        "AND": "en",
+        "GDPR": "Bepalingen AVG",
+        "GENCONS": "Algemene overwegingen"
     },
     "choice": {
         "WELCOME": "Welkom bij FlexForceMonkey!",
@@ -22,6 +25,7 @@
         "NOT_A_HIRER": "Geen inkoper?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
         "NOT_A_FREELANCER": "Geen zelfstandige?",
+        "ROLES": "Rollen",
         "KIT": "Aansluitkit",
         "OPTIONS": "Opties",
         "USE_FFM": "Zelf gebruiken"

@@ -15,12 +15,28 @@ $(document).ready(function() {
     // Open newsletter popup
     newsletterBlock();
 
+    // Set active tab on terms and conditions page
+    tabActive();
+
     // Set height elements on page load and when screen size changes
     heightElements();
     $(window).resize(function() {
         heightElements();
     });
 });
+
+function tabActive() {
+    var path = window.location.pathname;
+    $(".tab").removeClass("active");
+
+    if(path.indexOf('generalconsiderations') > -1) {
+        $(".tab-1").addClass("active");
+    } else if(path.indexOf('termsandconditions') > -1) {
+        $(".tab-2").addClass("active");
+    } else if(path.indexOf('gdpr') > -1) {
+        $(".tab-3").addClass("active");
+    }
+}
 
 function animationBanner() {
     $(".animation-banner .banner-title:gt(0)").hide();
