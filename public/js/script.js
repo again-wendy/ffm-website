@@ -10,7 +10,7 @@ $(document).ready(function() {
     animationBanner();
 
     // Set active role
-    setActiveRoleLink();
+    // setActiveRoleLink();
 
     // Open newsletter popup
     newsletterBlock();
@@ -28,11 +28,12 @@ $(document).ready(function() {
 function tabActive() {
     var path = window.location.pathname;
     $(".tab").removeClass("active");
-
+    console.log(path);
     if(path.indexOf('generalconsiderations') > -1) {
         $(".tab-1").addClass("active");
     } else if(path.indexOf('termsandconditions') > -1) {
         $(".tab-2").addClass("active");
+        console.log("Terms and conditions");
     } else if(path.indexOf('gdpr') > -1) {
         $(".tab-3").addClass("active");
     }
@@ -116,6 +117,14 @@ function closeNewsletterBlock() {
 function menuScroll(name) {
     $("html, body").animate({
         scrollTop: $(name).offset().top
+    }, 1000);
+}
+
+// Scroll content termspages
+function termsScroll(name) {
+    var offset = $(name).offset().top - 100;
+    $("html, body").animate({
+        scrollTop: offset
     }, 1000);
 }
 
