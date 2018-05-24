@@ -11,6 +11,25 @@
             display: block;
             margin: 0 auto;
         }
+        @media (max-width: 922px) {
+            .section-text {
+                width: 100%;
+                float: none;
+                a {
+                    white-space: normal;
+                    display: block;
+                    margin: 0 auto 20px auto;
+                }
+            }
+            img {
+                width: 50%;
+            }
+        }
+        @media (max-width: 550px) {
+            img {
+                width: 80%;
+            }
+        }
     }
 }
 
@@ -38,6 +57,16 @@
             display: block;
         }
     }
+    @media (max-width: 540px) {
+        .section-text a {
+            white-space: normal;
+        }
+    }
+    @media (max-width: 400px) {
+        .section-text a {
+            font-size: 1rem;
+        }
+    }
 }
 
 #work {
@@ -53,6 +82,24 @@
         .section-text {
             width: 55%;
             float: right;
+            a {
+                white-space: normal;
+            }
+        }
+        @media (max-width: 650px) {
+            .fa-handshake {
+                width: 80%;
+                display: block;
+                margin: 0 auto;
+            }
+            .section-text {
+                width: 100%;
+                float: none;
+                a {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 }

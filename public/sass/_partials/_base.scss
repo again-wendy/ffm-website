@@ -29,6 +29,14 @@ strong {
     font-family: $font-bold;
 }
 
+.flash-success {
+    color: $success;
+}
+
+.flash-error {
+    color: $warning;
+}
+
 .container {
     width: 65%;
     margin: 0 auto;

@@ -1,135 +1,15 @@
-#choose {
-    padding-bottom: 0;
-    .section-title {
-        margin-bottom: 50px;
-    }
-    .choices {
-        height: 100%;
-        @include displayFlex;
-        justify-content: space-between;
-        flex-direction: row;
-        @media (max-width: 991px) {
-            flex-direction: column;
-            height: auto;
-        }
-        .choice {
-            padding: 20px;
-            text-align: center;
-            height: 100%;
-            @include prefix(transition, all 0.5s, webkit moz o);
-            @include prefix(flex, 1, webkit moz o);
-            @media (max-width: 991px) {
-                padding: 30px 25%;
-            }
-            @media (max-width: 767px) {
-                padding: 30px 10%;
-            }
-            @media (max-width: 600px) {
-                padding: 20px;
-            }
-            .content {
-                position: relative;
-                top: 30%;
-                padding: 20px;
-                background: rgba(255, 255, 255, 0.4);
-            }
-        }
-        .hirer {
-            background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.5),
-                    rgba(255, 255, 255, 0.5)
-                ),
-                url('../images/hirer.jpg')
-                no-repeat
-                50% 50%;
-                @media (max-width: 991px) {
-                    background-position: 50% 60%;
-                }
-            &:hover {
-                background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.2)
-                ),
-                url('../images/hirer.jpg')
-                no-repeat
-                50% 50%;
-                @media (max-width: 991px) {
-                    background-position: 50% 60%;
-                }
-            }
-        }
-        .supplier {
-            background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.5),
-                    rgba(255, 255, 255, 0.5)
-                ),
-                url('../images/supplier.jpg')
-                no-repeat
-                70% 50%;
-                @media (max-width: 991px) {
-                    background-position: 50% 30%;
-                }
-                @media (max-width: 715px) {
-                    background-position: 60% 30%;
-                }
-            &:hover {
-                background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.2)
-                ),
-                url('../images/supplier.jpg')
-                no-repeat
-                70% 50%;
-                @media (max-width: 991px) {
-                    background-position: 50% 30%;
-                }
-                @media (max-width: 715px) {
-                    background-position: 60% 30%;
-                }
-            }
-        }
-        .freelancer {
-            background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.5),
-                    rgba(255, 255, 255, 0.5)
-                ),
-                url('../images/freelancer.jpg')
-                no-repeat
-                40% 50%;
-                @media (max-width: 991px) {
-                    background-position: 20% 40%;
-                }
-                @media (max-width: 715px) {
-                    background-position: 30% 50%;
-                }
-            &:hover {
-                background: 
-                linear-gradient(
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.2)
-                ),
-                url('../images/freelancer.jpg')
-                no-repeat
-                20% 50%;
-                @media (max-width: 991px) {
-                    background-position: 20% 40%;
-                }
-            }
-        }
-    }
-}
-
 #home-intro {
     background: $light-grey;
     .buttons {
         @include displayFlex;
         @include prefix(justify-content, space-between, webkit moz o);
         margin-bottom: 50px;
+        @media(max-width: 730px) {
+            @include prefix(flex-direction, column, webkit moz o);
+            a {
+                margin-bottom: 5px;
+            }
+        }
     }
     .small-screen {
         display: none;

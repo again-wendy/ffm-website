@@ -77,6 +77,20 @@
         </div>
     </footer>
 
+    <div id="newsletter-popup">
+        <div class="envelope">
+            <span class="fa fa-envelope"></span>
+        </div>
+        <div class="header-container">
+            <div class="header">{{ translation.newsletter.SUBSCRIBE_OUR }}</div>
+            <a onclick="closeNewsletterBlock()" class="close">&times;</a>
+        </div>
+        <div class="content-container">
+            <p>{{ translation.newsletter.OPENS_NEW_TAB }}</p>
+            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">{{ translation.newsletter.OPEN }}</a>
+        </div>
+    </div>
+
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="./public/js/js-cookie.js"></script>

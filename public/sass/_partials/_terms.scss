@@ -28,6 +28,17 @@
         .tab.active {
             background: $light-grey-hover;
         }
+        @media (max-width: 805px) {
+            .tab.active {
+                display: none;
+            }
+        }
+        @media (max-width: 510px) {
+            @include prefix(flex-direction, column, webkit moz o);
+            .tab {
+                margin: 0;
+            }
+        }
     }
 }
 

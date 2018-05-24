@@ -6,6 +6,11 @@ $(document).ready(function() {
         $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
     }
 
+    // Don't show mobile menu on page load
+    if($(window).width() < 769) {
+        $("#navbar .right-menu .menu-items").hide();
+    }
+
     // Animation banner
     animationBanner();
 
@@ -28,7 +33,6 @@ $(document).ready(function() {
 function tabActive() {
     var path = window.location.pathname;
     $(".tab").removeClass("active");
-    console.log(path);
     if(path.indexOf('generalconsiderations') > -1) {
         $(".tab-1").addClass("active");
     } else if(path.indexOf('termsandconditions') > -1) {
@@ -100,9 +104,10 @@ function setWidthTableColums(tableId) {
 
 // Open newsletter popup when user hasn't closed it in the last 7 days
 function newsletterBlock() {
-    if( Cookies.get("newsletter" !== "closed") ) {
+    console.log(Cookies.get("newsletter"));
+    if( Cookies.get("newsletter") != "closed" ) {
         window.setTimeout(function() {
-            $("#newsletter").fadeIn();
+            $("#newsletter-popup").fadeIn();
         }, 6000);
     } 
 }
@@ -110,7 +115,7 @@ function newsletterBlock() {
 // Close newsletter popup and set cookie so it doesn't show for 7 days
 function closeNewsletterBlock() {
     Cookies.set("newsletter", "closed", { expires: 7 });
-    $("#newsletter").fadeOut();
+    $("#newsletter-popup").fadeOut();
 }
 
 // Menu scroll to section
@@ -129,14 +134,16 @@ function termsScroll(name) {
 }
 
 // Check for hover on dropdown menu
-$('.dropdown').hover(
-    function() {
-        $(".dropdown > .dropdown-menu").slideDown();
-    }, 
-    function() {
-        $(".dropdown > .dropdown-menu").slideUp();
-    }
-);
+if($(window).width() > 768) {
+    $('.dropdown').hover(
+        function() {
+            $(".dropdown > .dropdown-menu").slideDown();
+        }, 
+        function() {
+            $(".dropdown > .dropdown-menu").slideUp();
+        }
+    );
+}
 
 // Check for active role and set link to active
 function setActiveRoleLink() {
@@ -169,5 +176,20 @@ function setLang($event) {
     } else {
         var tempUrl = url.substr(0, url.length - 2);
         window.location.href = tempUrl + $event;
+    }
+}
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    var menu = $("#navbar .right-menu .menu-items");
+    var icon = $("#navbar .right-menu .mobile-toggle .nav-icon");
+    if( menu.css("display") === "none" ) {
+        // open menu and change icon to cross
+        menu.slideDown();
+        icon.addClass("open");
+    } else {
+        // close menu and change icon to bars
+        menu.slideUp();
+        icon.removeClass("open");
     }
 }

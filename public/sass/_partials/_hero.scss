@@ -20,6 +20,24 @@
         bottom: 10%;
         color: white;
     }
+    @media(max-width: 930px) {
+        .hero-title {
+            width: 80%;
+            h1 {
+                font-size: 2.6rem;
+            }
+        }
+    }
+    @media (max-width: 620px) {
+        .hero-title h1 {
+            font-size: 2.2rem;
+        }
+    }
+    @media (max-width: 450px) {
+        .hero-title h1 {
+            font-size: 1.8rem;
+        }
+    }
     .scrolldiv {
         position: absolute;
         left: 50%;
@@ -62,6 +80,15 @@
             font-family: $font-logo;
             color: $primary;
             font-size: 4rem;
+            @media (max-width: 670px) {
+                font-size: 3rem;
+            }
+            @media(max-width: 500px) {
+                font-size: 2.4rem;
+            }
+            @media(max-width: 400px) {
+                font-size: 2rem;
+            }
         }
         .sublogo {
             font-family: $font-xbold;
@@ -69,39 +96,51 @@
             font-size: 1.8rem;
             position: relative;
             top: -15px;
+            @media (max-width: 670px) {
+                font-size: 1.4rem;
+            }
+            @media(max-width: 500px) {
+                font-size: 1.2rem;
+                top: -10px
+            }
+            @media(max-width: 400px) {
+                font-size: 1rem;
+            }
         }
         @media (max-width: 1100px) {
             width: 60%;
         }
-        @media (max-width: 730px) {
+        @media(max-width: 991px) {
             width: 90%;
             top: 5%;
         }
+        @media(max-width: 550px) {
+            top: 0;
+            padding: 20px;
+        }
         h1 {
             font-size: 2.5rem;
+            @media (max-width: 670px) {
+                font-size: 2rem;
+            }
+            @media(max-width: 500px) {
+                font-size: 1.5rem;
+            }
+            @media(max-width: 400px) {
+                font-size: 1.2rem;
+            }
         }
     }
     .monkey {
         position: absolute;
         width: 40%;
         top: 40%;
-        right: 5%;
-        @media (max-width: 1460px) {
-            right: 10%;
+        right: 0;
+        @media (max-width: 1200px) {
+            top: 45%;
         }
-        @media (max-width: 991px) {
-            width: 60%;
-            right: 6%;
-        }
-        @media (max-width: 730px) {
-            width: 74%;
-            right: 13%;
-            top: 35%;
-        }
-        @media (max-width: 500px) {
-            width: 90%;
-            right: 10%;
-            top: 40%;
+        @media(max-width: 991px) {
+            display: none;
         }
         svg {
             height: 100%;
@@ -129,6 +168,9 @@
         url('../images/supplier.jpg') 
         no-repeat 
         center;
+    @media (max-width: 800px) {
+        background-position: 70% 50%;
+    }
 }
 
 #hero.freelancer {
@@ -144,5 +186,8 @@
         width: 65%;
         right: 5%;
         left: auto;
+        @media (max-width: 800px) {
+            width: 90%;
+        }
     }
 }

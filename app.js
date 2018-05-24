@@ -201,7 +201,7 @@ app.post('/logout', (req, res) => {
 
 // Send connection kit request
 app.post('/sendconnectkit', (req, res) => {
-    firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
+    //firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Iemand vraagt een aansluitkit aan</h1>
         <h2>Details:</h2>
@@ -243,18 +243,18 @@ app.post('/sendconnectkit', (req, res) => {
         if(error) {
             req.flash('error', 'Something went wrong: ' + error);
         } else {
-            writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
+            //writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
             req.flash('success', 'Je aansluitkit is aangevraagd!');
-            res.redirect('/');
+            res.redirect(req.get('referer'));
         }
     });
 
-    logout(res);
+    //logout(res);
 });
 
 // Send contactform
 app.post('/send', (req, res) => {
-    firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
+    // firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
@@ -282,7 +282,7 @@ app.post('/send', (req, res) => {
     });
     
     let HelperOptions = {
-        from: '"Contact Form FFM website" <wendy.dimmendaal@again.nl>',
+        from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
         to: 'wendy.dimmendaal@again.nl',
         subject: 'Reactie contactform FFM.com',
         text: 'Test 123',
@@ -293,12 +293,12 @@ app.post('/send', (req, res) => {
         if(error) {
             req.flash('error', 'Something went wrong: ' + error);
         } else {
-            writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
+            // writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
             req.flash('success', 'Thanks for the message! We\'ll be in touch');
-            res.redirect('/');
+            res.redirect(req.get('referer') + "#contact");
         }
     });
-    logout(res);
+    // logout(res);
 });
 
 //Add subscriber to Mailchimp list

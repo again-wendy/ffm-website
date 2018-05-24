@@ -8,6 +8,12 @@ section {
         margin: 0 0 50px 0;
         padding: 0;
         text-align: center;
+        @media (max-width: 768px) {
+            font-size: 2.3rem;
+        }
+        @media (max-width: 500px) {
+            font-size: 2rem;
+        }
     }
     .sub-title {
         font-family: $font-bold;

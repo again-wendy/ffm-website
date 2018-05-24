@@ -10,6 +10,21 @@
             float: right;
             padding-left: 30px;
         }
+        @media (max-width: 600px) {
+            img {
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+            }
+            .section-text {
+                width: 100%;
+                float: none;
+                button {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
     }
 }
 
@@ -23,6 +38,25 @@
         .section-text {
             width: 40%;
             float: right;
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+            }
+            .section-text {
+                width: 100%;
+                float: none;
+            }
+            a {
+                white-space: normal;
+            }
+        }
+        @media (max-width: 400px) {
+            a {
+                font-size: 1rem;
+            }
         }
     }
 }
@@ -48,6 +82,24 @@
         }
         .text-center {
             margin-top: 30px;
+        }
+        @media (max-width: 875px) {
+            .buttons {
+                @include prefix(flex-direction, column, webkit moz o);
+                button, a {
+                    margin-bottom: 10px;
+                    white-space: normal;
+                }
+            }
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 60%;
+            }
+            .section-text {
+                width: 100%;
+                float: none;
+            }
         }
     }
 }

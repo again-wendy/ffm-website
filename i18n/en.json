@@ -93,7 +93,8 @@
         "SUBJECT": "Subject",
         "MSG": "Message",
         "SUBMIT": "Submit",
-        "SEND_SUCCESS": "Your form has been sent successfully. We will contact you as soon as possible!"
+        "SEND_SUCCESS": "Your form has been sent successfully. We will contact you as soon as possible!",
+        "SEND_ERROR": "Sorry, something went wrong. Please try again later!"
     },
     "database": {
         "LOG_IN_INTRO": "Only an admin can see this page.",
@@ -105,6 +106,8 @@
         "JOIN": "Join!",
         "FILL_IN": "Leave your information to request the connection kit",
         "SEND_SUCCESS": "Your request has been sent. You'll get the connection kit as soon as possible!",
+        "SEND_ERROR": "Sorry, something went wrong. Please try again later!",
+        "REQUIRED": "Fields with a * are required",
         "NAME": "Name",
         "PHONE": "Phone number",
         "COMPANY_NAME": "Company name",
@@ -117,14 +120,9 @@
         "SUBMIT": "Submit",
         "USE_CONTACT": "We only use this data for the shipment of our connection kit and for follow-up for receipt."
     },
-    "mailchimp": {
-        "HIRER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a hirer? Sign up for our newsletter!",
-        "SUPPLIER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a supplier? Sign up for our newsletter!",
-        "INTERIM_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a supplier of interim workers? Sign up for our newsletter!",
-        "FREELANCER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a freelancer? Sign up for our newsletter!",
-        "CURIOUS_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey? Sign up for our newsletter!",
-        "SUBSCRIBE_TO": "Subscribe to our mailing list",
-        "EMAIL_ADDRESS": "Email Address",
-        "SUBSCRIBE": "Subscribe"
+    "newsletter": {
+        "SUBSCRIBE_OUR": "FlexForceMonkey newsletter",
+        "OPENS_NEW_TAB": "Want to stay informed? Sign up for our newsletter!",
+        "OPEN": "Go to form"
     }
 }

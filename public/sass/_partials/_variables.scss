@@ -17,6 +17,11 @@ $dark-grey-hover: lighten($dark-grey, 15%);
 
 $white-hover: darken(white, 15%);
 
+$success: #0fb8ad;
+$success-hover: darken($success, 15%);
+$warning: #902B14;
+$warning-hover: darken($warning, 15%);
+
 $gradient: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 
 //NUMBERS
