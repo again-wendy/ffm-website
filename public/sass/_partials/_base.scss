@@ -259,3 +259,9 @@ input, textarea {
 .entire-width {
     width: 100%;
 }
+
+.lower-alpha {
+    li {
+        list-style-type: lower-alpha;
+    }
+}

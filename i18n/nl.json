@@ -31,7 +31,7 @@
         "USE_FFM": "Zelf gebruiken"
     },
     "hirer": {
-        "HERO_TEXT": "Dus jij droomt van een volledig geautomatiseerde keten met je flex-leveranciers? Jij wilt leidend zijn in een proces zonder onnodige supplier-lock-in? Dat vinden wij logisch! Join the collaborative flex experience",
+        "HERO_TEXT": "Dus jij droomt van een volledig geautomatiseerde keten met je flex-leveranciers? Jij wilt leidend zijn in een proces zonder onnodige supplier-lock-in? Dat vinden wij logisch!",
         "KIT_INTRO": "Online in een oogwenk: de FlexForceMonkey aansluitkit!",
         "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
         "GET_KIT": "BESTEL NU VRIJBLIJVEND EN GRATIS JOUW AANSLUITKIT",
@@ -58,7 +58,7 @@
         "PS": "PS: wist je trouwens dat werken op onze portal voorlopig gewoon gratis is?!"
     },
     "freelancer": {
-        "HERO_TEXT": "Jij bent toch ooit zelfstandig geworden om toegevoegde waarde te creëren? Niet om administratie te doen! Join the collaborative flex experience",
+        "HERO_TEXT": "Jij bent toch ooit zelfstandig geworden om toegevoegde waarde te creëren? Niet om administratie te doen!",
         "INTRO_TITLE": "Bezig zijn met jouw droom is inhoudelijk werk",
         "INTRO_SUBTITLE": "Dus waarom zou jij je energie en tijd verdoen aan het najagen van timesheets en facturen?",
         "INTRO_TEXT": "FlexForceMonkey biedt niet zomaar software voor urenregistratie, wij bieden een platform dat is ontstaan vanuit samenwerking tussen klant en leverancier. Hier maak je dus niet enkel een timesheet, hier zit controle en communicatie van die uren met jouw klant direct in de standaard oplossing.",
@@ -72,9 +72,9 @@
         "WORK_REGISTER": "REGISTREER HIER JE GRATIS ACCOUNT"
     },
     "home": {
-        "HERO_TEXT": "Foutloze facturen in de uitzendwereld?",
+        "HERO_TEXT": "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
         "HERO_PARAGRAPH": "Scroll naar beneden om je rol te kiezen",
-        "HOME_INTRO": "FlexForceMonkey is een slimme integratie software die je eenvoudiger samen laat werken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat jij bent. Klik op één van de volgende keuze om naar de betreffende website te gaan.",
+        "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat je rol in de keten is. Klik op één van de volgende keuzes om naar de betreffende website te gaan.",
         "CHOOSE_ROLE": "Kies je rol:"
     },
     "cookie": {
@@ -98,6 +98,22 @@
         "CONTACTFORMS": "Contact formulieren",
         "GET_CONTACT_DATA": "Haal contact data op",
         "DATE": "Datum"
+    },
+    "connect": {
+        "JOIN": "Sluit je aan!",
+        "FILL_IN": "Laat je informatie achter en wij sturen je de aansluitkit",
+        "SEND_SUCCESS": "Je aanvraag is ingediend. Je krijg de aansluitkit zo snel mogelijk!",
+        "NAME": "Naam",
+        "PHONE": "Telefoonnummer",
+        "COMPANY_NAME": "Bedrijfsnaam",
+        "STREET": "Straat",
+        "STREET_NUMBER": "Huisnummer",
+        "POSTAL_CODE": "Postcode",
+        "CITY": "Plaats",
+        "EMAIL_GENERAL_COMMERCIAL": "Email adres mag gebruikt worden voor algemene commerciële informatie rondom FlexForceMonkey",
+        "EMAIL_INDIVIDUAL_CONTACT": "Email adres mag gebruikt worden voor gericht individueel commercieel contact",
+        "SUBMIT": "Verstuur",
+        "USE_CONTACT": "Wij gebruiken deze data enkel voor verzending van onze aansluitkit en voor opvolging voor ontvangst."
     },
     "mailchimp": {
         "HIRER_TEXT": "Als inlener op de hoogte blijven van het laatste nieuws van FlexForceMonkey? Schrijf je dan in op onze nieuwsbrief!",

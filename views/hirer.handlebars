@@ -3,7 +3,8 @@
 <section id="hero" class="hirer">
     <div class="hero-title">
         <h1>
-            {{ translation.hirer.HERO_TEXT }}
+            <strong>{{ translation.hirer.HERO_TEXT }}</strong> 
+            <br />Join the collaborative flex experience!
         </h1>
     </div>
 </section>
@@ -14,7 +15,7 @@
         <div class="section-container">
             <div class="section-text scrollleft">
                 <p>{{ translation.hirer.INTRO_TEXT }}</p>
-                <button class="btn-light-grey-xl">{{ translation.hirer.GET_CONTACT }}</button>
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.hirer.GET_CONTACT }}</button>
             </div>
             <img class="scrollright" src="./public/images/puzzel-aap.png" alt="Puzzle Monkey">
         </div>
@@ -39,7 +40,7 @@
                 <p>{{ translation.hirer.KIT_TEXT }}</p>
             </div>
             <div class="text-center">
-                <button class="btn-complementary-xl">{{ translation.hirer.GET_KIT }}</button>
+                <a class="btn-complementary-xl" href="/sluitjeaan">{{ translation.hirer.GET_KIT }}</a>
             </div>
         </div>
     </div>
@@ -52,7 +53,7 @@
             <p class="sub-title">{{ translation.hirer.CONNECT_SUBTITLE }}</p>
             <div class="section-text scrollleft">
                 <p>{{ translation.hirer.CONNECT_TEXT }}</p>
-                <button class="btn-light-grey-xl">{{ translation.hirer.GET_CONTACT }}</button>
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.hirer.GET_CONTACT }}</button>
             </div>
             <img class="scrollright" src="./public/images/computeraap.png" alt="Computer Monkey">
         </div>

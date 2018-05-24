@@ -9,6 +9,7 @@ const path              = require('path');
 const nodemailer        = require('nodemailer');
 const i18n              = require('i18n-express');
 const firebase          = require('firebase');
+const request           = require('superagent');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -146,7 +147,11 @@ app.get('/gdpr', (req, res) => {
 });
 app.get('/generalconsiderations', (req, res) => {
     res.render('termsandconditions', {partial: 'gencons'})
-})
+});
+
+app.get('/sluitjeaan', (req, res) => {
+    res.render('connect');
+});
 
 // Save contactform to database
 function writeContactForm(name, email, subject, msg, role) {
@@ -192,11 +197,64 @@ app.post('/login', (req, res) => {
 
 app.post('/logout', (req, res) => {
     logout(res);
-})
+});
+
+// Send connection kit request
+app.post('/sendconnectkit', (req, res) => {
+    firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
+    let output = `
+        <h1>Iemand vraagt een aansluitkit aan</h1>
+        <h2>Details:</h2>
+        <ul>
+            <li>Naam: ${req.body.name}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Telefoon: ${req.body.phone}</li>
+            <li>Bedrijfsnaam: ${req.body.compname}</li>
+            <li>Straat + nummer: ${req.body.street} ${req.body.number}</li>
+            <li>Postcode: ${req.body.postal}</li>
+            <li>Plaats: ${req.body.city}</li>
+            <li>Email adres mag gebruikt worden voor algemene commerciële informatie rondom FFM: ${req.body.generalCommercial}</li>
+            <li>Email adres mag gebruikt worden voor gericht individueel commerciele contact: ${req.body.individualContact}</li>
+        </ul>
+    `;
+
+    let transporter = nodemailer.createTransport({
+        host: "smtp.sendgrid.net",
+        secure: false,
+        port: 25,
+        auth: {
+            user: process.env.SENDGRID_USER,
+            pass: process.env.SENDGRID_PASS
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+    
+    let HelperOptions = {
+        from: '"Aansluitkit request" <wendy.dimmendaal@again.nl>',
+        to: 'wendy.dimmendaal@again.nl',
+        subject: 'Aansluitkit request',
+        text: 'Test 123',
+        html: output
+    };
+
+    transporter.sendMail(HelperOptions, (error, info) => {
+        if(error) {
+            req.flash('error', 'Something went wrong: ' + error);
+        } else {
+            writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
+            req.flash('success', 'Je aansluitkit is aangevraagd!');
+            res.redirect('/');
+        }
+    });
+
+    logout(res);
+});
 
 // Send contactform
 app.post('/send', (req, res) => {
-    login(process.env.FB_EMAIL, process.env.FB_PASSWORD);
+    firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
@@ -240,6 +298,26 @@ app.post('/send', (req, res) => {
             res.redirect('/');
         }
     });
+    logout(res);
+});
+
+//Add subscriber to Mailchimp list
+app.post('/signup', (req, res) => {
+    request
+        .post(process.env.MAILCHIMP_URL + 'lists/' + process.env.MAILCHIMP_LISTID + '/members/')
+        .set('Content-Type', 'application/json;charset=urf-8')
+        .set('Authorization', 'Basic ' + new Buffer('any:' + process.env.MAILCHIMP_APIKEY).toString('base64'))
+        .send({
+            'email_address': req.body.email,
+            'status': 'subscribed'
+        })
+        .end((err, res) => {
+            if(res.status < 300 || (res.status === 400 && res.body.title === "Member Exists")) {
+                req.flash('success', 'Signed up!');
+            } else {
+                req.flash('error', 'Something went wrong');
+            }
+        });
 });
 
 var port = process.env.port || 3000;

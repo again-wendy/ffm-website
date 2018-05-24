@@ -74,7 +74,7 @@
         "WORK_REGISTER": "REGISTER YOUR FREE ACCOUNT HERE"
     },
     "home": {
-        "HERO_TEXT": "Error-free invoices in the supplierworld?",
+        "HERO_TEXT": "One platform where the employment agency, hirer, freelancer and consulting company work together on an efficient process",
         "HERO_PARAGRAPH": "Scroll down to choose your role",
         "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier to work together. It ensures a seamless connection between administrations. To show you how we can help you, we want to know what you are. Click on one of the following options to go the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
@@ -100,6 +100,22 @@
         "CONTACTFORMS": "Contact forms",
         "GET_CONTACT_DATA": "Get contact data",
         "DATE": "Date"
+    },
+    "connect": {
+        "JOIN": "Join!",
+        "FILL_IN": "Leave your information to request the connection kit",
+        "SEND_SUCCESS": "Your request has been sent. You'll get the connection kit as soon as possible!",
+        "NAME": "Name",
+        "PHONE": "Phone number",
+        "COMPANY_NAME": "Company name",
+        "STREET": "Street",
+        "STREET_NUMBER": "Street number",
+        "POSTAL_CODE": "Postal code",
+        "CITY": "City",
+        "EMAIL_GENERAL_COMMERCIAL": "Email address may be used for general commercial information concerning FlexForceMonkey",
+        "EMAIL_INDIVIDUAL_CONTACT": "Email address may be used for targeted individual commercial contact",
+        "SUBMIT": "Submit",
+        "USE_CONTACT": "We only use this data for the shipment of our connection kit and for follow-up for receipt."
     },
     "mailchimp": {
         "HIRER_TEXT": "Do you want to stay up-to-date with the latest news from FlexForceMonkey as a hirer? Sign up for our newsletter!",

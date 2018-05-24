@@ -1,0 +1,55 @@
+{{> base-nav }}
+
+<section id="connect" class="with-base-nav">
+    <div class="container">
+        <h2 class="section-title">{{ translation.connect.JOIN }}</h2>
+        <div class="section-container">
+            <h4 class="text-center">{{ translation.connect.FILL_IN }}</h4>
+            {{#if messages.success}}
+                <p class="flash flash-success">{{ translation.connect.SEND_SUCCESS }}</p>
+            {{/if}}
+            <form method="POST" action="sendconnectkit">
+                <div class="form-group">
+                    <label for="name">{{ translation.connect.NAME }}</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">{{ translation.connect.PHONE }}</label>
+                    <input type="text" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="compname">{{ translation.connect.COMPANY_NAME }}</label>
+                    <input type="text" id="compname" name="compname" required>
+                </div>
+                <div class="form-group">
+                    <label for="street">{{ translation.connect.STREET }}</label>
+                    <input type="text" id="street" name="street" required>
+                </div>
+                <div class="form-group">
+                    <label for="number">{{ translation.connect.STREET_NUMBER }}</label>
+                    <input type="number" id="number" name="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal">{{ translation.connect.POSTAL_CODE }}</label>
+                    <input type="text" id="postal" name="postal" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">{{ translation.connect.CITY }}</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <p>{{ translation.connect.USE_CONTACT }}</p>
+                <div class="form-group">
+                    <input type="checkbox" name="general-commercial" value="generalCommercial"> {{ translation.connect.EMAIL_GENERAL_COMMERCIAL }} <br />
+                    <input type="checkbox" name="individual-contact" value="individualContact"> {{ translation.connect.EMAIL_INDIVIDUAL_CONTACT }}
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" class="btn-complementary-xl" value="{{ translation.connect.SUBMIT }}">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

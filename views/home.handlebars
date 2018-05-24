@@ -1,12 +1,21 @@
 <section id="hero" class="home">
     <div class="hero-title">
         <h1>
+            <span class="logo">FlexForceMonkey</span><br />
+            <span class="sublogo">Systemintegration as a Service</span><br/>
             {{ translation.home.HERO_TEXT }}
         </h1>
-        <p>{{ translation.home.HERO_PARAGRAPH }}</p>
     </div>
     <div class="monkey">
         {{> monkey}}
+    </div>
+    <div class="scrolldiv">
+        <button id="inpage_scroll_btn" class="btn-primary standard-button inpage-scroll" onclick="menuScroll('#home-intro')">
+            <span class="screen-reader-text">
+                {{ translation.home.HERO_PARAGRAPH }}<br />
+            </span>
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 </section>
 
