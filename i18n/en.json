@@ -4,7 +4,7 @@
         "TERMSCON": "Terms and Conditions",
         "FASTER": "Faster",
         "FLEXIBLE": "More flexible",
-        "CAREFREE": "More carefree",
+        "CAREFREE": "Worry free",
         "OPTIMAL": "More optimal",
         "AND": "and",
         "GDPR": "Provisions GDPR",
@@ -12,11 +12,11 @@
     },
     "choice": {
         "WELCOME": "Welcome to FlexForceMonkey!",
-        "CHOOSE_TEXT": "We want to give you the most optimal information. So we ask you to make a choice from the following roles:",
-        "HIRER": "I'm a hirer",
-        "SUPPLIER": "I'm a supplier",
+        "CHOOSE_TEXT": "We want to give you the best possible information. That is why we are asking you to make a choice from the following roles:",
+        "HIRER": "I'm a purchaser",
+        "SUPPLIER": "I'm an employment agency",
         "INTERIM": "I supply interim workers",
-        "FREELANCER": "I'm a freelancer",
+        "FREELANCER": "Self employed",
         "CURIOUS": "I'm just curious",
         "GO_TO_WEBSITE": "Go to website"
     },
@@ -24,16 +24,16 @@
         "HOW_WORK": "How it works",
         "BLOG": "Blog",
         "CONTACT": "Contact",
-        "NOT_A_HIRER": "Not a hirer?",
-        "NOT_A_SUPPLIER": "Not a supplier?",
-        "NOT_A_FREELANCER": "Not a freelancer?",
+        "NOT_A_HIRER": "Not a purchaser?",
+        "NOT_A_SUPPLIER": "Not an employment agency?",
+        "NOT_A_FREELANCER": "Not self employed?",
         "ROLES": "Roles",
         "KIT": "Connection kit",
         "OPTIONS": "Options",
         "USE_FFM": "Use it yourself"
     },
     "hirer": {
-        "HERO_TEXT": "So you dream of a fully automated chain with your flex suppliers? You want to be leading in a process without unnecessary supplier lock-in? We think that is logical! Join the collaborative flex experience",
+        "HERO_TEXT": "So you are dreaming of a fully automated chain with your flex-suppliers? You want to be in a process without unnecessary supplier-lock-in? Join the collaborative flex experience",
         "KIT_INTRO": "De FlexForceMonkey connection kit!",
         "KIT_TEXT": "After all the stories have become curious about FlexForceMonkey? Then ask for our connection kit. You can then connect your own system to ours and see what we can actually do for you.",
         "GET_KIT": "Get the kit",
@@ -45,7 +45,7 @@
         "CONNECT_TEXT": "The most special thing about FlexForceMonkey is that we are not very demanding on your system. Whether you want to shop with us from a catalog buying process via punch-out, or want to offer a data feed as HR master data. Whether you want to participate with or without an hour registration system. We have a combinable solution for all common choices. And we connect your supplier (s) for you with the digital sauce they ask for. Easy online collaboration."
     },
     "supplier": {
-        "HERO_TEXT": "Stop operational battles around PO numbers and hours that do not fit in the CAO: join the collaborative flex experience",
+        "HERO_TEXT": "Stop operational battles around PO numbers and hours that do not fit in the CLA: join the collaborative flex experience",
         "KIT_INTRO": "Online in no time: the FlexForceMonkey connection kit!",
         "KIT_TEXT": "Corporate integration software made just as simple as taking out an internet subscription? Yep, born in the cloud, naturally thinking in collaboration, that requires quick solutions. And that's what you get.",
         "GET_KIT": "REQUEST OUR KIT FOR FREE AND WITHOUT ANY OBLIGATIONS",
@@ -76,7 +76,7 @@
     "home": {
         "HERO_TEXT": "One platform where the employment agency, hirer, freelancer and consulting company work together on an efficient process",
         "HERO_PARAGRAPH": "Scroll down to choose your role",
-        "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier to work together. It ensures a seamless connection between administrations. To show you how we can help you, we want to know what you are. Click on one of the following options to go the relevant website.",
+        "HOME_INTRO": "FlexForceMonkey is smart integration software that business partners in flex easier let work together. It allows for a seamless connection between administrations. To show how we can help you we would like to know what your role is in the chain. Click on one of the following choices to go to the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
     },
     "cookie": {
@@ -87,7 +87,7 @@
     "contact-section": {
         "INTERESTED": "Interested?",
         "MAKE_CONTACT": "Contact us!",
-        "INTRO": "Interested in FlexForceMonkey? Or are you interested in a demo? Fill in the following form and we will contact you as soon as possible.",
+        "INTRO": "Interest in FlexForceMonkey? Or do you have questions? Please fill in the following form and we will contact you as soon as possible.",
         "NAME": "Name",
         "EMAIL": "Email",
         "SUBJECT": "Subject",
@@ -103,7 +103,7 @@
         "DATE": "Date"
     },
     "connect": {
-        "JOIN": "Join!",
+        "JOIN": "Join us!",
         "FILL_IN": "Leave your information to request the connection kit",
         "SEND_SUCCESS": "Your request has been sent. You'll get the connection kit as soon as possible!",
         "SEND_ERROR": "Sorry, something went wrong. Please try again later!",
@@ -115,14 +115,14 @@
         "STREET_NUMBER": "Street number",
         "POSTAL_CODE": "Postal code",
         "CITY": "City",
-        "EMAIL_GENERAL_COMMERCIAL": "Email address may be used for general commercial information concerning FlexForceMonkey",
-        "EMAIL_INDIVIDUAL_CONTACT": "Email address may be used for targeted individual commercial contact",
+        "EMAIL_GENERAL_COMMERCIAL": "Email address may be used for general commercial information around FlexForceMonkey",
+        "EMAIL_INDIVIDUAL_CONTACT": "Email address may be used for focused individual commercial contact",
         "SUBMIT": "Submit",
         "USE_CONTACT": "We only use this data for the shipment of our connection kit and for follow-up for receipt."
     },
     "newsletter": {
         "SUBSCRIBE_OUR": "FlexForceMonkey newsletter",
-        "OPENS_NEW_TAB": "Want to stay informed? Sign up for our newsletter!",
+        "OPENS_NEW_TAB": "Stay up to date? Register now for our newsletter!",
         "OPEN": "Go to form"
     }
 }

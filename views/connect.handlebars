@@ -44,9 +44,10 @@
                 </div>
                 <p>{{ translation.connect.USE_CONTACT }}</p>
                 <div class="form-group">
-                    <input type="checkbox" name="generalCommercial" value="false"> {{ translation.connect.EMAIL_GENERAL_COMMERCIAL }} <br />
-                    <input type="checkbox" name="individualContact" value="false"> {{ translation.connect.EMAIL_INDIVIDUAL_CONTACT }}
+                    <input type="checkbox" name="generalCommercial" value="Ja"> {{ translation.connect.EMAIL_GENERAL_COMMERCIAL }} <br />
+                    <input type="checkbox" name="individualContact" value="Ja"> {{ translation.connect.EMAIL_INDIVIDUAL_CONTACT }}
                 </div>
+                <p class="antispam">Leave this empty: <input type="text" name="url"></p>
                 <div class="form-group text-center">
                     <input type="submit" class="btn-complementary-xl" value="{{ translation.connect.SUBMIT }}">
                 </div>

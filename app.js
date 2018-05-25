@@ -65,11 +65,6 @@ app.use(session({
 app.use(flash());
 
 app.get('/', (req, res) => {
-    // if (req.cookies.role) {
-    //     res.redirect('/' + req.cookies.role);
-    // } else {
-    //     res.render('home');
-    // }
     res.render('home');
 });
 
@@ -99,35 +94,35 @@ function smallerThanTen(num) {
     return num < 10 ? "0" + num : num;
 }
 
-app.get('/database', (req, res) => {
-    var user = firebase.auth().currentUser;
-    if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
-        res.render('data');
-    } else if (user === null) {
-        res.render('login');
-    } else {
-        res.render('error', {
-            errormsg: "Only an admin can see this page"
-        });
-    }
-});
+// app.get('/database', (req, res) => {
+//     var user = firebase.auth().currentUser;
+//     if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
+//         res.render('data');
+//     } else if (user === null) {
+//         res.render('login');
+//     } else {
+//         res.render('error', {
+//             errormsg: "Only an admin can see this page"
+//         });
+//     }
+// });
 
-app.get('/database/contact', (req, res) => {
-    var user = firebase.auth().currentUser;
-    if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
-        var formsArr = [];
-        req.db.ref('contactform').on('value', (snapshot) => {
-            snapshot.forEach(function(item) {
-                var itemVal = item.val();
-                itemVal.date = convertTimestamp(itemVal.timestamp);
-                formsArr.push(itemVal);
-            });
-            res.send(formsArr);
-        });
-    } else {
-        res.status(500).send({error: "You have no rights to get this data!"});
-    }
-});
+// app.get('/database/contact', (req, res) => {
+//     var user = firebase.auth().currentUser;
+//     if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
+//         var formsArr = [];
+//         req.db.ref('contactform').on('value', (snapshot) => {
+//             snapshot.forEach(function(item) {
+//                 var itemVal = item.val();
+//                 itemVal.date = convertTimestamp(itemVal.timestamp);
+//                 formsArr.push(itemVal);
+//             });
+//             res.send(formsArr);
+//         });
+//     } else {
+//         res.status(500).send({error: "You have no rights to get this data!"});
+//     }
+// });
 
 app.get('/hirer', (req, res) => { 
     res.cookie('role', 'hirer').render('hirer');
@@ -154,54 +149,53 @@ app.get('/sluitjeaan', (req, res) => {
 });
 
 // Save contactform to database
-function writeContactForm(name, email, subject, msg, role) {
-    db.ref('contactform').push({
-        timestamp: firebase.database.ServerValue.TIMESTAMP,
-        contactName: name,
-        contactEmail: email,
-        contactSubject: subject,
-        contactMsg: msg,
-        contactRole: role
-    });
-}
+// function writeContactForm(name, email, subject, msg, role) {
+//     db.ref('contactform').push({
+//         timestamp: firebase.database.ServerValue.TIMESTAMP,
+//         contactName: name,
+//         contactEmail: email,
+//         contactSubject: subject,
+//         contactMsg: msg,
+//         contactRole: role
+//     });
+// }
 
 // Log in user
-function login(email, password, res) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-        res.redirect('/database');
-    }).catch((err) => {
-        // Sign-in went wrong
-        res.render('error', {
-            roleNews: req.cookies.role + "/newsletter-text",
-            errormsg: "Sorry, something went wrong! Error: " + err
-        });
-    });
-}
+// function login(email, password, res) {
+//     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+//         res.redirect('/database');
+//     }).catch((err) => {
+//         // Sign-in went wrong
+//         res.render('error', {
+//             roleNews: req.cookies.role + "/newsletter-text",
+//             errormsg: "Sorry, something went wrong! Error: " + err
+//         });
+//     });
+// }
 
 // Log out user
-function logout(res) {
-    firebase.auth().signOut().then(() => {
-        res.redirect('/');
-    }).catch((err) => {
-        // Sign-out went wrong
-        res.render('error', {
-            roleNews: req.cookies.role + "/newsletter-text",
-            errormsg: "Sorry, something went wrong! Error: " + err
-        });
-    })
-}
+// function logout(res) {
+//     firebase.auth().signOut().then(() => {
+//         res.redirect('/');
+//     }).catch((err) => {
+//         // Sign-out went wrong
+//         res.render('error', {
+//             roleNews: req.cookies.role + "/newsletter-text",
+//             errormsg: "Sorry, something went wrong! Error: " + err
+//         });
+//     })
+// }
 
-app.post('/login', (req, res) => {
-    login(req.body.email, req.body.password, res);
-});
+// app.post('/login', (req, res) => {
+//     login(req.body.email, req.body.password, res);
+// });
 
-app.post('/logout', (req, res) => {
-    logout(res);
-});
+// app.post('/logout', (req, res) => {
+//     logout(res);
+// });
 
 // Send connection kit request
 app.post('/sendconnectkit', (req, res) => {
-    //firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Iemand vraagt een aansluitkit aan</h1>
         <h2>Details:</h2>
@@ -232,29 +226,28 @@ app.post('/sendconnectkit', (req, res) => {
     });
     
     let HelperOptions = {
-        from: '"Aansluitkit request" <wendy.dimmendaal@again.nl>',
-        to: 'wendy.dimmendaal@again.nl',
+        from: '"Aansluitkit request" <noreply@flexforcemonkey.com>',
+        to: 'doede.van.haperen@lakran.com',
         subject: 'Aansluitkit request',
         text: 'Test 123',
         html: output
     };
 
-    transporter.sendMail(HelperOptions, (error, info) => {
-        if(error) {
-            req.flash('error', 'Something went wrong: ' + error);
-        } else {
-            //writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
-            req.flash('success', 'Je aansluitkit is aangevraagd!');
-            res.redirect(req.get('referer'));
-        }
-    });
-
-    //logout(res);
+    // If hidden field is filled, its a spam mail and we don't send it
+    if(req.body.url === "" && req.body.url.length == 0) {
+        transporter.sendMail(HelperOptions, (error, info) => {
+            if(error) {
+                req.flash('error', 'Something went wrong: ' + error);
+            } else {
+                req.flash('success', 'Je aansluitkit is aangevraagd!');
+                res.redirect(req.get('referer'));
+            }
+        });
+    }
 });
 
 // Send contactform
 app.post('/send', (req, res) => {
-    // firebase.auth().signInWithEmailAndPassword(process.env.FB_EMAIL, process.env.FB_PASSWORD);
     let output = `
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
@@ -283,22 +276,23 @@ app.post('/send', (req, res) => {
     
     let HelperOptions = {
         from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
-        to: 'wendy.dimmendaal@again.nl',
+        to: 'doede.van.haperen@lakran.com',
         subject: 'Reactie contactform FFM.com',
         text: 'Test 123',
         html: output
     };
-    
-    transporter.sendMail(HelperOptions, (error, info) => {
-        if(error) {
-            req.flash('error', 'Something went wrong: ' + error);
-        } else {
-            // writeContactForm(req.body.name, req.body.email, req.body.subject, req.body.msg, req.cookies.role);
-            req.flash('success', 'Thanks for the message! We\'ll be in touch');
-            res.redirect(req.get('referer') + "#contact");
-        }
-    });
-    // logout(res);
+
+    // If hidden field is filled, its a spam mail and we don't send it
+    if(req.body.url === "" && req.body.url.length == 0) {
+        transporter.sendMail(HelperOptions, (error, info) => {
+            if(error) {
+                req.flash('error', 'Something went wrong: ' + error);
+            } else {
+                req.flash('success', 'Thanks for the message! We\'ll be in touch');
+                res.redirect(req.get('referer') + "#contact");
+            }
+        });
+    }
 });
 
 //Add subscriber to Mailchimp list

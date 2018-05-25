@@ -55,6 +55,12 @@
             width: 2em;
             animation: bounce 2s infinite;
         }
+        @media(max-width: 575px) {
+            button {
+                font-size: 1.2rem;
+                white-space: normal;
+            }
+        }
     }
 }
 

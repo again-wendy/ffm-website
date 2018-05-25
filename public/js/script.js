@@ -11,6 +11,15 @@ $(document).ready(function() {
         $("#navbar .right-menu .menu-items").hide();
     }
 
+    $(window).change(function() {
+        if($(window).width() < 769) {
+            $("#navbar .right-menu .menu-items").hide();
+            $(".dropdown > .dropdown-menu").hide();
+        } else {
+            $("#navbar .right-menu .menu-items").show();
+        }
+    })
+
     // Animation banner
     animationBanner();
 
