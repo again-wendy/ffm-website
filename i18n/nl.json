@@ -113,8 +113,9 @@
         "STREET_NUMBER": "Huisnummer",
         "POSTAL_CODE": "Postcode",
         "CITY": "Plaats",
-        "EMAIL_GENERAL_COMMERCIAL": "Email adres mag gebruikt worden voor algemene commerciële informatie rondom FlexForceMonkey",
-        "EMAIL_INDIVIDUAL_CONTACT": "Email adres mag gebruikt worden voor gericht individueel commercieel contact",
+        "EMAIL_NEWSLETTERS": "Email adres mag gebruikt worden voor nieuwsbrieven",
+        "EMAIL_PRODUCT_UPDATES": "Email adres mag gebruikt worden voor product updates",
+        "EMAIL_INDIVIDUAL_CONTACT": "Email address may be used for targeted individual commercial contact",
         "SUBMIT": "Verstuur",
         "USE_CONTACT": "Wij gebruiken deze data enkel voor verzending van onze aansluitkit en voor opvolging voor ontvangst."
     },

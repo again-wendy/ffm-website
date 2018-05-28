@@ -207,8 +207,9 @@ app.post('/sendconnectkit', (req, res) => {
             <li>Straat + nummer: ${req.body.street} ${req.body.number}</li>
             <li>Postcode: ${req.body.postal}</li>
             <li>Plaats: ${req.body.city}</li>
-            <li>Email adres mag gebruikt worden voor algemene commerciële informatie rondom FFM: ${req.body.generalCommercial}</li>
-            <li>Email adres mag gebruikt worden voor gericht individueel commerciele contact: ${req.body.individualContact}</li>
+            <li>Email adres mag gebruikt worden voor nieuwsbrieven: ${req.body.newsletters}</li>
+            <li>Email adres mag gebruikt worden voor product updates: ${req.body.productUpdates}</li>
+            <li>Email adres mag gebruikt worden voor gericht individueel commercieel contact: ${req.body.individualContact}</li>
         </ul>
     `;
 

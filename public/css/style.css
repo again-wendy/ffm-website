@@ -297,8 +297,9 @@ input, textarea {
 .btn-complementary:visited:active,
 .btn-complementary-xl:visited:active {
   background-color: #b39100;
+  color: #2B2B2B;
 }
-/* line 193, ../sass/_partials/_base.scss */
+/* line 194, ../sass/_partials/_base.scss */
 .btn-complementary:disabled, .btn-complementary-xl:disabled, .btn-complementary[disabled], [disabled].btn-complementary-xl,
 .btn-complementary:visited:disabled,
 .btn-complementary-xl:visited:disabled,
@@ -308,13 +309,13 @@ input, textarea {
   background-color: rgba(255, 207, 0, 0.6);
 }
 
-/* line 200, ../sass/_partials/_base.scss */
+/* line 201, ../sass/_partials/_base.scss */
 .btn-complementary-xl {
   padding: 15px 20px;
   font-size: 1.4rem;
 }
 
-/* line 206, ../sass/_partials/_base.scss */
+/* line 207, ../sass/_partials/_base.scss */
 .btn-dark-grey, .btn-dark-grey-xl,
 .btn-dark-grey:visited,
 .btn-dark-grey-xl:visited {
@@ -322,7 +323,7 @@ input, textarea {
   border: 1px solid #2B2B2B;
   color: white;
 }
-/* line 212, ../sass/_partials/_base.scss */
+/* line 213, ../sass/_partials/_base.scss */
 .btn-dark-grey:hover, .btn-dark-grey-xl:hover, .btn-dark-grey:focus, .btn-dark-grey-xl:focus, .btn-dark-grey:active, .btn-dark-grey-xl:active,
 .btn-dark-grey:visited:hover,
 .btn-dark-grey-xl:visited:hover,
@@ -332,7 +333,7 @@ input, textarea {
 .btn-dark-grey-xl:visited:active {
   background-color: #515151;
 }
-/* line 217, ../sass/_partials/_base.scss */
+/* line 218, ../sass/_partials/_base.scss */
 .btn-dark-grey:disabled, .btn-dark-grey-xl:disabled, .btn-dark-grey[disabled], [disabled].btn-dark-grey-xl,
 .btn-dark-grey:visited:disabled,
 .btn-dark-grey-xl:visited:disabled,
@@ -342,13 +343,13 @@ input, textarea {
   background-color: rgba(43, 43, 43, 0.6);
 }
 
-/* line 224, ../sass/_partials/_base.scss */
+/* line 225, ../sass/_partials/_base.scss */
 .btn-dark-grey-xl {
   padding: 15px 20px;
   font-size: 1.4rem;
 }
 
-/* line 230, ../sass/_partials/_base.scss */
+/* line 231, ../sass/_partials/_base.scss */
 .btn-light-grey, .btn-light-grey-xl,
 .btn-light-grey:visited,
 .btn-light-grey-xl:visited {
@@ -356,7 +357,7 @@ input, textarea {
   border: 1px solid #ECECEC;
   color: #2B2B2B;
 }
-/* line 236, ../sass/_partials/_base.scss */
+/* line 237, ../sass/_partials/_base.scss */
 .btn-light-grey:hover, .btn-light-grey-xl:hover, .btn-light-grey:focus, .btn-light-grey-xl:focus, .btn-light-grey:active, .btn-light-grey-xl:active,
 .btn-light-grey:visited:hover,
 .btn-light-grey-xl:visited:hover,
@@ -367,7 +368,7 @@ input, textarea {
   background-color: #c6c6c6;
   color: #2B2B2B;
 }
-/* line 242, ../sass/_partials/_base.scss */
+/* line 243, ../sass/_partials/_base.scss */
 .btn-light-grey:disabled, .btn-light-grey-xl:disabled, .btn-light-grey[disabled], [disabled].btn-light-grey-xl,
 .btn-light-grey:visited:disabled,
 .btn-light-grey-xl:visited:disabled,
@@ -377,13 +378,13 @@ input, textarea {
   background-color: rgba(236, 236, 236, 0.6);
 }
 
-/* line 249, ../sass/_partials/_base.scss */
+/* line 250, ../sass/_partials/_base.scss */
 .btn-light-grey-xl {
   padding: 15px 20px;
   font-size: 1.4rem;
 }
 
-/* line 255, ../sass/_partials/_base.scss */
+/* line 256, ../sass/_partials/_base.scss */
 .row {
   display: -webkit-box;
   display: -moz-box;
@@ -395,7 +396,7 @@ input, textarea {
   margin: 0;
   width: 100%;
 }
-/* line 260, ../sass/_partials/_base.scss */
+/* line 261, ../sass/_partials/_base.scss */
 .row .column {
   -webkit-flex: 1 1 0;
   -ms-flex: 1 1 0;
@@ -404,17 +405,17 @@ input, textarea {
   padding: 15px;
 }
 
-/* line 267, ../sass/_partials/_base.scss */
+/* line 268, ../sass/_partials/_base.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 271, ../sass/_partials/_base.scss */
+/* line 272, ../sass/_partials/_base.scss */
 .entire-width {
   width: 100%;
 }
 
-/* line 276, ../sass/_partials/_base.scss */
+/* line 277, ../sass/_partials/_base.scss */
 .lower-alpha li {
   list-style-type: lower-alpha;
 }
