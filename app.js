@@ -207,6 +207,7 @@ app.post('/sendconnectkit', (req, res) => {
             <li>Straat + nummer: ${req.body.street} ${req.body.number}</li>
             <li>Postcode: ${req.body.postal}</li>
             <li>Plaats: ${req.body.city}</li>
+            <li>Opmerkingen: ${req.body.notes}</li>
             <li>Email adres mag gebruikt worden voor nieuwsbrieven: ${req.body.newsletters}</li>
             <li>Email adres mag gebruikt worden voor product updates: ${req.body.productUpdates}</li>
             <li>Email adres mag gebruikt worden voor gericht individueel commercieel contact: ${req.body.individualContact}</li>
@@ -229,6 +230,7 @@ app.post('/sendconnectkit', (req, res) => {
     let HelperOptions = {
         from: '"Aansluitkit request" <noreply@flexforcemonkey.com>',
         to: 'doede.van.haperen@lakran.com',
+        //to: 'wendy.dimmendaal@again.nl',
         subject: 'Aansluitkit request',
         text: 'Test 123',
         html: output

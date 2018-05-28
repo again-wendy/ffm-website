@@ -42,10 +42,14 @@
                     <label for="city">{{ translation.connect.CITY }}*</label>
                     <input type="text" id="city" name="city" required>
                 </div>
+                <div class="form-group">
+                    <label for="city">{{ translation.connect.NOTES }}*</label>
+                    <textarea name="notes" id="notes" cols="30" rows="5"></textarea>
+                </div>
                 <p>{{ translation.connect.USE_CONTACT }}</p>
                 <div class="form-group">
                     <input type="checkbox" name="newsletters" value="Ja"> {{ translation.connect.EMAIL_NEWSLETTERS }} <br />
-                    <input type="checkbox" name="productUpdates" value="Ja"> {{ translation.connect.EMAIL_PRODUCT_UPDATES }}
+                    <input type="checkbox" name="productUpdates" value="Ja"> {{ translation.connect.EMAIL_PRODUCT_UPDATES }} <br />
                     <input type="checkbox" name="individualContact" value="Ja"> {{ translation.connect.EMAIL_INDIVIDUAL_CONTACT }}
                 </div>
                 <p class="antispam">Leave this empty: <input type="text" name="url"></p>

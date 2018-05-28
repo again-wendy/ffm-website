@@ -115,6 +115,7 @@
         "STREET_NUMBER": "Street number",
         "POSTAL_CODE": "Postal code",
         "CITY": "City",
+        "NOTES": "Notes",
         "EMAIL_NEWSLETTERS": "Email address may be used for newsletters",
         "EMAIL_PRODUCT_UPDATES": "Email address may be used for product updates",
         "EMAIL_INDIVIDUAL_CONTACT": "Email address may be used for targeted individual commercial contact",
