@@ -1331,7 +1331,7 @@ section.with-base-nav {
   justify-content: space-between;
   margin-bottom: 50px;
 }
-@media (max-width: 730px) {
+@media (max-width: 1175px) {
   /* line 3, ../sass/_partials/_home.scss */
   #home-intro .buttons {
     -webkit-flex-direction: column;
@@ -1342,34 +1342,35 @@ section.with-base-nav {
   /* line 9, ../sass/_partials/_home.scss */
   #home-intro .buttons a {
     margin-bottom: 5px;
+    white-space: normal;
   }
 }
-/* line 14, ../sass/_partials/_home.scss */
+/* line 15, ../sass/_partials/_home.scss */
 #home-intro .small-screen {
   display: none;
 }
 @media (max-width: 767px) {
-  /* line 14, ../sass/_partials/_home.scss */
+  /* line 15, ../sass/_partials/_home.scss */
   #home-intro .small-screen {
     display: block;
   }
 }
-/* line 20, ../sass/_partials/_home.scss */
+/* line 21, ../sass/_partials/_home.scss */
 #home-intro .normal-screen {
   display: none;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
-  /* line 20, ../sass/_partials/_home.scss */
+  /* line 21, ../sass/_partials/_home.scss */
   #home-intro .normal-screen {
     display: block;
   }
 }
-/* line 26, ../sass/_partials/_home.scss */
+/* line 27, ../sass/_partials/_home.scss */
 #home-intro .big-screen {
   display: none;
 }
 @media (min-width: 1200px) {
-  /* line 26, ../sass/_partials/_home.scss */
+  /* line 27, ../sass/_partials/_home.scss */
   #home-intro .big-screen {
     display: block;
   }

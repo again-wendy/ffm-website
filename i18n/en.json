@@ -14,9 +14,9 @@
         "WELCOME": "Welcome to FlexForceMonkey!",
         "CHOOSE_TEXT": "We want to give you the best possible information. That is why we are asking you to make a choice from the following roles:",
         "HIRER": "Flex client",
-        "SUPPLIER": "Temp staffing or consulting firm",
+        "SUPPLIER": "Temp staffing / Consulting firm",
         "INTERIM": "I supply interim workers",
-        "FREELANCER": "Boutique firm or self employed professional",
+        "FREELANCER": "Boutique firm / SEP",
         "CURIOUS": "I'm just curious",
         "GO_TO_WEBSITE": "Go to website"
     },
