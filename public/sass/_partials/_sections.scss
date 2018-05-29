@@ -32,6 +32,10 @@ section.full-screen {
     .container {
         margin: 0;
     }
+    @media (max-height: 650px) {
+        height: auto;
+        padding: 20px 0;
+    }
 }
 
 section.with-base-nav {

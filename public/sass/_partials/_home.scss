@@ -11,6 +11,11 @@
                 white-space: normal;
             }
         }
+        @media (max-width: 500px) {
+            a {
+                font-size: 1rem;
+            }
+        }
     }
     .small-screen {
         display: none;

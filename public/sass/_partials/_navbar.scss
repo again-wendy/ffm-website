@@ -275,6 +275,14 @@
             width: 64%;
         }
     }
+    @media (max-width: 400px) {
+        .left-menu {
+            padding-top: 3vh;
+            .logo h2 {
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
 
 #navbar.supplier {
@@ -338,6 +346,14 @@
             width: 64%;
         }
     }
+    @media (max-width: 400px) {
+        .left-menu {
+            padding-top: 3vh;
+            .logo h2 {
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
 
 #navbar.freelancer {
@@ -393,6 +409,14 @@
         }
         .right-menu {
             width: 64%;
+        }
+    }
+    @media (max-width: 400px) {
+        .left-menu {
+            padding-top: 3vh;
+            .logo h2 {
+                font-size: 1.4rem;
+            }
         }
     }
 }

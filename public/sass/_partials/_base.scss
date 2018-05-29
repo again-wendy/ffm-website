@@ -119,7 +119,7 @@ input, textarea {
     font-family: $font-bold;
     line-height: 1.42857143;
     text-align: center;
-    @include prefix(white-space, nowrap, moz o);
+    @include prefix(white-space, normal, moz o);
     vertical-align: middle;
     touch-action: manipulation;
     cursor: pointer;
