@@ -22,13 +22,14 @@
     },
     "menu-items": {
         "HOW_WORK": "How it works",
+        "WHAT_WE_DO": "What we do",
         "BLOG": "Blog",
         "CONTACT": "Contact",
         "NOT_A_HIRER": "Not a flex client?",
-        "NOT_A_SUPPLIER": "Not a temp staffing or consulting firm?",
-        "NOT_A_FREELANCER": "Not a self employed professional or boutique firm?",
+        "NOT_A_SUPPLIER": "Not a supplier?",
+        "NOT_A_FREELANCER": "Not boutique firm / SEP?",
         "ROLES": "Roles",
-        "KIT": "Connectivity kit",
+        "KIT": "Request connectivity kit",
         "OPTIONS": "Options",
         "USE_FFM": "Use it yourself"
     },

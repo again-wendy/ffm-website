@@ -20,13 +20,14 @@
     },
     "menu-items": {
         "HOW_WORK": "Hoe het werkt",
+        "WHAT_WE_DO": "Wat we doen",
         "BLOG": "Blog",
         "CONTACT": "Contact",
-        "NOT_A_HIRER": "Geen inkoper?",
+        "NOT_A_HIRER": "Geen opdrachtgever?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
         "NOT_A_FREELANCER": "Geen zelfstandige?",
         "ROLES": "Rollen",
-        "KIT": "Aansluitkit",
+        "KIT": "Aanvragen aansluitkit",
         "OPTIONS": "Opties",
         "USE_FFM": "Zelf gebruiken"
     },
