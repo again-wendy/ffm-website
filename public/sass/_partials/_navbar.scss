@@ -142,6 +142,14 @@
                         padding: 0;
                     }
                 }
+                .btn-light-grey {
+                    padding: 1vh 15px;
+                    color: $dark-grey;
+                    &:hover, &:active, &:focus {
+                        background: $light-grey-hover;
+                        color: $dark-grey;
+                    }
+                }
             }
             .menu-item-4 {
                 .svg-inline--fa {
@@ -235,7 +243,7 @@
             width: 75%;
         }
     }
-    @media(max-width: 1250px) {
+    @media(max-width: 1370px) {
         .left-menu {
             padding-top: 2.8vh;
             .logo h2 {
@@ -248,7 +256,7 @@
             }
         }
     }
-    @media(max-width: 1090px) {
+    @media(max-width: 1200px) {
         .left-menu {
             padding-left: 20px;
         }
@@ -256,9 +264,12 @@
             .menu-items .menu-item a {
                 padding: 3vh 10px;
             }
+            .menu-items .menu-item a.btn-light-grey {
+                padding: 1vh 10px;
+            }
         }
     }
-    @media(max-width: 1010px) {
+    @media(max-width: 11110px) {
         .left-menu {
             padding-top: 3.2vh;
             width: 20%;
@@ -270,18 +281,33 @@
             width: 80%;
         }
     }
-    @media(max-width: 805px) {
+    @media(max-width: 1040px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.9rem;
             }
         }
     }
-    @media(max-width: 945px) {
+    @media(max-width: 960px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.8rem;
                 padding: 3vh 7px;
+            }
+            .menu-items .menu-item a.btn-light-grey {
+                padding: 1vh 7px;
+            }
+        }
+    }
+    @media(max-width: 850px) {
+        .left-menu {
+            .logo h2 {
+                font-size: 1rem;
+            }
+        }
+        .right-menu {
+            .menu-items .menu-item a {
+                font-size: 0.7rem;
             }
         }
     }
@@ -311,7 +337,7 @@
 }
 
 #navbar.supplier {
-    @media(max-width:1395px) {
+    @media(max-width:1540px) {
         .left-menu {
             width: 25%;
         }
@@ -319,7 +345,7 @@
             width: 75%;
         }
     }
-    @media(max-width:1190px) {
+    @media(max-width:1315px) {
         .left-menu {
             padding-left: 20px;
             padding-top: 2.8vh;
@@ -333,14 +359,17 @@
             }
         }
     }
-    @media(max-width:1042px) {
+    @media(max-width:1155px) {
         .right-menu {
             .menu-items .menu-item a {
                 padding: 3vh 10px;
             }
+            .menu-items .menu-item a.btn-light-grey {
+                padding: 1vh 10px;
+            }
         }
     }
-    @media(max-width: 960px) {
+    @media(max-width: 1060px) {
         .left-menu {
             padding-top: 3.2vh;
             width: 20%;
@@ -352,18 +381,25 @@
             width: 80%;
         }
     }
-    @media(max-width: 900px) {
+    @media(max-width: 999px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.9rem;
             }
         }
     }
-    @media(max-width: 850px) {
+    @media(max-width: 920px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.8rem;
                 padding: 3vh 7px;
+            }
+        }
+    }
+    @media (max-width: 825px) {
+        .right-menu {
+            .menu-items .menu-item a {
+                font-size: 0.7rem;
             }
         }
     }
@@ -393,7 +429,7 @@
 }
 
 #navbar.freelancer {
-    @media (max-width: 1385px) {
+    @media (max-width: 1530px) {
         .left-menu {
             width: 25%;
         }
@@ -401,7 +437,7 @@
             width: 75%;
         }
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 1310px) {
         .left-menu {
             padding-top: 2.8vh;
             padding-left: 20px;
@@ -415,7 +451,7 @@
             }
         }
     }
-    @media (max-width: 1040px) {
+    @media (max-width: 1150px) {
         .left-menu {
             padding-top: 3.2vh;
             .logo h2 {
@@ -428,11 +464,21 @@
             }
         }
     }
-    @media(max-width: 965px) {
+    @media(max-width: 1070px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.8rem;
                 padding: 3vh 7px;
+            }
+            .menu-items .menu-item a.btn-light-grey {
+                padding: 1vh 7px;
+            }
+        }
+    }
+    @media(max-width: 845px) {
+        .right-menu {
+            .menu-items .menu-item a {
+                font-size: 0.7rem;
             }
         }
     }
