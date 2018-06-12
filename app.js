@@ -65,7 +65,11 @@ app.use(session({
 app.use(flash());
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {
+        title: "FlexForceMonkey | Systemintegration as a Service",
+        desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+        img: "./public/images/screenshot.png"
+    });
 });
 
 function getContactForms() {
@@ -125,23 +129,50 @@ function smallerThanTen(num) {
 // });
 
 app.get('/hirer', (req, res) => { 
-    res.cookie('role', 'hirer').render('hirer');
+    res.cookie('role', 'hirer').render('hirer', {
+        title: "FlexForceMonkey | Flex client",
+        desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+        img: "./public/images/hirer.jpg"
+    });
 });
 app.get('/supplier', (req, res) => { 
-    res.cookie('role', 'supplier').render('supplier');
+    res.cookie('role', 'supplier').render('supplier', {
+        title: "FlexForceMonkey | Temp staffing/Consulting firm",
+        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+        img: "./public/images/supplier.jpg"
+    });
 });
 app.get('/freelancer', (req, res) => { 
-    res.cookie('role', 'freelancer').render('freelancer');
+    res.cookie('role', 'freelancer').render('freelancer', {
+        title: "FlexForceMonkey | Boutique firm/SEP",
+        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+        img: "./public/images/freelancer.jpg"
+    });
 });
 
 app.get('/termsandconditions', (req, res) => {
-    res.render('termsandconditions', {partial: 'terms'});
+    res.render('termsandconditions', {
+        partial: 'terms',
+        title: "FlexForceMonkey | Terms and Conditions",
+        desc: "Terms and Conditions (Dutch) of FlexForceMonkey, May 2018",
+        img: "./public/images/screenshot.png"
+    });
 });
 app.get('/gdpr', (req, res) => {
-    res.render('termsandconditions', {partial: 'gdpr'});
+    res.render('termsandconditions', {
+        partial: 'gdpr',
+        title: "FlexForceMonkey | GDPR Provisions",
+        desc: "GDPR Provisions (Dutch) of FlexForceMonkey, May 2018",
+        img: "./public/images/screenshot.png"
+    });
 });
 app.get('/generalconsiderations', (req, res) => {
-    res.render('termsandconditions', {partial: 'gencons'})
+    res.render('termsandconditions', {
+        partial: 'gencons',
+        title: "FlexForceMonkey | General Remarks",
+        desc: "General Remarks (Dutch) of FlexForceMonkey, May 2018",
+        img: "./public/images/screenshot.png"
+    })
 });
 
 app.get('/sluitjeaan', (req, res) => {
