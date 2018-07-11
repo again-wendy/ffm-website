@@ -1431,9 +1431,10 @@ section.with-base-nav {
 }
 /* line 192, ../sass/_partials/_hero.scss */
 #hero.freelancer .hero-title {
-  width: 65%;
+  width: 55%;
   right: 5%;
   left: auto;
+  top: 15%;
 }
 @media (max-width: 800px) {
   /* line 192, ../sass/_partials/_hero.scss */
@@ -1458,53 +1459,48 @@ section.with-base-nav {
   -o-justify-content: space-between;
   justify-content: space-between;
   margin-bottom: 50px;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
 }
-@media (max-width: 1175px) {
-  /* line 3, ../sass/_partials/_home.scss */
-  #home-intro .buttons {
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
-  }
-  /* line 9, ../sass/_partials/_home.scss */
-  #home-intro .buttons a {
-    margin-bottom: 5px;
-    white-space: normal;
-  }
+/* line 8, ../sass/_partials/_home.scss */
+#home-intro .buttons a {
+  margin-bottom: 5px;
+  white-space: normal;
 }
 @media (max-width: 500px) {
-  /* line 15, ../sass/_partials/_home.scss */
+  /* line 13, ../sass/_partials/_home.scss */
   #home-intro .buttons a {
     font-size: 1rem;
   }
 }
-/* line 20, ../sass/_partials/_home.scss */
+/* line 18, ../sass/_partials/_home.scss */
 #home-intro .small-screen {
   display: none;
 }
 @media (max-width: 767px) {
-  /* line 20, ../sass/_partials/_home.scss */
+  /* line 18, ../sass/_partials/_home.scss */
   #home-intro .small-screen {
     display: block;
   }
 }
-/* line 26, ../sass/_partials/_home.scss */
+/* line 24, ../sass/_partials/_home.scss */
 #home-intro .normal-screen {
   display: none;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
-  /* line 26, ../sass/_partials/_home.scss */
+  /* line 24, ../sass/_partials/_home.scss */
   #home-intro .normal-screen {
     display: block;
   }
 }
-/* line 32, ../sass/_partials/_home.scss */
+/* line 30, ../sass/_partials/_home.scss */
 #home-intro .big-screen {
   display: none;
 }
 @media (min-width: 1200px) {
-  /* line 32, ../sass/_partials/_home.scss */
+  /* line 30, ../sass/_partials/_home.scss */
   #home-intro .big-screen {
     display: block;
   }

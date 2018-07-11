@@ -4,12 +4,10 @@
         @include displayFlex;
         @include prefix(justify-content, space-between, webkit moz o);
         margin-bottom: 50px;
-        @media(max-width: 1175px) {
-            @include prefix(flex-direction, column, webkit moz o);
-            a {
-                margin-bottom: 5px;
-                white-space: normal;
-            }
+        @include prefix(flex-direction, column, webkit moz o);
+        a {
+            margin-bottom: 5px;
+            white-space: normal;
         }
         @media (max-width: 500px) {
             a {

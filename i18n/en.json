@@ -13,9 +13,9 @@
     "choice": {
         "WELCOME": "Welcome to FlexForceMonkey!",
         "CHOOSE_TEXT": "We want to give you the best possible information. That is why we are asking you to make a choice from the following roles:",
-        "HIRER": "Flex client",
-        "SUPPLIER": "Temp staffing / Consulting firm",
-        "INTERIM": "I supply interim workers",
+        "HIRER": "View our integration service for Flex clients",
+        "SUPPLIER": "View our integration service for Temp staffing/Consulting firm",
+        "INTERIM": "View our online software for Time Registration and invoicing",
         "FREELANCER": "Boutique firm / SEP",
         "CURIOUS": "I'm just curious",
         "GO_TO_WEBSITE": "Go to website"
@@ -61,17 +61,23 @@
         "PS": "PS: have you already heard that working on our online portal is just free for now ?!"
     },
     "freelancer": {
-        "HERO_TEXT": "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration!",
-        "INTRO_TITLE": "Being busy with your dream is a substantial job",
+        "HERO_TEXT": "Shouldn’t it all be about the quality of your hours? Administrating them should just be automated.",
+        "INTRO_TITLE": "Self-employed or global player, your dream should be content-based work",
         "INTRO_SUBTITLE": "So why would you waste your energy on managing timesheets and chasing invoices?",
         "INTRO_TEXT": "FlexForceMonkey does not just offer software for time registration, we offer a platform that was inspired from cooperation between customer and supplier. So here you do not just make a timesheet, with this software you can control and communicate this time with your customer directly. And that is available in the standard solution.",
         "REGISTER_ACCOUNT": "REGISTER NOW FOR AN ONLINE ACCOUNT",
-        "TRY_TITLE": "Want to use FlexForceMonkey",
-        "TRY_SUBTITLE": "Are you curious enough to get started? You can easily get online with FlexForceMonkey yourself!",
-        "TRY_TEXT": "We believe in the future of flex work. We see it as the fabric that holds our economic future together. It is our dream that the entire flex industry will be online and connected. This way we are sure that everything can be more efficient, but on top of that we think that this will benefit the transparency and therefore honesty for all parties involved.",
+        "TRY_TITLE": "A free account and only pay-per-use based on above-threshold usage?",
+        "TRY_SUBTITLE": "We consider all time&material business as equals. So whether you are freelancing or running a 1.000 resources in an online business, you are a FlexForceMonkey.",
+        "TRY_TEXT": "We believe in the future of flex work. We see it as the fabric that holds our economic future together and we have the dream of bringing a little more efficiency, transparency and fairness into that game. It is our strategy that the entire flex industry will be online and connected, so we offer a low threshold and scalable cost.",
+        "TRY_SUBTITLE_2": "In the end, everyone should benefit, right? ",
         "TRY_NOW": "JOIN NOW AND REGISTER YOUR ACCOUNT",
-        "WORK_TITLE": "Collaboration is the standard with us",
-        "WORK_TEXT": "So quickly create a company account, enter your flex resources and invite your customer(s) to connect and review your timesheets online. For the time being, FlexForceMonkey is also completely free of charge. So getting on board now will definitely bring you additional benefits.",
+        "WORK_TITLE": "Online software for time registration and invoicing",
+        "WORK_TEXT": "Register now for a company account and trust on the advantages of FlexForceMonkey:",
+        "WORK_TEXT_ITEM1": "Just invite your clients to your account, we will do the rest",
+        "WORK_TEXT_ITEM2": "Simplicity for 1 to 100.000 human resources",
+        "WORK_TEXT_ITEM3": "Subscription fee of € 1,50 per weekly / € 5,- per monthly timesheet per client",
+        "WORK_TEXT_ITEM4": "Always get the first 25 weekly / 5 monthy timesheets per month for free",
+        "WORK_TEXT_ITEM5": "Internal timesheets are always included and for free ",
         "WORK_REGISTER": "REGISTER YOUR FREE ACCOUNT HERE"
     },
     "home": {
