@@ -16,7 +16,7 @@
         "HIRER": "View our integration service for Flex clients",
         "SUPPLIER": "View our integration service for Temp staffing/Consulting firm",
         "INTERIM": "View our online software for Time Registration and invoicing",
-        "FREELANCER": "Boutique firm / SEP",
+        "FREELANCER": "View our online software for Time Registration and invoicing",
         "CURIOUS": "I'm just curious",
         "GO_TO_WEBSITE": "Go to website"
     },
@@ -27,7 +27,7 @@
         "CONTACT": "Contact",
         "NOT_A_HIRER": "Not a flex client?",
         "NOT_A_SUPPLIER": "Not a supplier?",
-        "NOT_A_FREELANCER": "Not boutique firm / SEP?",
+        "NOT_A_FREELANCER": "Flex client or supplier?",
         "ROLES": "Roles",
         "KIT": "Request connectivity kit",
         "OPTIONS": "Options",
@@ -86,6 +86,9 @@
         "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier business partners to collaborate in online processes. It ensures a seamless connection between administrations. To show you how we can help, we would like to know your role in the flex supply chain. Just click one of the following options to go the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
     },
+    "ebookpage": {
+
+    },
     "cookie": {
         "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website. We do this by keeping track of the parts of the site that you visit, so we get a better understanding of how to be of assistance. This cookies are only accessed when you re-enter our website. We do not track or otherwise leverage this data when you are not on our website.",
         "DISMISS": "Got it!",
@@ -133,5 +136,10 @@
         "SUBSCRIBE_OUR": "FlexForceMonkey newsletter",
         "OPENS_NEW_TAB": "Stay up to date? Register now for our newsletter!",
         "OPEN": "Go to form"
+    },
+    "footer": {
+        "HIRER": "Flex client",
+        "SUPPLIER": "Temp staffing/consulting firm",
+        "FREELANCER": "Boutique firm / SEP"
     }
 }

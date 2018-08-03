@@ -37,6 +37,15 @@ $(document).ready(function() {
     $(window).resize(function() {
         heightElements();
     });
+
+    // Don't show button to page you already on in footer
+    if(window.location.pathname == "/hirer") {
+        $("#footer .roles .hirer").remove();
+    } else if(window.location.pathname == "/supplier") {
+        $("#footer .roles .supplier").remove();
+    } else if(window.location.pathname == "/freelancer") {
+        $("#footer .roles .freelancer").remove();
+    }
 });
 
 function tabActive() {
@@ -113,7 +122,6 @@ function setWidthTableColums(tableId) {
 
 // Open newsletter popup when user hasn't closed it in the last 7 days
 function newsletterBlock() {
-    console.log(Cookies.get("newsletter"));
     if( Cookies.get("newsletter") != "closed" ) {
         window.setTimeout(function() {
             $("#newsletter-popup").fadeIn();

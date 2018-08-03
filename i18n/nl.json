@@ -25,7 +25,7 @@
         "CONTACT": "Contact",
         "NOT_A_HIRER": "Geen opdrachtgever?",
         "NOT_A_SUPPLIER": "Geen uitzender?",
-        "NOT_A_FREELANCER": "Geen zelfstandige?",
+        "NOT_A_FREELANCER": "Opdrachtgever of uitzender?",
         "ROLES": "Rollen",
         "KIT": "Aanvragen aansluitkit",
         "OPTIONS": "Opties",
@@ -84,6 +84,9 @@
         "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat je rol in de keten is. Klik op één van de volgende keuzes om naar de betreffende website te gaan.",
         "CHOOSE_ROLE": "Kies je rol:"
     },
+    "ebookpage": {
+
+    },
     "cookie": {
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
         "DISMISS": "Oké!",
@@ -131,5 +134,10 @@
         "SUBSCRIBE_OUR": "FlexForceMonkey nieuwsbrief",
         "OPENS_NEW_TAB": "Op de hoogte blijven? Schrijf je nu in voor onze nieuwsbrief!",
         "OPEN": "Ga naar het formulier"
+    },
+    "footer": {
+        "HIRER": "Opdrachtgever",
+        "SUPPLIER": "Uitzendbureau/consultancy firms",
+        "FREELANCER": "Boutique firm / SEP"
     }
 }
