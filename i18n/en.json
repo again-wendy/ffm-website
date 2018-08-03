@@ -86,8 +86,12 @@
         "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier business partners to collaborate in online processes. It ensures a seamless connection between administrations. To show you how we can help, we would like to know your role in the flex supply chain. Just click one of the following options to go the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
     },
-    "ebookpage": {
-
+    "ebook": {
+        "TITLE": "Download our eBook!",
+        "INTROTEXT": "Want to know more about ...? Read our eBook! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+        "BUTTONTEXT": "Download it now!",
+        "EMAIL": "Enter your email:",
+        "SEND_SUCCESS": "Success! Check your inbox for the eBook."
     },
     "cookie": {
         "BANNER_TEXT": "This website uses cookies to ensure you get the best experience on our website. We do this by keeping track of the parts of the site that you visit, so we get a better understanding of how to be of assistance. This cookies are only accessed when you re-enter our website. We do not track or otherwise leverage this data when you are not on our website.",
@@ -141,5 +145,10 @@
         "HIRER": "Flex client",
         "SUPPLIER": "Temp staffing/consulting firm",
         "FREELANCER": "Boutique firm / SEP"
+    },
+    "error": {
+        "TITLE": "Sorry, we slipped!",
+        "SUBTITLE": "We couldn't find the page you where looking for.",
+        "GOTOHOME": "Go to homepage"
     }
 }

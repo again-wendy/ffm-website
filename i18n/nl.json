@@ -84,8 +84,12 @@
         "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat je rol in de keten is. Klik op één van de volgende keuzes om naar de betreffende website te gaan.",
         "CHOOSE_ROLE": "Kies je rol:"
     },
-    "ebookpage": {
-
+    "ebook": {
+        "TITLE": "Download ons eBook!",
+        "INTROTEXT": "Meer weten over ...? In ons eBook lees je er alles over! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+        "BUTTONTEXT": "Download hem nu!",
+        "EMAIL": "Voer je email in:",
+        "SEND_SUCCESS": "Succes! Check je inbox voor het eBook."
     },
     "cookie": {
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
@@ -139,5 +143,10 @@
         "HIRER": "Opdrachtgever",
         "SUPPLIER": "Uitzendbureau/consultancy firms",
         "FREELANCER": "Boutique firm / SEP"
+    },
+    "error": {
+        "TITLE": "Sorry, we slipped!",
+        "SUBTITLE": "We konden de pagina niet vinden waar je naar zocht.",
+        "GOTOHOME": "Ga naar homepagina"
     }
 }

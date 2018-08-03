@@ -2477,3 +2477,31 @@ form .form-group input, form .form-group textarea {
 #termsandconditions #contact .container {
   border-top: none;
 }
+
+/* line 1, ../sass/_partials/_ebook.scss */
+#ebook {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/jungle.jpg") no-repeat center;
+}
+/* line 10, ../sass/_partials/_ebook.scss */
+#ebook .container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 20% 25px 5%;
+  position: relative;
+}
+/* line 14, ../sass/_partials/_ebook.scss */
+#ebook .container .ebook {
+  position: absolute;
+  right: -5%;
+  top: -40%;
+  width: 25%;
+}
+
+/* line 1, ../sass/_partials/404.scss */
+#notfound {
+  background: #ECECEC;
+}
+/* line 3, ../sass/_partials/404.scss */
+#notfound img {
+  width: 50%;
+  margin-top: 50px;
+}

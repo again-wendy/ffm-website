@@ -61,6 +61,20 @@ app.use(session({
     }
 }));
 
+// Settings for mail
+const transporter = nodemailer.createTransport({
+    host: "smtp.sendgrid.net",
+    secure: false,
+    port: 25,
+    auth: {
+        user: process.env.SENDGRID_USER,
+        pass: process.env.SENDGRID_PASS
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
+
 // Flash Middleware
 app.use(flash());
 
@@ -82,20 +96,6 @@ function getContactForms() {
         });
         return formsArr;
     });
-}
-
-function convertTimestamp(timestamp) {
-    var newDate = new Date(timestamp);
-    var date = smallerThanTen(newDate.getDate());
-    var month = smallerThanTen(newDate.getMonth() + 1);
-    var year = smallerThanTen(newDate.getFullYear());
-    var hours = smallerThanTen(newDate.getHours() + 1);
-    var sec = smallerThanTen(newDate.getSeconds());
-    return date + "-" + month + "-" + year + " " + hours + ":" + sec;
-}
-
-function smallerThanTen(num) {
-    return num < 10 ? "0" + num : num;
 }
 
 // app.get('/database', (req, res) => {
@@ -147,6 +147,14 @@ app.get('/freelancer', (req, res) => {
         title: "FlexForceMonkey | Boutique firm/SEP",
         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
         img: "./public/images/freelancer.jpg"
+    });
+});
+
+app.get('/ebook', (req, res) => {
+    res.render('ebookpage', {
+        title: "eBook | Titel eBook",
+        desc: "Want to know everything about ...? Download our eBook!",
+        img: "./public/images/ebook.jpg"
     });
 });
 
@@ -244,19 +252,6 @@ app.post('/sendconnectkit', (req, res) => {
             <li>Email adres mag gebruikt worden voor gericht individueel commercieel contact: ${req.body.individualContact}</li>
         </ul>
     `;
-
-    let transporter = nodemailer.createTransport({
-        host: "smtp.sendgrid.net",
-        secure: false,
-        port: 25,
-        auth: {
-            user: process.env.SENDGRID_USER,
-            pass: process.env.SENDGRID_PASS
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    });
     
     let HelperOptions = {
         from: '"Aansluitkit request" <noreply@flexforcemonkey.com>',
@@ -294,19 +289,6 @@ app.post('/send', (req, res) => {
         <h4 style="margin-bottom:0;">Message:</h4> 
         <p>${req.body.msg}</p>
     `;
-
-    let transporter = nodemailer.createTransport({
-        host: "smtp.sendgrid.net",
-        secure: false,
-        port: 25,
-        auth: {
-            user: process.env.SENDGRID_USER,
-            pass: process.env.SENDGRID_PASS
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    });
     
     let HelperOptions = {
         from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
@@ -324,6 +306,54 @@ app.post('/send', (req, res) => {
             } else {
                 req.flash('success', 'Thanks for the message! We\'ll be in touch');
                 res.redirect(req.get('referer') + "#contact");
+            }
+        });
+    }
+});
+
+// Request for ebook
+app.post('/get-ebook', (req, res) => {
+    let output;
+    let pathBook;
+    if(req.cookies.ulang == "nl") {
+        output = `
+            <h1>Hier is je eBook!</h1>
+            <p>${req.body.email}</p>
+            <p>Je hebt op <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> een eBook aangevraagd. Hij zit als bijlage bij deze mail!</p>
+            <p>Heb je nog vragen? Neem gerust contact met ons op!</p>
+        `;
+        pathBook = './public/files/ebook-nl.pdf';
+    } else {
+        output = `
+            <h1>Here is your eBook!</h1>
+            <p>${req.body.email}</p>
+            <p>You've requested on <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> an eBook. You can find it as an attachment!</p>
+            <p>Any questions? Don't hesitate to contact us!</p>
+        `;
+        pathBook = './public/files/ebook-en.pdf'
+    }
+
+    let HelperOptions = {
+        from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+        to: 'wendy.dimmendaal@again.nl',
+        subject: 'FlexForceMonkey eBook',
+        text: 'Test 123',
+        html: output,
+        attachments: [
+            {
+                path: pathBook
+            }
+        ]
+    };
+
+    // If hidden field is filled, its a spam mail and we don't send it
+    if(req.body.url === "" && req.body.url.length == 0) {
+        transporter.sendMail(HelperOptions, (error, info) => {
+            if(error) {
+                req.flash('error', 'Something went wrong: ' + error);
+            } else {
+                req.flash('success', 'You can find your eBook in your mailbox!');
+                res.redirect(req.get('referer'));
             }
         });
     }
@@ -347,6 +377,15 @@ app.post('/signup', (req, res) => {
             }
         });
 });
+
+// Fallback for wrong urls
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: "Page not found",
+        desc: "404: page not found",
+        img: "./public/images/we-slipped.svg"
+    });
+})
 
 var port = process.env.port || 3000;
 app.listen(port, () => {

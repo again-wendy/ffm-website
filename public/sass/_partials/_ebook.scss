@@ -1,0 +1,21 @@
+#ebook {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/jungle.jpg')
+        no-repeat
+        center;
+    .container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 25px 20% 25px 5%;
+        position: relative;
+        .ebook {
+            position: absolute;
+            right: -5%;
+            top: -40%;
+            width: 25%;
+        }
+    }
+}
