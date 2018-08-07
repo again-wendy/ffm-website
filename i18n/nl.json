@@ -89,7 +89,14 @@
         "INTROTEXT": "Meer weten over ...? In ons eBook lees je er alles over! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
         "BUTTONTEXT": "Download hem nu!",
         "EMAIL": "Voer je email in:",
-        "SEND_SUCCESS": "Succes! Check je inbox voor het eBook."
+        "SEND_SUCCESS": "Succes! Check je inbox voor het eBook.",
+        "WHYTITLE": "Waarom dit eBook?",
+        "REASON1TITLE": "Reden een",
+        "REASON1EXP": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "REASON2TITLE": "Reden twee",
+        "REASON2EXP": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "REASON3TITLE": "Reden drie",
+        "REASON3EXP": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
     },
     "cookie": {
         "BANNER_TEXT": "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
