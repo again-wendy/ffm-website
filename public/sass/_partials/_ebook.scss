@@ -1,21 +1,105 @@
-#ebook {
+#ebook-top {
+    height: 65vh;
+    border-bottom: none;
+    padding-top: calc(9vh + 50px);
+    position: relative;
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
         ),
         url('../images/jungle.jpg')
         no-repeat
         center;
+    @media(max-width: 768px) {
+        height: auto;
+    }
     .container {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 25px 20% 25px 5%;
-        position: relative;
+        padding: 15px;
+        .section-title {
+            color: white;
+        }
         .ebook {
+            width: 18%;
             position: absolute;
-            right: -5%;
-            top: -40%;
-            width: 25%;
+            left: 10%;
+            bottom: -35px;
+            @media(max-width: 1200px) {
+                width: 22%;
+            }
+            @media(max-width: 940px) {
+                left: 5%;
+                width: 25%;
+            }
+            @media (max-width: 768px) {
+                bottom: 10%;
+                width: 165px;
+            }
+            @media(max-width: 520px) {
+                display: none;
+            }
+        }
+        .section-container {
+            width: 75%;
+            padding-left: 40px;
+            float: right;
+            @media(max-width: 768px) {
+                float: none;
+                width: 70%;
+                margin-left: 30%;
+            }
+            @media(max-width: 520px) {
+                width: 100%;
+                padding-left: 0;
+                margin-left: 0;
+            }
+            .info-text {
+                color: white;
+            }
+            .ebook-form {
+                label {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+#ebook-bottom {
+    height: 35vh;
+    border-bottom: none;
+    background: $dark-grey;
+    color: white;
+    padding: 25px 0;
+    @media(max-width: 768px) {
+        height: auto;
+    }
+    .section-title {
+        margin-bottom: 10px;
+        font-size: 2rem;
+        @media(max-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+    .row {
+        .column {
+            text-align: center;
+            .svg-inline--fa {
+                display: block;
+                margin: 0 auto;
+                color: white;
+            }
+            h4 {
+                margin: 20px 0;
+                font-size: 1.6rem;
+                @media(max-width: 768px) {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        @media(max-width: 540px) {
+            @include prefix(flex-direction, column, webkit moz ms);
+            @include prefix(justify-content, flex-start, webkit moz ms);
         }
     }
 }

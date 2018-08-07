@@ -1,22 +1,46 @@
 {{> base-nav }}
 
-<section id="ebook" class="full-screen">
+<section id="ebook-top">
     <div class="container">
         <h2 class="section-title">{{ translation.ebook.TITLE }}</h2>
         <img src="./public/images/ebook.png" alt="Download our eBook" class="ebook">
-        <div class="section-container text-center">
-            <p>{{ translation.ebook.INTROTEXT }}</p>
-            {{#if messages.success}}
-                <p class="flash flash-success">{{ translation.ebook.SEND_SUCCESS }}</p>
-            {{/if}}
-            <form id="requestEbook" method="POST" action="get-ebook">
-                <div class="form-group">
-                    <label for="email">{{ translation.ebook.EMAIL }}</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com">
-                </div>
-                <p class="antispam">Leave this empty: <input type="text" name="url"></p>
-                <input type="submit" class="btn-complementary-xl" value="{{ translation.ebook.BUTTONTEXT }}">
-            </form>
+        <div class="section-container">
+            <p class="info-text">{{ translation.ebook.INTROTEXT }}</p>
+            <div class="ebook-form">
+                {{#if messages.success}}
+                    <p class="flash flash-success">{{ translation.ebook.SEND_SUCCESS }}</p>
+                {{/if}}
+                <form id="requestEbook" method="POST" action="get-ebook">
+                    <div class="form-group">
+                        <label for="email">{{ translation.ebook.EMAIL }}</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
+                    <p class="antispam">Leave this empty: <input type="text" name="url"></p>
+                    <input type="submit" class="btn-complementary-xl" value="{{ translation.ebook.BUTTONTEXT }}">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ebook-bottom">
+    <div class="container">
+        <h2 class="section-title">Waarom dit eBook?</h2>
+        <div class="row">
+            <div class="column reason-1">
+                <span class="fa fa-file fa-3x"></span>
+                <h4>Reason one</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </p>
+            </div>
+            <div class="column reason-2">
+                <span class="fa fa-book fa-3x"></span>
+                <h4>Reason two</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </p>
+            </div>
+            <div class="column reason-3">
+                <span class="fa fa-users fa-3x"></span>
+                <h4>Reason three</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </p>
+            </div>
         </div>
     </div>
 </section>

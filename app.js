@@ -150,13 +150,13 @@ app.get('/freelancer', (req, res) => {
     });
 });
 
-app.get('/ebook', (req, res) => {
-    res.render('ebookpage', {
-        title: "eBook | Titel eBook",
-        desc: "Want to know everything about ...? Download our eBook!",
-        img: "./public/images/ebook.jpg"
-    });
-});
+// app.get('/ebook', (req, res) => {
+//     res.render('ebookpage', {
+//         title: "eBook | Titel eBook",
+//         desc: "Want to know everything about ...? Download our eBook!",
+//         img: "./public/images/ebook.jpg"
+//     });
+// });
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {
@@ -312,52 +312,52 @@ app.post('/send', (req, res) => {
 });
 
 // Request for ebook
-app.post('/get-ebook', (req, res) => {
-    let output;
-    let pathBook;
-    if(req.cookies.ulang == "nl") {
-        output = `
-            <h1>Hier is je eBook!</h1>
-            <p>${req.body.email}</p>
-            <p>Je hebt op <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> een eBook aangevraagd. Hij zit als bijlage bij deze mail!</p>
-            <p>Heb je nog vragen? Neem gerust contact met ons op!</p>
-        `;
-        pathBook = './public/files/ebook-nl.pdf';
-    } else {
-        output = `
-            <h1>Here is your eBook!</h1>
-            <p>${req.body.email}</p>
-            <p>You've requested on <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> an eBook. You can find it as an attachment!</p>
-            <p>Any questions? Don't hesitate to contact us!</p>
-        `;
-        pathBook = './public/files/ebook-en.pdf'
-    }
+// app.post('/get-ebook', (req, res) => {
+//     let output;
+//     let pathBook;
+//     if(req.cookies.ulang == "nl") {
+//         output = `
+//             <h1>Hier is je eBook!</h1>
+//             <p>${req.body.email}</p>
+//             <p>Je hebt op <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> een eBook aangevraagd. Hij zit als bijlage bij deze mail!</p>
+//             <p>Heb je nog vragen? Neem gerust contact met ons op!</p>
+//         `;
+//         pathBook = './public/files/ebook-nl.pdf';
+//     } else {
+//         output = `
+//             <h1>Here is your eBook!</h1>
+//             <p>${req.body.email}</p>
+//             <p>You've requested on <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> an eBook. You can find it as an attachment!</p>
+//             <p>Any questions? Don't hesitate to contact us!</p>
+//         `;
+//         pathBook = './public/files/ebook-en.pdf'
+//     }
 
-    let HelperOptions = {
-        from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-        to: 'wendy.dimmendaal@again.nl',
-        subject: 'FlexForceMonkey eBook',
-        text: 'Test 123',
-        html: output,
-        attachments: [
-            {
-                path: pathBook
-            }
-        ]
-    };
+//     let HelperOptions = {
+//         from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+//         to: 'wendy.dimmendaal@again.nl',
+//         subject: 'FlexForceMonkey eBook',
+//         text: 'Test 123',
+//         html: output,
+//         attachments: [
+//             {
+//                 path: pathBook
+//             }
+//         ]
+//     };
 
-    // If hidden field is filled, its a spam mail and we don't send it
-    if(req.body.url === "" && req.body.url.length == 0) {
-        transporter.sendMail(HelperOptions, (error, info) => {
-            if(error) {
-                req.flash('error', 'Something went wrong: ' + error);
-            } else {
-                req.flash('success', 'You can find your eBook in your mailbox!');
-                res.redirect(req.get('referer'));
-            }
-        });
-    }
-});
+//     // If hidden field is filled, its a spam mail and we don't send it
+//     if(req.body.url === "" && req.body.url.length == 0) {
+//         transporter.sendMail(HelperOptions, (error, info) => {
+//             if(error) {
+//                 req.flash('error', 'Something went wrong: ' + error);
+//             } else {
+//                 req.flash('success', 'You can find your eBook in your mailbox!');
+//                 res.redirect(req.get('referer'));
+//             }
+//         });
+//     }
+// });
 
 //Add subscriber to Mailchimp list
 app.post('/signup', (req, res) => {

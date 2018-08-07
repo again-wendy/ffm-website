@@ -2479,28 +2479,156 @@ form .form-group input, form .form-group textarea {
 }
 
 /* line 1, ../sass/_partials/_ebook.scss */
-#ebook {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/jungle.jpg") no-repeat center;
-}
-/* line 10, ../sass/_partials/_ebook.scss */
-#ebook .container {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 25px 20% 25px 5%;
+#ebook-top {
+  height: 65vh;
+  border-bottom: none;
+  padding-top: calc(9vh + 50px);
   position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/jungle.jpg") no-repeat center;
 }
-/* line 14, ../sass/_partials/_ebook.scss */
-#ebook .container .ebook {
+@media (max-width: 768px) {
+  /* line 1, ../sass/_partials/_ebook.scss */
+  #ebook-top {
+    height: auto;
+  }
+}
+/* line 17, ../sass/_partials/_ebook.scss */
+#ebook-top .container {
+  padding: 15px;
+}
+/* line 19, ../sass/_partials/_ebook.scss */
+#ebook-top .container .section-title {
+  color: white;
+}
+/* line 22, ../sass/_partials/_ebook.scss */
+#ebook-top .container .ebook {
+  width: 18%;
   position: absolute;
-  right: -5%;
-  top: -40%;
-  width: 25%;
+  left: 10%;
+  bottom: -35px;
+}
+@media (max-width: 1200px) {
+  /* line 22, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .ebook {
+    width: 22%;
+  }
+}
+@media (max-width: 940px) {
+  /* line 22, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .ebook {
+    left: 5%;
+    width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  /* line 22, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .ebook {
+    bottom: 10%;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  /* line 22, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .ebook {
+    display: none;
+  }
+}
+/* line 42, ../sass/_partials/_ebook.scss */
+#ebook-top .container .section-container {
+  width: 75%;
+  padding-left: 40px;
+  float: right;
+}
+@media (max-width: 768px) {
+  /* line 42, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .section-container {
+    float: none;
+    width: 70%;
+    margin-left: 30%;
+  }
+}
+@media (max-width: 520px) {
+  /* line 42, ../sass/_partials/_ebook.scss */
+  #ebook-top .container .section-container {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+/* line 56, ../sass/_partials/_ebook.scss */
+#ebook-top .container .section-container .info-text {
+  color: white;
+}
+/* line 60, ../sass/_partials/_ebook.scss */
+#ebook-top .container .section-container .ebook-form label {
+  color: white;
 }
 
-/* line 1, ../sass/_partials/404.scss */
+/* line 68, ../sass/_partials/_ebook.scss */
+#ebook-bottom {
+  height: 35vh;
+  border-bottom: none;
+  background: #2B2B2B;
+  color: white;
+  padding: 25px 0;
+}
+@media (max-width: 768px) {
+  /* line 68, ../sass/_partials/_ebook.scss */
+  #ebook-bottom {
+    height: auto;
+  }
+}
+/* line 77, ../sass/_partials/_ebook.scss */
+#ebook-bottom .section-title {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  /* line 77, ../sass/_partials/_ebook.scss */
+  #ebook-bottom .section-title {
+    font-size: 1.8rem;
+  }
+}
+/* line 85, ../sass/_partials/_ebook.scss */
+#ebook-bottom .row .column {
+  text-align: center;
+}
+/* line 87, ../sass/_partials/_ebook.scss */
+#ebook-bottom .row .column .svg-inline--fa {
+  display: block;
+  margin: 0 auto;
+  color: white;
+}
+/* line 92, ../sass/_partials/_ebook.scss */
+#ebook-bottom .row .column h4 {
+  margin: 20px 0;
+  font-size: 1.6rem;
+}
+@media (max-width: 768px) {
+  /* line 92, ../sass/_partials/_ebook.scss */
+  #ebook-bottom .row .column h4 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 540px) {
+  /* line 84, ../sass/_partials/_ebook.scss */
+  #ebook-bottom .row {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+/* line 1, ../sass/_partials/_404.scss */
 #notfound {
   background: #ECECEC;
 }
-/* line 3, ../sass/_partials/404.scss */
+/* line 3, ../sass/_partials/_404.scss */
 #notfound img {
   width: 50%;
   margin-top: 50px;
