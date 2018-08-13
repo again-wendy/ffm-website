@@ -165,6 +165,7 @@ input, textarea {
     &:focus,
     &:active {
         background-color: $secondary-hover;
+        color: white;
     }
     &:disabled, 
     &[disabled] {

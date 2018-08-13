@@ -1,0 +1,35 @@
+#blogs {
+    .blog {
+        background: $light-grey;
+        padding: 15px;
+        margin-bottom: 10px;
+        @include displayFlex;
+        .img-container {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            display: inline-block;
+            img {
+                display: inline-block;
+                margin: 0 auto 0 -25%;
+                height: 100%;
+                width: auto;
+                max-width: none;
+            }
+        }
+        .blog-link {
+            text-decoration: none;
+            position: relative;
+            h3 {
+                font-size: 1.6rem;
+                display: inline-block;
+                margin: 0 0 0 20px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

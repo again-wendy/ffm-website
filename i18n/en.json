@@ -86,6 +86,12 @@
         "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier business partners to collaborate in online processes. It ensures a seamless connection between administrations. To show you how we can help, we would like to know your role in the flex supply chain. Just click one of the following options to go the relevant website.",
         "CHOOSE_ROLE": "Choose your role:"
     },
+    "blogs": {
+        "TITLE": "Latest blogsposts FlexJungle",
+        "ALLBLOGS": "View all blogposts",
+        "LATESTNEWS": "Latest news",
+        "ALLDOWNLOADS" : "View all our downloads"
+    },
     "ebook": {
         "TITLE": "Download our eBook!",
         "INTROTEXT": "Want to know more about ...? Read our eBook! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",

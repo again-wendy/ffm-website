@@ -84,6 +84,12 @@
         "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat je rol in de keten is. Klik op één van de volgende keuzes om naar de betreffende website te gaan.",
         "CHOOSE_ROLE": "Kies je rol:"
     },
+    "blogs": {
+        "TITLE": "Laatste blogs FlexJungle",
+        "ALLBLOGS": "Bekijk alle blogposts",
+        "LATESTNEWS": "Laatste nieuws",
+        "ALLDOWNLOADS" : "Bekijk al onze downloads"
+    },
     "ebook": {
         "TITLE": "Download ons eBook!",
         "INTROTEXT": "Meer weten over ...? In ons eBook lees je er alles over! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",

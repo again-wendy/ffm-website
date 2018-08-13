@@ -212,3 +212,27 @@ function toggleMobileMenu() {
         icon.removeClass("open");
     }
 }
+
+function flexjungleBlogLink() {
+    if(checkLang().indexOf("nl") != -1) {
+        window.open('http://flexjungle.flexforcemonkey.com/blogs-nl/', '_blank');
+    } else {
+        window.open('http://flexjungle.flexforcemonkey.com/blogs/', '_blank');
+    }
+}
+
+function flexjungleNewsLink() {
+    if(checkLang().indexOf("nl") != -1) {
+        window.open('http://flexjungle.flexforcemonkey.com/nieuws/', '_blank');
+    } else {
+        window.open('http://flexjungle.flexforcemonkey.com/news/', '_blank');
+    }
+}
+
+function flexjungleDownloadLink() {
+    if(checkLang().indexOf("nl") != -1) {
+        window.open('http://flexjungle.flexforcemonkey.com/downloads-nl/', '_blank');
+    } else {
+        window.open('http://flexjungle.flexforcemonkey.com/downloads/', '_blank');
+    }
+}

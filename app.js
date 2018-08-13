@@ -9,7 +9,8 @@ const path              = require('path');
 const nodemailer        = require('nodemailer');
 const i18n              = require('i18n-express');
 const firebase          = require('firebase');
-const request           = require('superagent');
+const superagent        = require('superagent');
+const request           = require('request');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -86,77 +87,54 @@ app.get('/', (req, res) => {
     });
 });
 
-function getContactForms() {
-    var forms = db.ref('contactform');
-    var formsArr = [];
-    forms.on('value', (snapshot) => {
-        snapshot.forEach(function(item) {
-            var itemVal = item.val();
-            formsArr.push(itemVal);
-        });
-        return formsArr;
-    });
-}
-
-// app.get('/database', (req, res) => {
-//     var user = firebase.auth().currentUser;
-//     if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
-//         res.render('data');
-//     } else if (user === null) {
-//         res.render('login');
-//     } else {
-//         res.render('error', {
-//             errormsg: "Only an admin can see this page"
-//         });
-//     }
-// });
-
-// app.get('/database/contact', (req, res) => {
-//     var user = firebase.auth().currentUser;
-//     if(user !== null && user.uid == process.env.ADMIN_USER_UID ) {
-//         var formsArr = [];
-//         req.db.ref('contactform').on('value', (snapshot) => {
-//             snapshot.forEach(function(item) {
-//                 var itemVal = item.val();
-//                 itemVal.date = convertTimestamp(itemVal.timestamp);
-//                 formsArr.push(itemVal);
-//             });
-//             res.send(formsArr);
-//         });
-//     } else {
-//         res.status(500).send({error: "You have no rights to get this data!"});
-//     }
-// });
-
 app.get('/hirer', (req, res) => { 
-    res.cookie('role', 'hirer').render('hirer', {
-        title: "FlexForceMonkey | Flex client",
-        desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-        img: "./public/images/hirer.jpg"
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+        var temp = JSON.parse(body);
+        temp = temp.slice(0, 3);
+        temp = getFeaturedImage(temp);
+        res.cookie('role', 'hirer').render('hirer', {
+            title: "FlexForceMonkey | Flex client",
+            desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+            img: "./public/images/hirer.jpg",
+            blogs: temp
+        });
     });
 });
 app.get('/supplier', (req, res) => { 
-    res.cookie('role', 'supplier').render('supplier', {
-        title: "FlexForceMonkey | Temp staffing/Consulting firm",
-        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-        img: "./public/images/supplier.jpg"
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+        var temp = JSON.parse(body);
+        temp = temp.slice(0, 3);
+        temp = getFeaturedImage(temp);
+        res.cookie('role', 'supplier').render('supplier', {
+            title: "FlexForceMonkey | Temp staffing/Consulting firm",
+            desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+            img: "./public/images/supplier.jpg",
+            blogs: temp
+        });
     });
+    
 });
 app.get('/freelancer', (req, res) => { 
-    res.cookie('role', 'freelancer').render('freelancer', {
-        title: "FlexForceMonkey | Boutique firm/SEP",
-        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-        img: "./public/images/freelancer.jpg"
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+        var temp = JSON.parse(body);
+        temp = temp.slice(0, 3);
+        temp = getFeaturedImage(temp);
+        res.cookie('role', 'freelancer').render('freelancer', {
+            title: "FlexForceMonkey | Boutique firm/SEP",
+            desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+            img: "./public/images/freelancer.jpg",
+            blogs: temp
+        });
     });
 });
 
-app.get('/ebook', (req, res) => {
-    res.render('ebookpage', {
-        title: "eBook | Titel eBook",
-        desc: "Want to know everything about ...? Download our eBook!",
-        img: "./public/images/ebook.jpg"
-    });
-});
+// app.get('/ebook', (req, res) => {
+//     res.render('ebookpage', {
+//         title: "eBook | Titel eBook",
+//         desc: "Want to know everything about ...? Download our eBook!",
+//         img: "./public/images/ebook.jpg"
+//     });
+// });
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {
@@ -186,52 +164,6 @@ app.get('/generalconsiderations', (req, res) => {
 app.get('/sluitjeaan', (req, res) => {
     res.render('connect');
 });
-
-// Save contactform to database
-// function writeContactForm(name, email, subject, msg, role) {
-//     db.ref('contactform').push({
-//         timestamp: firebase.database.ServerValue.TIMESTAMP,
-//         contactName: name,
-//         contactEmail: email,
-//         contactSubject: subject,
-//         contactMsg: msg,
-//         contactRole: role
-//     });
-// }
-
-// Log in user
-// function login(email, password, res) {
-//     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-//         res.redirect('/database');
-//     }).catch((err) => {
-//         // Sign-in went wrong
-//         res.render('error', {
-//             roleNews: req.cookies.role + "/newsletter-text",
-//             errormsg: "Sorry, something went wrong! Error: " + err
-//         });
-//     });
-// }
-
-// Log out user
-// function logout(res) {
-//     firebase.auth().signOut().then(() => {
-//         res.redirect('/');
-//     }).catch((err) => {
-//         // Sign-out went wrong
-//         res.render('error', {
-//             roleNews: req.cookies.role + "/newsletter-text",
-//             errormsg: "Sorry, something went wrong! Error: " + err
-//         });
-//     })
-// }
-
-// app.post('/login', (req, res) => {
-//     login(req.body.email, req.body.password, res);
-// });
-
-// app.post('/logout', (req, res) => {
-//     logout(res);
-// });
 
 // Send connection kit request
 app.post('/sendconnectkit', (req, res) => {
@@ -361,7 +293,7 @@ app.post('/get-ebook', (req, res) => {
 
 //Add subscriber to Mailchimp list
 app.post('/signup', (req, res) => {
-    request
+    superagent
         .post(process.env.MAILCHIMP_URL + 'lists/' + process.env.MAILCHIMP_LISTID + '/members/')
         .set('Content-Type', 'application/json;charset=urf-8')
         .set('Authorization', 'Basic ' + new Buffer('any:' + process.env.MAILCHIMP_APIKEY).toString('base64'))
@@ -391,3 +323,11 @@ var port = process.env.port || 3000;
 app.listen(port, () => {
     console.log('Server started...');
 });
+
+const getFeaturedImage = (arr) => {
+    for(var i = 0; i < arr.length; i++) {
+        var img = arr[i]._embedded['wp:featuredmedia'][0].source_url;
+        arr[i].img = img;
+    }
+    return arr;
+}

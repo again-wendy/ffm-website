@@ -1,0 +1,30 @@
+<section id="blogs">
+    <div class="container">
+        <h2 class="section-title">{{ translation.blogs.TITLE }}</h2>
+        <div class="section-container">
+            {{#each blogs}}
+            <div class="blog">
+                <div class="image">
+                    <div class="img-container">
+                        <img src="{{img}}" alt="Featured image">
+                    </div>
+                </div>
+                <a class="blog-link" href="{{link}}" target="_blank">
+                    <h3>{{ title.rendered }}</h3>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+        <div class="buttons text-center">
+            <a onclick="flexjungleBlogLink()" class="btn-secondary">
+                {{ translation.blogs.ALLBLOGS }}
+            </a>
+            <a onclick="flexjungleNewsLink()" class="btn-secondary">
+                {{ translation.blogs.LATESTNEWS }}
+            </a>
+            <a onclick="flexjungleDownloadLink()" class="btn-secondary">
+                {{ translation.blogs.ALLDOWNLOADS }}
+            </a>
+        </div>
+    </div>
+</section>
