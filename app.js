@@ -128,13 +128,13 @@ app.get('/freelancer', (req, res) => {
     });
 });
 
-// app.get('/ebook', (req, res) => {
-//     res.render('ebookpage', {
-//         title: "eBook | Titel eBook",
-//         desc: "Want to know everything about ...? Download our eBook!",
-//         img: "./public/images/ebook.jpg"
-//     });
-// });
+app.get('/ebook', (req, res) => {
+    res.render('ebookpage', {
+        title: "eBook | Titel eBook",
+        desc: "Want to know everything about ...? Download our eBook!",
+        img: "./public/images/ebook.jpg"
+    });
+});
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {

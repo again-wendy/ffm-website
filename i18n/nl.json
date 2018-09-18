@@ -16,7 +16,10 @@
         "HIRER": "Bekijk onze integratiedienst voor Opdrachtgevers",
         "SUPPLIER": "Bekijk onze integratiedienst voor Uitzendbureaus/Consultancy firms",
         "FREELANCER": "Bekijk onze online software voor Urenregistratie en facturatie",
-        "GO_TO_WEBSITE": "Ga naar website"
+        "GO_TO_WEBSITE": "Ga naar website",
+        "MENU-HIRER": "Integratie voor Opdrachtgevers",
+        "MENU-SUPPLIER": "Integratie voor Uitzendbureaus/Consultancy firms",
+        "MENU-FREELANCER": "Online software voor urenregistratie en facturatie"
     },
     "menu-items": {
         "HOW_WORK": "Hoe het werkt",

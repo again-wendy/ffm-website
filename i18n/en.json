@@ -18,7 +18,10 @@
         "INTERIM": "View our online software for Time Registration and invoicing",
         "FREELANCER": "View our online software for Time Registration and invoicing",
         "CURIOUS": "I'm just curious",
-        "GO_TO_WEBSITE": "Go to website"
+        "GO_TO_WEBSITE": "Go to website",
+        "MENU-HIRER": "Integration for Flex clients",
+        "MENU-SUPPLIER": "Integration for Temp staffing/Consultancy firm",
+        "MENU-FREELANCER": "Online software for Time Registration and invoicing"
     },
     "menu-items": {
         "HOW_WORK": "How it works",
