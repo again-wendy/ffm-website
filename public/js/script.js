@@ -13,6 +13,8 @@ $(document).ready(function() {
         $("#navbar .right-menu .menu-items").hide();
     }
 
+    getBlogs();
+
     $(window).change(function() {
         if($(window).width() < 769) {
             $("#navbar .right-menu .menu-items").hide();
@@ -71,22 +73,26 @@ function animationBanner() {
 }
 
 function getBlogs() {
-    var url = 'http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/';
-    $.ajax({
-        type: 'GET',
-        url: url,
-        crossDomain: true,
-        headers: {
-            'Access-Control-Allow-Origin': 'http://flexjungle.flexforcemonkey.com',
-            'Access-Control-Allow-Headers' : 'access-control-allow-headers,access-control-allow-origin,content-type'
-        },
-        dataType: "json",
-        contentType: "application/json",
-        success: function(res) {
-            console.log("Success");
-            console.log(res);
+    $.getJSON("blogs", function(data) {
+        var items = data;
+        console.log(items);
+        var blogContainer = $("#blogs .section-container");
+        blogContainer.text("");
+        for(var i = 0; i < items.length; i++) {
+            blogContainer.append(
+                `<div class="blog">
+                    <div class="image">
+                        <div class="img-container">
+                            <img src="${items[i].img}" alt="Featured image">
+                        </div>
+                    </div>
+                    <a class="blog-link" href="${items[i].link}" target="_blank">
+                        <h3>${ items[i].title.rendered }</h3>
+                    </a>
+                </div>`
+            )
         }
-    })
+    });
 }
 
 function heightElements() {
@@ -190,6 +196,8 @@ function checkLang() {
 // Set the language
 function setLang($event) {
     var url = window.location.href;
+    Cookies.set("ulang", $event);
+    getBlogs();
     if( url.indexOf("?clang=") == -1 ) {
         window.location.href = url + "?clang=" + $event;
     } else {

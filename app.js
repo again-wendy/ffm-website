@@ -87,11 +87,18 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/hirer', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+app.get('/blogs', (req, res) => {
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = temp.slice(0, 3);
-        temp = getFeaturedImage(temp);
+        temp = getBlogPerLang(req.cookies.ulang, temp);
+        res.send(temp);
+    });
+});
+
+app.get('/hirer', (req, res) => { 
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
+        var temp = JSON.parse(body);
+        temp = getBlogPerLang(req.cookies.ulang, temp);
         res.cookie('role', 'hirer').render('hirer', {
             title: "FlexForceMonkey | Flex client",
             desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
@@ -101,10 +108,9 @@ app.get('/hirer', (req, res) => {
     });
 });
 app.get('/supplier', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = temp.slice(0, 3);
-        temp = getFeaturedImage(temp);
+        temp = getBlogPerLang(req.cookies.ulang, temp);
         res.cookie('role', 'supplier').render('supplier', {
             title: "FlexForceMonkey | Temp staffing/Consulting firm",
             desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
@@ -115,10 +121,9 @@ app.get('/supplier', (req, res) => {
     
 });
 app.get('/freelancer', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true', (err, resp, body) => {
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = temp.slice(0, 3);
-        temp = getFeaturedImage(temp);
+        temp = getBlogPerLang(req.cookies.ulang, temp);
         res.cookie('role', 'freelancer').render('freelancer', {
             title: "FlexForceMonkey | Boutique firm/SEP",
             desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
@@ -325,9 +330,43 @@ app.listen(port, () => {
 });
 
 const getFeaturedImage = (arr) => {
-    for(var i = 0; i < arr.length; i++) {
+    if( arr._embedded['wp:featuredmedia'] != undefined ) {
         var img = arr[i]._embedded['wp:featuredmedia'][0].source_url;
-        arr[i].img = img;
+        arr.img = img;
+    } else {
+        arr.img = "./public/images/imgplaceholder.png";
     }
-    return arr;
+    return arr.img;
+}
+
+const getBlogPerLang = (lang, arr) => {
+    var tempArr = [];
+    if(lang == "nl") {
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i].id == 4373) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4292) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4249) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            }
+        }
+    } else {
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i].id == 4365) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4358) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4351) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            }
+        }
+    }
+    return tempArr;
 }
