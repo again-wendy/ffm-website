@@ -104,15 +104,15 @@ function heightElements() {
 }
 
 // Get all the contact data and show it in a table
-function getContactData() {
-    $.get("http://localhost:3000/database/contact", function(data) {
-        for (var i = 0; i < data.length; i++) {
-            $("#contactTable").fadeIn();
-            $("#contactTable tbody").append("<tr><td>" + data[i].contactName + "</td><td>" + data[i].contactEmail + "</td><td>" + data[i].date + "</td><td>" + data[i].contactSubject + "</td><td>" + data[i].contactMsg + "</td></tr>");
-            setWidthTableColums("#contactTable");
-        }
-    });
-}
+// function getContactData() {
+//     $.get("http://localhost:3000/database/contact", function(data) {
+//         for (var i = 0; i < data.length; i++) {
+//             $("#contactTable").fadeIn();
+//             $("#contactTable tbody").append("<tr><td>" + data[i].contactName + "</td><td>" + data[i].contactEmail + "</td><td>" + data[i].date + "</td><td>" + data[i].contactSubject + "</td><td>" + data[i].contactMsg + "</td></tr>");
+//             setWidthTableColums("#contactTable");
+//         }
+//     });
+// }
 
 // For tables with fixed header it's needed to set the width of the header th
 function setWidthTableColums(tableId) {
@@ -184,9 +184,13 @@ function setActiveRoleLink() {
 
 // Check the language
 function checkLang() {
+    var cookieLang = Cookies.get("ulang");
     var userLang = navigator.language || navigator.userLanguage;
     var url = window.location.href;
-    if( url.indexOf("?clang=") == -1 ) {
+    // Check if language is set in cookies
+    if( cookieLang != undefined ) {
+        return cookieLang;
+    } else if( url.indexOf("?clang=") == -1 ) {
         return userLang;
     } else {
         return url.substr(-2, 2);

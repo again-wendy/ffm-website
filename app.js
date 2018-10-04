@@ -133,13 +133,13 @@ app.get('/freelancer', (req, res) => {
     });
 });
 
-app.get('/ebook', (req, res) => {
-    res.render('ebookpage', {
-        title: "eBook | Titel eBook",
-        desc: "Want to know everything about ...? Download our eBook!",
-        img: "./public/images/ebook.jpg"
-    });
-});
+// app.get('/ebook', (req, res) => {
+//     res.render('ebookpage', {
+//         title: "eBook | Titel eBook",
+//         desc: "Want to know everything about ...? Download our eBook!",
+//         img: "./public/images/ebook.jpg"
+//     });
+// });
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {
@@ -343,26 +343,26 @@ const getBlogPerLang = (lang, arr) => {
     var tempArr = [];
     if(lang == "nl") {
         for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4373) {
+            if(arr[i].id == 4388) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4373) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             } else if(arr[i].id == 4292) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4249) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             }
         }
     } else {
         for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4365) {
+            if(arr[i].id == 4380) {
+                arr[i].img = getFeaturedImage(arr[i]);
+                tempArr.push(arr[i]);
+            } else if(arr[i].id == 4365) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             } else if(arr[i].id == 4358) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4351) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             }
