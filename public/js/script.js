@@ -59,7 +59,6 @@ function tabActive() {
         $(".tab-1").addClass("active");
     } else if(path.indexOf('termsandconditions') > -1) {
         $(".tab-2").addClass("active");
-        console.log("Terms and conditions");
     } else if(path.indexOf('gdpr') > -1) {
         $(".tab-3").addClass("active");
     }
@@ -75,7 +74,6 @@ function animationBanner() {
 function getBlogs() {
     $.getJSON("blogs", function(data) {
         var items = data;
-        console.log(items);
         var blogContainer = $("#blogs .section-container");
         blogContainer.text("");
         for(var i = 0; i < items.length; i++) {

@@ -121,14 +121,21 @@ app.get('/supplier', (req, res) => {
     
 });
 app.get('/freelancer', (req, res) => { 
+    let blogs;
+    let subs;
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = getBlogPerLang(req.cookies.ulang, temp);
-        res.cookie('role', 'freelancer').render('freelancer', {
-            title: "FlexForceMonkey | Boutique firm/SEP",
-            desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-            img: "./public/images/freelancer.jpg",
-            blogs: temp
+        blogs = getBlogPerLang(req.cookies.ulang, temp);
+        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
+            var temp2 = JSON.parse(body2);
+            subs = setSubType(temp2);
+            res.cookie('role', 'freelancer').render('freelancer', {
+                title: "FlexForceMonkey | Boutique firm/SEP",
+                desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+                img: "./public/images/freelancer.jpg",
+                blogs: blogs,
+                subs: subs
+            });
         });
     });
 });
@@ -369,4 +376,27 @@ const getBlogPerLang = (lang, arr) => {
         }
     }
     return tempArr;
+}
+
+const setSubType = (arr) => {
+    for(var i = 0; i < arr.length; i++) {
+        switch (arr[i].subscriptionType) {
+            case 0: 
+                arr[i].subscriptionTypeText = "Basic";
+                break;
+            case 1: 
+                arr[i].subscriptionTypeText = "Basic+";
+                break;
+            case 2: 
+                arr[i].subscriptionTypeText = "SmallBusiness";
+                break;
+            case 3: 
+                arr[i].subscriptionTypeText = "MediumBusiness";
+                break;
+            case 4: 
+                arr[i].subscriptionTypeText = "Enterprise";
+                break;
+        }
+    }
+    return arr;
 }

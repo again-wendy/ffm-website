@@ -1,0 +1,18 @@
+<section id="pricemodel">
+    <div class="container">
+        <h2 class="section-title"></h2>
+        <div class="section-container row">
+            {{#each subs}}
+                <div class="column">
+                    <div class="title-part">
+                        <h3>{{subscriptionTypeText}}</h3>
+                    </div>
+                    <div class="body-part">
+                        <span class="monthprice"><span class="price">{{monthlyFee}}</span> /{{translation.subs.MONTH}}</span>
+                        <div class="yearprice">{{ translation.subs.or }} {{annualFee}} {{ translation.subs.FORAYEAR }}</div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
