@@ -2677,3 +2677,177 @@ form .form-group input, form .form-group textarea {
   width: 50%;
   margin-top: 50px;
 }
+
+/* line 2, ../sass/_partials/_pricemodel.scss */
+#pricemodel .container {
+  width: 94%;
+}
+/* line 5, ../sass/_partials/_pricemodel.scss */
+#pricemodel .section-title {
+  margin-top: 20px;
+}
+/* line 8, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+/* line 16, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column {
+  -webkit-flex: 1 1 0;
+  -moz-flex: 1 1 0;
+  -o-flex: 1 1 0;
+  flex: 1 1 0;
+  margin: 0 5px;
+  text-align: center;
+  min-width: 185px;
+}
+/* line 41, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra {
+  background: white;
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  height: 0;
+}
+/* line 47, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+}
+/* line 52, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .title {
+  padding-bottom: 10px;
+}
+/* line 58, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .content {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  text-align: left;
+}
+/* line 61, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .content ul {
+  padding-left: 15px;
+  list-style-type: square;
+}
+/* line 64, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .content ul li {
+  font-size: 14px;
+}
+/* line 66, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .content ul li.bold {
+  color: #2B2B2B;
+}
+/* line 71, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .content .list-type-none {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* line 87, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner button {
+  width: 100%;
+}
+/* line 96, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .extra .inner .btn-secondary, #pricemodel .subscriptions .column .extra .inner .btn-secondary-xl {
+  margin-bottom: 10px;
+}
+/* line 104, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base {
+  z-index: 5;
+  position: relative;
+  background: #ECECEC;
+}
+/* line 108, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base h3 {
+  background: #2B2B2B;
+  color: white;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 2rem;
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+}
+@media (max-width: 1199px) {
+  /* line 108, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column .base h3 {
+    font-size: 2.2rem;
+  }
+}
+/* line 119, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner {
+  padding: 10px;
+}
+/* line 121, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .bold {
+  height: 150px;
+  color: #2B2B2B;
+}
+/* line 128, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .price-rule {
+  font-family: "ZwoOT-Xbold", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+  padding: 20px 0 8px 0;
+}
+/* line 132, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .price-rule .price {
+  font-size: 3rem;
+}
+@media (max-width: 1150px) {
+  /* line 132, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column .base .inner .price-rule .price {
+    font-size: 4rem;
+  }
+}
+/* line 138, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .price-rule.one {
+  padding-top: 45px;
+  padding-bottom: 18px;
+}
+/* line 149, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .other-prices {
+  height: 110px;
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+}
+/* line 153, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner button {
+  width: 100%;
+}
+/* line 156, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .choose {
+  margin-top: 10px;
+}
+/* line 161, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column:first-child {
+  margin-left: 0;
+}
+/* line 164, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column:last-child {
+  margin-right: 0;
+}
+@media (max-width: 565px) {
+  /* line 16, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column {
+    margin: 5px 0;
+  }
+}

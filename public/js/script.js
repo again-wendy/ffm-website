@@ -38,8 +38,10 @@ $(document).ready(function() {
 
     // Set height elements on page load and when screen size changes
     heightElements();
+    calculateColumns();
     $(window).resize(function() {
         heightElements();
+        calculateColumns();
     });
 
     // Don't show button to page you already on in footer
@@ -246,3 +248,45 @@ function flexjungleDownloadLink() {
         window.open('http://flexjungle.flexforcemonkey.com/downloads/', '_blank');
     }
 }
+
+// Subscription price model
+function calculateColumns() {
+    $("#pricemodel .column").each(function() {
+        var baseDivWidth = $(this).find(".base").innerWidth();
+        $(this).find(".extra").css("width", baseDivWidth + "px");
+        $(this).find(".extra").find(".inner").hide();
+    });
+}
+
+$("#pricemodel .more-info").click(function() {
+    var base = $(this).parent().parent().parent().find(".base");
+    var extra = $(this).parent().parent().parent().find(".extra");
+    console.log(base);
+    console.log(extra);
+    var baseHeight;
+
+    if($(window).width() > 565) {
+        baseHeight = base.innerHeight();
+    } else {
+        baseHeight = (base.innerHeight() / 3) + base.innerHeight();
+    }
+
+    var baseTop = base.position().top;
+    extra.css("border", "1px solid #AEAFAF");
+    extra.css("top", baseTop + "px");
+
+    extra.animate({
+        height: baseHeight
+    }, 500, function() {
+        extra.find(".inner").fadeIn();
+    });
+});
+
+$(".close-info").click(function() {
+    var extra = $(this).parent().parent().parent();
+    extra.find(".inner").hide();
+    extra.css("border", "none");
+    extra.animate({
+        height: 0
+    }, 500);
+});
