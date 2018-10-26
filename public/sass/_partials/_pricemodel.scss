@@ -1,4 +1,9 @@
 #pricemodel {
+    background: white;
+    background: url('../images/subscription-background.jpg') no-repeat;
+    @media(max-width: 1050px) {
+        height: auto;
+    }
     .container {
         width: 94%;
     }
@@ -10,34 +15,34 @@
         @include prefix(justify-content, space-between, webkit moz o);
         @include prefix(flex-wrap, wrap, webkit moz o);
         position: relative;
-        // @media(max-width: 565px) {
-        //     @include prefix(flex-direction, column, webkit moz o);
-        // }
+        @media(max-width: 660px) {
+            @include prefix(flex-direction, column, webkit moz o);
+        }
         .column {
             @include prefix(flex, 1 1 0, webkit moz o);
             margin: 0 5px;
             text-align: center;
             min-width: 185px;
-            // @media(max-width: 1199px) {
-            //     min-width: 250px;
-            //     &:nth-child(3) {
-            //         margin-right: 0;
-            //     }
-            //     &:nth-child(4) {
-            //         margin-left: 0;
-            //     }
-            //     &:nth-child(4), &:nth-child(5) {
-            //         margin-top: 10px;
-            //         margin-bottom: 30px;
+            @media(max-width: 1050px) {
+                min-width: 250px;
+                &:nth-child(3) {
+                    margin-right: 0;
+                }
+                &:nth-child(4) {
+                    margin-left: 0;
+                }
+                &:nth-child(4), &:nth-child(5) {
+                    margin-top: 10px;
+                    margin-bottom: 30px;
 
-            //     }
-            // }
-            // @media(max-width: 843px) {
-            //     min-width: 190px;
-            // }
-            // @media(max-width: 619px) {
-            //     min-width: auto;
-            // }
+                }
+            }
+            @media(max-width: 835px) {
+                min-width: 190px;
+            }
+            @media(max-width: 619px) {
+                min-width: auto;
+            }
             .extra {
                 background: white;
                 position: absolute;
@@ -51,9 +56,10 @@
                     padding: 10px;
                     .title {
                         padding-bottom: 10px;
-                        // @media(max-width: 565px) {
-                        //     font-size: 2.2rem;
-                        // }
+                        margin: 0;
+                        @media(max-width: 660px) {
+                            font-size: 2.2rem;
+                        }
                     }
                     .content {
                         @include prefix(flex, 1, webkit moz o);
@@ -72,32 +78,32 @@
                             list-style-type: none;
                             padding-left: 0;
                         }
-                        // @media(max-width: 565px) {
-                        //     ul:first-child {
-                        //         width: 58%;
-                        //         margin-right: 1%;
-                        //         display: inline-block;
-                        //     }
-                        //     ul:last-child {
-                        //         width: 38%;
-                        //         display: inline-block;
-                        //     }
-                        // }
+                        @media(max-width: 660px) {
+                            ul:first-child {
+                                width: 58%;
+                                margin-right: 1%;
+                                display: inline-block;
+                            }
+                            ul:last-child {
+                                width: 38%;
+                                display: inline-block;
+                            }
+                        }
                     }
                     button {
                         width: 100%;
-                        // @media(max-width: 565px) {
-                        //     width: 48%;
-                        //     &:first-child {
-                        //         margin-right: 2%;
-                        //     }
-                        // }
+                        @media(max-width: 660px) {
+                            width: 48%;
+                            &:first-child {
+                                margin-right: 2%;
+                            }
+                        }
                     }
                     .btn-secondary {
                         margin-bottom: 10px;
-                        // @media(max-width: 565px) {
-                        //     margin-bottom: 0;
-                        // }
+                        @media(max-width: 660px) {
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }
@@ -112,39 +118,57 @@
                     padding: 10px 0;
                     font-size: 2rem;
                     font-family: $font-bold;
-                    @media(max-width: 1199px) {
-                        font-size: 2.2rem;
+                    @media(max-width: 1335px) {
+                        font-size: 1.8rem;
+                    }
+                    @media(max-width: 1185px) {
+                        font-size: 1.5rem;
                     }
                 }
                 .inner {
                     padding: 10px;
                     .bold {
                         height: 150px;
-                        // @media(max-width: 565px) {
-                        //     height: auto;
-                        // }
+                        @media(max-width: 660px) {
+                            height: auto;
+                        }
                         color: $dark-grey;
                     }
                     .price-rule {
                         font-family: $font-xbold;
                         font-size: 1.8rem;
                         padding: 20px 0 8px 0;
+                        @media(max-width:1255px) {
+                            font-size: 1.3rem;
+                        }
+                        @media(max-width: 1050px) {
+                            font-size: 1.6rem;
+                        }
                         .price {
-                            font-size: 3rem;
-                            @media(max-width:1150px) {
-                                font-size: 4rem;
+                            font-size: 2.8rem;
+                            @media(max-width:1345px) {
+                                font-size: 2.4rem;
+                            }
+                            @media(max-width: 1255px) {
+                                font-size: 2.2rem;
+                            }
+                            @media(max-width: 1050px) {
+                                font-size: 2.6rem;
                             }
                         }
                         &.one {
-                            padding-top: 45px;
-                            padding-bottom: 18px;
-                            // @media(max-width: 950px) {
-                            //     padding-top: 39px;
-                            // }
+                            padding-top: 34px;
+                            padding-bottom: 12px;
+                            @media(max-width: 1345px) {
+                                padding-top: 28px;
+                            }
+                            @media(max-width: 1255px) {
+                                padding-top: 33px;
+                            }
                         }
-                        // @media(max-width: 565px) {
-                        //     padding: 0;
-                        // }
+                        @media(max-width: 660px) {
+                            padding: 0;
+                        }
                     }
                     .other-prices {
                         height: 110px;
@@ -164,7 +188,7 @@
             &:last-child {
                 margin-right: 0;
             }
-            @media(max-width: 565px) {
+            @media(max-width: 660px) {
                 margin: 5px 0;
             }
         }

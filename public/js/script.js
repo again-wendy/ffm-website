@@ -258,14 +258,16 @@ function calculateColumns() {
     });
 }
 
+function openRegisterPage(subType) {
+    window.open('https://auth.flexforcemonkey.com/api/SelfService/Register?subscriptionType=' + subType, '_blank');
+}
+
 $("#pricemodel .more-info").click(function() {
     var base = $(this).parent().parent().parent().find(".base");
     var extra = $(this).parent().parent().parent().find(".extra");
-    console.log(base);
-    console.log(extra);
     var baseHeight;
 
-    if($(window).width() > 565) {
+    if($(window).width() > 660) {
         baseHeight = base.innerHeight();
     } else {
         baseHeight = (base.innerHeight() / 3) + base.innerHeight();

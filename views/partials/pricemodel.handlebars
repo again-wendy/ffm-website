@@ -42,8 +42,13 @@
                                         {{/iff}}
                                     </ul>
                                     <ul class="list-style-none">
-                                        <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
-                                        <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                        {{#iff monthlyFee '!=' null}}
+                                            <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
+                                            <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                        {{/iff}}
+                                        {{#iff monthlyFee '==' null}}
+                                            <li class="bold">{{ ../translation.subs.ASKFOROFFER }}</li>
+                                        {{/iff}}
                                     </ul>
                                 </div>
                                 <div class="buttons">
@@ -88,7 +93,7 @@
                                     {{/iff}}
                                 </div>
                                 <button class="btn-secondary more-info">{{ ../translation.subs.MOREINFO }}</button>
-                                <button class="btn-primary choose">{{ ../translation.subs.REGISTER }}</button>
+                                <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">{{ ../translation.subs.REGISTER }}</button>
                             </div>
                         </div>
                     </div>
