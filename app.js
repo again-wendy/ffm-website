@@ -134,37 +134,45 @@ app.get('/blogs', (req, res) => {
 app.get('/hirer', (req, res) => { 
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = getBlogPerLang(req.cookies.ulang, temp);
-        res.cookie('role', 'hirer').render('hirer', {
-            title: "FlexForceMonkey | Flex client",
-            desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-            img: "./public/images/hirer.jpg",
-            blogs: temp
+        var blogs = getBlogPerLang(req.cookies.ulang, temp);
+        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
+            var temp2 = JSON.parse(body2);
+            var subs = setSubType(temp2);
+            res.cookie('role', 'hirer').render('hirer', {
+                title: "FlexForceMonkey | Flex client",
+                desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                img: "./public/images/hirer.jpg",
+                blogs: blogs,
+                subs: subs
+            });
         });
     });
 });
 app.get('/supplier', (req, res) => { 
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = getBlogPerLang(req.cookies.ulang, temp);
-        res.cookie('role', 'supplier').render('supplier', {
-            title: "FlexForceMonkey | Temp staffing/Consulting firm",
-            desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-            img: "./public/images/supplier.jpg",
-            blogs: temp
+        var blogs = getBlogPerLang(req.cookies.ulang, temp);
+        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
+            var temp2 = JSON.parse(body2);
+            var subs = setSubType(temp2);
+            res.cookie('role', 'supplier').render('supplier', {
+                title: "FlexForceMonkey | Temp staffing/Consulting firm",
+                desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                img: "./public/images/supplier.jpg",
+                blogs: blogs,
+                subs: subs
+            });
         });
     });
     
 });
 app.get('/freelancer', (req, res) => { 
-    let blogs;
-    let subs;
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
-        blogs = getBlogPerLang(req.cookies.ulang, temp);
+        var blogs = getBlogPerLang(req.cookies.ulang, temp);
         request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
             var temp2 = JSON.parse(body2);
-            subs = setSubType(temp2);
+            var subs = setSubType(temp2);
             res.cookie('role', 'freelancer').render('freelancer', {
                 title: "FlexForceMonkey | Boutique firm/SEP",
                 desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
