@@ -243,7 +243,7 @@
             width: 75%;
         }
     }
-    @media(max-width: 1370px) {
+    @media(max-width: 1250px) {
         .left-menu {
             padding-top: 2.8vh;
             .logo h2 {
@@ -256,7 +256,7 @@
             }
         }
     }
-    @media(max-width: 1200px) {
+    @media(max-width: 1050px) {
         .left-menu {
             padding-left: 20px;
         }
@@ -269,7 +269,7 @@
             }
         }
     }
-    @media(max-width: 11110px) {
+    @media(max-width: 945px) {
         .left-menu {
             padding-top: 3.2vh;
             width: 20%;
@@ -281,14 +281,14 @@
             width: 80%;
         }
     }
-    @media(max-width: 1040px) {
+    @media(max-width: 875px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.9rem;
             }
         }
     }
-    @media(max-width: 960px) {
+    @media(max-width: 850px) {
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.8rem;
@@ -299,18 +299,18 @@
             }
         }
     }
-    @media(max-width: 850px) {
-        .left-menu {
-            .logo h2 {
-                font-size: 1rem;
-            }
-        }
-        .right-menu {
-            .menu-items .menu-item a {
-                font-size: 0.7rem;
-            }
-        }
-    }
+    // @media(max-width: 850px) {
+    //     .left-menu {
+    //         .logo h2 {
+    //             font-size: 1rem;
+    //         }
+    //     }
+    //     .right-menu {
+    //         .menu-items .menu-item a {
+    //             font-size: 0.7rem;
+    //         }
+    //     }
+    // }
     @media (max-width: 768px) {
         .left-menu {
             width: 35%;
@@ -437,7 +437,7 @@
             width: 75%;
         }
     }
-    @media (max-width: 1310px) {
+    @media (max-width: 1150px) {
         .left-menu {
             padding-top: 2.8vh;
             padding-left: 20px;
@@ -451,7 +451,7 @@
             }
         }
     }
-    @media (max-width: 1150px) {
+    @media (max-width: 875px) {
         .left-menu {
             padding-top: 3.2vh;
             .logo h2 {
@@ -461,24 +461,6 @@
         .right-menu {
             .menu-items .menu-item a {
                 font-size: 0.9rem;
-            }
-        }
-    }
-    @media(max-width: 1070px) {
-        .right-menu {
-            .menu-items .menu-item a {
-                font-size: 0.8rem;
-                padding: 3vh 7px;
-            }
-            .menu-items .menu-item a.btn-light-grey {
-                padding: 1vh 7px;
-            }
-        }
-    }
-    @media(max-width: 845px) {
-        .right-menu {
-            .menu-items .menu-item a {
-                font-size: 0.7rem;
             }
         }
     }
