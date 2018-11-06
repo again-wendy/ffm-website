@@ -1411,9 +1411,9 @@ section.with-base-nav {
 }
 /* line 192, ../sass/_partials/_hero.scss */
 #hero.freelancer .hero-title {
-  width: 55%;
-  right: 5%;
-  left: auto;
+  width: 45%;
+  right: auto;
+  left: 5%;
   top: 15%;
 }
 @media (max-width: 800px) {

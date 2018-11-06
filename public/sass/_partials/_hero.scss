@@ -190,9 +190,9 @@
         no-repeat 
         center;
     .hero-title {
-        width: 55%;
-        right: 5%;
-        left: auto;
+        width: 45%;
+        right: auto;
+        left: 5%;
         top: 15%;
         @media (max-width: 800px) {
             width: 90%;
