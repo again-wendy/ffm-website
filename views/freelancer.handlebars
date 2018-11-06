@@ -13,7 +13,7 @@
             <p class="sub-title">{{ translation.freelancer.INTRO_SUBTITLE }}</p>
             <div class="section-text scrollleft">
                 <p>{{ translation.freelancer.INTRO_TEXT }}</p>
-                <a class="btn-light-grey-xl" target="_blank" href="https://auth.flexforcemonkey.com/api/SelfService/Register">{{ translation.freelancer.REGISTER_ACCOUNT }}</a>
+                <a class="btn-light-grey-xl" target="_blank" onclick="menuScroll('#pricemodel')">{{ translation.freelancer.REGISTER_ACCOUNT }}</a>
             </div>
             <img class="scrollright" src="./public/images/computeraap.png" alt="Computer Monkey">
         </div>
@@ -28,7 +28,7 @@
             <div class="section-text">
                 <p>{{ translation.freelancer.TRY_TEXT }}</p>
                 <p class="sub-title">{{ translation.freelancer.TRY_SUBTITLE_2 }}</p>
-                <a class="btn-complementary-xl" target="_blank" href="https://auth.flexforcemonkey.com/api/SelfService/Register">{{ translation.freelancer.TRY_NOW }}</a>
+                <a class="btn-complementary-xl" target="_blank" onclick="menuScroll('#pricemodel')">{{ translation.freelancer.TRY_NOW }}</a>
             </div>
         </div>
     </div>
@@ -37,25 +37,6 @@
     <img class="big-screen" src="./public/images/stekker-aap-big.png" alt="{{ translation.freelancer_TRY_TITLE }}">
 </section>
 
-<section id="work" class="full-screen">
-    <div class="container">
-        <h2 class="section-title">{{ translation.freelancer.WORK_TITLE }}</h2>
-        <div class="section-container scrollright">
-            <span class="fa fa-handshake"></span>
-            <div class="section-text">
-                <p>{{ translation.freelancer.WORK_TEXT }}</p>
-                <ul class="list">
-                    <li>{{ translation.freelancer.WORK_TEXT_ITEM1 }}</li>
-                    <li>{{ translation.freelancer.WORK_TEXT_ITEM2 }}</li>
-                    <li>{{ translation.freelancer.WORK_TEXT_ITEM3 }}</li>
-                    <li>{{ translation.freelancer.WORK_TEXT_ITEM4 }}</li>
-                    <li>{{ translation.freelancer.WORK_TEXT_ITEM5 }}</li>
-                </ul>
-                <a class="btn-light-grey-xl" target="_blank" href="https://auth.flexforcemonkey.com/api/SelfService/Register">{{ translation.freelancer.WORK_REGISTER }}</a>
-            </div>
-        </div>
-    </div>
-</section>
 
 {{> pricemodel }}
 
