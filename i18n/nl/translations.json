@@ -46,6 +46,7 @@
     "MSG": "Bericht",
     "NAME": "Naam",
     "SEND_ERROR": "Er is helaas iets misgegaan. Probeer het later nog eens.",
+    "SEND_RECAPT_ERROR": "Je bent vergeten de reCAPTCHA aan te vinken onderaan dit formulier!",
     "SEND_SUCCESS": "Je formulier is succesvol verzonden. We nemen zo spoedig mogelijk contact met je op!",
     "SUBJECT": "Onderwerp",
     "SUBMIT": "Verstuur"

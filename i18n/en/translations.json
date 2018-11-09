@@ -46,6 +46,7 @@
     "MSG": "Message",
     "NAME": "Name",
     "SEND_ERROR": "Sorry, something went wrong. Please try again later!",
+    "SEND_RECAPT_ERROR": "You forgot to check the reCAPTCHA at the bottom of this form!",
     "SEND_SUCCESS": "Your form has been sent successfully. We will contact you as soon as possible!",
     "SUBJECT": "Subject",
     "SUBMIT": "Submit"

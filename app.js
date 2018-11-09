@@ -217,54 +217,58 @@ app.get('/generalconsiderations', (req, res) => {
     })
 });
 
-app.get('/sluitjeaan', (req, res) => {
-    res.render('connect');
-});
+// app.get('/sluitjeaan', (req, res) => {
+//     res.render('connect');
+// });
 
 // Send connection kit request
-app.post('/sendconnectkit', (req, res) => {
-    let output = `
-        <h1>Iemand vraagt een aansluitkit aan</h1>
-        <h2>Details:</h2>
-        <ul>
-            <li>Naam: ${req.body.name}</li>
-            <li>Email: ${req.body.email}</li>
-            <li>Telefoon: ${req.body.phone}</li>
-            <li>Bedrijfsnaam: ${req.body.compname}</li>
-            <li>Straat + nummer: ${req.body.street} ${req.body.number}</li>
-            <li>Postcode: ${req.body.postal}</li>
-            <li>Plaats: ${req.body.city}</li>
-            <li>Opmerkingen: ${req.body.notes}</li>
-            <li>Email adres mag gebruikt worden voor nieuwsbrieven: ${req.body.newsletters}</li>
-            <li>Email adres mag gebruikt worden voor product updates: ${req.body.productUpdates}</li>
-            <li>Email adres mag gebruikt worden voor gericht individueel commercieel contact: ${req.body.individualContact}</li>
-        </ul>
-    `;
+// app.post('/sendconnectkit', (req, res) => {
+//     let output = `
+//         <h1>Iemand vraagt een aansluitkit aan</h1>
+//         <h2>Details:</h2>
+//         <ul>
+//             <li>Naam: ${req.body.name}</li>
+//             <li>Email: ${req.body.email}</li>
+//             <li>Telefoon: ${req.body.phone}</li>
+//             <li>Bedrijfsnaam: ${req.body.compname}</li>
+//             <li>Straat + nummer: ${req.body.street} ${req.body.number}</li>
+//             <li>Postcode: ${req.body.postal}</li>
+//             <li>Plaats: ${req.body.city}</li>
+//             <li>Opmerkingen: ${req.body.notes}</li>
+//             <li>Email adres mag gebruikt worden voor nieuwsbrieven: ${req.body.newsletters}</li>
+//             <li>Email adres mag gebruikt worden voor product updates: ${req.body.productUpdates}</li>
+//             <li>Email adres mag gebruikt worden voor gericht individueel commercieel contact: ${req.body.individualContact}</li>
+//         </ul>
+//     `;
     
-    let HelperOptions = {
-        from: '"Aansluitkit request" <noreply@flexforcemonkey.com>',
-        to: 'doede.van.haperen@lakran.com',
-        //to: 'wendy.dimmendaal@again.nl',
-        subject: 'Aansluitkit request',
-        text: 'Test 123',
-        html: output
-    };
+//     let HelperOptions = {
+//         from: '"Aansluitkit request" <noreply@flexforcemonkey.com>',
+//         to: 'doede.van.haperen@lakran.com',
+//         //to: 'wendy.dimmendaal@again.nl',
+//         subject: 'Aansluitkit request',
+//         text: 'Test 123',
+//         html: output
+//     };
 
-    // If hidden field is filled, its a spam mail and we don't send it
-    if(req.body.url === "" && req.body.url.length == 0) {
-        transporter.sendMail(HelperOptions, (error, info) => {
-            if(error) {
-                req.flash('error', 'Something went wrong: ' + error);
-            } else {
-                req.flash('success', 'Je aansluitkit is aangevraagd!');
-                res.redirect(req.get('referer'));
-            }
-        });
-    }
-});
+//     // If hidden field is filled, its a spam mail and we don't send it
+//     if(req.body.url === "" && req.body.url.length == 0) {
+//         transporter.sendMail(HelperOptions, (error, info) => {
+//             if(error) {
+//                 req.flash('error', 'Something went wrong: ' + error);
+//             } else {
+//                 req.flash('success', 'Je aansluitkit is aangevraagd!');
+//                 res.redirect(req.get('referer'));
+//             }
+//         });
+//     }
+// });
 
 // Send contactform
 app.post('/send', (req, res) => {
+    let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
+    recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
+    recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
+    recaptcha_url += "remoteip=" + req.connection.remoteAddress;
     let output = `
         <h1>Contact Form FFM.com</h1>
         <h2>Details:</h2>
@@ -281,71 +285,89 @@ app.post('/send', (req, res) => {
     let HelperOptions = {
         from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
         to: 'doede.van.haperen@lakran.com',
+        //to: 'wendy.dimmendaal@again.nl',
         subject: 'Reactie contactform FFM.com',
         text: 'Test 123',
         html: output
     };
 
-    // If hidden field is filled, its a spam mail and we don't send it
-    if(req.body.url === "" && req.body.url.length == 0) {
-        transporter.sendMail(HelperOptions, (error, info) => {
-            if(error) {
-                req.flash('error', 'Something went wrong: ' + error);
+    request(recaptcha_url, function(error, resp, body) {
+        body = JSON.parse(body);
+        console.log(error);
+        console.log(body);
+        console.log(recaptcha_url);
+        if(body.success !== undefined && !body.success) {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error)
             } else {
-                req.flash('success', 'Thanks for the message! We\'ll be in touch');
-                res.redirect(req.get('referer') + "#contact");
+                req.flash('error', 'Something went wrong with recaptcha: ' + error);
             }
-        });
-    }
+            res.redirect(req.get('referer') + "#contact");
+        } else {
+            transporter.sendMail(HelperOptions, (errorMail, info) => {
+                if(errorMail) {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error)
+                    } else {
+                        req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
+                    }
+                    res.redirect(req.get('referer') + "#contact");
+                } else {
+                    req.flash('success', 'Thanks for the message! We\'ll be in touch');
+                    res.redirect(req.get('referer') + "#contact");
+                }
+            });
+        }
+    });
 });
 
 // Request for ebook
-app.post('/get-ebook', (req, res) => {
-    let output;
-    let pathBook;
-    if(req.cookies.ulang == "nl") {
-        output = `
-            <h1>Hier is je eBook!</h1>
-            <p>${req.body.email}</p>
-            <p>Je hebt op <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> een eBook aangevraagd. Hij zit als bijlage bij deze mail!</p>
-            <p>Heb je nog vragen? Neem gerust contact met ons op!</p>
-        `;
-        pathBook = './public/files/ebook-nl.pdf';
-    } else {
-        output = `
-            <h1>Here is your eBook!</h1>
-            <p>${req.body.email}</p>
-            <p>You've requested on <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> an eBook. You can find it as an attachment!</p>
-            <p>Any questions? Don't hesitate to contact us!</p>
-        `;
-        pathBook = './public/files/ebook-en.pdf'
-    }
+// app.post('/get-ebook', (req, res) => {
+//     let output;
+//     let pathBook;
+//     if(req.cookies.ulang == "nl") {
+//         output = `
+//             <h1>Hier is je eBook!</h1>
+//             <p>${req.body.email}</p>
+//             <p>Je hebt op <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> een eBook aangevraagd. Hij zit als bijlage bij deze mail!</p>
+//             <p>Heb je nog vragen? Neem gerust contact met ons op!</p>
+//         `;
+//         pathBook = './public/files/ebook-nl.pdf';
+//     } else {
+//         output = `
+//             <h1>Here is your eBook!</h1>
+//             <p>${req.body.email}</p>
+//             <p>You've requested on <a href="http://flexforcemonkey.com/">FlexForceMonkey.com</a> an eBook. You can find it as an attachment!</p>
+//             <p>Any questions? Don't hesitate to contact us!</p>
+//         `;
+//         pathBook = './public/files/ebook-en.pdf'
+//     }
 
-    let HelperOptions = {
-        from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-        to: 'wendy.dimmendaal@again.nl',
-        subject: 'FlexForceMonkey eBook',
-        text: 'Test 123',
-        html: output,
-        attachments: [
-            {
-                path: pathBook
-            }
-        ]
-    };
+//     let HelperOptions = {
+//         from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+//         to: 'wendy.dimmendaal@again.nl',
+//         subject: 'FlexForceMonkey eBook',
+//         text: 'Test 123',
+//         html: output,
+//         attachments: [
+//             {
+//                 path: pathBook
+//             }
+//         ]
+//     };
 
-    // If hidden field is filled, its a spam mail and we don't send it
-    if(req.body.url === "" && req.body.url.length == 0) {
-        transporter.sendMail(HelperOptions, (error, info) => {
-            if(error) {
-                req.flash('error', 'Something went wrong: ' + error);
-            } else {
-                req.flash('success', 'You can find your eBook in your mailbox!');
-                res.redirect(req.get('referer'));
-            }
-        });
-    }
-});
+//     // If hidden field is filled, its a spam mail and we don't send it
+//     if(req.body.url === "" && req.body.url.length == 0) {
+//         transporter.sendMail(HelperOptions, (error, info) => {
+//             if(error) {
+//                 req.flash('error', 'Something went wrong: ' + error);
+//             } else {
+//                 req.flash('success', 'You can find your eBook in your mailbox!');
+//                 res.redirect(req.get('referer'));
+//             }
+//         });
+//     }
+// });
 
 //Add subscriber to Mailchimp list
 app.post('/signup', (req, res) => {

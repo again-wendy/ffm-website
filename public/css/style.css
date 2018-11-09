@@ -2083,8 +2083,12 @@ form .form-group input, form .form-group textarea {
     padding: 10px 6px;
   }
 }
+/* line 28, ../sass/_partials/_form.scss */
+form .g-recaptcha > div {
+  margin: 0 auto;
+}
 
-/* line 30, ../sass/_partials/_form.scss */
+/* line 33, ../sass/_partials/_form.scss */
 .antispam {
   display: none;
 }
