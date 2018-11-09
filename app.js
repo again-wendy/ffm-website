@@ -293,12 +293,9 @@ app.post('/send', (req, res) => {
 
     request(recaptcha_url, function(error, resp, body) {
         body = JSON.parse(body);
-        console.log(error);
-        console.log(body);
-        console.log(recaptcha_url);
         if(body.success !== undefined && !body.success) {
             if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error)
+                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
             } else {
                 req.flash('error', 'Something went wrong with recaptcha: ' + error);
             }
@@ -307,7 +304,7 @@ app.post('/send', (req, res) => {
             transporter.sendMail(HelperOptions, (errorMail, info) => {
                 if(errorMail) {
                     if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error)
+                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
                     } else {
                         req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
                     }
