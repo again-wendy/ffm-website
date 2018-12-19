@@ -8,26 +8,26 @@ const exphbs            = require('express-handlebars');
 const path              = require('path');
 const nodemailer        = require('nodemailer');
 const i18n              = require('i18n-express');
-const firebase          = require('firebase');
 const superagent        = require('superagent');
 const request           = require('request');
+const promRequest       = require('request-promise');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
 
 // Setup Firebase
-var config = {
-    apiKey: process.env.FB_API_KEY,
-    authDomain: process.env.FB_AUTH_DOMAIN,
-    databaseURL: process.env.FB_DATABASE_URL,
-    storageBucket: process.env.FB_PROCESS_BUCKET
-}
-firebase.initializeApp(config);
-const db = firebase.database();
-app.use((req, res, next) => {
-    req.db = db;
-    next();
-});
+// var config = {
+//     apiKey: process.env.FB_API_KEY,
+//     authDomain: process.env.FB_AUTH_DOMAIN,
+//     databaseURL: process.env.FB_DATABASE_URL,
+//     storageBucket: process.env.FB_PROCESS_BUCKET
+// }
+// firebase.initializeApp(config);
+// const db = firebase.database();
+// app.use((req, res, next) => {
+//     req.db = db;
+//     next();
+// });
 
 // Setup language
 app.use(i18n({
@@ -132,56 +132,117 @@ app.get('/blogs', (req, res) => {
 });
 
 app.get('/hirer', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
-        var temp = JSON.parse(body);
-        var blogs = getBlogPerLang(req.cookies.ulang, temp);
-        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
-            var temp2 = JSON.parse(body2);
-            var subs = setSubType(temp2);
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+        .then((blogRes) => {
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             res.cookie('role', 'hirer').render('hirer', {
                 title: "FlexForceMonkey | Flex client",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
-                blogs: blogs,
-                subs: subs
+                blogs: blogs
+            });
+        })
+        .catch(() => {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
+            } else {
+                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
+            }
+            res.cookie('role', 'hirer').render('hirer', {
+                title: "FlexForceMonkey | Flex client",
+                desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                img: "./public/images/hirer.jpg",
+                blogs: null
             });
         });
-    });
 });
 app.get('/supplier', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
-        var temp = JSON.parse(body);
-        var blogs = getBlogPerLang(req.cookies.ulang, temp);
-        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
-            var temp2 = JSON.parse(body2);
-            var subs = setSubType(temp2);
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+        .then((blogRes) => {
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             res.cookie('role', 'supplier').render('supplier', {
                 title: "FlexForceMonkey | Temp staffing/Consulting firm",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
-                blogs: blogs,
-                subs: subs
+                blogs: blogs
             });
-        });
-    });
-    
+        })
+        .catch(() => {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
+            } else {
+                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
+            }
+            res.cookie('role', 'supplier').render('supplier', {
+                title: "FlexForceMonkey | Temp staffing/Consulting firm",
+                desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                img: "./public/images/supplier.jpg",
+                blogs: null
+            });
+        });    
 });
 app.get('/freelancer', (req, res) => { 
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100', (err, resp, body) => {
-        var temp = JSON.parse(body);
-        var blogs = getBlogPerLang(req.cookies.ulang, temp);
-        request('https://api-test.flexforcemonkey.com/api/Subscriptions', (err2, resp2, body2) => {
-            var temp2 = JSON.parse(body2);
-            var subs = setSubType(temp2);
-            res.cookie('role', 'freelancer').render('freelancer', {
-                title: "FlexForceMonkey | Boutique firm/SEP",
-                desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-                img: "./public/images/freelancer.jpg",
-                blogs: blogs,
-                subs: subs
-            });
-        });
-    });
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+        .then((blogRes) => {
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+                .then((subRes) => {
+                    var tempSubs = JSON.parse(subRes);
+                    var subs = setSubType(tempSubs);
+                    res.cookie('role', 'freelancer').render('freelancer', {
+                        title: "FlexForceMonkey | Boutique firm/SEP",
+                        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+                        img: "./public/images/freelancer.jpg",
+                        blogs: blogs,
+                        subs: subs
+                    });
+                })
+                .catch(() => {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+                    } else {
+                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+                    }
+                    res.cookie('role', 'freelancer').render('freelancer', {
+                        title: "FlexForceMonkey | Boutique firm/SEP",
+                        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+                        img: "./public/images/freelancer.jpg",
+                        blogs: blogs,
+                        subs: null
+                    });
+                });
+        })
+        .catch(() => {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+            } else {
+                req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+            }
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+                .then((subRes) => {
+                    var tempSubs = JSON.parse(subRes);
+                    var subs = setSubType(tempSubs);
+                    res.cookie('role', 'freelancer').render('freelancer', {
+                        title: "FlexForceMonkey | Boutique firm/SEP",
+                        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+                        img: "./public/images/freelancer.jpg",
+                        blogs: null,
+                        subs: subs
+                    });
+                })
+                .catch(() => {
+                    res.cookie('role', 'freelancer').render('freelancer', {
+                        title: "FlexForceMonkey | Boutique firm/SEP",
+                        desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
+                        img: "./public/images/freelancer.jpg",
+                        blogs: null,
+                        subs: null
+                    });
+                });
+        });  
 });
 
 // app.get('/ebook', (req, res) => {

@@ -3,101 +3,105 @@
         <h2 class="section-title">{{ translation.subs.TITLE }}</h2>
         <div class="section-container">
             <div class="subscriptions">
-                {{#each subs}}
-                    <div class="column">
-                        <div class="extra">
-                            <div class="inner">
-                                <h4 class="title">{{subscriptionTypeText}}</h4>
-                                <div class="content">
-                                    <ul>
-                                        {{#iff maximumWeeklyTimesheets '>' 0}}
-                                            <li>{{ ../translation.subs.UPTO }} {{maximumWeeklyTimesheets}} {{ ../translation.subs.TIMESHEETSPERWEEK }}</li>
-                                        {{/iff}}
-                                        {{#iff maximumWeeklyTimesheets '==' null}}
-                                            <li>{{ ../translation.subs.UNLIMITEDTIMESHEETS }}</li>
-                                        {{/iff}}
+                {{#if subs}}
+                    {{#each subs}}
+                        <div class="column">
+                            <div class="extra">
+                                <div class="inner">
+                                    <h4 class="title">{{subscriptionTypeText}}</h4>
+                                    <div class="content">
+                                        <ul>
+                                            {{#iff maximumWeeklyTimesheets '>' 0}}
+                                                <li>{{ ../translation.subs.UPTO }} {{maximumWeeklyTimesheets}} {{ ../translation.subs.TIMESHEETSPERWEEK }}</li>
+                                            {{/iff}}
+                                            {{#iff maximumWeeklyTimesheets '==' null}}
+                                                <li>{{ ../translation.subs.UNLIMITEDTIMESHEETS }}</li>
+                                            {{/iff}}
 
-                                        <li>{{ ../translation.subs.SENDINVOICESWEEKMONTH }}</li>
-                                        <li>{{ ../translation.subs.INVITEDUNLIMITEDAPPR }}</li>
-                                        
-                                        {{#iff maximumTimeUsers '>' 0}}
-                                            <li>{{../translation.subs.UPTO }} {{maximumTimeUsers}} {{ ../translation.subs.TIMEUSERSTOADMIN }}</li>
-                                        {{/iff}}
-                                        {{#iff maximumTimeUsers '==' null}}
-                                            <li>{{ ../translation.subs.UNLIMITEDTIMEUSERS }}</li>
-                                        {{/iff}}
-                                        
-                                        {{#if editableInvoiceDesign}}
-                                            <li>{{ ../translation.subs.INVOICEDESIGN }}</li>
-                                        {{/if}}
-                                        
-                                        <li>{{ ../translation.subs.UNLIMITEDSUPPORT }}</li>
+                                            <li>{{ ../translation.subs.SENDINVOICESWEEKMONTH }}</li>
+                                            <li>{{ ../translation.subs.INVITEDUNLIMITEDAPPR }}</li>
+                                            
+                                            {{#iff maximumTimeUsers '>' 0}}
+                                                <li>{{../translation.subs.UPTO }} {{maximumTimeUsers}} {{ ../translation.subs.TIMEUSERSTOADMIN }}</li>
+                                            {{/iff}}
+                                            {{#iff maximumTimeUsers '==' null}}
+                                                <li>{{ ../translation.subs.UNLIMITEDTIMEUSERS }}</li>
+                                            {{/iff}}
+                                            
+                                            {{#if editableInvoiceDesign}}
+                                                <li>{{ ../translation.subs.INVOICEDESIGN }}</li>
+                                            {{/if}}
+                                            
+                                            <li>{{ ../translation.subs.UNLIMITEDSUPPORT }}</li>
 
-                                        {{#iff discountPercentage '>' 0}}
-                                            <li>{{ discountPercentage }}% {{ ../translation.subs.DISCOUNT }}</li>
-                                        {{/iff}}
+                                            {{#iff discountPercentage '>' 0}}
+                                                <li>{{ discountPercentage }}% {{ ../translation.subs.DISCOUNT }}</li>
+                                            {{/iff}}
 
-                                        {{#iff trialInNumberOfDays '>' 0}}
-                                            <li>{{ trialInNumberOfDays }} {{ ../translation.subs.TRIALPERIOD }}</li>
-                                        {{/iff}}
-                                    </ul>
-                                    <ul class="list-style-none">
-                                        {{#iff monthlyFee '!=' null}}
-                                            <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
-                                            <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
-                                        {{/iff}}
-                                        {{#iff monthlyFee '==' null}}
-                                            <li class="bold">{{ ../translation.subs.ASKFOROFFER }}</li>
-                                        {{/iff}}
-                                    </ul>
+                                            {{#iff trialInNumberOfDays '>' 0}}
+                                                <li>{{ trialInNumberOfDays }} {{ ../translation.subs.TRIALPERIOD }}</li>
+                                            {{/iff}}
+                                        </ul>
+                                        <ul class="list-style-none">
+                                            {{#iff monthlyFee '!=' null}}
+                                                <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
+                                                <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                            {{/iff}}
+                                            {{#iff monthlyFee '==' null}}
+                                                <li class="bold">{{ ../translation.subs.ASKFOROFFER }}</li>
+                                            {{/iff}}
+                                        </ul>
+                                    </div>
+                                    <div class="buttons">
+                                        <button class="btn-secondary close-info">{{ ../translation.subs.CLOSE }}</button>
+                                        <button class="btn-primary choose">{{ ../translation.subs.REGISTER }}</button>
+                                    </div>
                                 </div>
-                                <div class="buttons">
-                                    <button class="btn-secondary close-info">{{ ../translation.subs.CLOSE }}</button>
-                                    <button class="btn-primary choose">{{ ../translation.subs.REGISTER }}</button>
+                            </div>
+                            <div class="base">
+                                <h3>{{ subscriptionTypeText}}</h3>
+                                <div class="inner">
+                                    <p class="bold">
+                                        {{#iff subscriptionType '==' 0}}
+                                            {{ ../translation.subs.INFO0 }}
+                                        {{/iff}}
+                                        {{#iff subscriptionType '==' 1}}
+                                            {{ ../translation.subs.INFO1 }}
+                                        {{/iff}}
+                                        {{#iff subscriptionType '==' 2}}
+                                            {{ ../translation.subs.INFO2 }}
+                                        {{/iff}}
+                                        {{#iff subscriptionType '==' 3}}
+                                            {{ ../translation.subs.INFO3 }}
+                                        {{/iff}}
+                                        {{#iff subscriptionType '==' 4}}
+                                            {{ ../translation.subs.INFO4 }}
+                                        {{/iff}}
+                                    </p>
+                                    {{#iff monthlyFee '!=' null}}
+                                        <p class="price-rule">
+                                            <span class="price">&euro; {{monthlyFee}}</span> /{{ ../translation.subs.MONTH }}
+                                        </p>
+                                    {{/iff}}
+                                    {{#iff monthlyFee '==' null}}
+                                        <p class="price-rule one">
+                                            {{ ../translation.subs.ASKFOROFFER }}
+                                        </p>
+                                    {{/iff}}
+                                    <div class="other-prices">
+                                        {{#iff annualFee '!=' null}}
+                                            <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p>
+                                        {{/iff}}
+                                    </div>
+                                    <button class="btn-secondary more-info">{{ ../translation.subs.MOREINFO }}</button>
+                                    <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">{{ ../translation.subs.REGISTER }}</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="base">
-                            <h3>{{ subscriptionTypeText}}</h3>
-                            <div class="inner">
-                                <p class="bold">
-                                    {{#iff subscriptionType '==' 0}}
-                                        {{ ../translation.subs.INFO0 }}
-                                    {{/iff}}
-                                    {{#iff subscriptionType '==' 1}}
-                                        {{ ../translation.subs.INFO1 }}
-                                    {{/iff}}
-                                    {{#iff subscriptionType '==' 2}}
-                                        {{ ../translation.subs.INFO2 }}
-                                    {{/iff}}
-                                    {{#iff subscriptionType '==' 3}}
-                                        {{ ../translation.subs.INFO3 }}
-                                    {{/iff}}
-                                    {{#iff subscriptionType '==' 4}}
-                                        {{ ../translation.subs.INFO4 }}
-                                    {{/iff}}
-                                </p>
-                                {{#iff monthlyFee '!=' null}}
-                                    <p class="price-rule">
-                                        <span class="price">&euro; {{monthlyFee}}</span> /{{ ../translation.subs.MONTH }}
-                                    </p>
-                                {{/iff}}
-                                {{#iff monthlyFee '==' null}}
-                                    <p class="price-rule one">
-                                        {{ ../translation.subs.ASKFOROFFER }}
-                                    </p>
-                                {{/iff}}
-                                <div class="other-prices">
-                                    {{#iff annualFee '!=' null}}
-                                        <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p>
-                                    {{/iff}}
-                                </div>
-                                <button class="btn-secondary more-info">{{ ../translation.subs.MOREINFO }}</button>
-                                <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">{{ ../translation.subs.REGISTER }}</button>
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
+                    {{/each}}
+                {{else}}
+                    <p class="flash flash-error">{{ messages.error }}</p>
+                {{/if}}
             </div>
         </div>
     </div>

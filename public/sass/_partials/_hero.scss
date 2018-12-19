@@ -43,9 +43,10 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 5%;
+        color: white;
         button {
             background-color: transparent;
-            color: $dark-grey;
+            color: white;
             border: none;
             font-size: 1.5rem;
         }
@@ -67,10 +68,10 @@
 #hero.home {
     background: 
         linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
         ),
-        url('../images/home.jpg') 
+        url('../images/home-blur.jpg') 
         no-repeat 
         center;
     .hero-title {
@@ -80,7 +81,7 @@
         text-align: left;
         position: relative;
         float: left;
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.3);
         padding: 35px;
         .logo {
             font-family: $font-logo;
