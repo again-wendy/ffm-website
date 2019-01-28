@@ -15,7 +15,7 @@
     position: relative;
     .hero-title {
         position: absolute;
-        width: 60%;
+        width: 55%;
         left: 10%;
         bottom: 10%;
         color: white;
@@ -38,9 +38,28 @@
             font-size: 1.8rem;
         }
     }
+    .iframe {
+        position: absolute;
+        right: 1%;
+        width: 40%;
+        bottom: 2%;
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        }
+    }
     .scrolldiv {
         position: absolute;
-        left: 50%;
+        left: 30%;
         transform: translateX(-50%);
         bottom: 5%;
         color: white;
@@ -75,9 +94,9 @@
         no-repeat 
         center;
     .hero-title {
-        width: 65%;
-        left: 5%;
-        top: 10%;
+        width: 60%;
+        left: 2%;
+        top: 5%;
         text-align: left;
         position: relative;
         float: left;

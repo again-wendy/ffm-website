@@ -131,13 +131,13 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-app.get('/hirer', (req, res) => { 
+app.get('/integration', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'hirer').render('hirer', {
-                title: "FlexForceMonkey | Flex client",
+            res.cookie('role', 'integration').render('hirer', {
+                title: "FlexForceMonkey | Integration",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: blogs
@@ -149,8 +149,8 @@ app.get('/hirer', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'hirer').render('hirer', {
-                title: "FlexForceMonkey | Flex client",
+            res.cookie('role', 'integration').render('hirer', {
+                title: "FlexForceMonkey | Integration",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: null
