@@ -157,13 +157,16 @@ app.get('/integration', (req, res) => {
             });
         });
 });
-app.get('/supplier', (req, res) => { 
+app.get('/hirer', (req, res) => {
+    res.redirect('/integration');
+});
+app.get('/cla-engine', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'supplier').render('supplier', {
-                title: "FlexForceMonkey | Temp staffing/Consulting firm",
+            res.cookie('role', 'cla-engine').render('supplier', {
+                title: "FlexForceMonkey | Cla engine",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
                 blogs: blogs
@@ -175,13 +178,16 @@ app.get('/supplier', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'supplier').render('supplier', {
-                title: "FlexForceMonkey | Temp staffing/Consulting firm",
+            res.cookie('role', 'cla-engine').render('supplier', {
+                title: "FlexForceMonkey | Cla engine",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
                 blogs: null
             });
         });    
+});
+app.get('/supplier', (req, res) => {
+    res.redirect('/cla-engine');
 });
 app.get('/freelancer', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
