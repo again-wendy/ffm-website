@@ -131,13 +131,13 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-app.get('/integration', (req, res) => { 
+app.get('/hirer', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'integration').render('hirer', {
-                title: "FlexForceMonkey | Integration",
+            res.cookie('role', 'hirer').render('hirer', {
+                title: "FlexForceMonkey | Hirer",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: blogs
@@ -149,24 +149,24 @@ app.get('/integration', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'integration').render('hirer', {
-                title: "FlexForceMonkey | Integration",
+            res.cookie('role', 'hirer').render('hirer', {
+                title: "FlexForceMonkey | Hirer",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: null
             });
         });
 });
-app.get('/hirer', (req, res) => {
-    res.redirect('/integration');
-});
-app.get('/cla-engine', (req, res) => { 
+// app.get('/hirer', (req, res) => {
+//     res.redirect('/integration');
+// });
+app.get('/supplier', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'cla-engine').render('supplier', {
-                title: "FlexForceMonkey | Cla engine",
+            res.cookie('role', 'supplier').render('supplier', {
+                title: "FlexForceMonkey | Supplier",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
                 blogs: blogs
@@ -186,9 +186,9 @@ app.get('/cla-engine', (req, res) => {
             });
         });    
 });
-app.get('/supplier', (req, res) => {
-    res.redirect('/cla-engine');
-});
+// app.get('/supplier', (req, res) => {
+//     res.redirect('/cla-engine');
+// });
 app.get('/freelancer', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {

@@ -12,7 +12,7 @@
     "GO_TO_WEBSITE": "Ga naar website",
     "HIRER": "Bekijk onze integratiedienst voor Opdrachtgevers",
     "INTEGRATION": "Bekijk onze mogelijkheden voor integratie",
-    "CLAENGINE": "Lees meer over onze cao ontfutselaar",
+    "CLAENGINE": "Lees meer over onze cao ontrafelaar",
     "INTERIM": "Bekijk onze online software voor Tijdregistratie en facturatie",
     "MENU-FREELANCER": "Online software voor urenregistratie en facturatie",
     "MENU-HIRER": "Integratie voor Opdrachtgevers",
@@ -88,7 +88,7 @@
     "HIRER": "Opdrachtgever",
     "SUPPLIER": "Uitzendbureau/consultancy firms",
     "INTEGRATION": "Integratie",
-    "CLAENGINE": "Cao ontfutselaar"
+    "CLAENGINE": "Cao ontrafelaar"
   },
   "freelancer": {
     "HERO_TEXT": "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",

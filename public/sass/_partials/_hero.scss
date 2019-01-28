@@ -56,6 +56,12 @@
                 border: 0;
             }
         }
+        @media(max-width: 991px) {
+            width: 55%;
+        }
+        @media(max-width: 767px) {
+            display: none;
+        }
     }
     .scrolldiv {
         position: absolute;
@@ -74,6 +80,14 @@
             height: 2em;
             width: 2em;
             animation: bounce 2s infinite;
+        }
+        @media(max-width: 991px) {
+            left: 22%;
+            width: 25%;
+        }
+        @media(max-width: 767px) {
+            left: 50%;
+            width: auto;
         }
         @media(max-width: 575px) {
             button {
@@ -184,6 +198,15 @@
         url('../images/hirer.jpg') 
         no-repeat 
         center;
+    .hero-title {
+        width: 65%;
+        left: 3%;
+        top: 8%;
+        @media(max-width: 991px) {
+            width: 90%;
+            left: 5%;
+        }
+    }
 }
 
 #hero.supplier {
@@ -197,6 +220,11 @@
         center;
     @media (max-width: 800px) {
         background-position: 70% 50%;
+    }
+    .hero-title {
+        width: 65%;
+        left: 3%;
+        top: 8%;
     }
 }
 
@@ -214,6 +242,10 @@
         right: auto;
         left: 5%;
         top: 15%;
+        @media(max-width: 991px) {
+            width: 75%;
+            top: 8%;
+        }
         @media (max-width: 800px) {
             width: 90%;
         }
