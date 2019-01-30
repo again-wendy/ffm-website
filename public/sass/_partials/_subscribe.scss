@@ -1,0 +1,58 @@
+#subscribe-page {
+    @include displayFlex;
+    @include prefix(flex-direction, column, webkit moz o);
+    height: 100vh;
+    .navbar {
+        height: 50px;
+        background: $gradient;
+        .brand {
+            padding-left: 15px;
+            padding-top: 8px;
+            font-family: $font-logo;
+            font-size: 1.6rem;
+            color: white;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .main {
+        @include prefix(flex, 1, webkit moz o);
+        background: url('../images/curious.jpg') no-repeat center center;
+        background-size: cover;
+        .panel {
+            margin-top: 30px;
+            .panel-heading {
+                background: $panel-heading;
+                border-bottom: 1px solid $panel-border;
+                padding: 10px 15px;
+                .panel-title {
+                    color: $dark-grey;
+                    font-size: 16px;
+                    font-family: $font-bold;
+                    padding: 0;
+                }
+            }
+            .panel-body {
+                .subscribeform {
+                    @include displayFlex;
+                    .form-column {
+                        @include prefix(flex, 1, webkit moz o);
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        @include displayFlex;
+        border-top: 1px solid $light-grey;
+        padding: 0 15px;
+        .text {
+            @include prefix(flex, 1, webkit moz o);
+        }
+        .right-text {
+            text-align: right;
+        }
+    }
+}

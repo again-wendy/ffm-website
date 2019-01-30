@@ -1,0 +1,76 @@
+{{> cla-nav}}
+
+<section id="hero" class="supplier cla">
+    <div class="hero-title">
+        <h1>
+            {{ translation.supplier.HERO_TEXT }}
+        </h1>
+    </div>
+    <div class="iframe">
+        <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/UUSmUoriNkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section id="supplier-intro" class="full-screen">
+    <div class="container">
+        <h2 class="section-title">{{ translation.supplier.INTRO_TITLE }}</h2>
+        <div class="section-container">
+            <p class="sub-title">{{ translation.supplier.INTRO_SUBTITLE }}</p>
+            <img class="scrollleft" src="./public/images/computeraap.png" alt="Computer Monkey">
+            <div class="section-text scrollright">
+                <p>{{ translation.supplier.INTRO_TEXT_1 }}</p>
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.supplier.GET_CONTACT }}</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="banner banner-supplier">
+    <div class="banner-container animation-banner">
+        <h1 class="banner-title title-1">{{ translation.general.FASTER }}</h1>
+        <h1 class="banner-title title-2">{{ translation.general.FLEXIBLE }}</h1>
+        <h1 class="banner-title title-3">{{ translation.general.CAREFREE }}</h1>
+        <h1 class="banner-title title-4">{{ translation.general.OPTIMAL }}</h1>
+    </div>
+</div>
+
+<section id="supplier-kit" class="full-screen">
+    <div class="container">
+        <h2 class="section-title">{{ translation.supplier.KIT_INTRO }}</h2>
+        <div class="section-container">
+            <img class="scrollleft" src="./public/images/stekkerdoos.png" alt="De FlexForceMonkey Aansluitbox">
+            <div class="section-text scrollright">
+                <p>{{ translation.supplier.KIT_TEXT }}</p>
+            </div>
+            <div class="text-center">
+                <a class="btn-complementary-xl text-center" onclick="menuScroll('#contact')">{{ translation.supplier.GET_KIT }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="supplier-options" class="full-screen">
+    <div class="container">
+        <h2 class="section-title">{{ translation.supplier.AGENCY }}</h2>
+        <div class="section-container">
+            <p class="sub-title">{{ translation.supplier.AGENCY_SUBTITLE }}</p>
+            <div class="section-text scrollleft">
+                <p>{{ translation.supplier.AGENCY_TEXT }}</p>
+            </div>
+            <img class="scrollright" src="./public/images/puzzel-aap.png" alt="Puzzle Monkey">
+            <div class="buttons">
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.supplier.GET_CONTACT }}</button>
+                <a class="btn-light-grey-xl" target="_blank" href="https://app.flexforcemonkey.com/subscriptions">{{ translation.supplier.REGISTER_ACCOUNT }}</a>
+            </div>
+            <div class="text-center">
+                <p>{{ translation.supplier.PS }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{> blogs}}
+
+{{> contact}}

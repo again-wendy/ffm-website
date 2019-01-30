@@ -8,15 +8,18 @@
   "choice": {
     "CHOOSE_TEXT": "Wij willen jou de meest optimale informatie geven. Daarom vragen wij jou een keuze te maken uit de volgende rollen:",
     "CURIOUS": "Ik ben alleen nieuwsgierig",
-    "FREELANCER": "Bekijk onze online software voor Urenregistratie en facturatie",
+    "FREELANCER": "Lees meer over onze online software voor urenregistratie en facturatie",
     "GO_TO_WEBSITE": "Ga naar website",
     "HIRER": "Bekijk onze integratiedienst voor Opdrachtgevers",
-    "INTEGRATION": "Bekijk onze mogelijkheden voor integratie",
+    "INTEGRATION": "Lees meer over onze integratiediensten",
     "CLAENGINE": "Lees meer over onze cao ontrafelaar",
     "INTERIM": "Bekijk onze online software voor Tijdregistratie en facturatie",
     "MENU-FREELANCER": "Online software voor urenregistratie en facturatie",
     "MENU-HIRER": "Integratie voor Opdrachtgevers",
     "MENU-SUPPLIER": "Integratie voor Uitzendbureaus/Consultancy firms",
+    "MENU-INTEGRATION": "Integratiediensten",
+    "MENU-CLA": "Cao ontrafelaar",
+    "MENU-SOFTWARE": "Online software voor urenregistratie en facturatie",
     "SUPPLIER": "Bekijk onze integratiedienst voor Uitzendbureaus/Consultancy firms",
     "WELCOME": "Welkom bij FlexForceMonkey!"
   },
@@ -84,11 +87,14 @@
     "TITLE": "Sorry, we slipped!"
   },
   "footer": {
-    "FREELANCER": "Boutique firm / SEP",
+    "FREELANCER": "Online software",
     "HIRER": "Opdrachtgever",
     "SUPPLIER": "Uitzendbureau/consultancy firms",
     "INTEGRATION": "Integratie",
-    "CLAENGINE": "Cao ontrafelaar"
+    "CLAENGINE": "Cao ontrafelaar",
+    "CHOOSE_INFO": "Lees meer over:",
+    "SUPPORT1": "Hulp nodig? Neem",
+    "SUPPORT2": "op met onze supportdesk"
   },
   "freelancer": {
     "HERO_TEXT": "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
@@ -127,17 +133,31 @@
     "CONNECT_TEXT": "Het meest bijzondere aan FlexForceMonkey is wel dat wij niet veeleisend zijn aan jouw systeem. Of je nu vanuit een catalog buying proces via punch-out met ons wil shoppen, of een datafeed aangeboden wil hebben als HR stamgegeven. Of je nu met of zonder urenregistratie systeem deel wilt nemen. Wij hebben voor alle gangbare keuzes een combineerbare oplossing. En wij sluiten jouw leverancier(s) voor je aan met het digitale sausje waar zij om vragen. Eenvoudig online samenwerken dus.",
     "GET_CONTACT": "NEEM NU CONTACT MET ONS OP",
     "GET_KIT": "Neem nu contact op voor je eerste leveranciers integratie",
-    "HERO_TEXT": "Dus jij droomt van een volledig geautomatiseerde keten met je flex-leveranciers? Jij wilt leidend zijn in een proces zonder onnodige supplier-lock-in? Dat vinden wij logisch!",
-    "INTRO_TEXT": "Er zijn nogal wat systemen en processen in omloop en wat voor jullie organisatie het beste is levert nogal eens problemen met je leveranciers op. Hoe koppel je nu jullie optimalisatie in inkoop, uren en HR systemen aan een soepel proces bij de leverancier? Zonder dat maatwerkintegraties je onnodige kosten opleveren graag!",
-    "INTRO_TITLE": "Als jij flexkrachten inhuurt weet je wat we bedoelen",
+    "HERO_TEXT": "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
+    "INTRO_TEXT": "Er zijn nogal wat systemen en processen in omloop en wat voor jullie organisatie het beste is levert nogal eens problemen met je klanten op. Hoe koppel je nu jullie ideale proces voor uren en facturen aan hun optimalisatie van inkoop? Zonder dat maatwerkintegraties je onnodige kosten opleveren graag!",
+    "INTRO_TITLE": "Als jij een uitzendbureau of adviesbedrijf runt, weet je wat we bedoelen",
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
-    "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook."
+    "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
+    "SUBSCRIPTIONS": "Abonnementen",
+    "SUBSCRIBE": "Abonneer",
+    "table": {
+      "HRDATA": "Onbeperkte human resource data",
+      "ASSDATA": "Onbeperkte opdrachtdata",
+      "TSDATA": "Onbeperkte timesheet data",
+      "INVDATA": "Onbeperkte factuurdata",
+      "ONB": "Onboarding",
+      "MAP": "Mapping",
+      "FREE": "Gratis",
+      "PERTS": "per timesheet",
+      "PERSC": "per systeemkoppeling"
+    }
   },
   "home": {
     "CHOOSE_ROLE": "Kies je rol:",
-    "HERO_PARAGRAPH": "Scroll naar beneden om je rol te kiezen",
+    "HERO_PARAGRAPH": "Lees meer over onze producten",
     "HERO_TEXT": "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
-    "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen willen we graag weten wat je rol in de keten is. Klik op één van de volgende keuzes om naar de betreffende website te gaan."
+    "HOME_INTRO": "FlexForceMonkey is slimme integratie software die businesspartners in flex eenvoudiger laat samenwerken. Het zorgt voor een naadloze aansluiting tussen administraties. Om jou te laten zien hoe wij je kunnen helpen, willen we graag weten waar je naar op zoek bent. Klik op één van de volgende keuzes om naar de betreffende website te gaan.",
+    "OURPARTNERS": "Onze partners"
   },
   "menu-items": {
     "BLOG": "Blog",
@@ -150,6 +170,9 @@
     "OPTIONS": "Opties",
     "PRICES": "Prijzen",
     "ROLES": "Rollen",
+    "PAGES": "Pagina's",
+    "PRODUCTS": "Producten",
+    "OTHERPOSS": "Andere mogelijkheden",
     "USE_FFM": "Zelf gebruiken",
     "WHAT_WE_DO": "Wat we doen"
   },
@@ -157,6 +180,17 @@
     "OPEN": "Ga naar het formulier",
     "OPENS_NEW_TAB": "Op de hoogte blijven? Schrijf je nu in voor onze nieuwsbrief!",
     "SUBSCRIBE_OUR": "FlexForceMonkey nieuwsbrief"
+  },
+  "subscribe": {
+    "REGISTER": "Registreer",
+    "COMPANYNAME": "Bedrijfsnaam",
+    "FIRSTNAME": "Voornaam",
+    "LASTNAME": "Achternaam",
+    "EMAILNEWSLETTERS": "Email adres mag gebruikt worden voor nieuwsbrieven",
+    "EMAILPRODUCTUPDATES": "Email adres mag gebruikt worden voor product updates",
+    "EMAILCOMCONTACT": "Email adres mag gebruikt worden voor gericht individueel commercieel contact",
+    "YOURSUB": "Jouw abonnement",
+    "COMPARE": "Vergelijk"
   },
   "subs": {
     "ASKFOROFFER": "Vraag offerte",

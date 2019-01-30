@@ -22,10 +22,11 @@ $(document).ready(function() {
         } else {
             $("#navbar .right-menu .menu-items").show();
         }
-    })
+    });
 
     // Animation banner
     animationBanner();
+    partnerBannerSlider();
 
     // Set active role
     // setActiveRoleLink();
@@ -71,6 +72,19 @@ function animationBanner() {
     setInterval(function() {
         $(".animation-banner :first-child").fadeOut(500).next(".banner-title").delay(800).fadeIn(500).end().appendTo(".animation-banner");
     }, 5000);
+}
+
+function partnerBannerSlider() {
+    $('.slide-container').unslider({
+        arrows: {
+            prev: '<a class="prev">&#10094;</a>',
+            next: '<a class="next">&#10095;</a>'
+        },
+        autoplay: true,
+        speed: 1200,
+        delay: 5000,
+        dots: false
+    });
 }
 
 function getBlogs() {

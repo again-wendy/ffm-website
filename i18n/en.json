@@ -8,15 +8,18 @@
   "choice": {
     "CHOOSE_TEXT": "We want to give you the best possible information. That is why we are asking you to make a choice from the following roles:",
     "CURIOUS": "I'm just curious",
-    "FREELANCER": "View our online software for Time Registration and invoicing",
+    "FREELANCER": "Check our online software for timesheets and invoice management",
     "GO_TO_WEBSITE": "Go to website",
     "HIRER": "View our integration service for Flex clients",
-    "INTEGRATION": "View our integration possibilities",
-    "CLAENGINE": "View our online software for cla calculations",
-    "INTERIM": "View our online software for Time Registration and invoicing",
-    "MENU-FREELANCER": "Online software for Time Registration and invoicing",
+    "INTEGRATION": "Check our integration services",
+    "CLAENGINE": "Check our timesheet evaluator for collective labor rules",
+    "INTERIM": "Check our online software for Time Registration and invoicing",
+    "MENU-FREELANCER": "Online software for timesheets and invoice management",
     "MENU-HIRER": "Integration for Flex clients",
     "MENU-SUPPLIER": "Integration for Temp staffing/Consultancy firm",
+    "MENU-INTEGRATION": "Integration services",
+    "MENU-CLA": "Timesheet evaluator for cla's",
+    "MENU-SOFTWARE": "Online software for timesheets and invoice management",
     "SUPPLIER": "View our integration service for Temp staffing/Consulting firm",
     "WELCOME": "Welcome to FlexForceMonkey!"
   },
@@ -84,11 +87,14 @@
     "TITLE": "Sorry, we slipped!"
   },
   "footer": {
-    "FREELANCER": "Boutique firm / SEP",
+    "FREELANCER": "Online software",
     "HIRER": "Flex client",
     "SUPPLIER": "Temp staffing/consulting firm",
     "INTEGRATION": "Integration",
-    "CLAENGINE": "Cla engine"
+    "CLAENGINE": "Cla engine",
+    "CHOOSE_INFO": "Read more about:",
+    "SUPPORT1": "Need help? Get in",
+    "SUPPORT2": "with our supportdesk"
   },
   "freelancer": {
     "HERO_TEXT": "Shouldn’t it all be about the quality of your hours? Administrating them should just be automated.",
@@ -127,17 +133,31 @@
     "CONNECT_TEXT": "The most special thing about FlexForceMonkey is that it is not very demanding on your system. Whether you want to shop with us from a catalog buying process via punch-out, or you require a data feed as HR master data. Whether you want to participate with or without a time registration system. We have a combinable solution for all common choices. And we connect your supplier(s) for you following the digital desires they have. We think that is simple online collaboration.",
     "GET_CONTACT": "GET IN CONTACT NOW",
     "GET_KIT": "Contact us now for your first supplier integration",
-    "HERO_TEXT": "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience",
-    "INTRO_TEXT": "There are quite a few systems and processes in circulation and what is best for your organization often causes problems with your suppliers. How do you link your optimization in purchasing, time registration and HR systems to a smooth process at the supplier? You do not want to have any unnecessary costs and you do not want custom-made integrations!",
-    "INTRO_TITLE": "If you are familiar with hiring flex workers you know what we mean",
+    "HERO_TEXT": "So your dream is about a fully digitized chain? Process purchase and sales transactions for both blue and white collar hiring via one network? One platform that handles all data integration? We think that dream makes sense!",
+    "INTRO_TEXT": "There are quite a few systems and processes and what is best for your organisation often causes problems with your customers. How do you connect your ideal process for timeregistration and invoice management to their optimization of purchasing? And without the unnecessary costs of custom-made integrations!",
+    "INTRO_TITLE": "If you run an employment agency or consultancy firm, you know what we mean",
     "KIT_INTRO": "Digitization in a flash: Standardized connectors make all the difference",
-    "KIT_TEXT": "Corporate integration software that has been made equally simple as ordering something like an internet subscription? That was the goal! Born in the cloud, with a natural thought about collaboration, that asks for swift solutioning and that is exactly what you will be getting."
+    "KIT_TEXT": "Corporate integration software that has been made equally simple as ordering something like an internet subscription? That was the goal! Born in the cloud, with a natural thought about collaboration, that asks for swift solutioning and that is exactly what you will be getting.",
+    "SUBSCRIPTIONS": "Subscriptions",
+    "SUBSCRIBE": "Subscribe",
+    "table": {
+      "HRDATA": "Unlimited human resource data",
+      "ASSDATA": "Unlimited assignmentdata",
+      "TSDATA": "Unlimited timesheet data",
+      "INVDATA": "Unlimited invoicedata",
+      "ONB": "Onboarding",
+      "MAP": "Mapping",
+      "FREE": "Free",
+      "PERTS": "per timesheet",
+      "PERSC": "per systemconnection"
+    }
   },
   "home": {
     "CHOOSE_ROLE": "Choose your role:",
-    "HERO_PARAGRAPH": "Scroll down to learn more",
+    "HERO_PARAGRAPH": "Read more about our products",
     "HERO_TEXT": "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
-    "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier business partners to collaborate in online processes. It ensures a seamless connection between administrations. To show you how we can help, we would like to know your role in the flex supply chain. Just click one of the following options to go the relevant website."
+    "HOME_INTRO": "FlexForceMonkey is smart integration software that makes it easier business partners to collaborate in online processes. It ensures a seamless connection between administrations. To show you how we can help, we would like to know what you are looking for. Just click one of the following options to go the relevant website.",
+    "OURPARTNERS": "Our partners"
   },
   "menu-items": {
     "BLOG": "Blog",
@@ -150,6 +170,9 @@
     "OPTIONS": "Options",
     "PRICES": "Prices",
     "ROLES": "Roles",
+    "PAGES": "Pages",
+    "PRODUCTS": "Products",
+    "OTHERPOSS": "Other possibilities",
     "USE_FFM": "Use it yourself",
     "WHAT_WE_DO": "What we do"
   },
@@ -157,6 +180,17 @@
     "OPEN": "Go to form",
     "OPENS_NEW_TAB": "Stay up to date? Register now for our newsletter!",
     "SUBSCRIBE_OUR": "FlexForceMonkey newsletter"
+  },
+  "subscribe": {
+    "REGISTER": "Register",
+    "COMPANYNAME": "Companyname",
+    "FIRSTNAME": "Firstname",
+    "LASTNAME": "Lastname",
+    "EMAILNEWSLETTERS": "Email address may be used for newsletters",
+    "EMAILPRODUCTUPDATES": "Email address may be used for product updates",
+    "EMAILCOMCONTACT": "Email address may be used for targeted individual commercial contact",
+    "YOURSUB": "Your subscription",
+    "COMPARE": "Compare"
   },
   "subs": {
     "ASKFOROFFER": "Ask for offer",

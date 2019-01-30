@@ -4,7 +4,7 @@
     <div class="hero-title">
         <h1>
             <span class="logo">FlexForceMonkey</span><br />
-            <span class="sublogo">Systemintegration as a Service</span><br/>
+            <span class="sublogo">Business network for Flex</span><br/>
             {{ translation.home.HERO_TEXT }}
         </h1>
     </div>
@@ -32,8 +32,8 @@
         <div class="section-container">
             <p>{{ translation.home.HOME_INTRO }}</p>
             <div class="buttons">
-                <a href="/hirer" class="btn-complementary-xl">{{ translation.choice.HIRER }}</a>
-                <a href="/supplier" class="btn-complementary-xl">{{ translation.choice.SUPPLIER }}</a>
+                <a href="/hirer" class="btn-complementary-xl">{{ translation.choice.INTEGRATION }}</a>
+                <a href="/supplier" class="btn-complementary-xl">{{ translation.choice.CLAENGINE }}</a>
                 <a href="/freelancer" class="btn-complementary-xl">{{ translation.choice.FREELANCER }}</a>
             </div>
         </div>
@@ -42,3 +42,24 @@
     <img class="normal-screen" src="./public/images/stekker-aap-normal.png" alt="{{ translation.freelancer_TRY_TITLE }}">
     <img class="big-screen" src="./public/images/stekker-aap-big.png" alt="{{ translation.freelancer_TRY_TITLE }}">
 </section>
+
+<section id="partners">
+    <div class="container">
+        <h2 class="section-title">{{ translation.home.OURPARTNERS }}</h2>
+        <div class="section-container slide-container">
+            <ul class="slides">
+                <li class="slide slide-1">
+                    <img src="../public/images/imgplaceholder.png" alt="Placeholder">
+                </li>
+                <li class="slide slide-2">
+                    <img src="../public/images/imgplaceholder.png" alt="Placeholder">
+                </li>
+                <li class="slide slide-3">
+                    <img src="../public/images/imgplaceholder.png" alt="Placeholder">
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{{> blogs}}

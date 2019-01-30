@@ -34,3 +34,56 @@
         }
     }
 }
+
+#partners {
+    background: url('../images/wood-background.jpg') no-repeat;
+    .section-title {
+        color: white;
+    }
+    .unslider {
+        overflow: visible;
+        position: relative;
+        .next, .prev {
+            position: absolute;
+            top: 35%;
+            color: white;
+            font-size: 3rem;
+        }
+        .next {
+            right: 0;
+        }  
+        .unslider-nav {
+            display: none;
+        }
+    }
+    .slide-container {
+        position: relative;
+        overflow: visible;
+        height: 200px;
+        .slide {
+            list-style: none;
+            position: relative;
+            width: 100%;
+            float: left;
+            img {
+                height: 200px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+#subscribe-ffm {
+    .table {
+        tbody {
+            th {
+                text-align: left;
+            }
+        }
+    }
+    .cta-btn {
+        margin-top: 25px;
+    }
+}

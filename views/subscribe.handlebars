@@ -1,0 +1,70 @@
+<div id="subscribe-page">
+    <nav class="navbar">
+        <div class="brand">
+            <p>FlexForceMonkey</p>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="container">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ translation.subscribe.REGISTER }}</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="subscribeform" method="POST" action="selfservice-subscribe">
+                        <div class="form-column left">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyname">{{ translation.subscribe.COMPANYNAME }}</label>
+                                <input type="text" name="companyname" id="companyname">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">{{ translation.subscribe.FIRSTNAME }}</label>
+                                <input type="text" name="firstname" id="firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">{{ translation.subscribe.LASTNAME }}</label>
+                                <input type="text" name="lastname" id="lastname">
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="emailnewsletters" id="emailnewsletters">
+                                <label for="emailnewsletters">{{ translation.subscribe.EMAILNEWSLETTERS }}</label><br />
+                                <input type="checkbox" name="emailproductupdates" id="emailproductupdates">
+                                <label for="emailproductupdates">{{ translation.subscribe.EMAILPRODUCTUPDATES }}</label><br />
+                                <input type="checkbox" name="emailcomcontact" id="emailcomcontact">
+                                <label for="emailcomcontact">{{ translation.subscribe.EMAILCOMCONTACT }}</label>
+                            </div>
+                        </div>
+                        <div class="form-column right">
+                            <h5>{{ translation.subscribe.YOURSUB }}</h5>
+                            <button class="btn-primary">{{ translation.subscribe.COMPARE }}</button>
+                            <div class="form-group">
+                                <select name="subscription" id="subscription">
+                                    <option value="Basic">Basic</option>
+                                    <option value="BasicPlus">BasicPlus</option>
+                                    <option value="SmallBusiness">SmallBusiness</option>
+                                    <option value="MediumBusiness">MediumBusiness</option>
+                                    <option value="Enterprise">Enterprise</option>
+                                </select>
+                            </div>
+                            <input class="btn-secondary" type="submit" value="{{ translation.subscribe.REGISTER }}">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="text left-text">
+            <p>&copy; FlexForceMonkey - {{ year }}</p>
+        </div>
+        <div class="text right-text">
+            <p>{{ translation.footer.SUPPORT1 }} <a href="https://app.flexforcemonkey.com/support">contact</a> {{ translation.footer.SUPPORT2 }}</p>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    <link rel="stylesheet" href="./public/css/normalize.css">
+    <link rel="stylesheet" href="./public/css/unslider.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <!-- FONT AWESOME -->
+    <script defer src="./public/js/fontawesome-all.min.js"></script>
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./public/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./public/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./public/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="./public/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- META TAGS for Social Media -->
+    <!-- Search Engine -->
+    <meta name="description" content="{{ desc }}">
+    <meta name="image" content="{{ img }}">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="{{ title }}">
+    <meta itemprop="description" content="{{ desc }}">
+    <meta itemprop="image" content="{{ img }}">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ desc }}">
+    <meta name="twitter:site" content="@flexforcemonkey">
+    <meta name="twitter:image:src" content="{{ img }}">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="{{ title }}">
+    <meta name="og:description" content="{{ desc }}">
+    <meta name="og:image" content="{{ img }}">
+    <meta name="og:url" content="http://flexforcemonkey.com">
+    <meta name="og:site_name" content="{{ title }}">
+    <meta name="fb:admins" content="184172875337875">
+    <meta name="og:type" content="website">
+    <!-- reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- COOKIE CONSENT -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            palette: {
+                popup: {
+                    background: "#2b2b2b",
+                    text: "#ffffff"
+                },
+                button: {
+                    background: "#0482b3",
+                    text: "#ffffff"
+                }
+            },
+            container: document.getElementById("cookie"),
+            theme: "edgeless",
+            position: "bottom-left",
+            content: {
+                message: "{{ translation.cookie.BANNER_TEXT }}",
+                dismiss: "{{ translation.cookie.DISMISS }}",
+                link: "{{ translation.cookie.LEARN_MORE }}"
+            },
+            onPopupOpen: function() {
+                document.getElementById("cookie").style.display = "block";
+            },
+            onPopupClose: function() {
+                document.getElementById("cookie").style.display = "none";
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="cookie"></div>
+
+    {{{body}}}
+
+    <div id="newsletter-popup">
+        <div class="envelope">
+            <span class="fa fa-envelope"></span>
+        </div>
+        <div class="header-container">
+            <div class="header">{{ translation.newsletter.SUBSCRIBE_OUR }}</div>
+            <a onclick="closeNewsletterBlock()" class="close">&times;</a>
+        </div>
+        <div class="content-container">
+            <p>{{ translation.newsletter.OPENS_NEW_TAB }}</p>
+            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">{{ translation.newsletter.OPEN }}</a>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./public/js/js-cookie.js"></script>
+    <script src="./public/js/unslider.min.js"></script>
+    <script src="./public/js/script.js"></script>
+    <script src="./public/js/scroll-in-view.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-86701727-1', 'auto');
+		ga('send', 'pageview');
+	
+    </script>
+
+    <!-- HubSpot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5244833.js"></script>
+</body>
+</html>

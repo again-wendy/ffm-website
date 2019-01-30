@@ -116,11 +116,30 @@ const transporter = nodemailer.createTransport({
 app.use(flash());
 
 app.get('/', (req, res) => {
-    res.render('home', {
-        title: "FlexForceMonkey | Systemintegration as a Service",
-        desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
-        img: "./public/images/screenshot.png"
-    });
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+        .then((blogRes) => {
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            res.render('home', {
+                title: "FlexForceMonkey | Business network for Flex",
+                desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+                img: "./public/images/screenshot.jpg",
+                blogs: blogs
+            });
+        })
+        .catch(() => {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
+            } else {
+                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
+            }
+            res.render('home', {
+                title: "FlexForceMonkey | Business network for Flex",
+                desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+                img: "./public/images/screenshot.jpg",
+                blogs: null
+            });
+        });    
 });
 
 app.get('/blogs', (req, res) => {
@@ -131,13 +150,13 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-app.get('/hirer', (req, res) => { 
+app.get('/integration-services', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'hirer').render('hirer', {
-                title: "FlexForceMonkey | Hirer",
+            res.cookie('role', 'integration-services').render('integration', {
+                title: "FlexForceMonkey | Integration services",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: blogs
@@ -149,24 +168,33 @@ app.get('/hirer', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'hirer').render('hirer', {
-                title: "FlexForceMonkey | Hirer",
+            res.cookie('role', 'integration-services').render('integration', {
+                title: "FlexForceMonkey | Integration services",
                 desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
                 img: "./public/images/hirer.jpg",
                 blogs: null
             });
         });
 });
-// app.get('/hirer', (req, res) => {
-//     res.redirect('/integration');
-// });
-app.get('/supplier', (req, res) => { 
+app.get('/hirer', (req, res) => {
+    res.redirect('/integration-services');
+});
+app.get('/selfservice-subscribe', (req, res) => {
+    res.render('subscribe', {
+        title: "FlexForceMonkey | Subscribe",
+        desc: "Subscribe to FlexForceMonkey",
+        img: "./public/images/supplier.jpg",
+        year: new Date().getFullYear(),
+        layout: 'empty.handlebars'
+    });
+});
+app.get('/cla-engine', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'supplier').render('supplier', {
-                title: "FlexForceMonkey | Supplier",
+            res.cookie('role', 'cla-engine').render('claengine', {
+                title: "FlexForceMonkey | Cla evaluator",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
                 blogs: blogs
@@ -178,18 +206,18 @@ app.get('/supplier', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'cla-engine').render('supplier', {
-                title: "FlexForceMonkey | Cla engine",
+            res.cookie('role', 'cla-engine').render('claengine', {
+                title: "FlexForceMonkey | Cla evaluator",
                 desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
                 img: "./public/images/supplier.jpg",
                 blogs: null
             });
         });    
 });
-// app.get('/supplier', (req, res) => {
-//     res.redirect('/cla-engine');
-// });
-app.get('/freelancer', (req, res) => { 
+app.get('/supplier', (req, res) => {
+    res.redirect('/cla-engine');
+});
+app.get('/online-software', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
@@ -198,8 +226,8 @@ app.get('/freelancer', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'freelancer').render('freelancer', {
-                        title: "FlexForceMonkey | Boutique firm/SEP",
+                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                        title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
                         img: "./public/images/freelancer.jpg",
                         blogs: blogs,
@@ -212,8 +240,8 @@ app.get('/freelancer', (req, res) => {
                     } else {
                         req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
                     }
-                    res.cookie('role', 'freelancer').render('freelancer', {
-                        title: "FlexForceMonkey | Boutique firm/SEP",
+                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                        title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
                         img: "./public/images/freelancer.jpg",
                         blogs: blogs,
@@ -231,8 +259,8 @@ app.get('/freelancer', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'freelancer').render('freelancer', {
-                        title: "FlexForceMonkey | Boutique firm/SEP",
+                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                        title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
                         img: "./public/images/freelancer.jpg",
                         blogs: null,
@@ -240,8 +268,8 @@ app.get('/freelancer', (req, res) => {
                     });
                 })
                 .catch(() => {
-                    res.cookie('role', 'freelancer').render('freelancer', {
-                        title: "FlexForceMonkey | Boutique firm/SEP",
+                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                        title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
                         img: "./public/images/freelancer.jpg",
                         blogs: null,
@@ -249,6 +277,9 @@ app.get('/freelancer', (req, res) => {
                     });
                 });
         });  
+});
+app.get('/freelancer', (req, res) => {
+    res.redirect('/online-software');
 });
 
 // app.get('/ebook', (req, res) => {
