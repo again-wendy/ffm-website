@@ -2828,15 +2828,16 @@ form .g-recaptcha > div {
 #subscribe-page .navbar .brand {
   padding-left: 15px;
   padding-top: 8px;
+}
+/* line 11, ../sass/_partials/_subscribe.scss */
+#subscribe-page .navbar .brand a {
+  margin: 0;
   font-family: "Fredoka One", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   color: white;
+  text-decoration: none;
 }
-/* line 14, ../sass/_partials/_subscribe.scss */
-#subscribe-page .navbar .brand p {
-  margin: 0;
-}
-/* line 19, ../sass/_partials/_subscribe.scss */
+/* line 20, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main {
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -2845,17 +2846,17 @@ form .g-recaptcha > div {
   background: url("../images/curious.jpg") no-repeat center center;
   background-size: cover;
 }
-/* line 23, ../sass/_partials/_subscribe.scss */
+/* line 24, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel {
   margin-top: 30px;
 }
-/* line 25, ../sass/_partials/_subscribe.scss */
+/* line 26, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-heading {
   background: #f5f5f5;
   border-bottom: 1px solid #ddd;
   padding: 10px 15px;
 }
-/* line 29, ../sass/_partials/_subscribe.scss */
+/* line 30, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-heading .panel-title {
   color: #2B2B2B;
   font-size: 16px;
@@ -2863,6 +2864,10 @@ form .g-recaptcha > div {
   padding: 0;
 }
 /* line 37, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body {
+  padding: 15px;
+}
+/* line 39, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-body .subscribeform {
   display: -webkit-box;
   display: -moz-box;
@@ -2870,15 +2875,84 @@ form .g-recaptcha > div {
   display: -webkit-flex;
   display: flex;
 }
-/* line 39, ../sass/_partials/_subscribe.scss */
+/* line 41, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-body .subscribeform .form-column {
   -webkit-flex: 1;
   -moz-flex: 1;
   -o-flex: 1;
   flex: 1;
-  padding: 10px;
 }
-/* line 47, ../sass/_partials/_subscribe.scss */
+/* line 43, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column.left {
+  padding-right: 10px;
+}
+/* line 46, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column.right {
+  padding-left: 10px;
+}
+/* line 50, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .form-group label {
+  width: 100%;
+  margin-bottom: 5px;
+  padding-top: 0;
+  font-family: "ZwoOT", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+/* line 57, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .form-group input, #subscribe-page .main .panel .panel-body .subscribeform .form-column .form-group select {
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  background: white;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/* line 69, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .form-group.checkboxes label {
+  width: 95%;
+  margin-top: 8px;
+  font-weight: normal;
+}
+/* line 74, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .form-group.checkboxes input[type=checkbox] {
+  width: 5%;
+  float: left;
+  box-shadow: none;
+  border: none;
+  display: block;
+  clear: both;
+}
+/* line 84, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column h5 {
+  margin: 5px 0 20px 0;
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+  width: 60%;
+  float: left;
+  font-size: 1.2rem;
+}
+/* line 91, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .btn-primary, #subscribe-page .main .panel .panel-body .subscribeform .form-column .btn-primary-xl {
+  float: right;
+  font-size: 14px;
+}
+/* line 95, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .g-recaptcha > div {
+  margin: 0;
+  float: left;
+}
+/* line 99, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column input[type=submit] {
+  width: auto;
+  float: right;
+  margin-top: 20px;
+}
+/* line 109, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer {
   display: -webkit-box;
   display: -moz-box;
@@ -2888,14 +2962,14 @@ form .g-recaptcha > div {
   border-top: 1px solid #ECECEC;
   padding: 0 15px;
 }
-/* line 51, ../sass/_partials/_subscribe.scss */
+/* line 113, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer .text {
   -webkit-flex: 1;
   -moz-flex: 1;
   -o-flex: 1;
   flex: 1;
 }
-/* line 54, ../sass/_partials/_subscribe.scss */
+/* line 116, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer .right-text {
   text-align: right;
 }

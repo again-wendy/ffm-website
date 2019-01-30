@@ -8,11 +8,12 @@
         .brand {
             padding-left: 15px;
             padding-top: 8px;
-            font-family: $font-logo;
-            font-size: 1.6rem;
-            color: white;
-            p {
+            a {
                 margin: 0;
+                font-family: $font-logo;
+                font-size: 1.6rem;
+                color: white;
+                text-decoration: none;
             }
         }
     }
@@ -34,11 +35,72 @@
                 }
             }
             .panel-body {
+                padding: 15px;
                 .subscribeform {
                     @include displayFlex;
                     .form-column {
                         @include prefix(flex, 1, webkit moz o);
-                        padding: 10px;
+                        &.left {
+                            padding-right: 10px;
+                        }
+                        &.right {
+                            padding-left: 10px;
+                        }
+                        .form-group {
+                            label {
+                                width: 100%;
+                                margin-bottom: 5px;
+                                padding-top: 0;
+                                font-family: $font-normal;
+                                font-weight: bold;
+                            }
+                            input, select {
+                                width: 100%;
+                                height: 34px;
+                                padding: 6px 12px;
+                                font-size: 14px;
+                                line-height: 1.42857143;
+                                border: 1px solid #ccc;
+                                background: white;
+                                @include prefix(box-shadow, inset 0 1px 1px rgba(0, 0, 0, .075), webkit moz o);
+                                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                            }
+                            &.checkboxes {
+                                label {
+                                    width: 95%;
+                                    margin-top: 8px;
+                                    font-weight: normal;
+                                }
+                                input[type=checkbox] {
+                                    width: 5%;
+                                    float: left;
+                                    box-shadow: none;
+                                    border: none;
+                                    display: block;
+                                    clear: both;
+                                }
+                            }
+                        }
+                        h5 {
+                            margin: 5px 0 20px 0;
+                            font-family: $font-bold;
+                            width: 60%;
+                            float: left;
+                            font-size: 1.2rem;
+                        }
+                        .btn-primary {
+                            float: right;
+                            font-size: 14px;
+                        }
+                        .g-recaptcha > div {
+                            margin: 0;
+                            float: left;
+                        }
+                        input[type=submit] {
+                            width: auto;
+                            float: right;
+                            margin-top: 20px;
+                        }
                     }
                 }
             }

@@ -184,13 +184,16 @@
   "subscribe": {
     "REGISTER": "Registreer",
     "COMPANYNAME": "Bedrijfsnaam",
+    "COMPANYTYPE": "Bedrijfstype",
     "FIRSTNAME": "Voornaam",
     "LASTNAME": "Achternaam",
     "EMAILNEWSLETTERS": "Email adres mag gebruikt worden voor nieuwsbrieven",
     "EMAILPRODUCTUPDATES": "Email adres mag gebruikt worden voor product updates",
     "EMAILCOMCONTACT": "Email adres mag gebruikt worden voor gericht individueel commercieel contact",
     "YOURSUB": "Jouw abonnement",
-    "COMPARE": "Vergelijk"
+    "COMPARE": "Vergelijk",
+    "HIRER": "Afnemer",
+    "SUPPLIER": "Leverancier"
   },
   "subs": {
     "ASKFOROFFER": "Vraag offerte",

@@ -184,13 +184,16 @@
   "subscribe": {
     "REGISTER": "Register",
     "COMPANYNAME": "Companyname",
+    "COMPANYTYPE": "Company type",
     "FIRSTNAME": "Firstname",
     "LASTNAME": "Lastname",
     "EMAILNEWSLETTERS": "Email address may be used for newsletters",
     "EMAILPRODUCTUPDATES": "Email address may be used for product updates",
     "EMAILCOMCONTACT": "Email address may be used for targeted individual commercial contact",
     "YOURSUB": "Your subscription",
-    "COMPARE": "Compare"
+    "COMPARE": "Compare",
+    "HIRER": "Hirer",
+    "SUPPLIER": "Supplier"
   },
   "subs": {
     "ASKFOROFFER": "Ask for offer",

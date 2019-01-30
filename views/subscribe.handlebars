@@ -1,7 +1,7 @@
 <div id="subscribe-page">
     <nav class="navbar">
         <div class="brand">
-            <p>FlexForceMonkey</p>
+            <a href="/">FlexForceMonkey</a>
         </div>
     </nav>
 
@@ -12,29 +12,42 @@
                     <h3 class="panel-title">{{ translation.subscribe.REGISTER }}</h3>
                 </div>
                 <div class="panel-body">
+                    {{#if messages.success}}
+                        <p class="flash flash-success">{{ messages.success }}</p>
+                    {{/if}}
+                    {{#if messages.error}}
+                        <p class="flash flash-error">{{ messages.error }}</p>
+                    {{/if}}
                     <form class="subscribeform" method="POST" action="selfservice-subscribe">
                         <div class="form-column left">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email">
+                                <input type="email" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="companyname">{{ translation.subscribe.COMPANYNAME }}</label>
-                                <input type="text" name="companyname" id="companyname">
+                                <input type="text" name="companyname" id="companyname" placeholder="{{ translation.subscribe.COMPANYNAME }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="companytype">{{ translation.subscribe.COMPANYTYPE }}</label>
+                                <select name="companytype" id="companytype">
+                                    <option value="afnemer">{{ translation.subscribe.HIRER }}</option>
+                                    <option value="leverancier">{{ translation.subscribe.SUPPLIER }}</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="firstname">{{ translation.subscribe.FIRSTNAME }}</label>
-                                <input type="text" name="firstname" id="firstname">
+                                <input type="text" name="firstname" id="firstname" placeholder="{{ translation.subscribe.FIRSTNAME }}">
                             </div>
                             <div class="form-group">
                                 <label for="lastname">{{ translation.subscribe.LASTNAME }}</label>
-                                <input type="text" name="lastname" id="lastname">
+                                <input type="text" name="lastname" id="lastname" placeholder="{{ translation.subscribe.LASTNAME }}">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group checkboxes">
                                 <input type="checkbox" name="emailnewsletters" id="emailnewsletters">
-                                <label for="emailnewsletters">{{ translation.subscribe.EMAILNEWSLETTERS }}</label><br />
+                                <label for="emailnewsletters">{{ translation.subscribe.EMAILNEWSLETTERS }}</label>
                                 <input type="checkbox" name="emailproductupdates" id="emailproductupdates">
-                                <label for="emailproductupdates">{{ translation.subscribe.EMAILPRODUCTUPDATES }}</label><br />
+                                <label for="emailproductupdates">{{ translation.subscribe.EMAILPRODUCTUPDATES }}</label>
                                 <input type="checkbox" name="emailcomcontact" id="emailcomcontact">
                                 <label for="emailcomcontact">{{ translation.subscribe.EMAILCOMCONTACT }}</label>
                             </div>
@@ -51,6 +64,7 @@
                                     <option value="Enterprise">Enterprise</option>
                                 </select>
                             </div>
+                            <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
                             <input class="btn-secondary" type="submit" value="{{ translation.subscribe.REGISTER }}">
                         </div>
                     </form>

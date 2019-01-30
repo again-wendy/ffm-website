@@ -11,6 +11,7 @@ const i18n              = require('i18n-express');
 const superagent        = require('superagent');
 const request           = require('request');
 const promRequest       = require('request-promise');
+const emails            = require('./emails');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -416,6 +417,56 @@ app.post('/send', (req, res) => {
     });
 });
 
+// Request selfservice form via integration services
+app.post('/selfservice-subscribe', (req, res) => {
+    let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
+    recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
+    recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
+    recaptcha_url += "remoteip=" + req.connection.remoteAddress;
+
+    let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.companytype, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact);
+    
+    let HelperOptions = {
+        from: '"Aanvraag" <noreply@flexforcemonkey.com>',
+        //to: 'doede.van.haperen@lakran.com',
+        to: 'wendy.dimmendaal@again.nl',
+        subject: 'Aanvraag voor aansluiting',
+        text: 'Test 123',
+        html: output
+    };
+
+    request(recaptcha_url, function(error, resp, body) {
+        body = JSON.parse(body);
+        if(body.success !== undefined && !body.success) {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
+            } else {
+                req.flash('error', 'Something went wrong with recaptcha: ' + error);
+            }
+            res.redirect(req.get('referer'));
+        } else {
+            transporter.sendMail(HelperOptions, (errorMail, info) => {
+                if(errorMail) {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
+                    } else {
+                        req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
+                    }
+                    res.redirect(req.get('referer'));
+                } else {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('success', 'Je aanvraag is verstuurd!')
+                    } else {
+                        req.flash('success', 'Your request has been sent!');
+                    }
+                    res.redirect(req.get('referer'));
+                }
+            });
+            sendMailUser(req.body.email, req.cookies.ulang);
+        }
+    });
+});
+
 // Request for ebook
 // app.post('/get-ebook', (req, res) => {
 //     let output;
@@ -560,4 +611,31 @@ const setSubType = (arr) => {
         }
     }
     return arr;
+}
+
+const sendMailUser = (email, lang) => {
+    let options;
+    if(lang == "nl") {
+        let outputNL = emails.buildSelfServiceUserEmailNL();
+
+        options = {
+            from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+            to: email,
+            subject: "Je aanvraag is in behandeling",
+            text: "",
+            html: outputNL
+        }
+    } else {
+        let outputEN = emails.buildSelfServiceUserEmailEN();
+
+        options = {
+            from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+            to: email,
+            subject: "Your request is pending",
+            text: "",
+            html: outputEN
+        }
+    }
+
+    transporter.sendMail(options);
 }
