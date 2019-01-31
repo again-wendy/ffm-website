@@ -1568,58 +1568,123 @@ section.with-base-nav {
 
 /* line 38, ../sass/_partials/_home.scss */
 #partners {
-  background: url("../images/wood-background.jpg") no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/wood-background.jpg") no-repeat;
 }
-/* line 40, ../sass/_partials/_home.scss */
-#partners .section-title {
-  color: white;
-}
-/* line 43, ../sass/_partials/_home.scss */
+/* line 49, ../sass/_partials/_home.scss */
 #partners .unslider {
   overflow: visible;
   position: relative;
 }
-/* line 46, ../sass/_partials/_home.scss */
+/* line 52, ../sass/_partials/_home.scss */
 #partners .unslider .next, #partners .unslider .prev {
   position: absolute;
   top: 35%;
-  color: white;
+  color: #2B2B2B;
   font-size: 3rem;
+  cursor: pointer;
 }
-/* line 52, ../sass/_partials/_home.scss */
+/* line 59, ../sass/_partials/_home.scss */
 #partners .unslider .next {
   right: 0;
 }
-/* line 55, ../sass/_partials/_home.scss */
+/* line 62, ../sass/_partials/_home.scss */
 #partners .unslider .unslider-nav {
   display: none;
 }
-/* line 59, ../sass/_partials/_home.scss */
+/* line 66, ../sass/_partials/_home.scss */
 #partners .slide-container {
   position: relative;
   overflow: visible;
   height: 200px;
 }
-/* line 63, ../sass/_partials/_home.scss */
+/* line 70, ../sass/_partials/_home.scss */
 #partners .slide-container .slide {
   list-style: none;
   position: relative;
   width: 100%;
   float: left;
 }
-/* line 68, ../sass/_partials/_home.scss */
+/* line 75, ../sass/_partials/_home.scss */
 #partners .slide-container .slide img {
-  height: 200px;
+  width: 350px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
-
 /* line 81, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-1 img {
+  width: 280px;
+}
+/* line 84, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-2 img {
+  width: 400px;
+}
+/* line 87, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-3 img {
+  width: 150px;
+}
+/* line 90, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-4 img {
+  width: 320px;
+  top: 30px;
+}
+/* line 94, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-5 img {
+  width: 300px;
+  top: 20px;
+}
+/* line 98, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-7 img {
+  top: 30px;
+}
+/* line 101, ../sass/_partials/_home.scss */
+#partners .slide-container .slide.slide-8 img {
+  width: 280px;
+}
+@media (max-width: 600px) {
+  /* line 112, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-1 img, #partners .slide-container .slide.slide-2 img, #partners .slide-container .slide.slide-4 img, #partners .slide-container .slide.slide-5 img, #partners .slide-container .slide.slide-6 img, #partners .slide-container .slide.slide-7 img, #partners .slide-container .slide.slide-8 img {
+    width: 250px;
+  }
+  /* line 116, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-2 img {
+    top: 55px;
+  }
+  /* line 119, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-3 img {
+    width: 120px;
+  }
+}
+@media (max-width: 460px) {
+  /* line 130, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-2 img, #partners .slide-container .slide.slide-4 img, #partners .slide-container .slide.slide-5 img, #partners .slide-container .slide.slide-6 img, #partners .slide-container .slide.slide-7 img, #partners .slide-container .slide.slide-8 img {
+    width: 180px;
+    top: 60px;
+  }
+  /* line 135, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-1 img {
+    width: 120px;
+    top: 65px;
+  }
+  /* line 139, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-2 img {
+    top: 55px;
+  }
+  /* line 142, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-3 img {
+    width: 120px;
+  }
+  /* line 145, ../sass/_partials/_home.scss */
+  #partners .slide-container .slide.slide-8 img {
+    top: 40px;
+  }
+}
+
+/* line 156, ../sass/_partials/_home.scss */
 #subscribe-ffm .table tbody th {
   text-align: left;
 }
-/* line 86, ../sass/_partials/_home.scss */
+/* line 161, ../sass/_partials/_home.scss */
 #subscribe-ffm .cta-btn {
   margin-top: 25px;
 }
