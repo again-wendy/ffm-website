@@ -1932,6 +1932,11 @@ section.with-base-nav {
   }
 }
 
+/* line 108, ../sass/_partials/_supplier.scss */
+#subscribe-ffm-cla .cta-btn {
+  margin-top: 25px;
+}
+
 /* line 1, ../sass/_partials/_freelancer.scss */
 #freelancer-intro {
   color: white;

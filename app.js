@@ -181,12 +181,19 @@ app.get('/hirer', (req, res) => {
     res.redirect('/integration-services');
 });
 app.get('/selfservice-subscribe', (req, res) => {
+    let sub;
+    if(req.query.sub == 'int' || req.query.sub == 'cla') {
+        sub = req.query.sub;
+    } else {
+        sub = 'int';
+    }
     res.render('subscribe', {
         title: "FlexForceMonkey | Subscribe",
         desc: "Subscribe to FlexForceMonkey",
         img: "./public/images/supplier.jpg",
         year: new Date().getFullYear(),
-        layout: 'empty.handlebars'
+        layout: 'empty.handlebars',
+        sub: sub
     });
 });
 app.get('/cla-engine', (req, res) => { 
@@ -424,7 +431,7 @@ app.post('/selfservice-subscribe', (req, res) => {
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
     recaptcha_url += "remoteip=" + req.connection.remoteAddress;
 
-    let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.companytype, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact);
+    let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact, req.body.sub);
     
     let HelperOptions = {
         from: '"Aanvraag" <noreply@flexforcemonkey.com>',

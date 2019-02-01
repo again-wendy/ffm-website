@@ -3,7 +3,8 @@
 <section id="hero" class="supplier cla">
     <div class="hero-title">
         <h1>
-            {{ translation.supplier.HERO_TEXT }}
+            <strong>{{ translation.supplier.HERO_TEXT }}</strong><br />
+            Join the collaborative flex experience!
         </h1>
     </div>
     <div class="iframe">
@@ -55,7 +56,6 @@
     <div class="container">
         <h2 class="section-title">{{ translation.supplier.AGENCY }}</h2>
         <div class="section-container">
-            <p class="sub-title">{{ translation.supplier.AGENCY_SUBTITLE }}</p>
             <div class="section-text scrollleft">
                 <p>{{ translation.supplier.AGENCY_TEXT }}</p>
             </div>
@@ -64,8 +64,57 @@
                 <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.supplier.GET_CONTACT }}</button>
                 <a class="btn-light-grey-xl" target="_blank" href="https://app.flexforcemonkey.com/subscriptions">{{ translation.supplier.REGISTER_ACCOUNT }}</a>
             </div>
-            <div class="text-center">
-                <p>{{ translation.supplier.PS }}</p>
+        </div>
+    </div>
+</section>
+
+<section id="subscribe-ffm-cla">
+    <div class="container">
+        <h2 class="section-title">{{ translation.supplier.SUBSCRIPTIONS }}</h2>
+        <div class="section-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="44%"></th>
+                        <th width="28%">Buyer</th>
+                        <th width="28%">Seller</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>{{ translation.supplier.table.HRDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>{{ translation.supplier.table.ASSDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>{{ translation.supplier.table.TSDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td>&euro; 0,10 {{ translation.hirer.table.PERTS }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ translation.supplier.table.INVDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>{{ translation.supplier.table.ONB }}</th>
+                        <td>{{ translation.supplier.table.FREE }}</td>
+                        <td>{{ translation.supplier.table.FREE }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ translation.supplier.table.MAP }}</th>
+                        <td>{{ translation.supplier.table.FREE }}</td>
+                        <td>&euro; 750 {{ translation.supplier.table.PERSC }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center cta-btn">
+                <a href="./selfservice-subscribe?sub=cla" class="btn-complementary-xl">{{ translation.supplier.SUBSCRIBE }}</a>
             </div>
         </div>
     </div>

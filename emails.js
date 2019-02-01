@@ -1,4 +1,4 @@
-const buildSelfServiceFFMEmail = function(lang, email, companyName, companyType, firstName, lastName, emailNewsletters, emailProduct, emailContact) {
+const buildSelfServiceFFMEmail = function(lang, email, companyName, firstName, lastName, emailNewsletters, emailProduct, emailContact, sub) {
     let output = `
     <!doctype html>
     <html>
@@ -84,7 +84,7 @@ const buildSelfServiceFFMEmail = function(lang, email, companyName, companyType,
                                                         <li style="padding-bottom: 15px;">Gekozen taal: ${lang}</li>
                                                         <li style="padding-bottom: 5px;">Email: ${email}</li>
                                                         <li style="padding-bottom: 5px;">Bedrijfsnaam: ${companyName}</li>
-                                                        <li style="padding-bottom: 5px;">Bedrijfstype: ${companyType}</li>
+                                                        <li style="padding-bottom: 5px;">Abonnement + bedrijfstype: ${sub}</li>
                                                         <li style="padding-bottom: 5px;">Voornaam: ${firstName}</li>
                                                         <li style="padding-bottom: 15px;">Achternaam: ${lastName}</li>
                                                         <li style="padding-bottom: 5px;">Wil nieuwsbrieven ontvangen: ${emailNewsletters}</li>

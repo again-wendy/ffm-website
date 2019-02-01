@@ -194,7 +194,10 @@
     "YOURSUB": "Jouw abonnement",
     "COMPARE": "Vergelijk",
     "HIRER": "Afnemer",
-    "SUPPLIER": "Leverancier"
+    "SUPPLIER": "Leverancier",
+    "INTENG": "Integration engine (voor leveranciers)",
+    "CLAENG": "Cao engine (voor leveranciers)",
+    "STANDARD": "Standaard (voor afnemers)"
   },
   "subs": {
     "ASKFOROFFER": "Vraag offerte",
@@ -227,16 +230,29 @@
   "supplier": {
     "AGENCY": "Corporate of MKB uitzendbureau?",
     "AGENCY_SUBTITLE": "FlexForceMonkey gelooft in een online markt en maakt samenwerken dus voor iedereen mogelijk.",
-    "AGENCY_TEXT": "Het FlexForceMonkey platform sluit moeiteloos aan op jouw processen via SETU berichten, maar je kunt er ook voor kiezen om handmatig te werken en resources en uren in onze portal te beheren. In alle gevallen sluiten wij jouw klant(en) aan in de digitale smaak van hun voorkeur. Eenvoudig online samenwerken dus.",
+    "AGENCY_TEXT": "Het FlexForceMonkey platform sluit moeiteloos aan op jouw processen via SETU berichten, maar je kunt er ook voor kiezen om de timesheets en CAO-berekening handmatig te werken vanuit bijvoorbeeld CSV bestanden. In alle gevallen zorgen wij ervoor dat de CAO staat ingericht en die test je samen met klant om zeker te weten dat je de inzichten deelt. Eenvoudig online samenwerken dus.",
     "GET_CONTACT": "NEEM NU CONTACT OP",
     "GET_KIT": "Neem nu contact op voor je eerste klant integratie",
-    "HERO_TEXT": "Stop operationele gevechten rondom PO-nummers en uren die niet in de CAO passen: join the collaborative flex experience",
-    "INTRO_SUBTITLE": "Geld moet rollen vinden wij, dus als een factuur klopt moeten we gewoon zorgen dat hij betaalbaar wordt gesteld.",
-    "INTRO_TEXT_1": "Wij zien bij veel uitzendbureaus hoge kosten doordat facturen bij klanten in het proces stil komen te staan. Dit levert proceskosten op om informatie te voorzien die ervoor zorgt dat hij wordt vrijgegeven, maar dit levert ook enorme rentelasten op doordat geld domweg veel te laat wordt overgemaakt.",
+    "HERO_TEXT": "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
+    "INTRO_SUBTITLE": "Je herkent het vast, een beheerder in dienst die niets anders doet dan Excel sheets omrekenen naar de klant CAO?",
+    "INTRO_TEXT_1": "Wij zien bij veel uitzendbureaus hoge kosten doordat uren op allerlei formaten binnenkomen en vervolgens in off-line handelingen moeten worden doorgerekend. Kosten, risico bij ziekte van die ene beheerder die “wist hoe het zat”, vertragingen in het proces, enzovoorts. Wij willen je helpen om daar nu vanaf te stappen.",
     "INTRO_TITLE": "Als je flexkrachten uitzendt",
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
     "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
     "PS": "PS: wist je trouwens dat werken op onze portal met het basis abonnement gewoon gratis is?!",
-    "REGISTER_ACCOUNT": "REGISTREER JE NU VOOR EEN ONLINE ACCOUNT"
+    "REGISTER_ACCOUNT": "REGISTREER JE NU VOOR EEN ONLINE ACCOUNT",
+    "SUBSCRIPTIONS": "Abonnementen",
+    "SUBSCRIBE": "Abonneer",
+    "table": {
+      "HRDATA": "Onbeperkte human resource data",
+      "ASSDATA": "Onbeperkte opdrachtdata",
+      "TSDATA": "Onbeperkte timesheet berekeningen",
+      "INVDATA": "Onbeperkte factuurdata",
+      "ONB": "Onboarding",
+      "MAP": "Mapping",
+      "FREE": "Gratis",
+      "PERTS": "per timesheet",
+      "PERSC": "per systeemkoppeling"
+    }
   }
 }

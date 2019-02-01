@@ -215,7 +215,6 @@ function checkLang() {
 function setLang($event) {
     var url = window.location.href;
     Cookies.set("ulang", $event);
-    getBlogs();
     if( url.indexOf("?clang=") == -1 ) {
         window.location.href = url + "?clang=" + $event;
     } else {
