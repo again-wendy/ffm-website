@@ -131,13 +131,14 @@
     "CONNECT": "Met je inkoopsysteem of je HR-proces aansluiten",
     "CONNECT_SUBTITLE": "Een menukaart van aansluitopties maakt standaard altijd jouw optimalisatie leidend voor integratie.",
     "CONNECT_TEXT": "Het meest bijzondere aan FlexForceMonkey is wel dat wij niet veeleisend zijn aan jouw systeem. Of je nu vanuit een catalog buying proces via punch-out met ons wil shoppen, of een datafeed aangeboden wil hebben als HR stamgegeven. Of je nu met of zonder urenregistratie systeem deel wilt nemen. Wij hebben voor alle gangbare keuzes een combineerbare oplossing. En wij sluiten jouw leverancier(s) voor je aan met het digitale sausje waar zij om vragen. Eenvoudig online samenwerken dus.",
-    "GET_CONTACT": "NEEM NU CONTACT MET ONS OP",
+    "GET_CONTACT": "Neem nu contact met ons op",
     "GET_KIT": "Neem nu contact op voor je eerste leveranciers integratie",
     "HERO_TEXT": "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
     "INTRO_TEXT": "Er zijn nogal wat systemen en processen in omloop en wat voor jullie organisatie het beste is levert nogal eens problemen met je klanten op. Hoe koppel je nu jullie ideale proces voor uren en facturen aan hun optimalisatie van inkoop? Zonder dat maatwerkintegraties je onnodige kosten opleveren graag!",
     "INTRO_TITLE": "Als jij een uitzendbureau of adviesbedrijf runt, weet je wat we bedoelen",
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
     "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
+    "REGISTER_ACCOUNT": "Registreer je nu voor een gratis account",
     "SUBSCRIPTIONS": "Abonnementen",
     "SUBSCRIBE": "Abonneer",
     "table": {
@@ -231,7 +232,7 @@
     "AGENCY": "Corporate of MKB uitzendbureau?",
     "AGENCY_SUBTITLE": "FlexForceMonkey gelooft in een online markt en maakt samenwerken dus voor iedereen mogelijk.",
     "AGENCY_TEXT": "Het FlexForceMonkey platform sluit moeiteloos aan op jouw processen via SETU berichten, maar je kunt er ook voor kiezen om de timesheets en CAO-berekening handmatig te werken vanuit bijvoorbeeld CSV bestanden. In alle gevallen zorgen wij ervoor dat de CAO staat ingericht en die test je samen met klant om zeker te weten dat je de inzichten deelt. Eenvoudig online samenwerken dus.",
-    "GET_CONTACT": "NEEM NU CONTACT OP",
+    "GET_CONTACT": "Neem nu contact op",
     "GET_KIT": "Neem nu contact op voor je eerste klant integratie",
     "HERO_TEXT": "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
     "INTRO_SUBTITLE": "Je herkent het vast, een beheerder in dienst die niets anders doet dan Excel sheets omrekenen naar de klant CAO?",
@@ -240,7 +241,7 @@
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
     "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
     "PS": "PS: wist je trouwens dat werken op onze portal met het basis abonnement gewoon gratis is?!",
-    "REGISTER_ACCOUNT": "REGISTREER JE NU VOOR EEN ONLINE ACCOUNT",
+    "REGISTER_ACCOUNT": "Registreer je nu voor een gratis account",
     "SUBSCRIPTIONS": "Abonnementen",
     "SUBSCRIBE": "Abonneer",
     "table": {
@@ -250,9 +251,10 @@
       "INVDATA": "Onbeperkte factuurdata",
       "ONB": "Onboarding",
       "MAP": "Mapping",
+      "CLASETUP": "Cao inrichting",
       "FREE": "Gratis",
       "PERTS": "per timesheet",
-      "PERSC": "per systeemkoppeling"
+      "PERCLA": "per cao"
     }
   }
 }

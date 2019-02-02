@@ -82,7 +82,7 @@ function partnerBannerSlider() {
         },
         autoplay: true,
         speed: 1200,
-        delay: 5000,
+        delay: 2500,
         dots: false
     });
 }

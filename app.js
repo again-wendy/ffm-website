@@ -375,18 +375,8 @@ app.post('/send', (req, res) => {
     recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
     recaptcha_url += "remoteip=" + req.connection.remoteAddress;
-    let output = `
-        <h1>Contact Form FFM.com</h1>
-        <h2>Details:</h2>
-        <ul>
-            <li>Naam: ${req.body.name}</li>
-            <li>Email: <a href="mailto:${req.body.email}">${req.body.email}</a></li>
-            <li>Onderwerp: ${req.body.subject}</li>
-            <li>Gekozen rol: ${req.cookies.role}</li>
-        </ul>
-        <h4 style="margin-bottom:0;">Message:</h4> 
-        <p>${req.body.msg}</p>
-    `;
+
+    let output = emails.buildContactEmail(req.body.name, req.body.email, req.body.subject, req.cookies.role, req.body.msg, req.cookies.ulang);
     
     let HelperOptions = {
         from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
@@ -435,8 +425,8 @@ app.post('/selfservice-subscribe', (req, res) => {
     
     let HelperOptions = {
         from: '"Aanvraag" <noreply@flexforcemonkey.com>',
-        //to: 'doede.van.haperen@lakran.com',
-        to: 'wendy.dimmendaal@again.nl',
+        to: 'doede.van.haperen@lakran.com',
+        //to: 'wendy.dimmendaal@again.nl',
         subject: 'Aanvraag voor aansluiting',
         text: 'Test 123',
         html: output

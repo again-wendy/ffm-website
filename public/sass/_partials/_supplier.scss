@@ -105,6 +105,9 @@
 }
 
 #subscribe-ffm-cla {
+    .table tbody th {
+        text-align: left;
+    }
     .cta-btn {
         margin-top: 25px;
     }

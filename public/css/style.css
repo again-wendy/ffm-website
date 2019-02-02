@@ -1107,27 +1107,29 @@ section .section-title {
   margin: 0 0 50px 0;
   padding: 0;
   text-align: center;
+  font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
+  font-size: 2.3rem;
 }
 @media (max-width: 768px) {
-  /* line 7, ../sass/_partials/_sections.scss */
-  section .section-title {
-    font-size: 2.3rem;
-  }
-}
-@media (max-width: 500px) {
   /* line 7, ../sass/_partials/_sections.scss */
   section .section-title {
     font-size: 2rem;
   }
 }
-/* line 18, ../sass/_partials/_sections.scss */
+@media (max-width: 500px) {
+  /* line 7, ../sass/_partials/_sections.scss */
+  section .section-title {
+    font-size: 1.8rem;
+  }
+}
+/* line 20, ../sass/_partials/_sections.scss */
 section .sub-title {
   font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   text-align: center;
 }
 
-/* line 25, ../sass/_partials/_sections.scss */
+/* line 27, ../sass/_partials/_sections.scss */
 section.full-screen {
   height: 100vh;
   padding: 0;
@@ -1149,37 +1151,37 @@ section.full-screen {
   -o-align-items: center;
   align-items: center;
 }
-/* line 32, ../sass/_partials/_sections.scss */
+/* line 34, ../sass/_partials/_sections.scss */
 section.full-screen .container {
   margin: 0;
 }
 @media (max-height: 650px) {
-  /* line 25, ../sass/_partials/_sections.scss */
+  /* line 27, ../sass/_partials/_sections.scss */
   section.full-screen {
     height: auto;
     padding: 20px 0;
   }
 }
 
-/* line 41, ../sass/_partials/_sections.scss */
+/* line 43, ../sass/_partials/_sections.scss */
 section.with-base-nav {
   padding-top: 150px;
 }
 
-/* line 46, ../sass/_partials/_sections.scss */
+/* line 48, ../sass/_partials/_sections.scss */
 #contact .section-container {
   width: 60%;
   margin-left: 20%;
 }
 @media (max-width: 1200px) {
-  /* line 46, ../sass/_partials/_sections.scss */
+  /* line 48, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 75%;
     margin-left: 12.5%;
   }
 }
 @media (max-width: 991px) {
-  /* line 46, ../sass/_partials/_sections.scss */
+  /* line 48, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 100%;
     margin-left: 0;
@@ -1700,100 +1702,104 @@ section.with-base-nav {
   float: left;
   padding-right: 20px;
 }
-/* line 10, ../sass/_partials/_hirer.scss */
+/* line 9, ../sass/_partials/_hirer.scss */
+#hirer-intro .section-container .section-text button {
+  margin-top: 10px;
+}
+/* line 13, ../sass/_partials/_hirer.scss */
 #hirer-intro .section-container img {
   width: 30%;
   display: block;
   margin: 0 auto;
 }
 @media (max-width: 620px) {
-  /* line 16, ../sass/_partials/_hirer.scss */
+  /* line 19, ../sass/_partials/_hirer.scss */
   #hirer-intro .section-container .section-text {
     width: 100%;
     float: none;
   }
-  /* line 19, ../sass/_partials/_hirer.scss */
+  /* line 22, ../sass/_partials/_hirer.scss */
   #hirer-intro .section-container .section-text button {
     display: block;
     margin: 0 auto 20px auto;
   }
-  /* line 24, ../sass/_partials/_hirer.scss */
+  /* line 27, ../sass/_partials/_hirer.scss */
   #hirer-intro .section-container img {
     width: 50%;
   }
 }
 
-/* line 31, ../sass/_partials/_hirer.scss */
+/* line 34, ../sass/_partials/_hirer.scss */
 #hirer-kit {
   background: #ECECEC;
 }
-/* line 34, ../sass/_partials/_hirer.scss */
+/* line 37, ../sass/_partials/_hirer.scss */
 #hirer-kit .section-container img {
   width: 55%;
   display: inline-block;
 }
-/* line 38, ../sass/_partials/_hirer.scss */
+/* line 41, ../sass/_partials/_hirer.scss */
 #hirer-kit .section-container .section-text {
   width: 40%;
   float: right;
 }
 @media (max-width: 640px) {
-  /* line 43, ../sass/_partials/_hirer.scss */
+  /* line 46, ../sass/_partials/_hirer.scss */
   #hirer-kit .section-container a {
     white-space: normal;
   }
 }
 @media (max-width: 550px) {
-  /* line 48, ../sass/_partials/_hirer.scss */
+  /* line 51, ../sass/_partials/_hirer.scss */
   #hirer-kit .section-container img {
     width: 60%;
     display: block;
     margin: 0 auto;
   }
-  /* line 53, ../sass/_partials/_hirer.scss */
+  /* line 56, ../sass/_partials/_hirer.scss */
   #hirer-kit .section-container .section-text {
     width: 100%;
     float: none;
   }
 }
 @media (max-width: 400px) {
-  /* line 59, ../sass/_partials/_hirer.scss */
+  /* line 62, ../sass/_partials/_hirer.scss */
   #hirer-kit .section-container img {
     width: 90%;
   }
-  /* line 62, ../sass/_partials/_hirer.scss */
+  /* line 65, ../sass/_partials/_hirer.scss */
   #hirer-kit .section-container a {
     font-size: 1rem;
   }
 }
 
-/* line 69, ../sass/_partials/_hirer.scss */
+/* line 72, ../sass/_partials/_hirer.scss */
 #hirer-options {
   background: #99def6;
 }
-/* line 72, ../sass/_partials/_hirer.scss */
+/* line 75, ../sass/_partials/_hirer.scss */
 #hirer-options .section-container img {
   width: 40%;
   display: block;
   margin: 0 auto;
 }
-/* line 77, ../sass/_partials/_hirer.scss */
+/* line 80, ../sass/_partials/_hirer.scss */
 #hirer-options .section-container .section-text {
   width: 60%;
   float: left;
   padding-right: 20px;
 }
 @media (max-width: 650px) {
-  /* line 83, ../sass/_partials/_hirer.scss */
+  /* line 86, ../sass/_partials/_hirer.scss */
   #hirer-options .section-container img {
     width: 60%;
   }
-  /* line 86, ../sass/_partials/_hirer.scss */
+  /* line 89, ../sass/_partials/_hirer.scss */
   #hirer-options .section-container .section-text {
     width: 100%;
     float: none;
   }
-  /* line 89, ../sass/_partials/_hirer.scss */
+  /* line 92, ../sass/_partials/_hirer.scss */
   #hirer-options .section-container .section-text button {
     display: block;
     margin: 0 auto 20px auto;
@@ -1933,6 +1939,10 @@ section.with-base-nav {
 }
 
 /* line 108, ../sass/_partials/_supplier.scss */
+#subscribe-ffm-cla .table tbody th {
+  text-align: left;
+}
+/* line 111, ../sass/_partials/_supplier.scss */
 #subscribe-ffm-cla .cta-btn {
   margin-top: 25px;
 }
