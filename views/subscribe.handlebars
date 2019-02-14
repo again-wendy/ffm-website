@@ -83,7 +83,9 @@
                             </div>
                             <div class="form-group checkboxes">
                                 <input type="checkbox" name="termsconditions" id="termsconditions" required>
-                                <label for="termsconditions">{{ translation.subscribe.ACCTERMSCON }} <a href="/termsandconditions">{{ translation.general.TERMSCON }}</a></label>
+                                <label for="termsconditions">{{ translation.subscribe.ACCEPT }} <a target="_blank" href="/termsandconditions">{{ translation.general.TERMSCON }}</a></label>
+                                <input type="checkbox" name="avg" id="avg" required>
+                                <label for="avg">{{ translation.subscribe.ACCEPT }} <a href="/gdpr">{{ translation.general.GDPR }}</a></label>
                             </div>
                             <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
                             <input class="btn-secondary" type="submit" value="{{ translation.subscribe.REGISTER }}">

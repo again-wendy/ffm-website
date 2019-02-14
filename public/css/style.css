@@ -3033,7 +3033,7 @@ form .g-recaptcha > div {
 #subscribe-page .main .panel .panel-body .subscribeform .form-column input[type=submit] {
   width: 100%;
   display: block;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 /* line 111, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer {

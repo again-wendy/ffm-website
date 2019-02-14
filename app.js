@@ -417,7 +417,7 @@ app.post('/send', (req, res) => {
 });
 
 // Request selfservice form via integration services
-app.post('/selfservice-subscribe', [check('termsconditions').equals('on')], (req, res) => {
+app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check('avg').equals('on')], (req, res) => {
     let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
     recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
@@ -437,9 +437,9 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on')], (req
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
         if(req.cookies.ulang == "nl") {
-            req.flash('error', 'Je moet de algemene voorwaarden lezen en accepteren voor je verder kunt gaan!')
+            req.flash('error', 'Je moet de algemene voorwaarden en bepalingen AVG lezen en accepteren voor je verder kunt gaan!')
         } else {
-            req.flash('error', 'You need to read and accept the terms and conditions before you can register!');
+            req.flash('error', 'You need to read and accept the terms and conditions and GDPR provisions before you can register!');
         }
         res.redirect(req.get('referer'));
     } else {
