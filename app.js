@@ -1,17 +1,19 @@
 require('dotenv').config();
-const express           = require('express');
-const bodyParser        = require('body-parser');
-const cookieParser      = require('cookie-parser');
-const session           = require('express-session');
-const flash             = require('express-flash');
-const exphbs            = require('express-handlebars');
-const path              = require('path');
-const nodemailer        = require('nodemailer');
-const i18n              = require('i18n-express');
-const superagent        = require('superagent');
-const request           = require('request');
-const promRequest       = require('request-promise');
-const emails            = require('./emails');
+const express                   = require('express');
+const bodyParser                = require('body-parser');
+const cookieParser              = require('cookie-parser');
+const session                   = require('express-session');
+const flash                     = require('express-flash');
+const exphbs                    = require('express-handlebars');
+const {check, validationResult}  = require('express-validator/check');
+const {sanitizeBody}            = require('express-validator/filter');
+const path                      = require('path');
+const nodemailer                = require('nodemailer');
+const i18n                      = require('i18n-express');
+const superagent                = require('superagent');
+const request                   = require('request');
+const promRequest               = require('request-promise');
+const emails                    = require('./emails');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -182,10 +184,10 @@ app.get('/hirer', (req, res) => {
 });
 app.get('/selfservice-subscribe', (req, res) => {
     let sub;
-    if(req.query.sub == 'int' || req.query.sub == 'cla') {
+    if(req.query.sub == 'intbuy' || req.query.sub == 'intsel' || req.query.sub == 'clabuy' || req.query.sub == 'clasel') {
         sub = req.query.sub;
     } else {
-        sub = 'int';
+        sub = 'intbuy';
     }
     res.render('subscribe', {
         title: "FlexForceMonkey | Subscribe",
@@ -415,7 +417,7 @@ app.post('/send', (req, res) => {
 });
 
 // Request selfservice form via integration services
-app.post('/selfservice-subscribe', (req, res) => {
+app.post('/selfservice-subscribe', [check('termsconditions').equals('on')], (req, res) => {
     let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
     recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
@@ -432,36 +434,46 @@ app.post('/selfservice-subscribe', (req, res) => {
         html: output
     };
 
-    request(recaptcha_url, function(error, resp, body) {
-        body = JSON.parse(body);
-        if(body.success !== undefined && !body.success) {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
-            } else {
-                req.flash('error', 'Something went wrong with recaptcha: ' + error);
-            }
-            res.redirect(req.get('referer'));
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        if(req.cookies.ulang == "nl") {
+            req.flash('error', 'Je moet de algemene voorwaarden lezen en accepteren voor je verder kunt gaan!')
         } else {
-            transporter.sendMail(HelperOptions, (errorMail, info) => {
-                if(errorMail) {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
-                    } else {
-                        req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
-                    }
-                    res.redirect(req.get('referer'));
-                } else {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('success', 'Je aanvraag is verstuurd!')
-                    } else {
-                        req.flash('success', 'Your request has been sent!');
-                    }
-                    res.redirect(req.get('referer'));
-                }
-            });
-            sendMailUser(req.body.email, req.cookies.ulang);
+            req.flash('error', 'You need to read and accept the terms and conditions before you can register!');
         }
-    });
+        res.redirect(req.get('referer'));
+    } else {
+        request(recaptcha_url, function(error, resp, body) {
+            body = JSON.parse(body);
+            if(body.success !== undefined && !body.success) {
+                if(req.cookies.ulang == "nl") {
+                    req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
+                } else {
+                    req.flash('error', 'Something went wrong with recaptcha: ' + error);
+                }
+                res.redirect(req.get('referer'));
+            } else {
+                transporter.sendMail(HelperOptions, (errorMail, info) => {
+                    if(errorMail) {
+                        if(req.cookies.ulang == "nl") {
+                            req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
+                        } else {
+                            req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
+                        }
+                        res.redirect(req.get('referer'));
+                    } else {
+                        if(req.cookies.ulang == "nl") {
+                            req.flash('success', 'Je aanvraag is verstuurd!')
+                        } else {
+                            req.flash('success', 'Your request has been sent!');
+                        }
+                        res.redirect(req.get('referer'));
+                    }
+                });
+                sendMailUser(req.body.email, req.cookies.ulang);
+            }
+        });
+    }
 });
 
 // Request for ebook

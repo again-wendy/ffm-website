@@ -3024,15 +3024,18 @@ form .g-recaptcha > div {
 /* line 95, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-body .subscribeform .form-column .g-recaptcha > div {
   margin: 0;
-  float: left;
 }
-/* line 99, ../sass/_partials/_subscribe.scss */
+/* line 97, ../sass/_partials/_subscribe.scss */
+#subscribe-page .main .panel .panel-body .subscribeform .form-column .g-recaptcha > div iframe {
+  margin-top: 10px;
+}
+/* line 101, ../sass/_partials/_subscribe.scss */
 #subscribe-page .main .panel .panel-body .subscribeform .form-column input[type=submit] {
-  width: auto;
-  float: right;
-  margin-top: 20px;
+  width: 100%;
+  display: block;
+  margin-top: 60px;
 }
-/* line 109, ../sass/_partials/_subscribe.scss */
+/* line 111, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer {
   display: -webkit-box;
   display: -moz-box;
@@ -3042,14 +3045,14 @@ form .g-recaptcha > div {
   border-top: 1px solid #ECECEC;
   padding: 0 15px;
 }
-/* line 113, ../sass/_partials/_subscribe.scss */
+/* line 115, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer .text {
   -webkit-flex: 1;
   -moz-flex: 1;
   -o-flex: 1;
   flex: 1;
 }
-/* line 116, ../sass/_partials/_subscribe.scss */
+/* line 118, ../sass/_partials/_subscribe.scss */
 #subscribe-page .footer .right-text {
   text-align: right;
 }

@@ -138,7 +138,7 @@
       "INTRO_TITLE": "If you run an employment agency or consultancy firm, you know what we mean",
       "KIT_INTRO": "Digitization in a flash: Standardized connectors make all the difference",
       "KIT_TEXT": "Corporate integration software that has been made equally simple as ordering something like an internet subscription? That was the goal! Born in the cloud, with a natural thought about collaboration, that asks for swift solutioning and that is exactly what you will be getting.",
-      "REGISTER_ACCOUNT": "Register now for an online account",
+      "REGISTER_ACCOUNT": "Register now for free and pay only for use",
       "SUBSCRIBE": "Subscribe",
       "SUBSCRIPTIONS": "Subscriptions",
       "table": {
@@ -146,9 +146,9 @@
         "FREE": "Free",
         "HRDATA": "Unlimited human resource data",
         "INVDATA": "Unlimited invoicedata",
-        "MAP": "Mapping",
+        "MAP": "Systemconnection/data mapping",
         "ONB": "Onboarding",
-        "PERSC": "per systemconnection",
+        "PERSC": "per system",
         "PERTS": "per timesheet",
         "TSDATA": "Unlimited timesheet data"
       }
@@ -222,11 +222,16 @@
       "FIRSTNAME": "Firstname",
       "HIRER": "Hirer",
       "INTENG": "Integration engine (for suppliers)",
+      "INTENGBUY": "Integration engine (for buyers)",
+      "INTENGSEL": "Integration engine (for sellers)",
+      "CLAENGBUY": "Cla engine (for buyers)",
+      "CLAENGSEL": "Cla engine (for sellers)",
       "LASTNAME": "Lastname",
       "REGISTER": "Register",
       "STANDARD": "Standard (for hirers)",
       "SUPPLIER": "Supplier",
-      "YOURSUB": "Your subscription"
+      "YOURSUB": "Your subscription",
+      "ACCTERMSCON": "I've read and accept the"
     },
     "supplier": {
       "AGENCY": "Corporate or SME employment agency?",
@@ -241,7 +246,7 @@
       "KIT_INTRO": "Digitization in a flash: Standardized connectors make all the difference",
       "KIT_TEXT": "Corporate integration software that has been made equally simple as ordering something like an internet subscription? That was the goal! Born in the cloud, with a natural thought about collaboration, that asks for swift solutioning and that is exactly what you will be getting.",
       "PS": "PS: have you heard already that working in our online portal is free with a basic subscription?!",
-      "REGISTER_ACCOUNT": "Register now for an online account",
+      "REGISTER_ACCOUNT": "Register now for free and pay only for use",
       "SUBSCRIBE": "Subscribe",
       "SUBSCRIPTIONS": "Subscriptions",
       "table": {
@@ -254,7 +259,9 @@
         "ONB": "Onboarding",
         "PERCLA": "per cla",
         "PERTS": "per timesheet",
-        "TSDATA": "Unlimited timesheet calculation"
+        "TSDATA": "Unlimited timesheet calculation",
+        "ADDEXTSYS": "Connect external system/data mappings",
+        "SEEINT": "See integration services"
       }
     }
   }

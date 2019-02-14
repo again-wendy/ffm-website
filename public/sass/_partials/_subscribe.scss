@@ -94,12 +94,14 @@
                         }
                         .g-recaptcha > div {
                             margin: 0;
-                            float: left;
+                            iframe {
+                                margin-top: 10px;
+                            }
                         }
                         input[type=submit] {
-                            width: auto;
-                            float: right;
-                            margin-top: 20px;
+                            width: 100%;
+                            display: block;
+                            margin-top: 60px;
                         }
                     }
                 }

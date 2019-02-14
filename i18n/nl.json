@@ -138,7 +138,7 @@
     "INTRO_TITLE": "Als jij een uitzendbureau of adviesbedrijf runt, weet je wat we bedoelen",
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
     "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
-    "REGISTER_ACCOUNT": "Registreer je nu voor een gratis account",
+    "REGISTER_ACCOUNT": "Registreer je gratis en betaal enkel voor gebruik",
     "SUBSCRIPTIONS": "Abonnementen",
     "SUBSCRIBE": "Abonneer",
     "table": {
@@ -147,10 +147,10 @@
       "TSDATA": "Onbeperkte timesheet data",
       "INVDATA": "Onbeperkte factuurdata",
       "ONB": "Onboarding",
-      "MAP": "Mapping",
+      "MAP": "Systeemkoppeling/data mapping",
       "FREE": "Gratis",
       "PERTS": "per timesheet",
-      "PERSC": "per systeemkoppeling"
+      "PERSC": "per systeem"
     }
   },
   "home": {
@@ -196,9 +196,12 @@
     "COMPARE": "Vergelijk",
     "HIRER": "Afnemer",
     "SUPPLIER": "Leverancier",
-    "INTENG": "Integration engine (voor leveranciers)",
-    "CLAENG": "Cao engine (voor leveranciers)",
-    "STANDARD": "Standaard (voor afnemers)"
+    "INTENGBUY": "Integration engine (voor buyers)",
+    "INTENGSEL": "Integration engine (voor sellers)",
+    "CLAENGBUY": "Cao engine (voor buyers)",
+    "CLAENGSEL": "Cao engine (voor sellers)",
+    "STANDARD": "Standaard (voor afnemers)",
+    "ACCTERMSCON": "Ik accepteer de"
   },
   "subs": {
     "ASKFOROFFER": "Vraag offerte",
@@ -241,7 +244,7 @@
     "KIT_INTRO": "Online in een oogwenk: Standaard stekkers maken het verschil",
     "KIT_TEXT": "Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.",
     "PS": "PS: wist je trouwens dat werken op onze portal met het basis abonnement gewoon gratis is?!",
-    "REGISTER_ACCOUNT": "Registreer je nu voor een gratis account",
+    "REGISTER_ACCOUNT": "Registreer je gratis en betaal enkel voor gebruik",
     "SUBSCRIPTIONS": "Abonnementen",
     "SUBSCRIBE": "Abonneer",
     "table": {
@@ -254,7 +257,9 @@
       "CLASETUP": "Cao inrichting",
       "FREE": "Gratis",
       "PERTS": "per timesheet",
-      "PERCLA": "per cao"
+      "PERCLA": "per cao",
+      "ADDEXTSYS": "Koppelen extern systeem/data mappings",
+      "SEEINT": "Zie integratiediensten"
     }
   }
 }

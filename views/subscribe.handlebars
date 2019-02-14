@@ -19,7 +19,7 @@
                             <p class="flash flash-error">{{ messages.error }}</p>
                         {{/if}}
                     </div>
-                    <form class="subscribeform" method="POST" action="selfservice-subscribe">
+                    <form class="subscribeform" method="POST" action="selfservice-subscribe" novalidate>
                         <div class="form-column left">
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -51,17 +51,39 @@
                             <button class="btn-primary">{{ translation.subscribe.COMPARE }}</button>
                             <div class="form-group">
                                 <select name="sub" id="sub">
-                                    {{#iff sub '==' 'int'}}
-                                        <option value="IntegrationEngineSupplier" selected>{{ translation.subscribe.INTENG }}</option>
-                                        <option value="CaoEngineSupplier">{{ translation.subscribe.CLAENG }}</option>
+                                    {{#iff sub '==' 'intbuy'}}
+                                        <option value="IntegrationEngineBuyer" selected>{{ translation.subscribe.INTENGBUY }}</option>
+                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
+                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
+                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
-                                    {{#iff sub '==' 'cla'}}
-                                        <option value="IntegrationEngineSupplier">{{ translation.subscribe.INTENG }}</option>
-                                        <option value="CaoEngineSupplier" selected>{{ translation.subscribe.CLAENG }}</option>
+                                    {{#iff sub '==' 'intsel'}}
+                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
+                                        <option value="IntegrationEngineSeller" selected>{{ translation.subscribe.INTENGSEL }}</option>
+                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
+                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                    {{/iff}}
+                                    {{#iff sub '==' 'clabuy'}}
+                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
+                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
+                                        <option value="CaoEngineBuyer" selected>{{ translation.subscribe.CLAENGBUY }}</option>
+                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                    {{/iff}}
+                                    {{#iff sub '==' 'clasel'}}
+                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
+                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
+                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
+                                        <option value="CaoEngineSeller" selected>{{ translation.subscribe.CLAENGSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
                                 </select>
+                            </div>
+                            <div class="form-group checkboxes">
+                                <input type="checkbox" name="termsconditions" id="termsconditions" required>
+                                <label for="termsconditions">{{ translation.subscribe.ACCTERMSCON }} <a href="/termsandconditions">{{ translation.general.TERMSCON }}</a></label>
                             </div>
                             <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
                             <input class="btn-secondary" type="submit" value="{{ translation.subscribe.REGISTER }}">
