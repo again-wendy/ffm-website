@@ -56,6 +56,7 @@
                                         <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
                                         <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
                                         <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'intsel'}}
@@ -63,6 +64,7 @@
                                         <option value="IntegrationEngineSeller" selected>{{ translation.subscribe.INTENGSEL }}</option>
                                         <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
                                         <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'clabuy'}}
@@ -70,6 +72,7 @@
                                         <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
                                         <option value="CaoEngineBuyer" selected>{{ translation.subscribe.CLAENGBUY }}</option>
                                         <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'clasel'}}
@@ -77,6 +80,15 @@
                                         <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
                                         <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
                                         <option value="CaoEngineSeller" selected>{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
+                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                    {{/iff}} 
+                                    {{#iff sub '==' 'selclaint'}}
+                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
+                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
+                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
+                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
+                                        <option value="CombinationIntegrationAndCaoSeller" selected>{{ translation.subscribe.CLAINTSEL }}</option>
                                         <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
                                     {{/iff}}
                                 </select>

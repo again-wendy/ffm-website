@@ -184,7 +184,7 @@ app.get('/hirer', (req, res) => {
 });
 app.get('/selfservice-subscribe', (req, res) => {
     let sub;
-    if(req.query.sub == 'intbuy' || req.query.sub == 'intsel' || req.query.sub == 'clabuy' || req.query.sub == 'clasel') {
+    if(req.query.sub == 'intbuy' || req.query.sub == 'intsel' || req.query.sub == 'clabuy' || req.query.sub == 'clasel' || req.query.sub == 'selclaint') {
         sub = req.query.sub;
     } else {
         sub = 'intbuy';

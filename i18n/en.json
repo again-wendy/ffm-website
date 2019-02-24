@@ -231,7 +231,8 @@
       "STANDARD": "Standard (for hirers)",
       "SUPPLIER": "Supplier",
       "YOURSUB": "Your subscription",
-      "ACCEPT": "I've read and accept the"
+      "ACCEPT": "I've read and accept the",
+      "CLAINTSEL": "Integration in combination with cla engine(for sellers)"
     },
     "supplier": {
       "AGENCY": "Corporate or SME employment agency?",
@@ -250,6 +251,7 @@
       "SUBSCRIBE": "Subscribe",
       "SUBSCRIPTIONS": "Subscriptions",
       "table": {
+        "SELINTSER": "Seller in combination with integration services",
         "ASSDATA": "Unlimited assignmentdata",
         "FREE": "Free",
         "HRDATA": "Unlimited human resource data",

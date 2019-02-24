@@ -201,7 +201,8 @@
     "CLAENGBUY": "Cao engine (voor buyers)",
     "CLAENGSEL": "Cao engine (voor sellers)",
     "STANDARD": "Standaard (voor afnemers)",
-    "ACCEPT": "Ik accepteer de"
+    "ACCEPT": "Ik accepteer de",
+    "CLAINTSEL": "Integratie in combinatie met cao engine (voor sellers)"
   },
   "subs": {
     "ASKFOROFFER": "Vraag offerte",
@@ -248,6 +249,7 @@
     "SUBSCRIPTIONS": "Abonnementen",
     "SUBSCRIBE": "Abonneer",
     "table": {
+      "SELINTSER": "Seller in combinatie met integration services",
       "HRDATA": "Onbeperkte human resource data",
       "ASSDATA": "Onbeperkte opdrachtdata",
       "TSDATA": "Onbeperkte timesheet berekeningen",

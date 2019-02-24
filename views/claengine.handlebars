@@ -77,9 +77,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th width="44%"></th>
-                        <th width="28%">Buyer</th>
-                        <th width="28%">Seller</th>
+                        <th width="34%"></th>
+                        <th width="22%">Buyer</th>
+                        <th width="22%">Seller</th>
+                        <th width="22%">{{ translation.supplier.table.SELINTSER }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -87,19 +88,23 @@
                         <th>{{ translation.supplier.table.HRDATA }}</th>
                         <td><span class="fa fa-check green"></span></td>
                         <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
                     </tr>
                     <tr>
                         <th>{{ translation.supplier.table.ASSDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
                         <td><span class="fa fa-check green"></span></td>
                         <td><span class="fa fa-check green"></span></td>
                     </tr>
                     <tr>
                         <th>{{ translation.supplier.table.TSDATA }}</th>
                         <td><span class="fa fa-check green"></span></td>
+                        <td>&euro; 0,25 {{ translation.hirer.table.PERTS }}</td>
                         <td>&euro; 0,10 {{ translation.hirer.table.PERTS }}</td>
                     </tr>
                     <tr>
                         <th>{{ translation.supplier.table.INVDATA }}</th>
+                        <td><span class="fa fa-check green"></span></td>
                         <td><span class="fa fa-check green"></span></td>
                         <td><span class="fa fa-check green"></span></td>
                     </tr>
@@ -107,14 +112,17 @@
                         <th>{{ translation.supplier.table.ONB }}</th>
                         <td>{{ translation.supplier.table.FREE }}</td>
                         <td>{{ translation.supplier.table.FREE }}</td>
+                        <td>{{ translation.supplier.table.FREE }}</td>
                     </tr>
                     <tr>
                         <th>{{ translation.supplier.table.CLASETUP }}</th>
                         <td>{{ translation.supplier.table.FREE }}</td>
                         <td>&euro; 750 {{ translation.supplier.table.PERCLA }}</td>
+                        <td>&euro; 750 {{ translation.supplier.table.PERCLA }}</td>
                     </tr>
                     <tr>
                         <th>{{ translation.supplier.table.ADDEXTSYS }}</th>
+                        <td><a href="./integration-services#subscribe-ffm" class="btn-light-grey">{{ translation.supplier.table.SEEINT }}</a></td>
                         <td><a href="./integration-services#subscribe-ffm" class="btn-light-grey">{{ translation.supplier.table.SEEINT }}</a></td>
                         <td><a href="./integration-services#subscribe-ffm" class="btn-light-grey">{{ translation.supplier.table.SEEINT }}</a></td>
                     </tr>
@@ -122,6 +130,7 @@
                         <td></td>
                         <td><a href="./selfservice-subscribe?sub=clabuy" class="btn-complementary">{{ translation.hirer.SUBSCRIBE }}</a></td>
                         <td><a href="./selfservice-subscribe?sub=clasel" class="btn-complementary">{{ translation.hirer.SUBSCRIBE }}</a></td>
+                        <td><a href="./selfservice-subscribe?sub=selclaint" class="btn-complementary">{{ translation.hirer.SUBSCRIBE }}</a></td>
                     </tr>
                 </tbody>
             </table>
