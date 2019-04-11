@@ -135,7 +135,12 @@
     "FORGIVINGSCORE": "Your feedback is greatly appreciated!",
     "SORRY": "We are sorry you are not satisfied with us. Maybe we can help you?",
     "SORRY2": "We are sorry you are not completely satisfied with us. Maybe we can help jou?",
-    "CONTACTUS": "Contact us"
+    "CONTACTUS": "Contact us",
+    "VERYHAPPY": "I'm very happy with you",
+    "HAPPY": "I'm happy with you",
+    "NOTHAPPY": "I'm not so happy with you",
+    "ANGRY": "I feel very negative towards you",
+    "BACKHOME": "Back to home"
   },
   "hirer": {
     "CONNECT": "Connect with your purchasing system or HR process",

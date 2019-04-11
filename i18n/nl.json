@@ -135,7 +135,12 @@
     "FORGIVINGSCORE": "Jouw feedback wordt zeer gewaardeerd!",
     "SORRY": "Jammer dat je niet tevreden bent over ons. Misschien kunnen we je helpen?",
     "SORRY2": "Jammer dat je niet helemaal tevreden bent over ons. Misschien kunnen we je helpen?",
-    "CONTACTUS": "Neem contact op"
+    "CONTACTUS": "Neem contact op",
+    "VERYHAPPY": "Ik ben heel blij met jullie",
+    "HAPPY": "Ik ben blij met jullie",
+    "NOTHAPPY": "Ik ben niet zo blij met jullie",
+    "ANGRY": "Ik voel me erg negatief tegenover jullie",
+    "BACKHOME": "Terug naar home"
   },
   "hirer": {
     "CONNECT": "Met je inkoopsysteem of je HR-proces aansluiten",

@@ -19,6 +19,7 @@ const app = express();
 const sessionStore = new session.MemoryStore;
 
 // Setup Firebase
+//https://console.firebase.google.com/project/ffm-website/overview
 // var config = {
 //     apiKey: process.env.FB_API_KEY,
 //     authDomain: process.env.FB_AUTH_DOMAIN,
@@ -32,13 +33,6 @@ const sessionStore = new session.MemoryStore;
 //     req.db = db;
 //     next();
 // });
-
-// Setup language
-app.use(i18n({
-    translationsPath: path.join(__dirname, 'i18n'),
-    siteLangs: ['en', 'nl'],
-    textsVarName: 'translation'
-}));
 
 // View engine setup
 var hbs = exphbs.create({
@@ -89,6 +83,13 @@ app.use(bodyParser.json());
 
 // Cookie Parser Middleware
 app.use(cookieParser(process.env.SECRET_KEY));
+
+// Setup language
+app.use(i18n({
+    translationsPath: path.join(__dirname, 'i18n'),
+    siteLangs: ['en', 'nl'],
+    textsVarName: 'translation'
+}));
 
 // Session Middleware
 app.use(session({
@@ -327,7 +328,11 @@ app.get('/generalconsiderations', (req, res) => {
 });
 app.get('/feedback', (req,res) => {
     let score = req.query.score;
-    console.log(score);
+    if(score == undefined) {
+        // do nothing
+    } else {
+        // post score
+    }
     res.render('feedback', {
         title: "FlexForceMonkey | Feedback",
         desc: "Give us feedback",
