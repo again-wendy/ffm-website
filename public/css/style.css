@@ -3057,6 +3057,29 @@ form .g-recaptcha > div {
   text-align: right;
 }
 
+/* line 2, ../sass/_partials/_feedback.scss */
+#feedback .smilies {
+  margin-top: 20px;
+}
+/* line 4, ../sass/_partials/_feedback.scss */
+#feedback .smilies .smily {
+  width: 25%;
+}
+/* line 6, ../sass/_partials/_feedback.scss */
+#feedback .smilies .smily img {
+  max-width: 20%;
+}
+/* line 12, ../sass/_partials/_feedback.scss */
+#feedback .givenscore a {
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+}
+/* line 17, ../sass/_partials/_feedback.scss */
+#feedback .givenscore img {
+  width: 25%;
+}
+
 /* line 1, ../sass/_partials/_pricemodel.scss */
 #pricemodel {
   background: white;

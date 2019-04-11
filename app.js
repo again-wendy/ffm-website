@@ -23,7 +23,8 @@ const sessionStore = new session.MemoryStore;
 //     apiKey: process.env.FB_API_KEY,
 //     authDomain: process.env.FB_AUTH_DOMAIN,
 //     databaseURL: process.env.FB_DATABASE_URL,
-//     storageBucket: process.env.FB_PROCESS_BUCKET
+//     storageBucket: process.env.FB_PROCESS_BUCKET,
+//     messagingSenderId: process.env.FB_MESSAGING_SENDER_ID
 // }
 // firebase.initializeApp(config);
 // const db = firebase.database();
@@ -323,6 +324,16 @@ app.get('/generalconsiderations', (req, res) => {
         desc: "General Remarks (Dutch) of FlexForceMonkey, May 2018",
         img: "./public/images/screenshot.png"
     })
+});
+app.get('/feedback', (req,res) => {
+    let score = req.query.score;
+    console.log(score);
+    res.render('feedback', {
+        title: "FlexForceMonkey | Feedback",
+        desc: "Give us feedback",
+        img: "./public/images/screenshot.png",
+        score: score
+    }) 
 });
 
 // app.get('/sluitjeaan', (req, res) => {

@@ -128,6 +128,15 @@
     "VIEWTHE": "Bekijk de",
     "FROM": "v.a."
   },
+  "feedback": {
+    "THINKABOUT": "Wat vond je vandaag van ons?",
+    "GIVESCORE": "Klik op een afbeelding om ons (anoniem) een score te geven",
+    "THANKS": "Bedankt!",
+    "FORGIVINGSCORE": "Jouw feedback wordt zeer gewaardeerd!",
+    "SORRY": "Jammer dat je niet tevreden bent over ons. Misschien kunnen we je helpen?",
+    "SORRY2": "Jammer dat je niet helemaal tevreden bent over ons. Misschien kunnen we je helpen?",
+    "CONTACTUS": "Neem contact op"
+  },
   "hirer": {
     "CONNECT": "Met je inkoopsysteem of je HR-proces aansluiten",
     "CONNECT_SUBTITLE": "Een menukaart van aansluitopties maakt standaard altijd jouw optimalisatie leidend voor integratie.",

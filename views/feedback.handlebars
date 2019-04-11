@@ -1,0 +1,49 @@
+{{> base-nav}}
+
+<section id="feedback" class="full-screen">
+    <div class="container text-center">
+        {{#if score}}
+            <div class="givenscore">
+                {{#iff score '==' 4}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/veryhappy.png" alt="Very happy">
+                {{/iff}}
+                {{#iff score '==' 3}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/happy.png" alt="Happy">
+                {{/iff}}
+                {{#iff score '==' 2}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY2 }}</p>
+                    <a href="/integration-services#contact" class="btn-secondary-xl">{{ translation.feedback.CONTACTUS }}</a>
+                    <img src="../public/images/feedback/nothappy.png" alt="Not happy">
+                {{/iff}}
+                {{#iff score '==' 1}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY }}</p>
+                    <a href="/integration-services#contact" class="btn-secondary-xl">{{ translation.feedback.CONTACTUS }}</a>
+                    <img src="../public/images/feedback/angry.png" alt="Angry">
+                {{/iff}}
+            </div>
+        {{else}}
+            <h2 class="section-title">{{ translation.feedback.THINKABOUT }}</h2>
+            <p class="sub-title">{{ translation.feedback.GIVESCORE }}</p>
+            <div class="smilies">
+                <a href="/feedback?score=4" class="smily veryhappy">
+                    <img src="../public/images/feedback/veryhappy.png" alt="Very happy">
+                </a>
+                <a href="/feedback?score=3" class="smily happy">
+                    <img src="../public/images/feedback/happy.png" alt="Happy">
+                </a>
+                <a href="/feedback?score=2" class="smily nothappy">
+                    <img src="../public/images/feedback/nothappy.png" alt="Not happy">
+                </a>
+                <a href="/feedback?score=1" class="smily angry">
+                    <img src="../public/images/feedback/angry.png" alt="Angry">
+                </a>
+            </div>
+        {{/if}}
+    </div>
+</section>

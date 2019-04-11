@@ -128,6 +128,15 @@
     "VIEWTHE": "Check our",
     "FROM": "from"
   },
+  "feedback": {
+    "THINKABOUT": "What did you think of us today?",
+    "GIVESCORE": "Click on an image to give us a score (anonymous)",
+    "THANKS": "Thanks!",
+    "FORGIVINGSCORE": "Your feedback is greatly appreciated!",
+    "SORRY": "We are sorry you are not satisfied with us. Maybe we can help you?",
+    "SORRY2": "We are sorry you are not completely satisfied with us. Maybe we can help jou?",
+    "CONTACTUS": "Contact us"
+  },
   "hirer": {
     "CONNECT": "Connect with your purchasing system or HR process",
     "CONNECT_SUBTITLE": "A complete menu of connectivity options  standardizes your optimization for integration.",
