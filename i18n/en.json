@@ -140,7 +140,9 @@
     "HAPPY": "I'm happy with you",
     "NOTHAPPY": "I'm not so happy with you",
     "ANGRY": "I feel very negative towards you",
-    "BACKHOME": "Back to home"
+    "BACKHOME": "Back to home",
+    "SOMETHINGWENTWRONG": "Something went wrong..",
+    "ERROR": "..with sending your feedback. Would you like to try again?"
   },
   "hirer": {
     "CONNECT": "Connect with your purchasing system or HR process",

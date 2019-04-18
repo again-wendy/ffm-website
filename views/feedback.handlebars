@@ -28,25 +28,97 @@
             <div class="backhome text-center">
                 <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
             </div>
+        {{else if sent}}
+            <h2 class="section-title">{{ translation.feedback.SOMETHINGWENTWRONG }}</h2>
+            <p class="sub-title">{{ translation.feedback.ERROR }}</p>
+            <div class="backhome text-center">
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+            </div>
+            <div class="smilies">
+                <a onclick="postFeedback(4)" class="smily veryhappy">
+                    <img class="monkey" src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-veryhappy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-veryhappy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.VERYHAPPY }}</p> --}}
+                </a>
+                <a onclick="postFeedback(3)" class="smily happy">
+                    <img class="monkey" src="../public/images/feedback/happy-monkey.png" alt="Happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-happy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-happy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.HAPPY }}</p> --}}
+                </a>
+                <a onclick="postFeedback(2)" class="smily nothappy">
+                    <img class="monkey" src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-nothappy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-nothappy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.NOTHAPPY }}</p> --}}
+                </a>
+                <a onclick="postFeedback(1)" class="smily angry">
+                    <img class="monkey" src="../public/images/feedback/angry-monkey.png" alt="Angry">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-angry.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-angry-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.ANGRY }}</p> --}}
+                </a>
+            </div>
         {{else}}
             <h2 class="section-title">{{ translation.feedback.THINKABOUT }}</h2>
             <p class="sub-title">{{ translation.feedback.GIVESCORE }}</p>
             <div class="smilies">
-                <a href="/feedback?score=4" class="smily veryhappy">
-                    <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
-                    <p>{{ translation.feedback.VERYHAPPY }}</p>
+                <a onclick="postFeedback(4)" class="smily veryhappy">
+                    <img class="monkey" src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-veryhappy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-veryhappy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.VERYHAPPY }}</p> --}}
                 </a>
-                <a href="/feedback?score=3" class="smily happy">
-                    <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
-                    <p>{{ translation.feedback.HAPPY }}</p>
+                <a onclick="postFeedback(3)" class="smily happy">
+                    <img class="monkey" src="../public/images/feedback/happy-monkey.png" alt="Happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-happy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-happy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.HAPPY }}</p> --}}
                 </a>
-                <a href="/feedback?score=2" class="smily nothappy">
-                    <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
-                    <p>{{ translation.feedback.NOTHAPPY }}</p>
+                <a onclick="postFeedback(2)" class="smily nothappy">
+                    <img class="monkey" src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-nothappy.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-nothappy-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.NOTHAPPY }}</p> --}}
                 </a>
-                <a href="/feedback?score=1" class="smily angry">
-                    <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
-                    <p>{{ translation.feedback.ANGRY }}</p>
+                <a onclick="postFeedback(1)" class="smily angry">
+                    <img class="monkey" src="../public/images/feedback/angry-monkey.png" alt="Angry">
+                    {{#iff lang '==' 'nl'}}
+                    <img class="board" src="../public/images/feedback/bord-angry.svg">
+                    {{/iff}}
+                    {{#iff lang '==' 'en'}}
+                    <img class="board" src="../public/images/feedback/bord-angry-en.svg">
+                    {{/iff}}
+                    {{!-- <p>{{ translation.feedback.ANGRY }}</p> --}}
                 </a>
             </div>
         {{/if}}

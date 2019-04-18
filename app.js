@@ -14,6 +14,7 @@ const superagent                = require('superagent');
 const request                   = require('request');
 const promRequest               = require('request-promise');
 const emails                    = require('./emails');
+const http                      = require('http');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -328,17 +329,38 @@ app.get('/generalconsiderations', (req, res) => {
 });
 app.get('/feedback', (req,res) => {
     let score = req.query.score;
-    if(score == undefined) {
-        // do nothing
+    let sent = req.query.sent;
+    if(score != undefined && sent == undefined) {
+        // redirect to post
+        res.redirect('/postfeedback?score=' + score);
     } else {
-        // post score
+        res.render('feedback', {
+            title: "FlexForceMonkey | Feedback",
+            desc: "Give us feedback",
+            img: "./public/images/screenshot.png",
+            score: score,
+            sent: sent,
+            lang: req.cookies.ulang
+        }); 
     }
-    res.render('feedback', {
-        title: "FlexForceMonkey | Feedback",
-        desc: "Give us feedback",
-        img: "./public/images/screenshot.png",
-        score: score
-    }) 
+});
+
+app.post('/postfeedback', (req, res) => {
+    let score = req.body.score;
+    let url = 'https://api-test.flexforcemonkey.com/api/Feedback'
+    let data = JSON.stringify({'feedback:': score});
+    let options = {
+        method: 'POST',
+        uri: url,
+        form: data,
+    }
+    request(options, (err, res, body) => {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log(res);
+        }
+    });
 });
 
 // app.get('/sluitjeaan', (req, res) => {

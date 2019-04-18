@@ -10,7 +10,7 @@
             width: 25%;
             text-decoration: none;
             position: relative;
-            img {
+            .monkey {
                 max-width: 20%;
                 margin: 0 1%;
                 transition: all 0.3s;
@@ -18,6 +18,15 @@
                 opacity: 0.9;
                 position: relative;
                 z-index: 2;
+            }
+            .board {
+                position: absolute;
+                z-index: 3;
+                left: 0;
+                top: 60%;
+                perspective: 800px;
+                transform: rotate3d(1, 0, 0, 90deg);
+                transition: all .5s;
             }
             p {
                 opacity: 0;
@@ -31,23 +40,149 @@
                 width: 80%;
             }
             &:hover {
-                img {
+                cursor: pointer;
+                .monkey {
                     transform: scale(1.2);
                     opacity: 1;
+                }
+                .board {
+                    transform: rotate3d(0, 0, 0, 0deg);
                 }
                 p {
                     opacity: 1;
                     transform: translate(-50%, 0%);
                 }
             }
+            &.veryhappy {
+                p {
+                    color: #4FAE32;
+                }
+            }
+            &.happy {
+                p {
+                    color: #CFD946;
+                }
+            }
+            &.nothappy {
+                p {
+                    color: #E38617;
+                }
+            }
+            &.angry {
+                p {
+                    color: $warning;
+                }
+            }
+        }
+    }
+    .backhome {
+        margin-top: 30px;
+        @media(max-width: 680px) {
+            margin: 30px 0;
         }
     }
     .givenscore {
         img {
             width: 25%;
+            @media(max-width: 900px) {
+                width: 40%;
+            }
+            @media(max-width: 600px) {
+                width: 60%;
+            }
+            @media(max-width: 400px) {
+                width: 80%;
+            }
         }
     }
-    .backhome {
-        margin-top: 30px;
+    @media(max-width: 1200px) {
+        .container {
+            width: 85%;
+        }
+        .smilies {
+            .smily {
+                .monkey {
+                    max-width: 20%;
+                    margin: 0 2%;
+                }
+            }
+        }
+    }
+    @media(max-width: 850px) {
+        .container {
+            width: 95%;
+            margin: 0 2.5%;
+        }
+    }
+    @media(max-width: 767px) {
+        &.full-screen {
+            height: auto;
+            padding-top: 86px;
+        }
+        .smilies {
+            height: 620px;
+            margin-top: 0;
+            .smily {
+                .monkey {
+                    max-width: 40%;
+                    margin: 40px 2%;
+                    opacity: 1;
+                }
+                .board {
+                    top: -30px;
+                    transform: rotate3d(0, 0, 0, 0deg);
+                    width: 75%;
+                    left: 12.5%;
+                }
+                &:hover {
+                    .monkey {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width: 600px) {
+        .smilies {
+            height: 560px;
+        }
+    }
+    @media(max-width: 500px) {
+        .container {
+            width: 100%;
+            margin: 0;
+            padding: 0 15px;
+        }
+        .smilies {
+            height: 510px;
+            .smily {
+                .monkey {
+                    max-width: 45%;
+                }
+                .board {
+                    width: 85%;
+                    left: 7.5%;
+                }
+            }
+        }
+    }
+    @media(max-width: 400px) {
+        .smilies {
+            height: 1050px;
+            .smily {
+                .monkey {
+                    max-width: 75%;
+                    margin: 40px 4% 50px 4%;
+                    &:first-child {
+                        margin-top: 10px;
+                    }
+                }
+                .board {
+                    width: 75%;
+                    left: 12.5%;
+                    top: -55px;
+                }
+            }
+        }
     }
 }

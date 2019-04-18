@@ -140,7 +140,9 @@
     "HAPPY": "Ik ben blij met jullie",
     "NOTHAPPY": "Ik ben niet zo blij met jullie",
     "ANGRY": "Ik voel me erg negatief tegenover jullie",
-    "BACKHOME": "Terug naar home"
+    "BACKHOME": "Terug naar home",
+    "SOMETHINGWENTWRONG": "Er is iets misgegaan..",
+    "ERROR": "..met het versturen van je feedback. Zou je het nog eens willen proberen?"
   },
   "hirer": {
     "CONNECT": "Met je inkoopsysteem of je HR-proces aansluiten",

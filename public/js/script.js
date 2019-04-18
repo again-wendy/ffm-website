@@ -55,6 +55,11 @@ $(document).ready(function() {
     }
 });
 
+function postFeedback(value) {
+    var url = '/postfeedback'
+    $.post(url, {score: value});
+}
+
 function tabActive() {
     var path = window.location.pathname;
     $(".tab").removeClass("active");
