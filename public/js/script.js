@@ -56,7 +56,7 @@ $(document).ready(function() {
 });
 
 function postFeedback(value) {
-    let url = 'https://api-test.flexforcemonkey.com/api/Feedback'
+    let url = 'https://api.flexforcemonkey.com/api/Feedback'
     $.post(url, {score: value})
         .done(function() {
             window.location.href = window.location.origin + '/feedback?score=' + value + '&sent=success';
