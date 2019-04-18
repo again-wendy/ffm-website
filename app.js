@@ -331,19 +331,14 @@ app.get('/generalconsiderations', (req, res) => {
 app.get('/feedback', (req,res) => {
     let score = req.query.score;
     let sent = req.query.sent;
-    if(score != undefined && sent == undefined) {
-        // redirect to post
-        res.redirect('/postfeedback?score=' + score);
-    } else {
-        res.render('feedback', {
-            title: "FlexForceMonkey | Feedback",
-            desc: "Give us feedback",
-            img: "./public/images/screenshot.png",
-            score: score,
-            sent: sent,
-            lang: req.cookies.ulang
-        }); 
-    }
+    res.render('feedback', {
+        title: "FlexForceMonkey | Feedback",
+        desc: "Give us feedback",
+        img: "./public/images/screenshot.png",
+        score: score,
+        sent: sent,
+        lang: req.cookies.ulang
+    }); 
 });
 
 // app.get('/sluitjeaan', (req, res) => {

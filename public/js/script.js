@@ -13,6 +13,18 @@ $(document).ready(function() {
         $("#navbar .right-menu .menu-items").hide();
     }
 
+    if( $('.postscore').is(":visible") ) {
+        var className = $('.givenscore').attr('class');
+        className = className.replace("givenscore ", "");
+        $('.postscore').each(function(i, val) {
+            var cl = $(val).attr('class');
+            cl = cl.replace("postscore ", "");
+            if(cl == className) {
+                $(val).click();
+            }
+        });
+    }
+
     getBlogs();
 
     $(window).change(function() {

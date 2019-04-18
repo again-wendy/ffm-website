@@ -47,6 +47,9 @@
         }
     }
     .givenscore {
+        .postscore {
+            opacity: 0;
+        }
         img {
             width: 25%;
             @media(max-width: 900px) {

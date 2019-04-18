@@ -2,33 +2,7 @@
 
 <section id="feedback" class="full-screen">
     <div class="container text-center">
-        {{#if score}}
-            <div class="givenscore">
-                {{#iff score '==' 4}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
-                    <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
-                {{/iff}}
-                {{#iff score '==' 3}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
-                    <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
-                {{/iff}}
-                {{#iff score '==' 2}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY2 }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
-                    <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
-                {{/iff}}
-                {{#iff score '==' 1}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
-                    <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
-                {{/iff}}
-            </div>
-            <div class="backhome text-center">
-                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
-            </div>
-        {{else if sent}}
+        {{#iff sent '==' 'error'}}
             <h2 class="section-title">{{ translation.feedback.SOMETHINGWENTWRONG }}</h2>
             <p class="sub-title">{{ translation.feedback.ERROR }}</p>
             <div class="backhome text-center">
@@ -72,7 +46,69 @@
                     {{/iff}}
                 </a>
             </div>
-        {{else}}
+        {{/iff}}
+        {{#iff sent '==' 'success'}}
+            <div class="givenscore">
+                {{#iff score '==' 4}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
+                {{/iff}}
+                {{#iff score '==' 3}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
+                {{/iff}}
+                {{#iff score '==' 2}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY2 }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
+                {{/iff}}
+                {{#iff score '==' 1}}
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
+                {{/iff}}
+            </div>
+            <div class="backhome text-center">
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+            </div>
+        {{/iff}}
+        {{#iff sent '==' undefined}}
+            {{#iff score '!=' undefined}}
+                <div class="givenscore score-{{score}}">
+                {{#iff score '==' 4}}
+                    <a onclick="postFeedback(4)" class="postscore score-4"></a>
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
+                {{/iff}}
+                {{#iff score '==' 3}}
+                    <a onclick="postFeedback(3)" class="postscore score-3"></a>
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
+                {{/iff}}
+                {{#iff score '==' 2}}
+                    <a onclick="postFeedback(2)" class="postscore score-2"></a>
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY2 }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
+                {{/iff}}
+                {{#iff score '==' 1}}
+                    <a onclick="postFeedback(1)" class="postscore score-1"></a>
+                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
+                    <p class="sub-title">{{ translation.feedback.SORRY }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
+                {{/iff}}
+            </div>
+            <div class="backhome text-center">
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+            </div>
+            {{/iff}}
+        {{/iff}}
+        {{#iff score '==' undefined}}
+            {{#iff sent '==' undefined}}
             <h2 class="section-title">{{ translation.feedback.THINKABOUT }}</h2>
             <p class="sub-title">{{ translation.feedback.GIVESCORE }}</p>
             <div class="smilies">
@@ -113,6 +149,7 @@
                     {{/iff}}
                 </a>
             </div>
-        {{/if}}
+            {{/iff}}
+        {{/iff}}
     </div>
 </section>
