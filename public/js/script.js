@@ -56,8 +56,14 @@ $(document).ready(function() {
 });
 
 function postFeedback(value) {
-    var url = '/postfeedback'
-    $.post(url, {score: value});
+    let url = 'https://api-test.flexforcemonkey.com/api/Feedback'
+    $.post(url, {score: value})
+        .done(function() {
+            window.location.href = window.location.origin + '/feedback?score=' + value + '&sent=success';
+        })
+        .fail(function(){
+            window.location.href = window.location.origin + '/feedback?sent=error';
+        });
 }
 
 function tabActive() {

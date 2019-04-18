@@ -15,6 +15,7 @@ const request                   = require('request');
 const promRequest               = require('request-promise');
 const emails                    = require('./emails');
 const http                      = require('http');
+const uri                       = require('url');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -343,24 +344,6 @@ app.get('/feedback', (req,res) => {
             lang: req.cookies.ulang
         }); 
     }
-});
-
-app.post('/postfeedback', (req, res) => {
-    let score = req.body.score;
-    let url = 'https://api-test.flexforcemonkey.com/api/Feedback'
-    let data = JSON.stringify({'feedback:': score});
-    let options = {
-        method: 'POST',
-        uri: url,
-        form: data,
-    }
-    request(options, (err, res, body) => {
-        if(err) {
-            console.log(err);
-        } else {
-            console.log(res);
-        }
-    });
 });
 
 // app.get('/sluitjeaan', (req, res) => {
