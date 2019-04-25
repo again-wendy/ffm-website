@@ -3,3 +3,47 @@ section.partner {
         text-align: center;
     }
 }
+
+#partner-side-menu {
+    //width: 55px;
+    // background: $primary;
+    // position: fixed;
+    // top: 15%;
+    // left: 0;
+    // color: white;
+    // font-family: $font-bold;
+    // padding: 10px 0;
+    // .side-container {
+    //     position: relative;
+    //     .partner-item {
+    //         color: white;
+    //         text-decoration: none;
+    //         padding: 3px 5px;
+    //         display: block;
+    //         font-size: 14px;
+    //         position: relative;
+    //         &:hover, &:focus, &.active {
+    //             background: $primary-hover;
+    //         }
+    //     }
+    // }
+
+    position: fixed;
+    bottom: 2%;
+    right: 0;
+    padding: 0 5px 10px 15px;
+    border-bottom: 2px solid $light-grey;
+    .side-container {
+        .partner-item {
+            text-decoration: none;
+            padding: 0 8px;
+            position: relative;
+            transition: all 0.2s;
+            &:hover, &:focus, &.active {
+                //bottom: 5px;
+                font-size: 1.3rem;
+                color: $primary-hover;
+            }
+        }
+    }
+}

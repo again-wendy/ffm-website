@@ -65,6 +65,16 @@ $(document).ready(function() {
     } else if(window.location.pathname == "/freelancer") {
         $("#footer .roles .freelancer").remove();
     }
+
+    if( $('#partner-side-menu').length ) {
+        checkPartnerVisibility();
+    }
+
+    $(window).scroll(function() {
+        if( $('#partner-side-menu').length ) {
+            checkPartnerVisibility();
+        }
+    });
 });
 
 function postFeedback(value) {
@@ -328,3 +338,22 @@ $(".close-info").click(function() {
         height: 0
     }, 500);
 });
+
+function checkPartnerVisibility() {
+    var partnerArr = ['sap', 'easyflex', 'flexservice', 'pepflex', 'pivoton', 'carerix', 'setu', 'talentpeaks'];
+
+    $.each(partnerArr, function(i, v) {
+        if( $('#' + v + ' .container').visible(true) ) {
+            $('#partner-side-menu').find('.' + v).addClass('active');
+        } else {
+            if ( $('#partner-side-menu').find('.' + v).hasClass('active') ) {
+                $('#partner-side-menu').find('.' + v).removeClass('active')
+            }
+        }
+    });
+    if( $('.footer-block').visible(true) ) {
+        $('#partner-side-menu').hide();
+    } else {
+        $('#partner-side-menu').show();
+    }
+}

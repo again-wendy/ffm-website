@@ -40,6 +40,22 @@ section.full-screen {
     }
 }
 
+section.third-screen {
+    height: 90vh;
+    padding: 0;
+    @include displayFlex;
+    @include prefix(flex-direction, column, webkit moz o);
+    @include prefix(justify-content, center, webkit moz o);
+    @include prefix(align-items, center, webkit moz o);
+    .container {
+        margin: 0;
+    }
+    @media (max-height: 650px) {
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
 section.with-base-nav {
     padding-top: 150px;
 }

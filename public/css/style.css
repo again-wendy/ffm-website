@@ -1164,24 +1164,58 @@ section.full-screen .container {
 }
 
 /* line 43, ../sass/_partials/_sections.scss */
+section.third-screen {
+  height: 90vh;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+/* line 50, ../sass/_partials/_sections.scss */
+section.third-screen .container {
+  margin: 0;
+}
+@media (max-height: 650px) {
+  /* line 43, ../sass/_partials/_sections.scss */
+  section.third-screen {
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+/* line 59, ../sass/_partials/_sections.scss */
 section.with-base-nav {
   padding-top: 150px;
 }
 
-/* line 48, ../sass/_partials/_sections.scss */
+/* line 64, ../sass/_partials/_sections.scss */
 #contact .section-container {
   width: 60%;
   margin-left: 20%;
 }
 @media (max-width: 1200px) {
-  /* line 48, ../sass/_partials/_sections.scss */
+  /* line 64, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 75%;
     margin-left: 12.5%;
   }
 }
 @media (max-width: 991px) {
-  /* line 48, ../sass/_partials/_sections.scss */
+  /* line 64, ../sass/_partials/_sections.scss */
   #contact .section-container {
     width: 100%;
     margin-left: 0;
@@ -3566,4 +3600,25 @@ form .g-recaptcha > div {
 /* line 2, ../sass/_partials/_partners.scss */
 section.partner .section-container {
   text-align: center;
+}
+
+/* line 7, ../sass/_partials/_partners.scss */
+#partner-side-menu {
+  position: fixed;
+  bottom: 2%;
+  right: 0;
+  padding: 0 5px 10px 15px;
+  border-bottom: 2px solid #ECECEC;
+}
+/* line 37, ../sass/_partials/_partners.scss */
+#partner-side-menu .side-container .partner-item {
+  text-decoration: none;
+  padding: 0 8px;
+  position: relative;
+  transition: all 0.2s;
+}
+/* line 42, ../sass/_partials/_partners.scss */
+#partner-side-menu .side-container .partner-item:hover, #partner-side-menu .side-container .partner-item:focus, #partner-side-menu .side-container .partner-item.active {
+  font-size: 1.3rem;
+  color: #13A5D8;
 }
