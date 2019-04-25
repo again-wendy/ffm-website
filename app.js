@@ -149,6 +149,14 @@ app.get('/', (req, res) => {
         });    
 });
 
+app.get('/partners', (req, res) => {
+    res.render('partners', {
+        title: "FlexForceMonkey | Partners",
+        desc: "About our partners",
+        img: "./public/images/screenshot.jpg",
+    });
+})
+
 app.get('/blogs', (req, res) => {
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=100', (err, resp, body) => {
         var temp = JSON.parse(body);
