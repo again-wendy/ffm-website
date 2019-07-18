@@ -1,8 +1,9 @@
 #pricemodel {
     background: white;
     background: url('../images/subscription-background.jpg') no-repeat;
-    @media(max-width: 1050px) {
+    @media(max-width: 660px) {
         height: auto;
+        background: white;
     }
     .container {
         width: 94%;
@@ -14,6 +15,7 @@
         @include displayFlex;
         @include prefix(justify-content, space-between, webkit moz o);
         @include prefix(flex-wrap, wrap, webkit moz o);
+        @include prefix(align-items, stretch, webkit moz o);
         position: relative;
         @media(max-width: 660px) {
             @include prefix(flex-direction, column, webkit moz o);
@@ -173,6 +175,22 @@
                     .other-prices {
                         height: 110px;
                         font-family: $font-bold;
+                    }
+                    .desc {
+                        min-height: 86px;
+                        p {
+                            margin: 0;
+                            padding-bottom: 0;
+                        }
+                        @media(max-width: 898px) {
+                            min-height: 129px;
+                            p {
+                                margin-top: -30px;
+                            }
+                        }
+                        @media(max-width: 660px) {
+                            min-height: 0;
+                        }
                     }
                     button {
                         width: 100%;

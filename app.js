@@ -170,12 +170,32 @@ app.get('/integration-services', (req, res) => {
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'integration-services').render('integration', {
-                title: "FlexForceMonkey | Integration services",
-                desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                img: "./public/images/hirer.jpg",
-                blogs: blogs
-            });
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+                .then((subRes) => {
+                    var tempSubs = JSON.parse(subRes);
+                    var subs = setSubType(tempSubs);
+                    res.cookie('role', 'integration-services').render('integration', {
+                        title: "FlexForceMonkey | Integration services",
+                        desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                        img: "./public/images/hirer.jpg",
+                        blogs: blogs,
+                        subs: subs
+                    });
+                })
+                .catch(() => {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+                    } else {
+                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+                    }
+                    res.cookie('role', 'integration-services').render('integration', {
+                        title: "FlexForceMonkey | Integration services",
+                        desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                        img: "./public/images/hirer.jpg",
+                        blogs: blogs,
+                        subs: null
+                    });
+                });
         })
         .catch(() => {
             if(req.cookies.ulang == "nl") {
@@ -183,11 +203,31 @@ app.get('/integration-services', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'integration-services').render('integration', {
-                title: "FlexForceMonkey | Integration services",
-                desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                img: "./public/images/hirer.jpg",
-                blogs: null
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+            .then((subRes) => {
+                var tempSubs = JSON.parse(subRes);
+                var subs = setSubType(tempSubs);
+                res.cookie('role', 'integration-services').render('integration', {
+                    title: "FlexForceMonkey | Integration services",
+                    desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                    img: "./public/images/hirer.jpg",
+                    blogs: null,
+                    subs: subs
+                });
+            })
+            .catch(() => {
+                if(req.cookies.ulang == "nl") {
+                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+                } else {
+                    req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+                }
+                res.cookie('role', 'integration-services').render('integration', {
+                    title: "FlexForceMonkey | Integration services",
+                    desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
+                    img: "./public/images/hirer.jpg",
+                    blogs: null,
+                    subs: null
+                });
             });
         });
 });
@@ -215,12 +255,32 @@ app.get('/cla-engine', (req, res) => {
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
-            res.cookie('role', 'cla-engine').render('claengine', {
-                title: "FlexForceMonkey | Cla evaluator",
-                desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                img: "./public/images/supplier.jpg",
-                blogs: blogs
-            });
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+                .then((subRes) => {
+                    var tempSubs = JSON.parse(subRes);
+                    var subs = setSubType(tempSubs);
+                    res.cookie('role', 'cla-engine').render('claengine', {
+                        title: "FlexForceMonkey | Cla evaluator",
+                        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                        img: "./public/images/supplier.jpg",
+                        blogs: blogs,
+                        subs: subs
+                    });
+                })
+                .catch(() => {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+                    } else {
+                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+                    }
+                    res.cookie('role', 'cla-engine').render('claengine', {
+                        title: "FlexForceMonkey | Cla evaluator",
+                        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                        img: "./public/images/supplier.jpg",
+                        blogs: blogs,
+                        subs: null
+                    });
+                });
         })
         .catch(() => {
             if(req.cookies.ulang == "nl") {
@@ -228,12 +288,32 @@ app.get('/cla-engine', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            res.cookie('role', 'cla-engine').render('claengine', {
-                title: "FlexForceMonkey | Cla evaluator",
-                desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                img: "./public/images/supplier.jpg",
-                blogs: null
-            });
+            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
+                .then((subRes) => {
+                    var tempSubs = JSON.parse(subRes);
+                    var subs = setSubType(tempSubs);
+                    res.cookie('role', 'cla-engine').render('claengine', {
+                        title: "FlexForceMonkey | Cla evaluator",
+                        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                        img: "./public/images/supplier.jpg",
+                        blogs: null,
+                        subs: subs
+                    });
+                })
+                .catch(() => {
+                    if(req.cookies.ulang == "nl") {
+                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
+                    } else {
+                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
+                    }
+                    res.cookie('role', 'cla-engine').render('claengine', {
+                        title: "FlexForceMonkey | Cla evaluator",
+                        desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
+                        img: "./public/images/supplier.jpg",
+                        blogs: null,
+                        subs: null
+                    });
+                });
         });    
 });
 app.get('/supplier', (req, res) => {
@@ -595,26 +675,26 @@ const getBlogPerLang = (lang, arr) => {
     var tempArr = [];
     if(lang == "nl") {
         for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4388) {
+            if(arr[i].id == 4448) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
-            } else if(arr[i].id == 4373) {
+            } else if(arr[i].id == 4436) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
-            } else if(arr[i].id == 4292) {
+            } else if(arr[i].id == 4428) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             }
         }
     } else {
         for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4380) {
+            if(arr[i].id == 4453) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
-            } else if(arr[i].id == 4365) {
+            } else if(arr[i].id == 4433) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
-            } else if(arr[i].id == 4358) {
+            } else if(arr[i].id == 4431) {
                 arr[i].img = getFeaturedImage(arr[i]);
                 tempArr.push(arr[i]);
             }
@@ -630,19 +710,14 @@ const setSubType = (arr) => {
                 arr[i].subscriptionTypeText = "Basic";
                 break;
             case 1: 
-                arr[i].subscriptionTypeText = "Basic+";
-                break;
-            case 2: 
-                arr[i].subscriptionTypeText = "SmallBusiness";
-                break;
-            case 3: 
-                arr[i].subscriptionTypeText = "MediumBusiness";
+                arr[i].subscriptionTypeText = "MKB";
                 break;
             case 4: 
                 arr[i].subscriptionTypeText = "Enterprise";
                 break;
         }
     }
+    arr.splice(2,2);
     return arr;
 }
 

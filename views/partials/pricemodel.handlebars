@@ -41,11 +41,21 @@
                                             {{#iff trialInNumberOfDays '>' 0}}
                                                 <li>{{ trialInNumberOfDays }} {{ ../translation.subs.TRIALPERIOD }}</li>
                                             {{/iff}}
+
+                                            {{#iff maximumTimeUsers '==' 0}}
+                                                <li>Single user</li>
+                                            {{/iff}}
                                         </ul>
                                         <ul class="list-style-none">
                                             {{#iff monthlyFee '!=' null}}
-                                                <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
-                                                <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                                {{#iff subscriptionType '==' '1'}}
+                                                    <li class="bold">&euro;2,50 per time user {{ ../translation.subs.PERMONTH }}</li>
+                                                    <li class="bold">&euro;1,99 per time user {{ ../translation.subs.PERYEAR }}</li>
+                                                {{/iff}}
+                                                {{#iff subscriptionType '!=' '1'}}
+                                                    <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
+                                                    <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                                {{/iff}}
                                             {{/iff}}
                                             {{#iff monthlyFee '==' null}}
                                                 <li class="bold">{{ ../translation.subs.ASKFOROFFER }}</li>
@@ -80,7 +90,12 @@
                                     </p>
                                     {{#iff monthlyFee '!=' null}}
                                         <p class="price-rule">
-                                            <span class="price">&euro; {{monthlyFee}}</span> /{{ ../translation.subs.MONTH }}
+                                            {{#iff subscriptionType '==' 0}}
+                                                <span class="price">{{../translation.subs.FREE}}</span>
+                                            {{/iff}}
+                                            {{#iff subscriptionType '==' 1}}
+                                                <span class="price">&euro;1,99*</span> /time user
+                                            {{/iff}}
                                         </p>
                                     {{/iff}}
                                     {{#iff monthlyFee '==' null}}
@@ -90,7 +105,14 @@
                                     {{/iff}}
                                     <div class="other-prices">
                                         {{#iff annualFee '!=' null}}
+                                        {{#iff subscriptionType '!=' 0}}
                                             <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p>
+                                        {{/iff}}
+                                        {{/iff}}
+                                    </div>
+                                    <div class="desc">
+                                        {{#iff subscriptionType '==' 1}}
+                                            <p>{{../translation.subs.DESC}}</p>
                                         {{/iff}}
                                     </div>
                                     <button class="btn-secondary more-info">{{ ../translation.subs.MOREINFO }}</button>

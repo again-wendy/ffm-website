@@ -3280,21 +3280,22 @@ form .g-recaptcha > div {
   background: white;
   background: url("../images/subscription-background.jpg") no-repeat;
 }
-@media (max-width: 1050px) {
+@media (max-width: 660px) {
   /* line 1, ../sass/_partials/_pricemodel.scss */
   #pricemodel {
     height: auto;
+    background: white;
   }
 }
-/* line 7, ../sass/_partials/_pricemodel.scss */
+/* line 8, ../sass/_partials/_pricemodel.scss */
 #pricemodel .container {
   width: 94%;
 }
-/* line 10, ../sass/_partials/_pricemodel.scss */
+/* line 11, ../sass/_partials/_pricemodel.scss */
 #pricemodel .section-title {
   margin-top: 20px;
 }
-/* line 13, ../sass/_partials/_pricemodel.scss */
+/* line 14, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions {
   display: -webkit-box;
   display: -moz-box;
@@ -3309,10 +3310,14 @@ form .g-recaptcha > div {
   -moz-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
   position: relative;
 }
 @media (max-width: 660px) {
-  /* line 13, ../sass/_partials/_pricemodel.scss */
+  /* line 14, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
@@ -3320,7 +3325,7 @@ form .g-recaptcha > div {
     flex-direction: column;
   }
 }
-/* line 21, ../sass/_partials/_pricemodel.scss */
+/* line 23, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column {
   -webkit-flex: 1 1 0;
   -moz-flex: 1 1 0;
@@ -3331,37 +3336,37 @@ form .g-recaptcha > div {
   min-width: 185px;
 }
 @media (max-width: 1050px) {
-  /* line 21, ../sass/_partials/_pricemodel.scss */
+  /* line 23, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column {
     min-width: 250px;
   }
-  /* line 28, ../sass/_partials/_pricemodel.scss */
+  /* line 30, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column:nth-child(3) {
     margin-right: 0;
   }
-  /* line 31, ../sass/_partials/_pricemodel.scss */
+  /* line 33, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column:nth-child(4) {
     margin-left: 0;
   }
-  /* line 34, ../sass/_partials/_pricemodel.scss */
+  /* line 36, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column:nth-child(4), #pricemodel .subscriptions .column:nth-child(5) {
     margin-top: 10px;
     margin-bottom: 30px;
   }
 }
 @media (max-width: 835px) {
-  /* line 21, ../sass/_partials/_pricemodel.scss */
+  /* line 23, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column {
     min-width: 190px;
   }
 }
 @media (max-width: 619px) {
-  /* line 21, ../sass/_partials/_pricemodel.scss */
+  /* line 23, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column {
     min-width: auto;
   }
 }
-/* line 46, ../sass/_partials/_pricemodel.scss */
+/* line 48, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra {
   background: white;
   position: absolute;
@@ -3369,7 +3374,7 @@ form .g-recaptcha > div {
   z-index: 6;
   height: 0;
 }
-/* line 52, ../sass/_partials/_pricemodel.scss */
+/* line 54, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner {
   display: -webkit-box;
   display: -moz-box;
@@ -3383,18 +3388,18 @@ form .g-recaptcha > div {
   height: 100%;
   padding: 10px;
 }
-/* line 57, ../sass/_partials/_pricemodel.scss */
+/* line 59, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .title {
   padding-bottom: 10px;
   margin: 0;
 }
 @media (max-width: 660px) {
-  /* line 57, ../sass/_partials/_pricemodel.scss */
+  /* line 59, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner .title {
     font-size: 2.2rem;
   }
 }
-/* line 64, ../sass/_partials/_pricemodel.scss */
+/* line 66, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .content {
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -3402,68 +3407,68 @@ form .g-recaptcha > div {
   flex: 1;
   text-align: left;
 }
-/* line 67, ../sass/_partials/_pricemodel.scss */
+/* line 69, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .content ul {
   padding-left: 15px;
   list-style-type: square;
 }
-/* line 70, ../sass/_partials/_pricemodel.scss */
+/* line 72, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .content ul li {
   font-size: 14px;
 }
-/* line 72, ../sass/_partials/_pricemodel.scss */
+/* line 74, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .content ul li.bold {
   color: #2B2B2B;
 }
-/* line 77, ../sass/_partials/_pricemodel.scss */
+/* line 79, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .content .list-type-none {
   list-style-type: none;
   padding-left: 0;
 }
 @media (max-width: 660px) {
-  /* line 82, ../sass/_partials/_pricemodel.scss */
+  /* line 84, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner .content ul:first-child {
     width: 58%;
     margin-right: 1%;
     display: inline-block;
   }
-  /* line 87, ../sass/_partials/_pricemodel.scss */
+  /* line 89, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner .content ul:last-child {
     width: 38%;
     display: inline-block;
   }
 }
-/* line 93, ../sass/_partials/_pricemodel.scss */
+/* line 95, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner button {
   width: 100%;
 }
 @media (max-width: 660px) {
-  /* line 93, ../sass/_partials/_pricemodel.scss */
+  /* line 95, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner button {
     width: 48%;
   }
-  /* line 97, ../sass/_partials/_pricemodel.scss */
+  /* line 99, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner button:first-child {
     margin-right: 2%;
   }
 }
-/* line 102, ../sass/_partials/_pricemodel.scss */
+/* line 104, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .extra .inner .btn-secondary, #pricemodel .subscriptions .column .extra .inner .btn-secondary-xl {
   margin-bottom: 10px;
 }
 @media (max-width: 660px) {
-  /* line 102, ../sass/_partials/_pricemodel.scss */
+  /* line 104, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .extra .inner .btn-secondary, #pricemodel .subscriptions .column .extra .inner .btn-secondary-xl {
     margin-bottom: 0;
   }
 }
-/* line 110, ../sass/_partials/_pricemodel.scss */
+/* line 112, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base {
   z-index: 5;
   position: relative;
   background: #ECECEC;
 }
-/* line 114, ../sass/_partials/_pricemodel.scss */
+/* line 116, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base h3 {
   background: #2B2B2B;
   color: white;
@@ -3473,123 +3478,148 @@ form .g-recaptcha > div {
   font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
 }
 @media (max-width: 1335px) {
-  /* line 114, ../sass/_partials/_pricemodel.scss */
+  /* line 116, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base h3 {
     font-size: 1.8rem;
   }
 }
 @media (max-width: 1185px) {
-  /* line 114, ../sass/_partials/_pricemodel.scss */
+  /* line 116, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base h3 {
     font-size: 1.5rem;
   }
 }
-/* line 128, ../sass/_partials/_pricemodel.scss */
+/* line 130, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner {
   padding: 10px;
 }
-/* line 130, ../sass/_partials/_pricemodel.scss */
+/* line 132, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .bold {
   height: 150px;
   color: #2B2B2B;
 }
 @media (max-width: 660px) {
-  /* line 130, ../sass/_partials/_pricemodel.scss */
+  /* line 132, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .bold {
     height: auto;
   }
 }
-/* line 137, ../sass/_partials/_pricemodel.scss */
+/* line 139, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .price-rule {
   font-family: "ZwoOT-Xbold", Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
   padding: 20px 0 8px 0;
 }
 @media (max-width: 1255px) {
-  /* line 137, ../sass/_partials/_pricemodel.scss */
+  /* line 139, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule {
     font-size: 1.3rem;
   }
 }
 @media (max-width: 1050px) {
-  /* line 137, ../sass/_partials/_pricemodel.scss */
+  /* line 139, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule {
     font-size: 1.6rem;
   }
 }
-/* line 147, ../sass/_partials/_pricemodel.scss */
+/* line 149, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .price-rule .price {
   font-size: 2.8rem;
 }
 @media (max-width: 1345px) {
-  /* line 147, ../sass/_partials/_pricemodel.scss */
+  /* line 149, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule .price {
     font-size: 2.4rem;
   }
 }
 @media (max-width: 1255px) {
-  /* line 147, ../sass/_partials/_pricemodel.scss */
+  /* line 149, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule .price {
     font-size: 2.2rem;
   }
 }
 @media (max-width: 1050px) {
-  /* line 147, ../sass/_partials/_pricemodel.scss */
+  /* line 149, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule .price {
     font-size: 2.6rem;
   }
 }
-/* line 159, ../sass/_partials/_pricemodel.scss */
+/* line 161, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .price-rule.one {
   padding-top: 34px;
   padding-bottom: 12px;
 }
 @media (max-width: 1345px) {
-  /* line 159, ../sass/_partials/_pricemodel.scss */
+  /* line 161, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule.one {
     padding-top: 28px;
   }
 }
 @media (max-width: 1255px) {
-  /* line 159, ../sass/_partials/_pricemodel.scss */
+  /* line 161, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule.one {
     padding-top: 33px;
   }
 }
 @media (max-width: 660px) {
-  /* line 137, ../sass/_partials/_pricemodel.scss */
+  /* line 139, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column .base .inner .price-rule {
     padding: 0;
   }
 }
-/* line 173, ../sass/_partials/_pricemodel.scss */
+/* line 175, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .other-prices {
   height: 110px;
   font-family: "ZwoOT-SemiBd", Helvetica, Arial, sans-serif;
 }
-/* line 177, ../sass/_partials/_pricemodel.scss */
+/* line 179, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .desc {
+  min-height: 86px;
+}
+/* line 181, ../sass/_partials/_pricemodel.scss */
+#pricemodel .subscriptions .column .base .inner .desc p {
+  margin: 0;
+  padding-bottom: 0;
+}
+@media (max-width: 898px) {
+  /* line 179, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column .base .inner .desc {
+    min-height: 129px;
+  }
+  /* line 187, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column .base .inner .desc p {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 660px) {
+  /* line 179, ../sass/_partials/_pricemodel.scss */
+  #pricemodel .subscriptions .column .base .inner .desc {
+    min-height: 0;
+  }
+}
+/* line 195, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner button {
   width: 100%;
 }
-/* line 180, ../sass/_partials/_pricemodel.scss */
+/* line 198, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column .base .inner .choose {
   margin-top: 10px;
 }
-/* line 185, ../sass/_partials/_pricemodel.scss */
+/* line 203, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column:first-child {
   margin-left: 0;
 }
-/* line 188, ../sass/_partials/_pricemodel.scss */
+/* line 206, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .column:last-child {
   margin-right: 0;
 }
 @media (max-width: 660px) {
-  /* line 21, ../sass/_partials/_pricemodel.scss */
+  /* line 23, ../sass/_partials/_pricemodel.scss */
   #pricemodel .subscriptions .column {
     margin: 5px 0;
   }
 }
-/* line 195, ../sass/_partials/_pricemodel.scss */
+/* line 213, ../sass/_partials/_pricemodel.scss */
 #pricemodel .subscriptions .flash {
   padding: 20px;
   margin: 0 auto;
