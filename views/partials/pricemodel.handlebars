@@ -35,7 +35,9 @@
                                             <li>{{ ../translation.subs.UNLIMITEDSUPPORT }}</li>
 
                                             {{#iff discountPercentage '>' 0}}
-                                                <li>{{ discountPercentage }}% {{ ../translation.subs.DISCOUNT }}</li>
+                                                {{#iff subscriptionType '!=' 4}}
+                                                    <li>{{ discountPercentage }}% {{ ../translation.subs.DISCOUNT }}</li>
+                                                {{/iff}}
                                             {{/iff}}
 
                                             {{#iff trialInNumberOfDays '>' 0}}
@@ -50,7 +52,7 @@
                                             {{#iff monthlyFee '!=' null}}
                                                 {{#iff subscriptionType '==' '1'}}
                                                     <li class="bold">&euro;2,50 per time user {{ ../translation.subs.PERMONTH }}</li>
-                                                    <li class="bold">&euro;1,99 per time user {{ ../translation.subs.PERYEAR }}</li>
+                                                    <li class="bold">&euro;23,88 per time user {{ ../translation.subs.PERYEAR }}</li>
                                                 {{/iff}}
                                                 {{#iff subscriptionType '!=' '1'}}
                                                     <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
@@ -106,7 +108,8 @@
                                     <div class="other-prices">
                                         {{#iff annualFee '!=' null}}
                                         {{#iff subscriptionType '!=' 0}}
-                                            <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p>
+                                            {{!-- <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p> --}}
+                                            <p class="year">{{ ../translation.subs.OR }} &euro;2,50 per time user per {{ ../translation.subs.MONTH }}</p>
                                         {{/iff}}
                                         {{/iff}}
                                     </div>
