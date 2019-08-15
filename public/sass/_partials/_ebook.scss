@@ -1,14 +1,14 @@
 #ebook-top {
-    height: 65vh;
+    height: 70vh;
     border-bottom: none;
     padding-top: calc(9vh + 50px);
     position: relative;
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
         ),
-        url('../images/jungle.jpg')
+        url('../images/desert.jpg')
         no-repeat
         center;
     @media(max-width: 768px) {
@@ -66,7 +66,7 @@
 }
 
 #ebook-bottom {
-    height: 35vh;
+    height: 30vh;
     border-bottom: none;
     background: $dark-grey;
     color: white;
@@ -101,5 +101,55 @@
             @include prefix(flex-direction, column, webkit moz ms);
             @include prefix(justify-content, flex-start, webkit moz ms);
         }
+    }
+}
+
+#survey-ebook {
+    #ebook-survey-form {
+        .progress {
+            @include displayFlex;
+            @include prefix(justify-content, center, webkit moz o);
+            span {
+                height: 80px;
+                width: 80px;
+                padding: 26px 0;
+                text-align: center;
+                background: darken($light-grey, 8%);
+                border-radius: 50%;
+                font-size: 1.4rem;
+                margin: 0 15px;
+                &.active {
+                    background: $primary;
+                    font-weight: bold;
+                }
+            }
+            .fas {
+                color: darken($light-grey, 5%);
+                padding-top: 15px;
+            }
+        }
+        .section-2, .section-3 {
+            display: none;
+        }
+        .form-section {
+            h4 {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            label {
+                margin-bottom: 5px;
+                width: 100%;
+                display: block;
+            }
+            input[type="radio"] {
+                width: auto;
+            }
+        }
+    }
+    .submit, .prev {
+        display: none;
+    }
+    button {
+        margin: 0 8px;
     }
 }

@@ -5,19 +5,12 @@
         <h2 class="section-title">{{ translation.ebook.TITLE }}</h2>
         <img src="./public/images/ebook.png" alt="Download our eBook" class="ebook">
         <div class="section-container">
-            <p class="info-text">{{ translation.ebook.INTROTEXT }}</p>
+            <p class="info-text">In dit e-book wordt gekeken naar het Purchase to Pay proces van opdrachtgevers, door de ogen van een uitzender. Hoe moet je als uitzendbureau nu aankijken tegen dat inkoopproces? Wat houdt zo een proces precies in? Waarom gebruiken ze die opzet? Wat zijn de valkuilen voor een leverancier in het algemeen en voor een uren-leverancier in het bijzonder?</p>
             <div class="ebook-form">
                 {{#if messages.success}}
-                    <p class="flash flash-success">{{ translation.ebook.SEND_SUCCESS }}</p>
+                    <p class="flash flash-success">Succes! Je ontvangt het ebook in je inbox</p>
                 {{/if}}
-                <form id="requestEbook" method="POST" action="get-ebook">
-                    <div class="form-group">
-                        <label for="email">{{ translation.ebook.EMAIL }}</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com">
-                    </div>
-                    <p class="antispam">Leave this empty: <input type="text" name="url"></p>
-                    <input type="submit" class="btn-complementary-xl" value="{{ translation.ebook.BUTTONTEXT }}">
-                </form>
+                <button onclick="openModal('#survey-ebook')" class="btn-complementary-xl">Download hem nu!</button>
             </div>
         </div>
     </div>
@@ -27,20 +20,60 @@
         <h2 class="section-title">{{ translation.ebook.WHYTITLE }}</h2>
         <div class="row">
             <div class="column reason-1">
-                <span class="fa fa-file fa-3x"></span>
-                <h4>{{ translation.ebook.REASON1TITLE }}</h4>
-                <p>{{ translation.ebook.REASON1EXP }}</p>
+                <span class="fas fa-plug fa-3x"></span>
+                <p>Uitgaven worden met steeds striktere (purchase to pay) processen getoetst, hoe sluit je daarop aan als uitzendbureau?</p>
             </div>
             <div class="column reason-2">
-                <span class="fa fa-book fa-3x"></span>
-                <h4>{{ translation.ebook.REASON2TITLE }}</h4>
-                <p>{{ translation.ebook.REASON2EXP }}</p>
+                <span class="fas fa-handshake fa-3x"></span>
+                <p>Digitaal samenwerken in de keten begint met het willen begrijpen van de uitdagingen van je partner. Nu alle valkuilen overzichtelijk gebundeld.</p>
             </div>
             <div class="column reason-3">
-                <span class="fa fa-users fa-3x"></span>
-                <h4>{{ translation.ebook.REASON3TITLE }}</h4>
-                <p>{{ translation.ebook.REASON3EXP }}</p>
+                <span class="fas fa-money-check-alt fa-3x"></span>
+                <p>Na grondstoffen voor een eindproduct, is inhuur van externen voor veel organisaties de hoogste inkoop-uitgave die ze maken.</p>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal" id="survey-ebook">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">We hebben wat vragen voor je</h3>
+            <span class="close" onclick="closeModal('#survey-ebook')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="ebook-survey-form">
+                <div class="progress">
+                    <span class="one active">1</span>
+                    <i class="fas fa-chevron-right fa-3x"></i>
+                    <span class="two">2</span>
+                    <i class="fas fa-chevron-right fa-3x"></i>
+                    <span class="three">3</span>
+                </div>
+                <div class="form-section section-1">
+                    <h4>Vraag 1 van 3</h4>
+                    <label for="role">Geef aan of je opdrachtgever of uitlener bent binnen de keten van digitalisering</label>
+                    <input type="radio" name="role" value="Opdrachtgever"> Opdrachtgever<br />
+                    <input type="radio" name="role" value="Uitlener"> Uitlener
+                </div>
+                <div class="form-section section-2">
+                    <h4>Vraag 2 van 3</h4>
+                    <label for="frustration">Kun je ons vertellen wat jouw allerbelangrijkste frustratie is binnen het dagelijkse samenwerken en administratieve proces met jouw <span id="opp-role">opdrachtgever/uitlener</span>?</label>
+                    <textarea name="frustration" id="frustration" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-section section-3">
+                    <h4>Vraag 3 van 3</h4>
+                    <label for="email">Geef je emailadres op</label>
+                    <input type="email" name="email">
+                    <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-light-grey" onclick="closeModal('#survey-ebook')">Sluiten</button>
+            <button class="btn-dark-grey prev" onclick="prevQuestion()"><span class="fas fa-chevron-left"></span> Vorige</button>
+            <button class="btn-complementary next" onclick="nextQuestion()">Volgende <span class="fas fa-chevron-right"></span></button>
+            <button class="btn-complementary submit" onclick="submitSurvey()">Verstuur</button>
+        </div>
+    </div>
+</div>

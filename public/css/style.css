@@ -2362,7 +2362,7 @@ form .g-recaptcha > div {
 /* line 12, ../sass/_partials/_modal.scss */
 .modal .modal-content {
   background-color: #ECECEC;
-  margin: 15% auto;
+  margin: 8% auto;
   padding: 20px;
   width: 60%;
 }
@@ -2717,11 +2717,11 @@ form .g-recaptcha > div {
 
 /* line 1, ../sass/_partials/_ebook.scss */
 #ebook-top {
-  height: 65vh;
+  height: 70vh;
   border-bottom: none;
   padding-top: calc(9vh + 50px);
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/jungle.jpg") no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/desert.jpg") no-repeat center;
 }
 @media (max-width: 768px) {
   /* line 1, ../sass/_partials/_ebook.scss */
@@ -2803,7 +2803,7 @@ form .g-recaptcha > div {
 
 /* line 68, ../sass/_partials/_ebook.scss */
 #ebook-bottom {
-  height: 35vh;
+  height: 30vh;
   border-bottom: none;
   background: #2B2B2B;
   color: white;
@@ -2859,6 +2859,67 @@ form .g-recaptcha > div {
     -ms-justify-content: flex-start;
     justify-content: flex-start;
   }
+}
+
+/* line 109, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .progress {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+/* line 112, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .progress span {
+  height: 80px;
+  width: 80px;
+  padding: 26px 0;
+  text-align: center;
+  background: #d8d8d8;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  margin: 0 15px;
+}
+/* line 121, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .progress span.active {
+  background: #3CBFED;
+  font-weight: bold;
+}
+/* line 126, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .progress .fas {
+  color: #dfdfdf;
+  padding-top: 15px;
+}
+/* line 131, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .section-2, #survey-ebook #ebook-survey-form .section-3 {
+  display: none;
+}
+/* line 135, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .form-section h4 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 139, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .form-section label {
+  margin-bottom: 5px;
+  width: 100%;
+  display: block;
+}
+/* line 144, ../sass/_partials/_ebook.scss */
+#survey-ebook #ebook-survey-form .form-section input[type="radio"] {
+  width: auto;
+}
+/* line 149, ../sass/_partials/_ebook.scss */
+#survey-ebook .submit, #survey-ebook .prev {
+  display: none;
+}
+/* line 152, ../sass/_partials/_ebook.scss */
+#survey-ebook button {
+  margin: 0 8px;
 }
 
 /* line 2, ../sass/_partials/_blogs.scss */

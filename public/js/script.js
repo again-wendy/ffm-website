@@ -77,6 +77,8 @@ $(document).ready(function() {
     });
 });
 
+var currentsection = 1;
+
 function postFeedback(value) {
     let url = 'https://api.flexforcemonkey.com/api/Feedback'
     $.post(url, {score: value})
@@ -356,4 +358,92 @@ function checkPartnerVisibility() {
     } else {
         $('#partner-side-menu').show();
     }
+}
+
+function openModal(id) {
+    $(id).fadeIn();
+}
+
+function closeModal(id) {
+    $(id).fadeOut();
+}
+
+function nextQuestion() {
+    if(currentsection == 1) {
+        toSectionTwo();
+    } else if(currentsection == 2) {
+        toSectionThree();
+    }
+}
+
+function prevQuestion() {
+    if(currentsection == 2) {
+        toSectionOne();
+    } else if(currentsection == 3) {
+        toSectionTwo();
+    }
+}
+
+function toSectionOne() {
+    $('#survey-ebook .section-2').hide();
+    $('#survey-ebook .section-1').fadeIn();
+    $('#survey-ebook .prev').hide();
+    $('#survey-ebook .next').show();
+    $('#survey-ebook .submit').hide();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .one').addClass('active');
+    currentsection = 1;
+}
+
+function toSectionTwo() {
+    $('#survey-ebook .section-1').hide();
+    $('#survey-ebook .section-3').hide();
+    var role = $('#survey-ebook input[name="role"]:checked').val();
+    var opprole = "";
+    if(role) {
+        (role == "Opdrachtgever") ? opprole = "uitlener" : opprole = "opdrachtgever";
+        $('#survey-ebook .section-2 #opp-role').html(opprole)
+    }
+    $('#survey-ebook .section-2').fadeIn();
+    $('#survey-ebook .prev').show();
+    $('#survey-ebook .next').show();
+    $('#survey-ebook .submit').hide();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .two').addClass('active');
+    currentsection = 2;
+}
+
+function toSectionThree() {
+    $('#survey-ebook .section-1').hide();
+    $('#survey-ebook .section-2').hide();
+    $('#survey-ebook .section-3').fadeIn();
+    $('#survey-ebook .next').hide();
+    $('#survey-ebook .submit').show();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .three').addClass('active');
+    currentsection = 3;
+}
+
+function checkSection() {
+    if($('#survey-ebook .section-1').is(':visible')) {
+        currentsection = 1;
+    } else if($('#survey-ebook .section-2').is(':visible')) {
+        currentsection = 2;
+    } else if($('#survey-ebook .section-3').is(':visible')) {
+        currentsection = 3;
+    }
+}
+
+function submitSurvey() {
+    var form = $('#ebook-survey-form');
+    closeModal('#survey-ebook');
+    $.ajax({
+        url: '/get-ebook',
+        type: 'post',
+        dataType: 'json',
+        data: form.serialize(),
+        success: function(data) {
+            
+        }
+    });
 }
