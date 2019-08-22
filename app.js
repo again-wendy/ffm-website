@@ -386,8 +386,8 @@ app.get('/freelancer', (req, res) => {
 
 app.get('/ebook', (req, res) => {
     res.render('ebookpage', {
-        title: "eBook | Titel eBook",
-        desc: "Want to know everything about ...? Download our eBook!",
+        title: "eBook | Ontvlooien van inkoopsystemen en uitzendprocessen",
+        desc: "In dit e-book wordt gekeken naar het Purchase to Pay proces van opdrachtgevers, door de ogen van een uitzender.",
         img: "./public/images/ebook.jpg"
     });
 });
@@ -588,11 +588,11 @@ app.post('/get-ebook', (req, res) => {
     recaptcha_url += "remoteip=" + req.connection.remoteAddress;
 
     let output = emails.buildEbookEmailNL();
-    let pathBook = './public/files/ebook-nl.pdf';
+    let pathBook = './public/files/ebook-uitzenden-aansluiten-op-p2p.pdf';
 
     let HelperOptions = {
         from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-        to: 'wendy.dimmendaal@again.nl',
+        to: req.body.email,
         subject: 'FlexForceMonkey eBook',
         text: 'Test 123',
         html: output,
@@ -669,8 +669,8 @@ const sendConfirmMail = (body) => {
     `;
     let HelperOptions = {
         from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-        //to: "doede@flexforcemonkey.com",
-        to: "wendy.dimmendaal@again.nl",
+        to: "doede@flexforcemonkey.com",
+        //to: "wendy.dimmendaal@again.nl",
         subject: "Ebook download",
         text: "",
         html: output

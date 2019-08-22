@@ -2717,7 +2717,7 @@ form .g-recaptcha > div {
 
 /* line 1, ../sass/_partials/_ebook.scss */
 #ebook-top {
-  height: 70vh;
+  height: 65vh;
   border-bottom: none;
   padding-top: calc(9vh + 50px);
   position: relative;
@@ -2739,7 +2739,7 @@ form .g-recaptcha > div {
 }
 /* line 22, ../sass/_partials/_ebook.scss */
 #ebook-top .container .ebook {
-  width: 18%;
+  width: 17%;
   position: absolute;
   left: 10%;
   bottom: -35px;
@@ -2747,14 +2747,14 @@ form .g-recaptcha > div {
 @media (max-width: 1200px) {
   /* line 22, ../sass/_partials/_ebook.scss */
   #ebook-top .container .ebook {
-    width: 22%;
+    width: 21%;
   }
 }
 @media (max-width: 940px) {
   /* line 22, ../sass/_partials/_ebook.scss */
   #ebook-top .container .ebook {
     left: 5%;
-    width: 25%;
+    width: 24%;
   }
 }
 @media (max-width: 768px) {
@@ -2803,7 +2803,7 @@ form .g-recaptcha > div {
 
 /* line 68, ../sass/_partials/_ebook.scss */
 #ebook-bottom {
-  height: 30vh;
+  height: 35vh;
   border-bottom: none;
   background: #2B2B2B;
   color: white;
