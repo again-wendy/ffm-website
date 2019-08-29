@@ -89,7 +89,7 @@ app.use(cookieParser(process.env.SECRET_KEY));
 // Setup language
 app.use(i18n({
     translationsPath: path.join(__dirname, 'i18n'),
-    siteLangs: ['nl'],
+    siteLangs: ['en', 'nl'],
     textsVarName: 'translation'
 }));
 
@@ -123,15 +123,15 @@ const transporter = nodemailer.createTransport({
 app.use(flash());
 
 app.get('/', (req, res) => {
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
-            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             res.render('home', {
                 title: "FlexForceMonkey | Business network for Flex",
                 desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
                 img: "./public/images/screenshot.jpg",
-                blogs: blogs
+                blogs: tempBlogs
             });
         })
         .catch(() => {
@@ -158,18 +158,18 @@ app.get('/partners', (req, res) => {
 })
 
 app.get('/blogs', (req, res) => {
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=100', (err, resp, body) => {
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {
         var temp = JSON.parse(body);
-        temp = getBlogPerLang(req.cookies.ulang, temp);
+        //temp = getBlogPerLang(req.cookies.ulang, temp);
         res.send(temp);
     });
 });
 
 app.get('/integration-services', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var blogs = JSON.parse(blogRes);
+            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -251,10 +251,10 @@ app.get('/selfservice-subscribe', (req, res) => {
     });
 });
 app.get('/cla-engine', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var blogs = JSON.parse(blogRes);
+            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -320,10 +320,10 @@ app.get('/supplier', (req, res) => {
     res.redirect('/cla-engine');
 });
 app.get('/online-software', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=100')
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var blogs = JSON.parse(blogRes);
+            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -688,37 +688,37 @@ const getFeaturedImage = (arr) => {
     return arr.img;
 }
 
-const getBlogPerLang = (lang, arr) => {
-    var tempArr = [];
-    if(lang == "nl") {
-        for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4448) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4436) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4428) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            }
-        }
-    } else {
-        for(var i = 0; i < arr.length; i++) {
-            if(arr[i].id == 4453) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4433) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            } else if(arr[i].id == 4431) {
-                arr[i].img = getFeaturedImage(arr[i]);
-                tempArr.push(arr[i]);
-            }
-        }
-    }
-    return tempArr;
-}
+// const getBlogPerLang = (lang, arr) => {
+//     var tempArr = [];
+//     if(lang == "nl") {
+//         for(var i = 0; i < arr.length; i++) {
+//             if(arr[i].id == 4448) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             } else if(arr[i].id == 4436) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             } else if(arr[i].id == 4428) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             }
+//         }
+//     } else {
+//         for(var i = 0; i < arr.length; i++) {
+//             if(arr[i].id == 4453) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             } else if(arr[i].id == 4433) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             } else if(arr[i].id == 4431) {
+//                 arr[i].img = getFeaturedImage(arr[i]);
+//                 tempArr.push(arr[i]);
+//             }
+//         }
+//     }
+//     return tempArr;
+// }
 
 const setSubType = (arr) => {
     for(var i = 0; i < arr.length; i++) {
