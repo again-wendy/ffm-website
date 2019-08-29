@@ -126,12 +126,12 @@ app.get('/', (req, res) => {
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
-            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var blogs = getFeaturedImage(tempBlogs);
             res.render('home', {
                 title: "FlexForceMonkey | Business network for Flex",
                 desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
                 img: "./public/images/screenshot.jpg",
-                blogs: tempBlogs
+                blogposts: blogs
             });
         })
         .catch(() => {
@@ -160,7 +160,7 @@ app.get('/partners', (req, res) => {
 app.get('/blogs', (req, res) => {
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {
         var temp = JSON.parse(body);
-        //temp = getBlogPerLang(req.cookies.ulang, temp);
+        temp = getFeaturedImage(temp);
         res.send(temp);
     });
 });
@@ -168,8 +168,8 @@ app.get('/blogs', (req, res) => {
 app.get('/integration-services', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var blogs = JSON.parse(blogRes);
-            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var tempBblogs = JSON.parse(blogRes);
+            var blogs = getFeaturedImage(tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -253,8 +253,8 @@ app.get('/selfservice-subscribe', (req, res) => {
 app.get('/cla-engine', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var blogs = JSON.parse(blogRes);
-            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var tempBblogs = JSON.parse(blogRes);
+            var blogs = getFeaturedImage(tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -322,8 +322,8 @@ app.get('/supplier', (req, res) => {
 app.get('/online-software', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var blogs = JSON.parse(blogRes);
-            //var blogs = getBlogPerLang(req.cookies.ulang, tempBlogs);
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getFeaturedImage(tempBlogs);
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -679,13 +679,15 @@ const sendConfirmMail = (body) => {
 }
 
 const getFeaturedImage = (arr) => {
-    if( arr._embedded['wp:featuredmedia'] != undefined ) {
-        var img = arr._embedded['wp:featuredmedia'][0].source_url;
-        arr.img = img;
-    } else {
-        arr.img = "./public/images/imgplaceholder.png";
+    for(var i = 0; i < arr.length; i++) {
+        if( arr[i]._embedded['wp:featuredmedia'] != undefined ) {
+            var img = arr[i]._embedded['wp:featuredmedia'][0].source_url;
+            arr[i].img = img;
+        } else {
+            arr[i].img = "./public/images/imgplaceholder.png";
+        }
     }
-    return arr.img;
+    return arr;
 }
 
 // const getBlogPerLang = (lang, arr) => {
