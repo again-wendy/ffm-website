@@ -122,6 +122,14 @@ const transporter = nodemailer.createTransport({
 // Flash Middleware
 app.use(flash());
 
+app.get('/testhome', (req, res) => {
+    res.render('temphome', {
+        title: "FlexForceMonkey | Business network for Flex",
+        desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+        img: "./public/images/screenshot.jpg"
+    })
+})
+
 app.get('/', (req, res) => {
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
