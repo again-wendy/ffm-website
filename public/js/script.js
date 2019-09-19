@@ -291,9 +291,9 @@ function flexjungleNewsLink() {
 
 function flexjungleDownloadLink() {
     if(checkLang().indexOf("nl") != -1) {
-        window.open('http://flexjungle.flexforcemonkey.com/downloads-nl/', '_blank');
-    } else {
         window.open('http://flexjungle.flexforcemonkey.com/downloads/', '_blank');
+    } else {
+        window.open('http://flexjungle.flexforcemonkey.com/downloads-en/', '_blank');
     }
 }
 
@@ -386,6 +386,7 @@ function prevQuestion() {
 
 function toSectionOne() {
     $('#survey-ebook .section-2').hide();
+    $('#survey-ebook .section-3').hide();
     $('#survey-ebook .section-1').fadeIn();
     $('#survey-ebook .prev').hide();
     $('#survey-ebook .next').show();
@@ -436,14 +437,25 @@ function checkSection() {
 
 function submitSurvey() {
     var form = $('#ebook-survey-form');
-    closeModal('#survey-ebook');
-    $.ajax({
-        url: '/get-ebook',
-        type: 'post',
-        dataType: 'json',
-        data: form.serialize(),
-        success: function(data) {
-            
+    // validate email field
+    var email = $("#ebook-survey-form #email").val();
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(regex.test(email)) {
+        closeModal('#survey-ebook');
+        if( $('.email-validation').length ) {
+            $('.email-validation').remove();
         }
-    });
+        form.trigger("reset");
+        toSectionOne();
+        $.ajax({
+            url: '/get-ebook',
+            type: 'post',
+            dataType: 'json',
+            data: form.serialize(),
+        });
+    } else {
+        if( !$('.email-validation').length ) {
+            $("#ebook-survey-form #email").after("<span class='validation email-validation error'>Vul a.u.b. een geldig emailadres in</span>");
+        }
+    }
 }

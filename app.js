@@ -606,8 +606,8 @@ app.post('/get-ebook', (req, res) => {
     request(recaptcha_url, function(error, resp, body) {
         body = JSON.parse(body);
         if(body.success !== undefined && !body.success) {
-            req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
             res.redirect(req.get('referer'));
+            req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
         } else {
             transporter.sendMail(HelperOptions, (errorMail, info) => {
                 if(errorMail) {
@@ -653,7 +653,7 @@ app.get('*', (req, res) => {
 
 var port = process.env.port || 3000;
 app.listen(port, () => {
-    console.log('Server started...');
+    console.log('Server started on port ' + port + '...');
 });
 
 const sendConfirmMail = (body) => {
@@ -669,8 +669,8 @@ const sendConfirmMail = (body) => {
     `;
     let HelperOptions = {
         from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-        to: "doede@flexforcemonkey.com",
-        //to: "wendy.dimmendaal@again.nl",
+        //to: "doede@flexforcemonkey.com",
+        to: "wendy.dimmendaal@again.nl",
         subject: "Ebook download",
         text: "",
         html: output

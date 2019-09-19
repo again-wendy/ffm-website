@@ -10,6 +10,11 @@
                 {{#if messages.success}}
                     <p class="flash flash-success">Succes! Je ontvangt het ebook in je inbox</p>
                 {{/if}}
+                {{#if messages.error}}
+                    <p class="flash flash-error">{{messages.error}}</p>
+                {{/if}}
+                {{messages.success}}
+                {{messages.error}}
                 <button onclick="openModal('#survey-ebook')" class="btn-complementary-xl">Download hem nu!</button>
             </div>
         </div>
@@ -64,7 +69,7 @@
                 <div class="form-section section-3">
                     <h4>Vraag 3 van 3</h4>
                     <label for="email">Geef je emailadres op</label>
-                    <input type="email" name="email">
+                    <input id="email" type="email" name="email">
                     <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
                 </div>
             </form>

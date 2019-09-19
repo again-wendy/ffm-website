@@ -37,6 +37,13 @@ strong {
     color: $warning;
 }
 
+.validation {
+    color: $warning;
+    font-size: 85%;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
 .svg-inline--fa.green {
     color: $success;
 }
