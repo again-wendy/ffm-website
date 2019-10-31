@@ -37,12 +37,16 @@
     <meta name="twitter:image:src" content="{{ img }}">
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="{{ title }}">
+    <meta name="title" property="og:title" content="{{title}}">
     <meta name="og:description" content="{{ desc }}">
+    <meta name="description" property="og:description" content="{{desc}}">
     <meta name="og:image" content="{{ img }}">
-    <meta name="og:url" content="http://flexforcemonkey.com">
+    <meta name="image" property="og:image" content="{{img}}">
+    <meta name="og:url" content="{{url}}">
     <meta name="og:site_name" content="{{ title }}">
     <meta name="fb:admins" content="184172875337875">
-    <meta name="og:type" content="website">
+    <meta name="og:type" content="Website">
+    <meta property="og:type" content="Website">
     <!-- reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- COOKIE CONSENT -->
@@ -65,9 +69,9 @@
             theme: "edgeless",
             position: "bottom-left",
             content: {
-                message: "{{ translation.cookie.BANNER_TEXT }}",
-                dismiss: "{{ translation.cookie.DISMISS }}",
-                link: "{{ translation.cookie.LEARN_MORE }}"
+                message: "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
+                dismiss: "Oké!",
+                link: "Lees meer"
             },
             onPopupOpen: function() {
                 document.getElementById("cookie").style.display = "block";
@@ -89,12 +93,12 @@
             <span class="fa fa-envelope"></span>
         </div>
         <div class="header-container">
-            <div class="header">{{ translation.newsletter.SUBSCRIBE_OUR }}</div>
+            <div class="header">FlexForceMonkey nieuwsbrief</div>
             <a onclick="closeNewsletterBlock()" class="close">&times;</a>
         </div>
         <div class="content-container">
-            <p>{{ translation.newsletter.OPENS_NEW_TAB }}</p>
-            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">{{ translation.newsletter.OPEN }}</a>
+            <p>Op de hoogte blijven? Schrijf je nu in voor onze nieuwsbrief!</p>
+            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">Ga naar het formulier</a>
         </div>
     </div>
 

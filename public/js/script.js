@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // Load right flag in menu to set language
-    if(checkLang().indexOf("nl") != -1) {
-        $("#language").append('<a onclick="setLang(\'en\')"><img src="./public/images/en.png" alt="English"></a>');
-        Cookies.set("ulang", "nl");
-    } else {
-        $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
-        Cookies.set("ulang", "en");
-    }
+    // if(checkLang().indexOf("nl") != -1) {
+    //     $("#language").append('<a onclick="setLang(\'en\')"><img src="./public/images/en.png" alt="English"></a>');
+    //     Cookies.set("ulang", "nl");
+    // } else {
+    //     $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
+    //     Cookies.set("ulang", "en");
+    // }
 
     // Don't show mobile menu on page load
     if($(window).width() < 769) {
@@ -445,13 +445,15 @@ function submitSurvey() {
         if( $('.email-validation').length ) {
             $('.email-validation').remove();
         }
-        form.trigger("reset");
         toSectionOne();
         $.ajax({
-            url: '/get-ebook',
-            type: 'post',
+            url: form.attr('action'),
+            type: form.attr('method'),
             dataType: 'json',
             data: form.serialize(),
+            success: function(e) {
+                form.trigger("reset");
+            }
         });
     } else {
         if( !$('.email-validation').length ) {

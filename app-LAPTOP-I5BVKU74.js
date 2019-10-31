@@ -131,40 +131,43 @@ app.get('/testhome', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
-        .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getFeaturedImage(tempBlogs);
-            res.render('home', {
-                title: "FlexForceMonkey | Business network for Flex",
-                desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com",
-                blogposts: blogs
-            });
-        })
-        .catch(() => {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
-            } else {
-                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
-            }
-            res.render('home', {
-                title: "FlexForceMonkey | Business network for Flex",
-                desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com",
-                blogs: null
-            });
-        });    
+    res.render('home', {
+        title: "FlexForceMonkey | Business network for Flex",
+        desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+        img: "./public/images/screenshot.jpg",
+        blogs: null
+    })
+    // promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
+    //     .then((blogRes) => {
+    //         var tempBlogs = JSON.parse(blogRes);
+    //         var blogs = getFeaturedImage(tempBlogs);
+    //         res.render('home', {
+    //             title: "FlexForceMonkey | Business network for Flex",
+    //             desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+    //             img: "./public/images/screenshot.jpg",
+    //             blogposts: blogs
+    //         });
+    //     })
+    //     .catch(() => {
+    //         if(req.cookies.ulang == "nl") {
+    //             req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
+    //         } else {
+    //             req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
+    //         }
+    //         res.render('home', {
+    //             title: "FlexForceMonkey | Business network for Flex",
+    //             desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+    //             img: "./public/images/screenshot.jpg",
+    //             blogs: null
+    //         });
+    //     });    
 });
 
 app.get('/partners', (req, res) => {
     res.render('partners', {
         title: "FlexForceMonkey | Partners",
         desc: "About our partners",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/partners",
+        img: "./public/images/screenshot.jpg",
     });
 })
 
@@ -188,8 +191,7 @@ app.get('/integration-services', (req, res) => {
                     res.cookie('role', 'integration-services').render('integration', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/integration-services",
+                        img: "./public/images/hirer.jpg",
                         blogs: blogs,
                         subs: subs
                     });
@@ -203,8 +205,7 @@ app.get('/integration-services', (req, res) => {
                     res.cookie('role', 'integration-services').render('integration', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/integration-services",
+                        img: "./public/images/hirer.jpg",
                         blogs: blogs,
                         subs: null
                     });
@@ -223,8 +224,7 @@ app.get('/integration-services', (req, res) => {
                 res.cookie('role', 'integration-services').render('integration', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                    img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                    url: "http:flexforcemonkey.com/integration-services",
+                    img: "./public/images/hirer.jpg",
                     blogs: null,
                     subs: subs
                 });
@@ -238,8 +238,7 @@ app.get('/integration-services', (req, res) => {
                 res.cookie('role', 'integration-services').render('integration', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "So your dream is about a fully automated flex supply chain? You want to run the lead in a process without unnecessary supplier lock-in? We think that dream makes sense! Join the collaborative flex experience. Join the collaborative flex experience!",
-                    img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpgg",
-                    url: "http:flexforcemonkey.com/integration-services",
+                    img: "./public/images/hirer.jpg",
                     blogs: null,
                     subs: null
                 });
@@ -259,8 +258,7 @@ app.get('/selfservice-subscribe', (req, res) => {
     res.render('subscribe', {
         title: "FlexForceMonkey | Subscribe",
         desc: "Subscribe to FlexForceMonkey",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/selfservice-subscribe",
+        img: "./public/images/supplier.jpg",
         year: new Date().getFullYear(),
         layout: 'empty.handlebars',
         sub: sub
@@ -278,8 +276,7 @@ app.get('/cla-engine', (req, res) => {
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cla evaluator",
                         desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
+                        img: "./public/images/supplier.jpg",
                         blogs: blogs,
                         subs: subs
                     });
@@ -293,8 +290,7 @@ app.get('/cla-engine', (req, res) => {
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cla evaluator",
                         desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                        img: "./public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
+                        img: "./public/images/supplier.jpg",
                         blogs: blogs,
                         subs: null
                     });
@@ -313,8 +309,7 @@ app.get('/cla-engine', (req, res) => {
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cla evaluator",
                         desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
+                        img: "./public/images/supplier.jpg",
                         blogs: null,
                         subs: subs
                     });
@@ -328,8 +323,7 @@ app.get('/cla-engine', (req, res) => {
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cla evaluator",
                         desc: "Stop operations battles on PO numbers and billable hours that do not fit in the labor agreement: join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
+                        img: "./public/images/supplier.jpg",
                         blogs: null,
                         subs: null
                     });
@@ -351,8 +345,7 @@ app.get('/online-software', (req, res) => {
                     res.cookie('role', 'online-software').render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
+                        img: "./public/images/freelancer.jpg",
                         blogs: blogs,
                         subs: subs
                     });
@@ -366,8 +359,7 @@ app.get('/online-software', (req, res) => {
                     res.cookie('role', 'online-software').render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
+                        img: "./public/images/freelancer.jpg",
                         blogs: blogs,
                         subs: null
                     });
@@ -386,8 +378,7 @@ app.get('/online-software', (req, res) => {
                     res.cookie('role', 'online-software').render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
+                        img: "./public/images/freelancer.jpg",
                         blogs: null,
                         subs: subs
                     });
@@ -396,8 +387,7 @@ app.get('/online-software', (req, res) => {
                     res.cookie('role', 'online-software').render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Surely you once started out to create added value? We are positive it was not your dream to be busy with doing your administration! Join the collaborative flex experience",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
+                        img: "./public/images/freelancer.jpg",
                         blogs: null,
                         subs: null
                     });
@@ -412,8 +402,7 @@ app.get('/ebook', (req, res) => {
     res.render('ebookpage', {
         title: "eBook | Ontvlooien van inkoopsystemen en uitzendprocessen",
         desc: "In dit e-book wordt gekeken naar het Purchase to Pay proces van opdrachtgevers, door de ogen van een uitzender.",
-        img: "http:flexforcemonkey.com/public/images/og-img/ebook.jpg",
-        url: "http:flexforcemonkey.com/ebook",
+        img: "./public/images/ebook.jpg"
     });
 });
 
@@ -422,8 +411,7 @@ app.get('/termsandconditions', (req, res) => {
         partial: 'terms',
         title: "FlexForceMonkey | Terms and Conditions",
         desc: "Terms and Conditions (Dutch) of FlexForceMonkey, May 2018",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/termsandconditions",
+        img: "./public/images/screenshot.png"
     });
 });
 app.get('/gdpr', (req, res) => {
@@ -431,8 +419,7 @@ app.get('/gdpr', (req, res) => {
         partial: 'gdpr',
         title: "FlexForceMonkey | GDPR Provisions",
         desc: "GDPR Provisions (Dutch) of FlexForceMonkey, May 2018",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/gdpr",
+        img: "./public/images/screenshot.png"
     });
 });
 app.get('/generalconsiderations', (req, res) => {
@@ -440,8 +427,7 @@ app.get('/generalconsiderations', (req, res) => {
         partial: 'gencons',
         title: "FlexForceMonkey | General Remarks",
         desc: "General Remarks (Dutch) of FlexForceMonkey, May 2018",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/generalconsiderations",
+        img: "./public/images/screenshot.png"
     })
 });
 app.get('/feedback', (req,res) => {
@@ -450,8 +436,7 @@ app.get('/feedback', (req,res) => {
     res.render('feedback', {
         title: "FlexForceMonkey | Feedback",
         desc: "Give us feedback",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/feedback",
+        img: "./public/images/screenshot.png",
         score: score,
         sent: sent,
         lang: req.cookies.ulang
@@ -515,7 +500,7 @@ app.post('/send', (req, res) => {
     
     let HelperOptions = {
         from: '"Contact Form FFM website" <noreply@flexforcemonkey.com>',
-        to: 'doede@flexforcemonkey.com',
+        to: 'doede.van.haperen@lakran.com',
         //to: 'wendy.dimmendaal@again.nl',
         subject: 'Reactie contactform FFM.com',
         text: 'Test 123',
@@ -560,7 +545,7 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check
     
     let HelperOptions = {
         from: '"Aanvraag" <noreply@flexforcemonkey.com>',
-        to: 'doede@flexforcemonkey.com',
+        to: 'doede.van.haperen@lakran.com',
         //to: 'wendy.dimmendaal@again.nl',
         subject: 'Aanvraag voor aansluiting',
         text: 'Test 123',
@@ -610,7 +595,7 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check
 });
 
 // Request for ebook
-app.post('/download-ebook', (req, res) => {
+app.post('/get-ebook', (req, res) => {
     let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
     recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
@@ -630,7 +615,7 @@ app.post('/download-ebook', (req, res) => {
                 path: pathBook
             }
         ]
-    }
+    };
 
     request(recaptcha_url, function(error, resp, body) {
         body = JSON.parse(body);
@@ -649,7 +634,7 @@ app.post('/download-ebook', (req, res) => {
                 }
             });
         }
-   });
+    });
 });
 
 //Add subscriber to Mailchimp list
@@ -676,8 +661,7 @@ app.get('*', (req, res) => {
     res.render('404', {
         title: "Page not found",
         desc: "404: page not found",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http://flexforcemonkey.com/404"
+        img: "./public/images/we-slipped.svg"
     });
 })
 

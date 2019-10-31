@@ -1,32 +1,32 @@
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">{{ translation.menu-items.CONTACT }}</h2>
+        <h2 class="section-title">Contact</h2>
         <div class="section-container">
             {{#if messages.success}}
-                <p class="flash flash-success">{{ translation.contact-section.SEND_SUCCESS }}</p>
+                <p class="flash flash-success">Formulier is succesvol verzonden!</p>
             {{/if}}
             {{#if messages.error}}
                 <p class="flash flash-error">{{ messages.error }}</p>
             {{/if}}
             <form id="contactform" method="POST" action="send">
                 <div class="form-group">
-                    <label for="name">{{ translation.contact-section.NAME }}</label>
+                    <label for="name">Naam</label>
                     <input type="text" id="name" name="name">
                 </div>
                 <div class="form-group">
-                    <label for="email">{{ translation.contact-section.EMAIL }}</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email">
                 </div>
                 <div class="form-group">
-                    <label for="subject">{{ translation.contact-section.SUBJECT }}</label>
+                    <label for="subject">Onderwerp</label>
                     <input type="text" id="subject" name="subject">
                 </div>
                 <div class="form-group">
-                    <label for="msg">{{ translation.contact-section.MSG }}</label>
+                    <label for="msg">Bericht</label>
                     <textarea name="msg" id="msg"></textarea>
                 </div>
                 <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
-                <input type="submit" class="btn-complementary-xl" value="{{ translation.contact-section.SUBMIT }}">
+                <input type="submit" class="btn-complementary-xl" value="Verstuur">
             </form>
         </div>
     </div>

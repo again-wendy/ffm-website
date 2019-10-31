@@ -8,6 +8,7 @@
         @include prefix(flex-direction, column, webkit moz o);
         @include prefix(justify-content, center, webkit moz o);
         height: 100%;
+        height: 100vh;
         transition: flex 0.4s;
         text-align: center;
         color: white;
@@ -39,6 +40,9 @@
                 padding: 0 40px 20px 40px;
                 font-size: 18px;
                 font-family: $font-bold;
+                @media(max-width: 680px) {
+                    padding: 0 0 20px 0;
+                }
             }
             button {
                 .fa {
@@ -73,8 +77,10 @@
                 url('../images/home-left.jpg')
                 no-repeat;
             .animation-container {
-                img {
-                    animation: slingerenLeft 1.4s ease-out 0.5s;
+                @media(min-width: 767px) {
+                    img {
+                        animation: slingerenLeft 1.4s ease-out 0.5s;
+                    }
                 }
             }
         }
@@ -105,8 +111,10 @@
                 url('../images/home-right.jpg')
                 no-repeat;
             .animation-container {
-                img {
-                    animation: slingerenRight 1.4s ease-out 0.5s;
+                @media(min-width: 767px) {
+                    img {
+                        animation: slingerenRight 1.4s ease-out 0.5s;
+                    }
                 }
             }
         }
@@ -124,11 +132,20 @@
             font-size: 1.4rem;
             font-family: $font-bold;
             margin: 0;
+            @media(max-width: 390px) {
+                font-size: 1.1rem;
+            }
         }
         .logo {
             font-family: $font-logo;
             color: $primary;
             font-size: 3rem;
+            @media(max-width: 480px) {
+                font-size: 2.4rem;
+            }
+            @media(max-width: 390px) {
+                font-size: 2rem;
+            }
         }
         .sublogo {
             font-family: $font-bold;
@@ -137,11 +154,43 @@
             position: relative;
             top: -12px;
             color: white;
+            @media(max-width: 390px) {
+                top: -8px;
+            }
         }
+    }
+    @media(max-width: 767px) {
+        .part {
+            &:hover {
+                @include prefix(flex, 1 1 0, webkit moz o);
+            }
+        }
+    }
+    @media(max-width: 760px) {
+        @include prefix(flex-direction, column, webkit moz o);
+        .part {
+            @include prefix(order, 2, webkit moz o);
+            @include prefix(flex, 2 1 auto, webkit moz o);
+            height: auto;
+        }
+        .hero-title {
+            position: static;
+            background: $dark-grey;
+            transform: translateX(0);
+            width: 100%;
+            height: auto;
+            @include prefix(order, 1, webkit moz o);
+            @include prefix(flex, 1 1 auto, webkit moz o);
+        }
+    }
+    @media(max-width: 480px) {
+        height: auto;
     }
 }
 
 #ffm-home {
+    height: auto;
+    padding: 30px 0;
     .video-container {
         position: relative;
         overflow: hidden;
@@ -171,16 +220,23 @@
             @include displayFlex;
             @include prefix(justify-content, space-between, webkit moz o);
             a {
-                @include prefix(flex, 1 1 0, webkit moz o);
+                @include prefix(flex, 1 1 auto, webkit moz o);
                 @include displayFlex;
                 @include prefix(flex-direction, column, webkit moz o);
                 @include prefix(justify-content, center, webkit moz o);
                 margin: 0 3px;
+                width: 100%;
                 &:first-child {
                     margin-left: 0;
                 }
                 &:last-child {
                     margin-right: 0;
+                }
+            }
+            @media(max-width: 630px) {
+                @include prefix(flex-direction, column, webkit moz o);
+                a {
+                    margin: 3px 0;
                 }
             }
         }
