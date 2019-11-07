@@ -58,11 +58,11 @@ $(document).ready(function() {
     });
 
     // Don't show button to page you already on in footer
-    if(window.location.pathname == "/hirer") {
+    if(window.location.pathname == "/hirer" || window.location.pathname == "/integration-services") {
         $("#footer .roles .hirer").remove();
-    } else if(window.location.pathname == "/supplier") {
+    } else if(window.location.pathname == "/supplier" || window.location.pathname == "/cao-ontrafelaar") {
         $("#footer .roles .supplier").remove();
-    } else if(window.location.pathname == "/freelancer") {
+    } else if(window.location.pathname == "/freelancer" || window.location.pathname == "/online-software") {
         $("#footer .roles .freelancer").remove();
     }
 
@@ -75,6 +75,8 @@ $(document).ready(function() {
             checkPartnerVisibility();
         }
     });
+
+    loadUseCases();
 });
 
 var currentsection = 1;
@@ -368,6 +370,12 @@ function closeModal(id) {
     $(id).fadeOut();
 }
 
+function openKeyword(item) {
+    $("#keyword-modal .modal-title").html(keywords[item].title);
+    $("#keyword-modal .modal-body p").html(keywords[item].paragraph);
+    $("#keyword-modal").fadeIn();
+}
+
 function nextQuestion() {
     if(currentsection == 1) {
         toSectionTwo();
@@ -459,5 +467,24 @@ function submitSurvey() {
         if( !$('.email-validation').length ) {
             $("#ebook-survey-form #email").after("<span class='validation email-validation error'>Vul a.u.b. een geldig emailadres in</span>");
         }
+    }
+}
+
+var keywords = {
+    "keyword1": {
+        "title": "Dit is een titel",
+        "paragraph": "De paragraaf"
+    },
+    "keyword2": {
+        "title": "Dit is een titel",
+        "paragraph": "De paragraaf"
+    }
+}
+
+function loadUseCases() {
+    if(window.location.pathname == "/use-cases" && window.location.hash.length > 0) {
+        // If page is use cases and has query, scroll down to right element
+        var el = "#usecase-" + window.location.hash.substring(1);
+        setTimeout(menuScroll(el), 1500);
     }
 }

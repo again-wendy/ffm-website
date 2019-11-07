@@ -1,0 +1,62 @@
+.usecase-section {
+    position: relative;
+    .container {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 30px;
+    }
+    .keywords {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            padding: 20px 0;
+            li {
+                display: inline-block;
+                a {
+                    border-radius: 15px;
+                    background: $secondary;
+                    color: white;
+                    padding: 8px 16px;
+                    margin: 5px;
+                    display: inline-block;
+                    cursor: pointer;
+                    &:hover, &:focus, &.active {
+                        background: $primary-hover;
+                    }
+                }
+            }
+        }
+    }
+    .monkey-looking {
+        position: absolute;
+        width: 120px;
+        right: 0;
+        bottom: 15px;
+    }
+}
+
+#usecase-general {
+    background: url("../../public/images/jungle/jungle1.jpg");
+}
+
+#usecase-opdrachtgever {
+    background: $secondary;
+    .keywords ul li a {
+        background: $dark-grey;
+    }
+}
+
+#usecase-opdrachtnemer {
+    background: $light-grey;
+    .keywords ul li a {
+        background: $complementary;
+        color: $dark-grey;
+    }
+}
+
+#usecase-onlinesoftware {
+    background: $primary;
+    .keywords ul li a {
+        background: $dark-grey;
+    }
+}

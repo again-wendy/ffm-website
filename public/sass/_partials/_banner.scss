@@ -45,3 +45,18 @@
 .banner-hirer {
     background-image: url('../images/jungle.jpg');
 }
+
+.banner-usecases {
+    background-image: url("../images/jungle/jungle1.jpg");
+    .banner-container {
+        color: white;
+        text-decoration: none;
+        display: block;
+        .banner-title {
+            font-size: 3rem;
+        }
+        a {
+            margin-top: 15px;
+        }
+    }
+}

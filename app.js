@@ -159,14 +159,14 @@ app.get('/', (req, res) => {
         });    
 });
 
-app.get('/partners', (req, res) => {
-    res.render('partners', {
-        title: "FlexForceMonkey | Partners",
-        desc: "Over onze partners",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/partners",
-    });
-})
+// app.get('/partners', (req, res) => {
+//     res.render('partners', {
+//         title: "FlexForceMonkey | Partners",
+//         desc: "Over onze partners",
+//         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+//         url: "http:flexforcemonkey.com/partners",
+//     });
+// })
 
 app.get('/blogs', (req, res) => {
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {
@@ -285,11 +285,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                     });
                 })
                 .catch(() => {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    } else {
-                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-                    }
+                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
@@ -301,11 +297,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 });
         })
         .catch(() => {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
-            } else {
-                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
-            }
+            req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -320,11 +312,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                     });
                 })
                 .catch(() => {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    } else {
-                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-                    }
+                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
                     res.cookie('role', 'cla-engine').render('claengine', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
@@ -361,11 +349,7 @@ app.get('/online-software', (req, res) => {
                     });
                 })
                 .catch(() => {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    } else {
-                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-                    }
+                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
                     res.cookie('role', 'online-software').render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
@@ -377,11 +361,7 @@ app.get('/online-software', (req, res) => {
                 });
         })
         .catch(() => {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-            } else {
-                req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-            }
+            req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
             promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
@@ -419,6 +399,15 @@ app.get('/ebook', (req, res) => {
         url: "http:flexforcemonkey.com/ebook",
     });
 });
+
+// app.get('/use-cases', (req, res) => {
+//     res.render('usecases', {
+//         title: "FlexForceMonkey | Use cases",
+//         desc: "Hier zie je voorbeelden van hoe FlexForceMonkey jou kan helpen.",
+//         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+//         url: "http:flexforcemonkey.com/ebook",
+//     });
+// });
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {
@@ -528,20 +517,12 @@ app.post('/send', (req, res) => {
     request(recaptcha_url, function(error, resp, body) {
         body = JSON.parse(body);
         if(body.success !== undefined && !body.success) {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
-            } else {
-                req.flash('error', 'Something went wrong with recaptcha: ' + error);
-            }
+            req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
             res.redirect(req.get('referer') + "#contact");
         } else {
             transporter.sendMail(HelperOptions, (errorMail, info) => {
                 if(errorMail) {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
-                    } else {
-                        req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
-                    }
+                    req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
                     res.redirect(req.get('referer') + "#contact");
                 } else {
                     req.flash('success', 'Thanks for the message! We\'ll be in touch');
@@ -572,37 +553,21 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check
 
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        if(req.cookies.ulang == "nl") {
-            req.flash('error', 'Je moet de algemene voorwaarden en bepalingen AVG lezen en accepteren voor je verder kunt gaan!')
-        } else {
-            req.flash('error', 'You need to read and accept the terms and conditions and GDPR provisions before you can register!');
-        }
+        req.flash('error', 'Je moet de algemene voorwaarden en bepalingen AVG lezen en accepteren voor je verder kunt gaan!')
         res.redirect(req.get('referer'));
     } else {
         request(recaptcha_url, function(error, resp, body) {
             body = JSON.parse(body);
             if(body.success !== undefined && !body.success) {
-                if(req.cookies.ulang == "nl") {
-                    req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
-                } else {
-                    req.flash('error', 'Something went wrong with recaptcha: ' + error);
-                }
+                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
                 res.redirect(req.get('referer'));
             } else {
                 transporter.sendMail(HelperOptions, (errorMail, info) => {
                     if(errorMail) {
-                        if(req.cookies.ulang == "nl") {
-                            req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
-                        } else {
-                            req.flash('error', 'Something went wrong with sending the email: ' + errorMail);
-                        }
+                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
                         res.redirect(req.get('referer'));
                     } else {
-                        if(req.cookies.ulang == "nl") {
-                            req.flash('success', 'Je aanvraag is verstuurd!')
-                        } else {
-                            req.flash('success', 'Your request has been sent!');
-                        }
+                        req.flash('success', 'Je aanvraag is verstuurd!')
                         res.redirect(req.get('referer'));
                     }
                 });
@@ -686,7 +651,7 @@ app.get('*', (req, res) => {
 
 var port = process.env.port || 3000;
 app.listen(port, () => {
-    console.log('Server started on port ' + port + '...');
+    console.log('Server started on  http://localhost:' + port);
 });
 
 const sendConfirmMail = (body) => {
