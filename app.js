@@ -5,7 +5,7 @@ const cookieParser              = require('cookie-parser');
 const session                   = require('express-session');
 const flash                     = require('express-flash');
 const exphbs                    = require('express-handlebars');
-const {check, validationResult}  = require('express-validator/check');
+const {check, validationResult} = require('express-validator/check');
 const {sanitizeBody}            = require('express-validator/filter');
 const path                      = require('path');
 const nodemailer                = require('nodemailer');
@@ -125,7 +125,7 @@ app.use(flash());
 app.get('/testhome', (req, res) => {
     res.render('temphome', {
         title: "FlexForceMonkey | Business network for Flex",
-        desc: "One platform where temps agency, flex client, self-employed professional and consulting firm work together on an efficient and transparant process",
+        desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
         img: "./public/images/screenshot.jpg"
     })
 })
@@ -159,14 +159,14 @@ app.get('/', (req, res) => {
         });    
 });
 
-// app.get('/partners', (req, res) => {
-//     res.render('partners', {
-//         title: "FlexForceMonkey | Partners",
-//         desc: "Over onze partners",
-//         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-//         url: "http:flexforcemonkey.com/partners",
-//     });
-// })
+app.get('/partners', (req, res) => {
+    res.render('partners', {
+        title: "FlexForceMonkey | Partners",
+        desc: "Over onze partners",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/partners",
+    });
+})
 
 app.get('/blogs', (req, res) => {
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {

@@ -344,7 +344,7 @@ $(".close-info").click(function() {
 });
 
 function checkPartnerVisibility() {
-    var partnerArr = ['sap', 'easyflex', 'flexservice', 'pepflex', 'pivoton', 'carerix', 'setu', 'talentpeaks'];
+    var partnerArr = ['sap', 'easyflex', 'flexservice', 'pivoton', 'afas', 'pepflex', 'overig'];
 
     $.each(partnerArr, function(i, v) {
         if( $('#' + v + ' .container').visible(true) ) {

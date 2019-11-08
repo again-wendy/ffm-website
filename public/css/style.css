@@ -4159,18 +4159,13 @@ section.partner .section-container {
 }
 
 /* line 93, ../sass/_partials/_partners.scss */
-#carerix {
+#overig {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/images/jungle/jungle6.jpg");
 }
 
 /* line 101, ../sass/_partials/_partners.scss */
-#setu {
+#afas {
   background: url("../../public/images/jungle/jungle7.jpg");
-}
-
-/* line 104, ../sass/_partials/_partners.scss */
-#talentpeaks {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/images/jungle/jungle8.jpg");
 }
 
 /* line 1, ../sass/_partials/_usecases.scss */
