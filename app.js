@@ -400,14 +400,14 @@ app.get('/ebook', (req, res) => {
     });
 });
 
-// app.get('/use-cases', (req, res) => {
-//     res.render('usecases', {
-//         title: "FlexForceMonkey | Use cases",
-//         desc: "Hier zie je voorbeelden van hoe FlexForceMonkey jou kan helpen.",
-//         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-//         url: "http:flexforcemonkey.com/ebook",
-//     });
-// });
+app.get('/use-cases', (req, res) => {
+    res.render('usecases', {
+        title: "FlexForceMonkey | Use cases",
+        desc: "Hier zie je voorbeelden van hoe FlexForceMonkey jou kan helpen.",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/ebook",
+    });
+});
 
 app.get('/termsandconditions', (req, res) => {
     res.render('termsandconditions', {

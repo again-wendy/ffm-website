@@ -111,6 +111,15 @@ a.link-white:hover, a.link-white:focus, a.link-white:active {
     color: $white-hover;
 }
 
+a.link-sec,
+a.link-sec:visited {
+    color: $secondary;
+}
+
+a.link-sec:hover, a.link-sec:focus, a.link-sec:active {
+    color: $secondary-hover;
+}
+
 label {
     font-family: $font-bold;
 }
@@ -288,5 +297,48 @@ input, textarea {
 .lower-alpha {
     li {
         list-style-type: lower-alpha;
+    }
+}
+
+#construction {
+    padding-bottom: 30px;
+    text-align-last: center;
+    @media(max-width: 500px) {
+        padding-top: 90px;
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .sub-title {
+            font-size: 1rem;
+        }
+        .row {
+            .column {
+                &:first-of-type {
+                    @include prefix(flex, 1 1 35%, webkit ms);
+                }
+                &:last-of-type {
+                    
+                    @include prefix(flex, 1 1 65%, webkit ms);
+                }
+            }
+        }
+        .btn-complementary-xl {
+            padding: 6px 12px;
+            width: 100%;
+        }
+    }
+    @media(max-width: 400px) {
+        .row {
+            display: block;
+        }
+    }
+    img {
+        width: 70%;
+        @media(max-width: 767px) {
+            width: 100%;
+        }
+        @media(max-width: 400px) {
+            width: 60%;
+        }
     }
 }
