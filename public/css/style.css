@@ -476,7 +476,7 @@ input, textarea {
     flex: 1 1 65%;
   }
   /* line 325, ../sass/_partials/_base.scss */
-  #construction .btn-complementary-xl {
+  #construction .btn-complementary-xl, #construction .btn-light-grey-xl {
     padding: 6px 12px;
     width: 100%;
   }
