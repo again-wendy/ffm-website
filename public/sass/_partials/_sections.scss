@@ -22,6 +22,17 @@ section {
         font-size: 1.2rem;
         text-align: center;
     }
+    .col-left, .col-right {
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+        img {
+            padding: 15px;
+        }
+        @media(max-width: 767px) {
+            width: 100%;
+        }
+    }
 }
 
 section.full-screen {

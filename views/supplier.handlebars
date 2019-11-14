@@ -1,10 +1,8 @@
-{{> supplier-nav}}
+{{> cla-nav}}
 
 <section id="hero" class="supplier">
     <div class="hero-title">
-        <h1>
-            {{ translation.supplier.HERO_TEXT }}
-        </h1>
+        <h1>Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.</h1>
     </div>
     <div class="iframe">
         <div class="iframe-container">
@@ -15,13 +13,13 @@
 
 <section id="supplier-intro" class="full-screen">
     <div class="container">
-        <h2 class="section-title">{{ translation.supplier.INTRO_TITLE }}</h2>
+        <h2 class="section-title">Als je flexkrachten uitzendt</h2>
         <div class="section-container">
-            <p class="sub-title">{{ translation.supplier.INTRO_SUBTITLE }}</p>
+            <p class="sub-title">Je herkent het vast, een beheerder in dienst die niets anders doet dan Excel sheets omrekenen naar de klant CAO?</p>
             <img class="scrollleft" src="./public/images/computeraap.png" alt="Computer Monkey">
             <div class="section-text scrollright">
-                <p>{{ translation.supplier.INTRO_TEXT_1 }}</p>
-                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.supplier.GET_CONTACT }}</button>
+                <p>Wij zien bij veel uitzendbureaus hoge kosten doordat uren op allerlei formaten binnenkomen en vervolgens in off-line handelingen moeten worden doorgerekend. Kosten, risico bij ziekte van die ene beheerder die “wist hoe het zat”, vertragingen in het proces, enzovoorts. Wij willen je helpen om daar nu vanaf te stappen.</p>
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">Neem nu contact op</button>
             </div>
         </div>
     </div>
@@ -29,44 +27,105 @@
 
 <div class="banner banner-supplier">
     <div class="banner-container animation-banner">
-        <h1 class="banner-title title-1">{{ translation.general.FASTER }}</h1>
-        <h1 class="banner-title title-2">{{ translation.general.FLEXIBLE }}</h1>
-        <h1 class="banner-title title-3">{{ translation.general.CAREFREE }}</h1>
-        <h1 class="banner-title title-4">{{ translation.general.OPTIMAL }}</h1>
+        <h1 class="banner-title title-1">Sneller</h1>
+        <h1 class="banner-title title-2">Flexibeler</h1>
+        <h1 class="banner-title title-3">Zorgelozer</h1>
+        <h1 class="banner-title title-4">Optimaler</h1>
     </div>
 </div>
 
 <section id="supplier-kit" class="full-screen">
     <div class="container">
-        <h2 class="section-title">{{ translation.supplier.KIT_INTRO }}</h2>
+        <h2 class="section-title">Online in een oogwenk: Standaard stekkers maken het verschil</h2>
         <div class="section-container">
             <img class="scrollleft" src="./public/images/stekkerdoos.png" alt="De FlexForceMonkey Aansluitbox">
             <div class="section-text scrollright">
-                <p>{{ translation.supplier.KIT_TEXT }}</p>
+                <p>Corporate integratiesoftware net zo eenvoudig gemaakt als het afsluiten van een internet abonnement? Yep, geboren in de cloud, van nature denkend in samenwerken, dat vraagt om snelle oplossingen. En die krijg je dan dus ook.</p>
             </div>
             <div class="text-center">
-                <a class="btn-complementary-xl text-center" onclick="menuScroll('#contact')">{{ translation.supplier.GET_KIT }}</a>
+                <a class="btn-complementary-xl text-center" onclick="menuScroll('#contact')">Neem nu contact op voor je eerste klant integratie</a>
             </div>
         </div>
     </div>
 </section>
 
+<div class="banner banner-usecases">
+    <div class="banner-container">
+        <h1 class="banner-title">Snel zien hoe je FlexForceMonkey kunt toepassen?</h1>
+        <a href="/use-cases#opdrachtnemer" class="btn-complementary-xl">Bekijk onze pagina met use cases</a>
+    </div>
+</div>
+
 <section id="supplier-options" class="full-screen">
     <div class="container">
-        <h2 class="section-title">{{ translation.supplier.AGENCY }}</h2>
+        <h2 class="section-title">Corporate of MKB uitzendbureau?</h2>
         <div class="section-container">
-            <p class="sub-title">{{ translation.supplier.AGENCY_SUBTITLE }}</p>
+            <p class="sub-title">FlexForceMonkey gelooft in een online markt en maakt samenwerken dus voor iedereen mogelijk.</p>
             <div class="section-text scrollleft">
-                <p>{{ translation.supplier.AGENCY_TEXT }}</p>
+                <p>Het FlexForceMonkey platform sluit moeiteloos aan op jouw processen via SETU berichten, maar je kunt er ook voor kiezen om de timesheets en CAO-berekening handmatig te werken vanuit bijvoorbeeld CSV bestanden. In alle gevallen zorgen wij ervoor dat de CAO staat ingericht en die test je samen met klant om zeker te weten dat je de inzichten deelt. Eenvoudig online samenwerken dus.</p>
             </div>
             <img class="scrollright" src="./public/images/puzzel-aap.png" alt="Puzzle Monkey">
             <div class="buttons">
-                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">{{ translation.supplier.GET_CONTACT }}</button>
-                <a class="btn-light-grey-xl" target="_blank" href="https://app.flexforcemonkey.com/subscriptions">{{ translation.supplier.REGISTER_ACCOUNT }}</a>
+                <button class="btn-light-grey-xl" onclick="menuScroll('#contact')">Neem nu contact op</button>
+                <a class="btn-light-grey-xl" target="_blank" href="https://app.flexforcemonkey.com/subscriptions">Registreer je gratis en betaal enkel voor gebruik</a>
             </div>
             <div class="text-center">
-                <p>{{ translation.supplier.PS }}</p>
+                <p>PS: wist je trouwens dat werken op onze portal met het basis abonnement gewoon gratis is?!</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="subscribe-ffm">
+    <div class="container">
+        <h2 class="section-title">Abonnementen</h2>
+        <div class="section-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="44%"></th>
+                        <th width="28%">Inlener</th>
+                        <th width="28%">Intermediair</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Onbeperkte human resource data</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Onbeperkte opdrachtdata</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Onbeperkte timesheet data</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td>v.a. &euro;0,25 per timesheet</td>
+                    </tr>
+                    <tr>
+                        <th>Onbeperkte factuurdata</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Onboarding</th>
+                        <td>Gratis</td>
+                        <td>Gratis</td>
+                    </tr>
+                    <tr>
+                        <th>Systeemkoppeling/data mapping</th>
+                        <td>v.a. &euro;750 per systeem</td>
+                        <td>v.a. &euro;500 per systeem</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="./selfservice-subscribe?sub=intbuy" class="btn-complementary">Abonneer</a></td>
+                        <td><a href="./selfservice-subscribe?sub=intsel" class="btn-complementary">Abonneer</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

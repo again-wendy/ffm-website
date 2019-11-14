@@ -176,7 +176,7 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-app.get('/integration-services', (req, res) => { 
+app.get('/inlener', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBblogs = JSON.parse(blogRes);
@@ -185,7 +185,7 @@ app.get('/integration-services', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'integration-services').render('integration', {
+                    res.cookie('role', 'integration-services').render('hirer', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -200,7 +200,7 @@ app.get('/integration-services', (req, res) => {
                     } else {
                         req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
                     }
-                    res.cookie('role', 'integration-services').render('integration', {
+                    res.cookie('role', 'integration-services').render('hirer', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -220,7 +220,7 @@ app.get('/integration-services', (req, res) => {
             .then((subRes) => {
                 var tempSubs = JSON.parse(subRes);
                 var subs = setSubType(tempSubs);
-                res.cookie('role', 'integration-services').render('integration', {
+                res.cookie('role', 'integration-services').render('hirer', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                     img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -235,7 +235,7 @@ app.get('/integration-services', (req, res) => {
                 } else {
                     req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
                 }
-                res.cookie('role', 'integration-services').render('integration', {
+                res.cookie('role', 'integration-services').render('hirer', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                     img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -246,8 +246,12 @@ app.get('/integration-services', (req, res) => {
             });
         });
 });
+
+app.get('/integration-services', (req, res) => {
+    res.redirect('/inlener');
+});
 app.get('/hirer', (req, res) => {
-    res.redirect('/integration-services');
+    res.redirect('/inlener');
 });
 app.get('/selfservice-subscribe', (req, res) => {
     let sub;
@@ -266,7 +270,7 @@ app.get('/selfservice-subscribe', (req, res) => {
         sub: sub
     });
 });
-app.get('/cao-ontrafelaar', (req, res) => { 
+app.get('/uitzender', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBblogs = JSON.parse(blogRes);
@@ -275,7 +279,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'cla-engine').render('claengine', {
+                    res.cookie('role', 'cla-engine').render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -286,7 +290,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 })
                 .catch(() => {
                     req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'cla-engine').render('claengine', {
+                    res.cookie('role', 'cla-engine').render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "./public/images/og-img/flexforcemonkey.jpg",
@@ -302,7 +306,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'cla-engine').render('claengine', {
+                    res.cookie('role', 'cla-engine').render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -313,7 +317,7 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 })
                 .catch(() => {
                     req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'cla-engine').render('claengine', {
+                    res.cookie('role', 'cla-engine').render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -324,13 +328,16 @@ app.get('/cao-ontrafelaar', (req, res) => {
                 });
         });    
 });
+app.get('/cao-ontrafelaar', (req, res) => {
+    res.redirect('/uitzender');
+});
 app.get('/supplier', (req, res) => {
-    res.redirect('/cao-ontrafelaar');
+    res.redirect('/uitzender');
 });
 app.get('/cla-engine', (req, res) => {
-    res.redirect('/cao-ontrafelaar');
+    res.redirect('/uitzender');
 });
-app.get('/online-software', (req, res) => { 
+app.get('/mkb', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
@@ -387,8 +394,12 @@ app.get('/online-software', (req, res) => {
                 });
         });  
 });
+app.get('/online-software', (req, res) => {
+    res.redirect('/mkb');
+});
+
 app.get('/freelancer', (req, res) => {
-    res.redirect('/online-software');
+    res.redirect('/mkb');
 });
 
 app.get('/ebook', (req, res) => {

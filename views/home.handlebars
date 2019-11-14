@@ -1,46 +1,27 @@
-<section id="intro-home-temp" class="full-screen">
-    <div class="part-left part">
-        <div class="animation-container">
-            <img src="../public/images/slingeraap-links.png" alt="Slinger aap animatie">
-        </div>
+{{> base-nav}}
+
+<section id="intro-home-new" class="full-screen">
+    <h2 class="hero-title">Ervaar het gemak van gekoppelde uren!</h2>
+    <div class="hero-container">
         <div class="text-container">
-            <h2>Flexjungle</h2>
-            <p>Hier leren afnemers en aabieders in flex samenwerken. Lekker browsen door content voor uitzenders en inkopers.</p>
-            <a href="http://flexjungle.flexforcemonkey.com/" target="_blank" class="btn-complementary-xl">Ga naar Flexjungle <span class="fa fa-external-link-alt"></span></a>
+            <p>FlexForceMonkey is het platform voor integratie &amp; data-delen in de uren-keten. De plek waar inleners, uitzenders, Boutique consultants en ZZP-ers samenwerken aan hun flex administratie.</p>
+        </div>
+        <div class="img-container">
+            <img src="../public/images/bureau.png" alt="Bureau">
         </div>
     </div>
-    <div href="#ffm" class="part-right part">
-        <div class="animation-container">
-            <img src="../public/images/slingeraap.png" alt="Slinger aap animatie">
-        </div>
-        <div class="text-container">
-            <h2>Software as a service</h2>
-            <p>Software voor systeemintegratie, cao-ontrafeling, opdrachten, uren en facturen in flex.</p>
-            <button onclick="menuScroll('#ffm-home')" class="btn-complementary-xl">Ga naar software</button>
-        </div>
-    </div>
-    <div class="hero-title">
-        <h1>
-            <span class="logo">FlexForceMonkey</span><br />
-            <span class="sublogo">Business network for Flex</span><br/>
-            Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces
-        </h1>
+    <div class="btn-container">
+        <a onclick="menuScroll('#inlener')" class="btn-complementary-xl">Inlener</a>
+        <a onclick="menuScroll('#uitzender')" class="btn-complementary-xl">Intermediair</a>
+        <a onclick="menuScroll('#mkb')" class="btn-complementary-xl">MKB / ZZP-er</a>
     </div>
 </section>
 
 <section id="ffm-home">
     <div class="container">
+        <h2 class="section-title">FlexForceMonkey | Business network in flex</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/UUSmUoriNkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="section-container">
-            <a href="https://app.flexforcemonkey.com/login" target="_blank" class="login btn btn-dark-grey-xl">Inloggen op ons platform</a>
-            <p>Of wil je meer informatie over de diensten die we daar aanbieden?</p>
-            <div class="btn-row">
-                <a href="/hirer" class="btn-complementary">Lees meer over onze integratiediensten</a>
-                <a href="/supplier" class="btn-complementary">Lees meer over onze cao ontrafelaar</a>
-                <a href="/freelancer" class="btn-complementary">Lees meer over onze online software voor urenregistratie en facturatie</a>
-            </div>
+            <iframe src="https://www.youtube.com/embed/_Xl4Q8YkPss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -70,6 +51,54 @@
                     <a href="/partners#pepflex"><img src="../public/images/logos/pep.png" alt="PEP Flex"></a>
                 </li>
             </ul>
+        </div>
+    </div>
+</section>
+
+<section id="inlener">
+    <div class="container">
+        <h2 class="section-title">Inlener</h2>
+        <div class="section-container">
+            <div class="section-img col-left">
+                <img src="../public/images/computeraap.png" alt="">
+            </div>
+            <div class="section-text col-right">
+                <p>Verwerken van gewerkte uren en bijbehorende facturen is een werkje dat bij tijdelijke inhuur nogal eens in mismatches en handmatige acties eindigt. Wil jij zeker weten dat urenregistraties tussen jullie en je leveranciers naadloos overeen komen, en dus soepel en efficiënt verwerkt worden, dan is geïntegreerd samenwerken via FlexForceMonkey een logische keuze.</p>
+                <a class="btn-light-grey" href="/inlener">Meer informatie</a>
+                <a class="btn-complementary" href="/inlener#contact">Vraag demo aan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="uitzender">
+    <div class="container">
+        <h2 class="section-title">Uitzender</h2>
+        <div class="section-container">
+            <div class="section-text col-left">
+                <p>Als intermediair uren afstemmen met een opdrachtgever is vaak een heel avontuur. Zeker wanneer de CAO-interpretatie nog moet gebeuren, of er handmatig data uit systemen van hun moet worden gedownload. Een digitale uren-koppeling en naadloze data-uitwisseling lijkt ons dan een lekker begin naar een betere ervaring. En die begint hier.</p>
+                <a class="btn-light-grey" href="/uitzender">Meer informatie</a>
+                <a class="btn-complementary" href="/uitzender#contact">Vraag demo aan</a>
+            </div>
+            <div class="section-img col-right">
+                <img src="../public/images/puzzel-aap.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mkb">
+    <div class="container">
+        <h2 class="section-title">MKB / ZZP-er</h2>
+        <div class="section-container">
+            <div class="section-img col-left">
+                <img src="../public/images/ipad-aap.png" alt="">
+            </div>
+            <div class="section-text col-right">
+                <p>Je kent het vast wel, werken met je eigen urenregistratie in een lekker eenvoudige app. Maar uiteindelijk is het einde maand dan toch weer printen, najagen van je opdrachtgever voor een handtekening, scannen en dan kan de facturatie starten. Wat dacht jij van één geïntegreerde app? Met timesheets, goedkeuring en factuur-flip in één?</p>
+                <a class="btn-light-grey" href="/mkb">Meer informatie</a>
+                <a class="btn-complementary" target="_blank" href="https://app.flexforcemonkey.com/home">Maak een gratis account aan</a>
+            </div>
         </div>
     </div>
 </section>
