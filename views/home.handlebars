@@ -5,17 +5,43 @@
     <div class="hero-container">
         <div class="text-container">
             <p>FlexForceMonkey is het platform voor integratie &amp; data-delen in de uren-keten. De plek waar inleners, uitzenders, Boutique consultants en ZZP-ers samenwerken aan hun flex administratie.</p>
+            <div class="btn-container-inside">
+                <p>Meer informatie als je:</p>
+                <a onclick="menuScroll('#inlener')" class="btn-complementary-xl">Inlener</a>
+                <a onclick="menuScroll('#uitzender')" class="btn-complementary-xl">Intermediair</a>
+                <a onclick="menuScroll('#mkb')" class="btn-complementary-xl">MKB / ZZP-er</a>
+            </div>
         </div>
         <div class="img-container">
             <img src="../public/images/bureau.png" alt="Bureau">
         </div>
     </div>
-    <div class="btn-container">
+    <div class="scrolldiv">
+        <button id="inpage_scroll_btn" class="btn-primary standard-button inpage-scroll" onclick="menuScroll('#ffm-home')">
+            <span class="screen-reader-text">
+                Meer FlexForceMonkey<br />
+            </span>
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+    <div class="monkey-bottom">
+        {{> halfmonkeyhead}}
+    </div>
+    {{!-- <div class="btn-container">
         <a onclick="menuScroll('#inlener')" class="btn-complementary-xl">Inlener</a>
         <a onclick="menuScroll('#uitzender')" class="btn-complementary-xl">Intermediair</a>
         <a onclick="menuScroll('#mkb')" class="btn-complementary-xl">MKB / ZZP-er</a>
-    </div>
+    </div> --}}
 </section>
+
+<div class="banner banner-ebook">
+    <div class="banner-container">
+        <h2 class="banner-title">Het Purchase to Pay proces van opdrachtgevers...</h2>
+        <p>...door de ogen van een uitzender. Klinkt interessant? Lees er alles over in ons ebook!</p>
+        <a href="/ebook" class="btn-complementary-xl">Download het ebook nu</a>
+    </div>
+</div>
+
 
 <section id="ffm-home">
     <div class="container">
@@ -64,7 +90,7 @@
             </div>
             <div class="section-text col-right">
                 <p>Verwerken van gewerkte uren en bijbehorende facturen is een werkje dat bij tijdelijke inhuur nogal eens in mismatches en handmatige acties eindigt. Wil jij zeker weten dat urenregistraties tussen jullie en je leveranciers naadloos overeen komen, en dus soepel en efficiënt verwerkt worden, dan is geïntegreerd samenwerken via FlexForceMonkey een logische keuze.</p>
-                <a class="btn-light-grey" href="/inlener">Meer informatie</a>
+                <a class="btn-light-grey" href="/inlener">Lees meer...</a>
                 <a class="btn-complementary" href="/inlener#contact">Vraag demo aan</a>
             </div>
         </div>
@@ -77,7 +103,7 @@
         <div class="section-container">
             <div class="section-text col-left">
                 <p>Als intermediair uren afstemmen met een opdrachtgever is vaak een heel avontuur. Zeker wanneer de CAO-interpretatie nog moet gebeuren, of er handmatig data uit systemen van hun moet worden gedownload. Een digitale uren-koppeling en naadloze data-uitwisseling lijkt ons dan een lekker begin naar een betere ervaring. En die begint hier.</p>
-                <a class="btn-light-grey" href="/uitzender">Meer informatie</a>
+                <a class="btn-light-grey" href="/uitzender">Lees meer...</a>
                 <a class="btn-complementary" href="/uitzender#contact">Vraag demo aan</a>
             </div>
             <div class="section-img col-right">
@@ -96,7 +122,7 @@
             </div>
             <div class="section-text col-right">
                 <p>Je kent het vast wel, werken met je eigen urenregistratie in een lekker eenvoudige app. Maar uiteindelijk is het einde maand dan toch weer printen, najagen van je opdrachtgever voor een handtekening, scannen en dan kan de facturatie starten. Wat dacht jij van één geïntegreerde app? Met timesheets, goedkeuring en factuur-flip in één?</p>
-                <a class="btn-light-grey" href="/mkb">Meer informatie</a>
+                <a class="btn-light-grey" href="/mkb">Lees meer...</a>
                 <a class="btn-complementary" target="_blank" href="https://app.flexforcemonkey.com/home">Maak een gratis account aan</a>
             </div>
         </div>

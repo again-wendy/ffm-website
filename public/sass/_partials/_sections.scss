@@ -26,8 +26,14 @@ section {
         display: inline-block;
         width: 49%;
         vertical-align: top;
+        &.section-img {
+            width: 34%;
+        }
+        &.section-text {
+            width: 64%;
+        }
         img {
-            padding: 15px;
+            padding: 0 30px;
         }
         @media(max-width: 767px) {
             width: 100%;
