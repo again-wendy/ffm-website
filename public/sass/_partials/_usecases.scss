@@ -19,6 +19,7 @@
                     padding: 8px 16px;
                     margin: 5px;
                     display: inline-block;
+                    text-decoration: none;
                     cursor: pointer;
                     &:hover, &:focus, &.active {
                         background: $primary-hover;
@@ -39,24 +40,53 @@
     background: url("../../public/images/jungle/jungle1.jpg");
 }
 
-#usecase-opdrachtgever {
-    background: $secondary;
+#usecase-inlener {
+    background: url("../../public/images/gieteraap-metplant.jpg");
+    background-position: center center;
+    .container {
+        background: rgba(255, 255, 255, 0.8);
+    }
     .keywords ul li a {
         background: $dark-grey;
+        &:hover {
+            background: lighten($dark-grey, 10%);
+        }
     }
 }
 
-#usecase-opdrachtnemer {
-    background: $light-grey;
+#usecase-intermediair {
+    
+    background: url("../../public/images/clouds.jpg");
+    
     .keywords ul li a {
         background: $complementary;
         color: $dark-grey;
+        &:hover {
+            background: darken($complementary, 10%);
+        }
     }
 }
 
 #usecase-onlinesoftware {
-    background: $primary;
+    background: url("../../public/images/aap-schilderen.jpg");
+    background-position: bottom center;
     .keywords ul li a {
         background: $dark-grey;
+        &:hover {
+            background: lighten($dark-grey, 10%);
+        }
+    }
+}
+
+#construction-modal {
+    img {
+        width: 30%;
+        text-align: center;
+    }
+    .text {
+        display: inline-block;
+        width: 69%;
+        padding-left: 30px;
+        vertical-align: top;
     }
 }

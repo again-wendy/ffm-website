@@ -370,12 +370,6 @@ function closeModal(id) {
     $(id).fadeOut();
 }
 
-function openKeyword(item) {
-    $("#keyword-modal .modal-title").html(keywords[item].title);
-    $("#keyword-modal .modal-body p").html(keywords[item].paragraph);
-    $("#keyword-modal").fadeIn();
-}
-
 function nextQuestion() {
     if(currentsection == 1) {
         toSectionTwo();
@@ -470,15 +464,14 @@ function submitSurvey() {
     }
 }
 
+// USE CASES
+
 var keywords = {
-    "keyword1": {
-        "title": "Dit is een titel",
-        "paragraph": "De paragraaf"
+    // intermediair
+    "caoontrafelaar": {
+        "modalname": "caoontrafelaar",
+        "modaltitle": "Use case – CAO ontrafeling"
     },
-    "keyword2": {
-        "title": "Dit is een titel",
-        "paragraph": "De paragraaf"
-    }
 }
 
 function loadUseCases() {
@@ -487,4 +480,11 @@ function loadUseCases() {
         var el = "#usecase-" + window.location.hash.substring(1);
         setTimeout(menuScroll(el), 1500);
     }
+}
+
+function openKeyword(item) {
+    var url = "./public/js/ucmodals/" + item + ".html";
+    $("#keyword-modal .modal-title").html(keywords[item].modaltitle);
+    $("#keyword-modal .modal-body").load(url);
+    $("#keyword-modal").fadeIn();
 }
