@@ -15,7 +15,11 @@ const request                   = require('request');
 const promRequest               = require('request-promise');
 const emails                    = require('./emails');
 const http                      = require('http');
+const https                     = require('https');
 const uri                       = require('url');
+const fs                        = require('fs');
+const mime                      = require('mime');
+const redirectHttp              = require('express-http-to-https');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -105,6 +109,9 @@ app.use(session({
     }
 }));
 
+// For certificate
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+
 // Settings for mail
 const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
@@ -122,13 +129,26 @@ const transporter = nodemailer.createTransport({
 // Flash Middleware
 app.use(flash());
 
-app.get('/testhome', (req, res) => {
-    res.render('temphome', {
-        title: "FlexForceMonkey | Business network for Flex",
-        desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
-        img: "./public/images/screenshot.jpg"
-    })
-})
+
+// redirect to https
+var ignoreHosts = [/localhost:3000/]
+//app.use(redirectHttp.redirectToHTTPS(ignoreHosts));
+
+// app.use((req, res, next) => {
+//     var host = req.header("host");
+//     if(req.hostname === "localhost" || req.secure && host.match(/^www\..*/i)) {
+//         next();
+//     } else {
+//         res.redirect(301, "https://" + host);
+//     }
+// })
+// app.get('/testhome', (req, res) => {
+//     res.render('temphome', {
+//         title: "FlexForceMonkey | Business network for Flex",
+//         desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
+//         img: "./public/images/screenshot.jpg"
+//     })
+// });
 
 app.get('/', (req, res) => {
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
@@ -649,6 +669,22 @@ app.post('/signup', (req, res) => {
             }
         });
 });
+
+//Certificate
+// app.get("/.well-known/acme-challenge/*", (req, res) => {
+//     var url = req.originalUrl;
+//     ind = url.indexOf('ge/') + 3;
+//     str = url.substr(ind);
+//     var file = fs.createWriteStream(str);
+//     //res.redirect('https://storageffm.blob.core.windows.net/ffmwebsite-letsencrypt' + url);
+//     https.get("https://storageffm.blob.core.windows.net/ffmwebsite-letsencrypt" + url, (response) => {
+//         res.setHeader('Content-disposition', 'attachment; filename=' + str)
+//         res.setHeader('Content-type', 'application/octet-stream');
+//         res.send(response.pipe(file));
+//     }).on('error', (e) => {
+//         console.log(e);
+//     });
+// });
 
 // Fallback for wrong urls
 app.get('*', (req, res) => {
