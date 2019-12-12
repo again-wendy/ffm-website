@@ -59,10 +59,13 @@
     background: url("../../public/images/clouds.jpg");
     
     .keywords ul li a {
-        background: $complementary;
+        background: darken($complementary, 8%);
         color: $dark-grey;
         &:hover {
             background: darken($complementary, 10%);
+        }
+        &.active {
+            background: $complementary;
         }
     }
 }
