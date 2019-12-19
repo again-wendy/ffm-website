@@ -277,7 +277,11 @@
                 }
             }
         }
-        
+
+    }
+
+    @media(max-width: 650px) {
+        height: 100vh;
     }
 }
 
@@ -708,15 +712,3 @@
     }
 }
 
-#subscribe-ffm {
-    .table {
-        tbody {
-            th {
-                text-align: left;
-            }
-        }
-    }
-    .cta-btn {
-        margin-top: 25px;
-    }
-}

@@ -11,9 +11,11 @@
             overflow: hidden;
             border-radius: 50%;
             display: inline-block;
+            //border: 1px solid darken($light-grey, 5%);
+            box-shadow: 1px 1px 2px darken($light-grey, 5%);
             img {
                 display: inline-block;
-                margin: 0 auto 0 -25%;
+                margin: 0 auto 0 -10%;
                 height: 100%;
                 width: auto;
                 max-width: none;
@@ -25,10 +27,48 @@
             h3 {
                 font-size: 1.6rem;
                 display: inline-block;
-                margin: 0 0 0 20px;
+                margin: 0 0 0 20px; 
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
+                @media(max-width: 600px) {
+                    font-size: 1.4rem;
+                    font-family: $font-bold;
+                }
+            }
+        }
+        @media(max-width: 400px) {
+            padding: 10px;
+            display: block;
+            .image {
+                width: 100%;
+                text-align: center;
+            }
+            .blog-link {
+                display: block;
+                h3 {
+                    position: static;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    .buttons {
+        @media(max-width: 610px) {
+            a {
+                padding: 10px 16px;
+                &:last-of-type {
+                    margin-top: 5px;
+                }
+            }
+        }
+        @media(max-width: 400px) {
+            a {
+                width: 100%;
+                margin-bottom: 5px;
+                &:last-of-type {
+                    margin-top: 0;
+                }
             }
         }
     }

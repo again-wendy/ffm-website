@@ -47,9 +47,13 @@
         background: rgba(255, 255, 255, 0.8);
     }
     .keywords ul li a {
-        background: $dark-grey;
+        background: lighten($dark-grey, 8%);
         &:hover {
             background: lighten($dark-grey, 10%);
+        }
+
+        &.active {
+            background: $dark-grey;
         }
     }
 }

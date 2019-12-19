@@ -131,7 +131,7 @@ app.use(flash());
 
 
 // redirect to https
-var ignoreHosts = [/localhost:3000/]
+//var ignoreHosts = [/localhost:3000/]
 //app.use(redirectHttp.redirectToHTTPS(ignoreHosts));
 
 // app.use((req, res, next) => {
