@@ -196,8 +196,10 @@ function closeNewsletterBlock() {
 
 // Menu scroll to section
 function menuScroll(name) {
+    var navHeight = $("#navbar").outerHeight();
+    var offset = $(name).offset().top - navHeight;
     $("html, body").animate({
-        scrollTop: $(name).offset().top
+        scrollTop: offset
     }, 1000);
 }
 
