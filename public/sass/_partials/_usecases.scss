@@ -1,0 +1,99 @@
+.usecase-section {
+    position: relative;
+    .container {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 30px;
+    }
+    .keywords {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            padding: 20px 0;
+            li {
+                display: inline-block;
+                a {
+                    border-radius: 15px;
+                    background: $secondary;
+                    color: white;
+                    padding: 8px 16px;
+                    margin: 5px;
+                    display: inline-block;
+                    text-decoration: none;
+                    cursor: pointer;
+                    &:hover, &:focus, &.active {
+                        background: $primary-hover;
+                    }
+                }
+            }
+        }
+    }
+    .monkey-looking {
+        position: absolute;
+        width: 120px;
+        right: 0;
+        bottom: 15px;
+    }
+}
+
+#usecase-general {
+    background: url("../../public/images/jungle/jungle1.jpg");
+}
+
+#usecase-inlener {
+    background: url("../../public/images/gieteraap-metplant.jpg");
+    background-position: center center;
+    .container {
+        background: rgba(255, 255, 255, 0.8);
+    }
+    .keywords ul li a {
+        background: lighten($dark-grey, 8%);
+        &:hover {
+            background: lighten($dark-grey, 10%);
+        }
+
+        &.active {
+            background: $dark-grey;
+        }
+    }
+}
+
+#usecase-intermediair {
+    
+    background: url("../../public/images/clouds.jpg");
+    
+    .keywords ul li a {
+        background: darken($complementary, 8%);
+        color: $dark-grey;
+        &:hover {
+            background: darken($complementary, 10%);
+        }
+        &.active {
+            background: $complementary;
+        }
+    }
+}
+
+#usecase-onlinesoftware {
+    background: url("../../public/images/aap-schilderen.jpg");
+    background-position: bottom center;
+    .keywords ul li a {
+        background: $dark-grey;
+        &:hover {
+            background: lighten($dark-grey, 10%);
+        }
+    }
+}
+
+#construction-modal {
+    img {
+        width: 30%;
+        text-align: center;
+    }
+    .text {
+        display: inline-block;
+        width: 69%;
+        padding-left: 30px;
+        vertical-align: top;
+    }
+}

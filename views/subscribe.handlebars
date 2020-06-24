@@ -8,7 +8,7 @@
         <div class="container">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">{{ translation.subscribe.REGISTER }}</h3>
+                    <h3 class="panel-title">Registreer</h3>
                 </div>
                 <div class="panel-body">
                     <div class="text-center">
@@ -26,81 +26,81 @@
                                 <input type="email" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <label for="companyname">{{ translation.subscribe.COMPANYNAME }}</label>
-                                <input type="text" name="companyname" id="companyname" placeholder="{{ translation.subscribe.COMPANYNAME }}">
+                                <label for="companyname">Bedrijfsnaam</label>
+                                <input type="text" name="companyname" id="companyname" placeholder="Bedrijfsnaam">
                             </div>
                             <div class="form-group">
-                                <label for="firstname">{{ translation.subscribe.FIRSTNAME }}</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="{{ translation.subscribe.FIRSTNAME }}">
+                                <label for="firstname">Voornaam</label>
+                                <input type="text" name="firstname" id="firstname" placeholder="Voornaam">
                             </div>
                             <div class="form-group">
-                                <label for="lastname">{{ translation.subscribe.LASTNAME }}</label>
-                                <input type="text" name="lastname" id="lastname" placeholder="{{ translation.subscribe.LASTNAME }}">
+                                <label for="lastname">Achternaam</label>
+                                <input type="text" name="lastname" id="lastname" placeholder="Achternaam">
                             </div>
                             <div class="form-group checkboxes">
                                 <input type="checkbox" name="emailnewsletters" id="emailnewsletters">
-                                <label for="emailnewsletters">{{ translation.subscribe.EMAILNEWSLETTERS }}</label>
+                                <label for="emailnewsletters">Email adres mag gebruikt worden voor nieuwsbrieven</label>
                                 <input type="checkbox" name="emailproductupdates" id="emailproductupdates">
-                                <label for="emailproductupdates">{{ translation.subscribe.EMAILPRODUCTUPDATES }}</label>
+                                <label for="emailproductupdates">Email adres mag gebruikt worden voor product updates</label>
                                 <input type="checkbox" name="emailcomcontact" id="emailcomcontact">
-                                <label for="emailcomcontact">{{ translation.subscribe.EMAILCOMCONTACT }}</label>
+                                <label for="emailcomcontact">Email adres mag gebruikt worden voor gericht individueel commercieel contact</label>
                             </div>
                         </div>
                         <div class="form-column right">
-                            <h5>{{ translation.subscribe.YOURSUB }}</h5>
-                            <button class="btn-primary">{{ translation.subscribe.COMPARE }}</button>
+                            <h5>Jouw abonnement</h5>
+                            <button class="btn-primary">Vergelijk</button>
                             <div class="form-group">
                                 <select name="sub" id="sub">
                                     {{#iff sub '==' 'intbuy'}}
-                                        <option value="IntegrationEngineBuyer" selected>{{ translation.subscribe.INTENGBUY }}</option>
-                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
-                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
-                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
-                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
-                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                        <option value="IntegrationEngineBuyer" selected>Integration engine (voor buyers)</option>
+                                        <option value="IntegrationEngineSeller">Integration engine (voor sellers)</option>
+                                        <option value="CaoEngineBuyer">Cao engine (voor buyers)</option>
+                                        <option value="CaoEngineSeller">Cao engine (voor sellers)</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">Integratie in combinatie met cao engine (voor sellers)</option>
+                                        <option value="StandardCustomer">Standaard (voor afnemers)</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'intsel'}}
-                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
-                                        <option value="IntegrationEngineSeller" selected>{{ translation.subscribe.INTENGSEL }}</option>
-                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
-                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
-                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
-                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                        <option value="IntegrationEngineBuyer">Integration engine (voor buyers)</option>
+                                        <option value="IntegrationEngineSeller" selected>Integration engine (voor sellers)</option>
+                                        <option value="CaoEngineBuyer">Cao engine (voor buyers)</option>
+                                        <option value="CaoEngineSeller">>Cao engine (voor sellers)</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">Integratie in combinatie met cao engine (voor sellers)</option>
+                                        <option value="StandardCustomer">Standaard (voor afnemers)</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'clabuy'}}
-                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
-                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
-                                        <option value="CaoEngineBuyer" selected>{{ translation.subscribe.CLAENGBUY }}</option>
-                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
-                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
-                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                        <option value="IntegrationEngineBuyer">Integration engine (voor buyers)</option>
+                                        <option value="IntegrationEngineSeller">Integration engine (voor sellers)</option>
+                                        <option value="CaoEngineBuyer" selected>Cao engine (voor buyers)</option>
+                                        <option value="CaoEngineSeller">>Cao engine (voor sellers)</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">Integratie in combinatie met cao engine (voor sellers)</option>
+                                        <option value="StandardCustomer">Standaard (voor afnemers)</option>
                                     {{/iff}}
                                     {{#iff sub '==' 'clasel'}}
-                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
-                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
-                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
-                                        <option value="CaoEngineSeller" selected>{{ translation.subscribe.CLAENGSEL }}</option>
-                                        <option value="CombinationIntegrationAndCaoSeller">{{ translation.subscribe.CLAINTSEL }}</option>
-                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                        <option value="IntegrationEngineBuyer">Integration engine (voor buyers)</option>
+                                        <option value="IntegrationEngineSeller">Integration engine (voor sellers)</option>
+                                        <option value="CaoEngineBuyer">Cao engine (voor buyers)</option>
+                                        <option value="CaoEngineSeller" selected>>Cao engine (voor sellers)</option>
+                                        <option value="CombinationIntegrationAndCaoSeller">Integratie in combinatie met cao engine (voor sellers)</option>
+                                        <option value="StandardCustomer">Standaard (voor afnemers)</option>
                                     {{/iff}} 
                                     {{#iff sub '==' 'selclaint'}}
-                                        <option value="IntegrationEngineBuyer">{{ translation.subscribe.INTENGBUY }}</option>
-                                        <option value="IntegrationEngineSeller">{{ translation.subscribe.INTENGSEL }}</option>
-                                        <option value="CaoEngineBuyer">{{ translation.subscribe.CLAENGBUY }}</option>
-                                        <option value="CaoEngineSeller">{{ translation.subscribe.CLAENGSEL }}</option>
-                                        <option value="CombinationIntegrationAndCaoSeller" selected>{{ translation.subscribe.CLAINTSEL }}</option>
-                                        <option value="StandardCustomer">{{ translation.subscribe.STANDARD }}</option>
+                                        <option value="IntegrationEngineBuyer">Integration engine (voor buyers)</option>
+                                        <option value="IntegrationEngineSeller">Integration engine (voor sellers)</option>
+                                        <option value="CaoEngineBuyer">Cao engine (voor buyers)</option>
+                                        <option value="CaoEngineSeller">>Cao engine (voor sellers)</option>
+                                        <option value="CombinationIntegrationAndCaoSeller" selected>Integratie in combinatie met cao engine (voor sellers)</option>
+                                        <option value="StandardCustomer">Standaard (voor afnemers)</option>
                                     {{/iff}}
                                 </select>
                             </div>
                             <div class="form-group checkboxes">
                                 <input type="checkbox" name="termsconditions" id="termsconditions" required>
-                                <label for="termsconditions">{{ translation.subscribe.ACCEPT }} <a target="_blank" href="/termsandconditions">{{ translation.general.TERMSCON }}</a></label>
+                                <label for="termsconditions">Ik accepteer de <a target="_blank" href="/termsandconditions">Algemene voorwaarden</a></label>
                                 <input type="checkbox" name="avg" id="avg" required>
-                                <label for="avg">{{ translation.subscribe.ACCEPT }} <a href="/gdpr">{{ translation.general.GDPR }}</a></label>
+                                <label for="avg">Ik accepteer de <a href="/gdpr">Bepalingen AVG</a></label>
                             </div>
                             <div class="g-recaptcha" data-sitekey="6LdguR0UAAAAANniwp3vHxcsRnwW3lOu0rz91iwP"></div>
-                            <input class="btn-secondary" type="submit" value="{{ translation.subscribe.REGISTER }}">
+                            <input class="btn-secondary" type="submit" value="Registreer">
                         </div>
                     </form>
                 </div>
@@ -113,7 +113,7 @@
             <p>&copy; FlexForceMonkey - {{ year }}</p>
         </div>
         <div class="text right-text">
-            <p>{{ translation.footer.SUPPORT1 }} <a href="https://app.flexforcemonkey.com/support">contact</a> {{ translation.footer.SUPPORT2 }}</p>
+            <p>Hulp nodig? Neem <a href="https://app.flexforcemonkey.com/support">contact</a> op met onze supportdesk</p>
         </div>
     </footer>
 </div>

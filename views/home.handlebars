@@ -1,51 +1,61 @@
 {{> base-nav}}
 
-<section id="hero" class="home">
-    <div class="hero-title">
-        <h1>
-            <span class="logo">FlexForceMonkey</span><br />
-            <span class="sublogo">Business network for Flex</span><br/>
-            {{ translation.home.HERO_TEXT }}
-        </h1>
-    </div>
-    <!-- <div class="monkey">
-        {{> monkey}}
-    </div> -->
-    <div class="iframe">
-        <div class="iframe-container">
-            <iframe src="https://www.youtube.com/embed/UUSmUoriNkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<section id="intro-home-new" class="full-screen">
+    <h2 class="hero-title">Join the collaborative flex experience!</h2>
+    <div class="hero-container">
+        <div class="text-container">
+            <p>FlexForceMonkey is het platform voor eenvoudige integratie en veilig data-delen in de uren-keten. De plek waar inleners, uitzenders, Boutique consultants en ZZP-ers samenwerken aan hun flex administratie.</p>
+            <div class="btn-container-inside">
+                <p>Meer informatie voor jou als:</p>
+                <a onclick="menuScroll('#inlener')" class="btn-complementary-xl">Inlener</a>
+                <a onclick="menuScroll('#uitzender')" class="btn-complementary-xl">Intermediair</a>
+                <a onclick="menuScroll('#mkb')" class="btn-complementary-xl">MKB / ZZP-er</a>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="../public/images/bureau.png" alt="Bureau">
         </div>
     </div>
     <div class="scrolldiv">
-        <button id="inpage_scroll_btn" class="btn-primary standard-button inpage-scroll" onclick="menuScroll('#home-intro')">
+        <button id="inpage_scroll_btn" class="btn-primary standard-button inpage-scroll" onclick="menuScroll('#ebook-banner-home')">
             <span class="screen-reader-text">
-                {{ translation.home.HERO_PARAGRAPH }}<br />
+                Meer FlexForceMonkey<br />
             </span>
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
+    <div class="monkey-bottom">
+        {{> halfmonkeyhead}}
+    </div>
+    {{!-- <div class="btn-container">
+        <a onclick="menuScroll('#inlener')" class="btn-complementary-xl">Inlener</a>
+        <a onclick="menuScroll('#uitzender')" class="btn-complementary-xl">Intermediair</a>
+        <a onclick="menuScroll('#mkb')" class="btn-complementary-xl">MKB / ZZP-er</a>
+    </div> --}}
 </section>
 
-<section id="home-intro" class="full-screen">
+<div class="banner banner-ebook" id="ebook-banner-home">
+    <div class="banner-container">
+        <h2 class="banner-title">Het Purchase to Pay proces van opdrachtgevers...</h2>
+        <p>...door de ogen van een uitzender. Klinkt interessant? Lees er alles over in ons ebook!</p>
+        <a href="/ebook" class="btn-complementary-xl">Download het ebook nu</a>
+    </div>
+</div>
+
+
+<section id="ffm-home">
     <div class="container">
-        <h2 class="section-title">FlexForceMonkey</h2>
-        <div class="section-container">
-            <p>{{ translation.home.HOME_INTRO }}</p>
-            <div class="buttons">
-                <a href="/hirer" class="btn-complementary-xl">{{ translation.choice.INTEGRATION }}</a>
-                <a href="/supplier" class="btn-complementary-xl">{{ translation.choice.CLAENGINE }}</a>
-                <a href="/freelancer" class="btn-complementary-xl">{{ translation.choice.FREELANCER }}</a>
-            </div>
+        <h2 class="section-title">FlexForceMonkey | Business network in flex</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/_Xl4Q8YkPss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-    <img class="small-screen" src="./public/images/stekker-aap-small.png" alt="{{ translation.freelancer_TRY_TITLE }}">
-    <img class="normal-screen" src="./public/images/stekker-aap-normal.png" alt="{{ translation.freelancer_TRY_TITLE }}">
-    <img class="big-screen" src="./public/images/stekker-aap-big.png" alt="{{ translation.freelancer_TRY_TITLE }}">
 </section>
 
 <section id="partners">
     <div class="container">
-        <h2 class="section-title">{{ translation.home.OURECO }}</h2>
+        <h2 class="section-title">Ons ecosysteem</h2>
+        <p class="sub-title">Klik op een logo voor meer informatie</p>
         <div class="section-container slide-container">
             <ul class="slides">
                 <li class="slide slide-1">
@@ -58,23 +68,63 @@
                     <a href="/partners#flexservice"><img src="../public/images/logos/flexservice.png" alt="Flex service"></a>
                 </li>
                 <li class="slide slide-4">
-                    <a href="/partners#pepflex"><img src="../public/images/logos/pep.png" alt="PEP Flex"></a>
-                </li>
-                <li class="slide slide-5">
                     <a href="/partners#pivoton"><img src="../public/images/logos/pivoton.png" alt="Pivoton"></a>
                 </li>
+                <li class="slide slide-5">
+                    <a href="/partners#afas"><img src="../public/images/logos/afas.png" alt="AFAS"></a>
+                </li>
                 <li class="slide slide-6">
-                    <a href="/partners#carerix"><img src="../public/images/logos/carerix.png" alt="Carerix"></a>
-                </li>
-                <li class="slide slide-7">
-                    <a href="/partners#setu"><img src="../public/images/logos/setu.png" alt="SETU"></a>
-                </li>
-                <li class="slide slide-8">
-                    <a href="/partners#talentpeaks"><img src="../public/images/logos/talentpeaks.png" alt="Talent peaks"></a>
+                    <a href="/partners#pepflex"><img src="../public/images/logos/pep.png" alt="PEP Flex"></a>
                 </li>
             </ul>
         </div>
     </div>
 </section>
 
-{{> blogs}}
+<section id="inlener">
+    <div class="container">
+        <h2 class="section-title">Inlener</h2>
+        <div class="section-container">
+            <div class="section-img col-left">
+                <img src="../public/images/computeraap.png" alt="">
+            </div>
+            <div class="section-text col-right">
+                <p>Verwerken van gewerkte uren en bijbehorende facturen is een werkje dat bij tijdelijke inhuur nogal eens in mismatches en handmatige acties eindigt. Wil jij zeker weten dat urenregistraties tussen jullie en je leveranciers naadloos overeen komen, en dus soepel en efficiënt verwerkt worden, dan is geïntegreerd samenwerken via FlexForceMonkey een logische keuze.</p>
+                <a class="btn-light-grey" href="/inlener">Lees meer...</a>
+                <a class="btn-complementary" href="/inlener#contact">Vraag demo aan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="uitzender">
+    <div class="container">
+        <h2 class="section-title">Uitzender</h2>
+        <div class="section-container">
+            <div class="section-text col-left">
+                <p>Als intermediair uren afstemmen met een opdrachtgever is vaak een heel avontuur. Zeker wanneer de CAO-interpretatie nog moet gebeuren, of er handmatig data uit systemen van hun moet worden gedownload. Een digitale uren-koppeling en naadloze data-uitwisseling lijkt ons dan een lekker begin naar een betere ervaring. En die begint hier.</p>
+                <a class="btn-light-grey" href="/uitzender">Lees meer...</a>
+                <a class="btn-complementary" href="/uitzender#contact">Vraag demo aan</a>
+            </div>
+            <div class="section-img col-right">
+                <img src="../public/images/puzzel-aap.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mkb">
+    <div class="container">
+        <h2 class="section-title">MKB / ZZP-er</h2>
+        <div class="section-container">
+            <div class="section-img col-left">
+                <img src="../public/images/ipad-aap.png" alt="">
+            </div>
+            <div class="section-text col-right">
+                <p>Je kent het vast wel, werken met je eigen urenregistratie in een lekker eenvoudige app. Maar uiteindelijk is het einde maand dan toch weer printen, najagen van je opdrachtgever voor een handtekening, scannen en dan kan de facturatie starten. Wat dacht jij van één geïntegreerde app? Met timesheets, goedkeuring en factuur-flip in één?</p>
+                <a class="btn-light-grey" href="/mkb">Lees meer...</a>
+                {{!-- <a class="btn-complementary" target="_blank" href="https://app.flexforcemonkey.com/home">Maak een gratis account aan</a> --}}
+            </div>
+        </div>
+    </div>
+</section>

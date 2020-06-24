@@ -1,0 +1,80 @@
+{{> base-nav}}
+
+<section id="hero" class="home">
+    <div class="hero-title">
+        <h1>
+            <span class="logo">FlexForceMonkey</span><br />
+            <span class="sublogo">Business network for Flex</span><br/>
+            {{ translation.home.HERO_TEXT }}
+        </h1>
+    </div>
+    <!-- <div class="monkey">
+        {{> monkey}}
+    </div> -->
+    <div class="iframe">
+        <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/UUSmUoriNkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="scrolldiv">
+        <button id="inpage_scroll_btn" class="btn-primary standard-button inpage-scroll" onclick="menuScroll('#home-intro')">
+            <span class="screen-reader-text">
+                {{ translation.home.HERO_PARAGRAPH }}<br />
+            </span>
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+</section>
+
+<section id="home-intro" class="full-screen">
+    <div class="container">
+        <h2 class="section-title">FlexForceMonkey</h2>
+        <div class="section-container">
+            <p>{{ translation.home.HOME_INTRO }}</p>
+            <div class="buttons">
+                <a href="/hirer" class="btn-complementary-xl">{{ translation.choice.INTEGRATION }}</a>
+                <a href="/supplier" class="btn-complementary-xl">{{ translation.choice.CLAENGINE }}</a>
+                <a href="/freelancer" class="btn-complementary-xl">{{ translation.choice.FREELANCER }}</a>
+            </div>
+        </div>
+    </div>
+    <img class="small-screen" src="./public/images/stekker-aap-small.png" alt="{{ translation.freelancer_TRY_TITLE }}">
+    <img class="normal-screen" src="./public/images/stekker-aap-normal.png" alt="{{ translation.freelancer_TRY_TITLE }}">
+    <img class="big-screen" src="./public/images/stekker-aap-big.png" alt="{{ translation.freelancer_TRY_TITLE }}">
+</section>
+
+<section id="partners">
+    <div class="container">
+        <h2 class="section-title">{{ translation.home.OURECO }}</h2>
+        <div class="section-container slide-container">
+            <ul class="slides">
+                <li class="slide slide-1">
+                    <a href="/partners#sap"><img src="../public/images/logos/sap-partner.png" alt="SAP"></a>
+                </li>
+                <li class="slide slide-2">
+                    <a href="/partners#easyflex"><img src="../public/images/logos/easyflex.png" alt="Easyflex"></a>
+                </li>
+                <li class="slide slide-3">
+                    <a href="/partners#flexservice"><img src="../public/images/logos/flexservice.png" alt="Flex service"></a>
+                </li>
+                <li class="slide slide-4">
+                    <a href="/partners#pepflex"><img src="../public/images/logos/pep.png" alt="PEP Flex"></a>
+                </li>
+                <li class="slide slide-5">
+                    <a href="/partners#pivoton"><img src="../public/images/logos/pivoton.png" alt="Pivoton"></a>
+                </li>
+                <li class="slide slide-6">
+                    <a href="/partners#carerix"><img src="../public/images/logos/carerix.png" alt="Carerix"></a>
+                </li>
+                <li class="slide slide-7">
+                    <a href="/partners#setu"><img src="../public/images/logos/setu.png" alt="SETU"></a>
+                </li>
+                <li class="slide slide-8">
+                    <a href="/partners#talentpeaks"><img src="../public/images/logos/talentpeaks.png" alt="Talent peaks"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{{> blogs}}

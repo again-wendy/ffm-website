@@ -3,75 +3,55 @@
 <section id="feedback" class="full-screen">
     <div class="container text-center">
         {{#iff sent '==' 'error'}}
-            <h2 class="section-title">{{ translation.feedback.SOMETHINGWENTWRONG }}</h2>
-            <p class="sub-title">{{ translation.feedback.ERROR }}</p>
+            <h2 class="section-title">Er is iets misgegaan..</h2>
+            <p class="sub-title">..met het versturen van je feedback. Zou je het nog eens willen proberen?</p>
             <div class="backhome text-center">
-                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> Terug naar home</a>
             </div>
             <div class="smilies">
                 <a onclick="postFeedback(4)" class="smily veryhappy">
                     <img class="monkey" src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-veryhappy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-veryhappy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(3)" class="smily happy">
                     <img class="monkey" src="../public/images/feedback/happy-monkey.png" alt="Happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-happy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-happy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(2)" class="smily nothappy">
                     <img class="monkey" src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-nothappy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-nothappy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(1)" class="smily angry">
                     <img class="monkey" src="../public/images/feedback/angry-monkey.png" alt="Angry">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-angry.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-angry-en.svg">
-                    {{/iff}}
                 </a>
             </div>
         {{/iff}}
         {{#iff sent '==' 'success'}}
             <div class="givenscore">
                 {{#iff score '==' 4}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jouw feedback wordt zeer gewaardeerd!</p>
                     <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
                 {{/iff}}
                 {{#iff score '==' 3}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jouw feedback wordt zeer gewaardeerd!</p>
                     <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
                 {{/iff}}
                 {{#iff score '==' 2}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY2 }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jammer dat je niet helemaal tevreden bent over ons. Misschien kunnen we je helpen? <a href="/integration-services#contact">Neem contact op</a></p>
                     <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
                 {{/iff}}
                 {{#iff score '==' 1}}
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jammer dat je niet tevreden bent over ons. Misschien kunnen we je helpen? <a href="/integration-services#contact">Neem contact op</a></p>
                     <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
                 {{/iff}}
             </div>
             <div class="backhome text-center">
-                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> Terug naar home</a>
             </div>
         {{/iff}}
         {{#iff sent '==' undefined}}
@@ -79,74 +59,54 @@
                 <div class="givenscore score-{{score}}">
                 {{#iff score '==' 4}}
                     <a onclick="postFeedback(4)" class="postscore score-4"></a>
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jouw feedback wordt zeer gewaardeerd!</p>
                     <img src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
                 {{/iff}}
                 {{#iff score '==' 3}}
                     <a onclick="postFeedback(3)" class="postscore score-3"></a>
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.FORGIVINGSCORE }}</p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jouw feedback wordt zeer gewaardeerd!</p>
                     <img src="../public/images/feedback/happy-monkey.png" alt="Happy">
                 {{/iff}}
                 {{#iff score '==' 2}}
                     <a onclick="postFeedback(2)" class="postscore score-2"></a>
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY2 }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jammer dat je niet helemaal tevreden bent over ons. Misschien kunnen we je helpen? <a href="/integration-services#contact">Neem contact op</a></p>
                     <img src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
                 {{/iff}}
                 {{#iff score '==' 1}}
                     <a onclick="postFeedback(1)" class="postscore score-1"></a>
-                    <h2 class="section-title">{{ translation.feedback.THANKS }}</h2>
-                    <p class="sub-title">{{ translation.feedback.SORRY }} <a href="/integration-services#contact">{{ translation.feedback.CONTACTUS }}</a></p>
+                    <h2 class="section-title">Bedankt!</h2>
+                    <p class="sub-title">Jammer dat je niet tevreden bent over ons. Misschien kunnen we je helpen? <a href="/integration-services#contact">Neem contact op</a></p>
                     <img src="../public/images/feedback/angry-monkey.png" alt="Angry">
                 {{/iff}}
             </div>
             <div class="backhome text-center">
-                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> {{ translation.feedback.BACKHOME }}</a>
+                <a href="/" class="btn-complementary-xl"><span class="fa fa-home"></span> Terug naar home</a>
             </div>
             {{/iff}}
         {{/iff}}
         {{#iff score '==' undefined}}
             {{#iff sent '==' undefined}}
-            <h2 class="section-title">{{ translation.feedback.THINKABOUT }}</h2>
-            <p class="sub-title">{{ translation.feedback.GIVESCORE }}</p>
+            <h2 class="section-title">Wat vond je vandaag van ons?</h2>
+            <p class="sub-title">Klik op een afbeelding om ons (anoniem) een score te geven</p>
             <div class="smilies">
                 <a onclick="postFeedback(4)" class="smily veryhappy">
                     <img class="monkey" src="../public/images/feedback/very-happy-monkey.png" alt="Very happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-veryhappy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-veryhappy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(3)" class="smily happy">
                     <img class="monkey" src="../public/images/feedback/happy-monkey.png" alt="Happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-happy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-happy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(2)" class="smily nothappy">
                     <img class="monkey" src="../public/images/feedback/not-happy-monkey.png" alt="Not happy">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-nothappy.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-nothappy-en.svg">
-                    {{/iff}}
                 </a>
                 <a onclick="postFeedback(1)" class="smily angry">
                     <img class="monkey" src="../public/images/feedback/angry-monkey.png" alt="Angry">
-                    {{#iff lang '==' 'nl'}}
                     <img class="board" src="../public/images/feedback/bord-angry.svg">
-                    {{/iff}}
-                    {{#iff lang '==' 'en'}}
-                    <img class="board" src="../public/images/feedback/bord-angry-en.svg">
-                    {{/iff}}
                 </a>
             </div>
             {{/iff}}

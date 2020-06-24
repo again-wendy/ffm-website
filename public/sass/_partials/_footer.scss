@@ -7,13 +7,24 @@
             padding: 25px 15px;
             width: 100%;
             color: white;
+            .terms {
+                @media(max-width: 401px) {
+                    line-height: 2rem;
+                }
+            }
             .choose-role {
                 margin-top: 35px;
                 p {
                     font-size: 1.2rem;
                 }
-                .roles > a {
-                    margin-bottom: 5px;
+                .roles {
+                    > a {
+                        margin-bottom: 5px;
+                        @media(max-width: 350px) {
+                            width: 100%;
+                            padding: 10px 16px;
+                        }
+                    }
                 }
             }
         }

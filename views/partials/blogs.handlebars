@@ -2,8 +2,8 @@
     <div class="container">
         <h2 class="section-title">{{ translation.blogs.TITLE }}</h2>
         <div class="section-container">
-            {{#if blogs}}
-                {{#each blogs}}
+            {{#if blogposts}}
+                {{#each blogposts}}
                 <div class="blog">
                     <div class="image">
                         <div class="img-container">
@@ -21,13 +21,13 @@
         </div>
         <div class="buttons text-center">
             <a onclick="flexjungleBlogLink()" class="btn-secondary">
-                {{ translation.blogs.ALLBLOGS }}
+                Bekijk alle blogposts
             </a>
             <a onclick="flexjungleNewsLink()" class="btn-secondary">
-                {{ translation.blogs.LATESTNEWS }}
+                Laatste nieuws
             </a>
             <a onclick="flexjungleDownloadLink()" class="btn-secondary">
-                {{ translation.blogs.ALLDOWNLOADS }}
+                Bekijk al onze downloads
             </a>
         </div>
     </div>

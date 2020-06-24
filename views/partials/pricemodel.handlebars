@@ -1,6 +1,6 @@
 <section id="pricemodel" class="full-screen">
     <div class="container">
-        <h2 class="section-title">{{ translation.subs.TITLE }}</h2>
+        <h2 class="section-title">Online tijdregistratie en facturatie software</h2>
         <div class="section-container">
             <div class="subscriptions">
                 {{#if subs}}
@@ -12,36 +12,36 @@
                                     <div class="content">
                                         <ul>
                                             {{#iff maximumWeeklyTimesheets '>' 0}}
-                                                <li>{{ ../translation.subs.UPTO }} {{maximumWeeklyTimesheets}} {{ ../translation.subs.TIMESHEETSPERWEEK }}</li>
+                                                <li>Tot {{maximumWeeklyTimesheets}} timesheets per week</li>
                                             {{/iff}}
                                             {{#iff maximumWeeklyTimesheets '==' null}}
-                                                <li>{{ ../translation.subs.UNLIMITEDTIMESHEETS }}</li>
+                                                <li>Unlimited timesheets per week</li>
                                             {{/iff}}
 
-                                            <li>{{ ../translation.subs.SENDINVOICESWEEKMONTH }}</li>
-                                            <li>{{ ../translation.subs.INVITEDUNLIMITEDAPPR }}</li>
+                                            <li>Verstuur facturen op basis van timesheets per week of maand</li>
+                                            <li>Je kunt unlimited klanten uitnodigen als goedkeurder</li>
                                             
                                             {{#iff maximumTimeUsers '>' 0}}
-                                                <li>{{../translation.subs.UPTO }} {{maximumTimeUsers}} {{ ../translation.subs.TIMEUSERSTOADMIN }}</li>
+                                                <li>Tot {{maximumTimeUsers}} additionele tijdschrijf-users naast admin</li>
                                             {{/iff}}
                                             {{#iff maximumTimeUsers '==' null}}
-                                                <li>{{ ../translation.subs.UNLIMITEDTIMEUSERS }}</li>
+                                                <li>Unlimited additionele tijdschrijf-users naast admin</li>
                                             {{/iff}}
                                             
                                             {{#if editableInvoiceDesign}}
-                                                <li>{{ ../translation.subs.INVOICEDESIGN }}</li>
+                                                <li>Aanpasbare look &amp; feel factuur</li>
                                             {{/if}}
                                             
-                                            <li>{{ ../translation.subs.UNLIMITEDSUPPORT }}</li>
+                                            <li>Unlimited support desk</li>
 
                                             {{#iff discountPercentage '>' 0}}
                                                 {{#iff subscriptionType '!=' 4}}
-                                                    <li>{{ discountPercentage }}% {{ ../translation.subs.DISCOUNT }}</li>
+                                                    <li>{{ discountPercentage }}% korting wanneer je jaarlijks betaald</li>
                                                 {{/iff}}
                                             {{/iff}}
 
                                             {{#iff trialInNumberOfDays '>' 0}}
-                                                <li>{{ trialInNumberOfDays }} {{ ../translation.subs.TRIALPERIOD }}</li>
+                                                <li>{{ trialInNumberOfDays }} dagen trial periode</li>
                                             {{/iff}}
 
                                             {{#iff maximumTimeUsers '==' 0}}
@@ -51,22 +51,22 @@
                                         <ul class="list-style-none">
                                             {{#iff monthlyFee '!=' null}}
                                                 {{#iff subscriptionType '==' '1'}}
-                                                    <li class="bold">&euro;2,50 per time user {{ ../translation.subs.PERMONTH }}</li>
-                                                    <li class="bold">&euro;23,88 per time user {{ ../translation.subs.PERYEAR }}</li>
+                                                    <li class="bold">&euro;2,50 per time user per maand</li>
+                                                    <li class="bold">&euro;23,88 per time user per jaar</li>
                                                 {{/iff}}
                                                 {{#iff subscriptionType '!=' '1'}}
-                                                    <li class="bold">&euro;{{ monthlyFee }} {{ ../translation.subs.PERMONTH }}</li>
-                                                    <li class="bold">&euro;{{ annualFee }} {{ ../translation.subs.PERYEAR }}</li>
+                                                    <li class="bold">&euro;{{ monthlyFee }} per maand</li>
+                                                    <li class="bold">&euro;{{ annualFee }} per jaar</li>
                                                 {{/iff}}
                                             {{/iff}}
                                             {{#iff monthlyFee '==' null}}
-                                                <li class="bold">{{ ../translation.subs.ASKFOROFFER }}</li>
+                                                <li class="bold">Vraag offerte</li>
                                             {{/iff}}
                                         </ul>
                                     </div>
                                     <div class="buttons">
-                                        <button class="btn-secondary close-info">{{ ../translation.subs.CLOSE }}</button>
-                                        <button class="btn-primary choose">{{ ../translation.subs.REGISTER }}</button>
+                                        <button class="btn-secondary close-info">Sluit</button>
+                                        <button class="btn-primary choose">Registreer</button>
                                     </div>
                                 </div>
                             </div>
@@ -75,25 +75,25 @@
                                 <div class="inner">
                                     <p class="bold">
                                         {{#iff subscriptionType '==' 0}}
-                                            {{ ../translation.subs.INFO0 }}
+                                            De ideale tijd registratie app voor Freelance professionals. Klanten uitnodigen, uren boeken en factureren na goedkeuring.
                                         {{/iff}}
                                         {{#iff subscriptionType '==' 1}}
-                                            {{ ../translation.subs.INFO1 }}
+                                            De enige app die tijdregistratie met klantgoedkeuring voor al je medewerkers als de standaard ziet. Opschalen en controle houden was niet eerder zo eenvoudig.
                                         {{/iff}}
                                         {{#iff subscriptionType '==' 2}}
-                                            {{ ../translation.subs.INFO2 }}
+                                            Geschikt voor MKB bedrijven met verschillende niveaus van activiteit
                                         {{/iff}}
                                         {{#iff subscriptionType '==' 3}}
-                                            {{ ../translation.subs.INFO3 }}
+                                            Geschikt voor MKB bedrijven met verschillende niveaus van activiteit
                                         {{/iff}}
                                         {{#iff subscriptionType '==' 4}}
-                                            {{ ../translation.subs.INFO4 }}
+                                            Oneindig opschalen? Ga met ons in gesprek over een concurrerende abonnementsvorm of combinatie met onze klant-integratiedienst
                                         {{/iff}}
                                     </p>
                                     {{#iff monthlyFee '!=' null}}
                                         <p class="price-rule">
                                             {{#iff subscriptionType '==' 0}}
-                                                <span class="price">{{../translation.subs.FREE}}</span>
+                                                <span class="price">Gratis</span>
                                             {{/iff}}
                                             {{#iff subscriptionType '==' 1}}
                                                 <span class="price">&euro;1,99*</span> /time user
@@ -102,24 +102,24 @@
                                     {{/iff}}
                                     {{#iff monthlyFee '==' null}}
                                         <p class="price-rule one">
-                                            {{ ../translation.subs.ASKFOROFFER }}
+                                            Vraag offerte
                                         </p>
                                     {{/iff}}
                                     <div class="other-prices">
                                         {{#iff annualFee '!=' null}}
                                         {{#iff subscriptionType '!=' 0}}
                                             {{!-- <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p> --}}
-                                            <p class="year">{{ ../translation.subs.OR }} &euro;2,50 per time user per {{ ../translation.subs.MONTH }}</p>
+                                            <p class="year">of &euro;2,50 per time user per maand</p>
                                         {{/iff}}
                                         {{/iff}}
                                     </div>
                                     <div class="desc">
                                         {{#iff subscriptionType '==' 1}}
-                                            <p>{{../translation.subs.DESC}}</p>
+                                            <p>*Je betaalt €1,99 voor elke time user wanneer je jaarlijks betaald. Bij een maandelijkse betaling is de prijs 2,50 per time user</p>
                                         {{/iff}}
                                     </div>
-                                    <button class="btn-secondary more-info">{{ ../translation.subs.MOREINFO }}</button>
-                                    <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">{{ ../translation.subs.REGISTER }}</button>
+                                    <button class="btn-secondary more-info">Meer info</button>
+                                    <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">Registreer</button>
                                 </div>
                             </div>
                         </div>

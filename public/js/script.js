@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // Load right flag in menu to set language
-    if(checkLang().indexOf("nl") != -1) {
-        $("#language").append('<a onclick="setLang(\'en\')"><img src="./public/images/en.png" alt="English"></a>');
-        Cookies.set("ulang", "nl");
-    } else {
-        $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
-        Cookies.set("ulang", "en");
-    }
+    // if(checkLang().indexOf("nl") != -1) {
+    //     $("#language").append('<a onclick="setLang(\'en\')"><img src="./public/images/en.png" alt="English"></a>');
+    //     Cookies.set("ulang", "nl");
+    // } else {
+    //     $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
+    //     Cookies.set("ulang", "en");
+    // }
 
     // Don't show mobile menu on page load
     if($(window).width() < 769) {
@@ -58,11 +58,11 @@ $(document).ready(function() {
     });
 
     // Don't show button to page you already on in footer
-    if(window.location.pathname == "/hirer") {
+    if(window.location.pathname == "/hirer" || window.location.pathname == "/integration-services") {
         $("#footer .roles .hirer").remove();
-    } else if(window.location.pathname == "/supplier") {
+    } else if(window.location.pathname == "/supplier" || window.location.pathname == "/cao-ontrafelaar") {
         $("#footer .roles .supplier").remove();
-    } else if(window.location.pathname == "/freelancer") {
+    } else if(window.location.pathname == "/freelancer" || window.location.pathname == "/online-software") {
         $("#footer .roles .freelancer").remove();
     }
 
@@ -75,7 +75,11 @@ $(document).ready(function() {
             checkPartnerVisibility();
         }
     });
+
+    loadUseCases();
 });
+
+var currentsection = 1;
 
 function postFeedback(value) {
     let url = 'https://api.flexforcemonkey.com/api/Feedback'
@@ -192,8 +196,10 @@ function closeNewsletterBlock() {
 
 // Menu scroll to section
 function menuScroll(name) {
+    var navHeight = $("#navbar").outerHeight();
+    var offset = $(name).offset().top - navHeight;
     $("html, body").animate({
-        scrollTop: $(name).offset().top
+        scrollTop: offset
     }, 1000);
 }
 
@@ -289,9 +295,9 @@ function flexjungleNewsLink() {
 
 function flexjungleDownloadLink() {
     if(checkLang().indexOf("nl") != -1) {
-        window.open('http://flexjungle.flexforcemonkey.com/downloads-nl/', '_blank');
-    } else {
         window.open('http://flexjungle.flexforcemonkey.com/downloads/', '_blank');
+    } else {
+        window.open('http://flexjungle.flexforcemonkey.com/downloads-en/', '_blank');
     }
 }
 
@@ -340,7 +346,7 @@ $(".close-info").click(function() {
 });
 
 function checkPartnerVisibility() {
-    var partnerArr = ['sap', 'easyflex', 'flexservice', 'pepflex', 'pivoton', 'carerix', 'setu', 'talentpeaks'];
+    var partnerArr = ['sap', 'easyflex', 'flexservice', 'pivoton', 'afas', 'pepflex', 'overig'];
 
     $.each(partnerArr, function(i, v) {
         if( $('#' + v + ' .container').visible(true) ) {
@@ -356,4 +362,131 @@ function checkPartnerVisibility() {
     } else {
         $('#partner-side-menu').show();
     }
+}
+
+function openModal(id) {
+    $(id).fadeIn();
+}
+
+function closeModal(id) {
+    $(id).fadeOut();
+}
+
+function nextQuestion() {
+    if(currentsection == 1) {
+        toSectionTwo();
+    } else if(currentsection == 2) {
+        toSectionThree();
+    }
+}
+
+function prevQuestion() {
+    if(currentsection == 2) {
+        toSectionOne();
+    } else if(currentsection == 3) {
+        toSectionTwo();
+    }
+}
+
+function toSectionOne() {
+    $('#survey-ebook .section-2').hide();
+    $('#survey-ebook .section-3').hide();
+    $('#survey-ebook .section-1').fadeIn();
+    $('#survey-ebook .prev').hide();
+    $('#survey-ebook .next').show();
+    $('#survey-ebook .submit').hide();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .one').addClass('active');
+    currentsection = 1;
+}
+
+function toSectionTwo() {
+    $('#survey-ebook .section-1').hide();
+    $('#survey-ebook .section-3').hide();
+    var role = $('#survey-ebook input[name="role"]:checked').val();
+    var opprole = "";
+    if(role) {
+        (role == "Opdrachtgever") ? opprole = "uitlener" : opprole = "opdrachtgever";
+        $('#survey-ebook .section-2 #opp-role').html(opprole)
+    }
+    $('#survey-ebook .section-2').fadeIn();
+    $('#survey-ebook .prev').show();
+    $('#survey-ebook .next').show();
+    $('#survey-ebook .submit').hide();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .two').addClass('active');
+    currentsection = 2;
+}
+
+function toSectionThree() {
+    $('#survey-ebook .section-1').hide();
+    $('#survey-ebook .section-2').hide();
+    $('#survey-ebook .section-3').fadeIn();
+    $('#survey-ebook .next').hide();
+    $('#survey-ebook .submit').show();
+    $('#survey-ebook .progress span').removeClass('active');
+    $('#survey-ebook .progress .three').addClass('active');
+    currentsection = 3;
+}
+
+function checkSection() {
+    if($('#survey-ebook .section-1').is(':visible')) {
+        currentsection = 1;
+    } else if($('#survey-ebook .section-2').is(':visible')) {
+        currentsection = 2;
+    } else if($('#survey-ebook .section-3').is(':visible')) {
+        currentsection = 3;
+    }
+}
+
+function submitSurvey() {
+    var form = $('#ebook-survey-form');
+    // validate email field
+    var email = $("#ebook-survey-form #email").val();
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(regex.test(email)) {
+        closeModal('#survey-ebook');
+        if( $('.email-validation').length ) {
+            $('.email-validation').remove();
+        }
+        toSectionOne();
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            dataType: 'json',
+            data: form.serialize(),
+            success: function(e) {
+                form.trigger("reset");
+            }
+        });
+    } else {
+        if( !$('.email-validation').length ) {
+            $("#ebook-survey-form #email").after("<span class='validation email-validation error'>Vul a.u.b. een geldig emailadres in</span>");
+        }
+    }
+}
+
+// USE CASES
+
+var keywords = {
+    // intermediair
+    "caoontrafelaar": {
+        "modalname": "caoontrafelaar",
+        "modaltitle": "Use case – CAO ontrafeling"
+    },
+}
+
+function loadUseCases() {
+    if(window.location.pathname == "/use-cases" && window.location.hash.length > 0) {
+        // If page is use cases and has query, scroll down to right element
+        var el = "#usecase-" + window.location.hash.substring(1);
+        setTimeout(menuScroll(el), 1500);
+    }
+}
+
+function openKeyword(item) {
+    var url = "./public/js/ucmodals/" + item + ".html";
+    $("#keyword-modal .modal-title").html(keywords[item].modaltitle);
+    $("#keyword-modal .modal-body").load(url);
+    $("#keyword-modal").fadeIn();
 }

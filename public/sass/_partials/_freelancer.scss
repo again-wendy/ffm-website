@@ -31,6 +31,10 @@
             }
         }
     }
+    @media(max-width: 600px) {
+        height: auto;
+        padding: 15px 0;
+    }
 }
 
 #try {

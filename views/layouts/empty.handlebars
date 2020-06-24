@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./public/css/unslider.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
     <!-- FONT AWESOME -->
-    <script defer src="./public/js/fontawesome-all.min.js"></script>
+    <script src="https://kit.fontawesome.com/1673f52757.js"></script>
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="./public/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/favicons/favicon-32x32.png">
@@ -37,14 +37,20 @@
     <meta name="twitter:image:src" content="{{ img }}">
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="{{ title }}">
+    <meta name="title" property="og:title" content="{{title}}">
     <meta name="og:description" content="{{ desc }}">
+    <meta name="description" property="og:description" content="{{desc}}">
     <meta name="og:image" content="{{ img }}">
-    <meta name="og:url" content="http://flexforcemonkey.com">
+    <meta name="image" property="og:image" content="{{img}}">
+    <meta name="og:url" content="{{url}}">
     <meta name="og:site_name" content="{{ title }}">
     <meta name="fb:admins" content="184172875337875">
-    <meta name="og:type" content="website">
+    <meta name="og:type" content="Website">
+    <meta property="og:type" content="Website">
     <!-- reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="_OuHsJbhhFnUr_SfnG-DXw8tP9TbMrh0EO4xTXX9ZYk" />
     <!-- COOKIE CONSENT -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -65,9 +71,9 @@
             theme: "edgeless",
             position: "bottom-left",
             content: {
-                message: "{{ translation.cookie.BANNER_TEXT }}",
-                dismiss: "{{ translation.cookie.DISMISS }}",
-                link: "{{ translation.cookie.LEARN_MORE }}"
+                message: "Deze website gebruikt van cookies om te zorgen dat jij een optimale ervaring hebt.",
+                dismiss: "Oké!",
+                link: "Lees meer"
             },
             onPopupOpen: function() {
                 document.getElementById("cookie").style.display = "block";
@@ -89,12 +95,12 @@
             <span class="fa fa-envelope"></span>
         </div>
         <div class="header-container">
-            <div class="header">{{ translation.newsletter.SUBSCRIBE_OUR }}</div>
+            <div class="header">FlexForceMonkey nieuwsbrief</div>
             <a onclick="closeNewsletterBlock()" class="close">&times;</a>
         </div>
         <div class="content-container">
-            <p>{{ translation.newsletter.OPENS_NEW_TAB }}</p>
-            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">{{ translation.newsletter.OPEN }}</a>
+            <p>Op de hoogte blijven? Schrijf je nu in voor onze nieuwsbrief!</p>
+            <a href="http://eepurl.com/dsFN71" target="_blank" class="btn-complementary">Ga naar het formulier</a>
         </div>
     </div>
 
@@ -121,5 +127,27 @@
 
     <!-- HubSpot -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5244833.js"></script>
+    <!-- Online succes -->
+    <script type="text/javascript">
+    var image = document.createElement("img");
+    image.src ='//tr2.onlinesucces.nl/?i=e886d26e290de4264ad8b5eadeba57d71cd16820&ts='+new Date().getTime()+'&f='+encodeURIComponent(document.location.href)+'&r='+encodeURIComponent(document.referrer)+'&t='+encodeURIComponent(document.title);
+    </script>
+    <script type="text/javascript" id="myformscript" async data-api="e886d26e290de4264ad8b5eadeba57d71cd16820" data-client="3414"></script>
+    <script type="text/javascript" src="https://cdn.onlinesucces.nl/js/efc/efc.js"></script>
+    <!-- Linkedin -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "1469657";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})();
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1469657&fmt=gif" />
+    </noscript>
 </body>
 </html>

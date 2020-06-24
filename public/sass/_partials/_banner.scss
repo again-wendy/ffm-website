@@ -45,3 +45,106 @@
 .banner-hirer {
     background-image: url('../images/jungle.jpg');
 }
+
+.banner-usecases {
+    background-image: url("../images/jungle/jungle1.jpg");
+    .banner-container {
+        color: white;
+        text-decoration: none;
+        display: block;
+        .banner-title {
+            font-size: 3rem;
+        }
+        a {
+            margin-top: 15px;
+        }
+        @media(max-width: 768px) {
+            padding: 15px 0;
+            .banner-title {
+                font-size: 2.2rem;
+            }
+            a {
+                margin-top: 0px;
+                padding: 10px 12px;
+            }
+        }
+        @media(max-width: 560px) {
+            .banner-title {
+                font-size: 1.8rem;
+                font-family: $font-bold;
+            }
+            a {
+                padding: 8px;
+            }
+        }
+    }
+    @media(max-width: 560px) {
+        height: 200px;
+    }
+
+    @media(max-width: 380px) {
+        height: 220px;
+        padding: 15px;
+        .banner-container {
+            a {
+                font-size: 1.05rem;
+            }
+        }
+    }
+}
+
+.banner.banner-ebook {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+        url("../images/desert.jpg") no-repeat 50% 70%;
+    @media(max-width: 768px) {
+        height: 240px;
+        .banner-container {
+            .banner-title {
+                font-size: 2.2rem;
+                font-family: $font-bold;
+            }
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+    .banner-container {
+        .banner-title {
+            font-size: 2.8rem;
+        }
+        p {
+            color: white;
+            font-family: $font-bold;
+            font-size: 1.8rem;
+        }
+        a {
+            margin-top: 15px;
+        }
+        @media(max-width: 1093px) {
+            .banner-title {
+                font-size: 2.5rem;;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+        }
+        @media(max-width: 945px) {
+            p {
+                margin: 15px 0;
+            }
+            a {
+                margin-top: 0;
+            }
+        }
+        @media(max-width: 520px) {
+            padding: 0;
+            .banner-title {
+                font-size: 1.4rem;;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
