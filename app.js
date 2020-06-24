@@ -694,10 +694,6 @@ app.post('/signup', (req, res) => {
 //     });
 // });
 
-// app.get("/.well-known/pki-challenge/*", (req, res) => {
-
-// });
-
 // Fallback for wrong urls
 app.get('*', (req, res) => {
     res.render('404', {
