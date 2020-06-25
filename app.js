@@ -197,7 +197,7 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-app.get('/inlener', (req, res) => { 
+app.get('/opdrachtgever', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBblogs = JSON.parse(blogRes);
@@ -269,10 +269,13 @@ app.get('/inlener', (req, res) => {
 });
 
 app.get('/integration-services', (req, res) => {
-    res.redirect('/inlener');
+    res.redirect('/opdrachtgever');
 });
 app.get('/hirer', (req, res) => {
-    res.redirect('/inlener');
+    res.redirect('/opdrachtgever');
+});
+app.get('/inlener', (req, res) => {
+    res.redirect('/opdrachtgever');
 });
 app.get('/selfservice-subscribe', (req, res) => {
     let sub;
@@ -291,7 +294,7 @@ app.get('/selfservice-subscribe', (req, res) => {
         sub: sub
     });
 });
-app.get('/uitzender', (req, res) => { 
+app.get('/leverancier', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBblogs = JSON.parse(blogRes);
@@ -350,13 +353,16 @@ app.get('/uitzender', (req, res) => {
         });    
 });
 app.get('/cao-ontrafelaar', (req, res) => {
-    res.redirect('/uitzender');
+    res.redirect('/leverancier');
 });
 app.get('/supplier', (req, res) => {
-    res.redirect('/uitzender');
+    res.redirect('/leverancier');
 });
 app.get('/cla-engine', (req, res) => {
-    res.redirect('/uitzender');
+    res.redirect('/leverancier');
+});
+app.get('/uitzender', (req, res) => {
+    res.redirect('/leverancier');
 });
 app.get('/mkb', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')

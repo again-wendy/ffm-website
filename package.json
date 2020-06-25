@@ -1,7 +1,7 @@
 {
   "name": "ffm-website",
   "version": "1.0.0",
-  "description": "Code for the new 2018 FFM website",
+  "description": "Code for the new 2020 FFM website",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
