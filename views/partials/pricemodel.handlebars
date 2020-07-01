@@ -1,133 +1,158 @@
-<section id="pricemodel" class="full-screen">
+<section id="subscribe-ffm">
     <div class="container">
-        <h2 class="section-title">Online tijdregistratie en facturatie software</h2>
+        <h2 class="section-title">Online platform voor leveranciers- en klantintegratie</h2>
         <div class="section-container">
-            <div class="subscriptions">
-                {{#if subs}}
-                    {{#each subs}}
-                        <div class="column">
-                            <div class="extra">
-                                <div class="inner">
-                                    <h4 class="title">{{subscriptionTypeText}}</h4>
-                                    <div class="content">
-                                        <ul>
-                                            {{#iff maximumWeeklyTimesheets '>' 0}}
-                                                <li>Tot {{maximumWeeklyTimesheets}} timesheets per week</li>
-                                            {{/iff}}
-                                            {{#iff maximumWeeklyTimesheets '==' null}}
-                                                <li>Unlimited timesheets per week</li>
-                                            {{/iff}}
-
-                                            <li>Verstuur facturen op basis van timesheets per week of maand</li>
-                                            <li>Je kunt unlimited klanten uitnodigen als goedkeurder</li>
-                                            
-                                            {{#iff maximumTimeUsers '>' 0}}
-                                                <li>Tot {{maximumTimeUsers}} additionele tijdschrijf-users naast admin</li>
-                                            {{/iff}}
-                                            {{#iff maximumTimeUsers '==' null}}
-                                                <li>Unlimited additionele tijdschrijf-users naast admin</li>
-                                            {{/iff}}
-                                            
-                                            {{#if editableInvoiceDesign}}
-                                                <li>Aanpasbare look &amp; feel factuur</li>
-                                            {{/if}}
-                                            
-                                            <li>Unlimited support desk</li>
-
-                                            {{#iff discountPercentage '>' 0}}
-                                                {{#iff subscriptionType '!=' 4}}
-                                                    <li>{{ discountPercentage }}% korting wanneer je jaarlijks betaald</li>
-                                                {{/iff}}
-                                            {{/iff}}
-
-                                            {{#iff trialInNumberOfDays '>' 0}}
-                                                <li>{{ trialInNumberOfDays }} dagen trial periode</li>
-                                            {{/iff}}
-
-                                            {{#iff maximumTimeUsers '==' 0}}
-                                                <li>Single user</li>
-                                            {{/iff}}
-                                        </ul>
-                                        <ul class="list-style-none">
-                                            {{#iff monthlyFee '!=' null}}
-                                                {{#iff subscriptionType '==' '1'}}
-                                                    <li class="bold">&euro;2,50 per time user per maand</li>
-                                                    <li class="bold">&euro;23,88 per time user per jaar</li>
-                                                {{/iff}}
-                                                {{#iff subscriptionType '!=' '1'}}
-                                                    <li class="bold">&euro;{{ monthlyFee }} per maand</li>
-                                                    <li class="bold">&euro;{{ annualFee }} per jaar</li>
-                                                {{/iff}}
-                                            {{/iff}}
-                                            {{#iff monthlyFee '==' null}}
-                                                <li class="bold">Vraag offerte</li>
-                                            {{/iff}}
-                                        </ul>
-                                    </div>
-                                    <div class="buttons">
-                                        <button class="btn-secondary close-info">Sluit</button>
-                                        <button class="btn-primary choose">Registreer</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="base">
-                                <h3>{{ subscriptionTypeText}}</h3>
-                                <div class="inner">
-                                    <p class="bold">
-                                        {{#iff subscriptionType '==' 0}}
-                                            De ideale tijd registratie app voor Freelance professionals. Klanten uitnodigen, uren boeken en factureren na goedkeuring.
-                                        {{/iff}}
-                                        {{#iff subscriptionType '==' 1}}
-                                            De enige app die tijdregistratie met klantgoedkeuring voor al je medewerkers als de standaard ziet. Opschalen en controle houden was niet eerder zo eenvoudig.
-                                        {{/iff}}
-                                        {{#iff subscriptionType '==' 2}}
-                                            Geschikt voor MKB bedrijven met verschillende niveaus van activiteit
-                                        {{/iff}}
-                                        {{#iff subscriptionType '==' 3}}
-                                            Geschikt voor MKB bedrijven met verschillende niveaus van activiteit
-                                        {{/iff}}
-                                        {{#iff subscriptionType '==' 4}}
-                                            Oneindig opschalen? Ga met ons in gesprek over een concurrerende abonnementsvorm of combinatie met onze klant-integratiedienst
-                                        {{/iff}}
-                                    </p>
-                                    {{#iff monthlyFee '!=' null}}
-                                        <p class="price-rule">
-                                            {{#iff subscriptionType '==' 0}}
-                                                <span class="price">Gratis</span>
-                                            {{/iff}}
-                                            {{#iff subscriptionType '==' 1}}
-                                                <span class="price">&euro;1,99*</span> /time user
-                                            {{/iff}}
-                                        </p>
-                                    {{/iff}}
-                                    {{#iff monthlyFee '==' null}}
-                                        <p class="price-rule one">
-                                            Vraag offerte
-                                        </p>
-                                    {{/iff}}
-                                    <div class="other-prices">
-                                        {{#iff annualFee '!=' null}}
-                                        {{#iff subscriptionType '!=' 0}}
-                                            {{!-- <p class="year">{{ ../translation.subs.OR }} &euro;{{ annualFee }} {{ ../translation.subs.FORAYEAR }}</p> --}}
-                                            <p class="year">of &euro;2,50 per time user per maand</p>
-                                        {{/iff}}
-                                        {{/iff}}
-                                    </div>
-                                    <div class="desc">
-                                        {{#iff subscriptionType '==' 1}}
-                                            <p>*Je betaalt €1,99 voor elke time user wanneer je jaarlijks betaald. Bij een maandelijkse betaling is de prijs 2,50 per time user</p>
-                                        {{/iff}}
-                                    </div>
-                                    <button class="btn-secondary more-info">Meer info</button>
-                                    <button class="btn-primary choose" onclick="openRegisterPage({{ subscriptionType }})">Registreer</button>
-                                </div>
-                            </div>
-                        </div>
-                    {{/each}}
-                {{else}}
-                    <p class="flash flash-error">{{ messages.error }}</p>
-                {{/if}}
-            </div>
+            <table class="table table-bg">
+                <thead>
+                    <tr>
+                        <th width="28%"></th>
+                        <th width="18%">Basic</th>
+                        <th width="18%">One-on-One</th>
+                        <th width="18%">Small tribe</th>
+                        <th width="18%">Unlimited group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Abonnement per maand</th>
+                        <td>Gratis - enkel op uitnodiging</td>
+                        <td>Vanaf &euro; 199,-</td>
+                        <td>Vanaf &euro; 399,-</td>
+                        <td>Op aanvraag</td>
+                    </tr>
+                    <tr>
+                        <th>Online HR data beheren</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Online contractdata beheren</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Online gewerkte uren beheren</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Online facturen beheren</th>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Extra leveranciers of klanten uitnodigen</th>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Standaard integraties</th>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Maatwerk integraties</th>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="far fa-circle yellow"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Datagebruik</th>
+                        <td>Beperkt tot één ketenpartner</td>
+                        <td>Beperkt tot één ketenpartner</td>
+                        <td>Beperkt tot vijf ketenpartners</td>
+                        <td>Onbeperkt</td>
+                    </tr>
+                    <tr>
+                        <th>Afkoop partnerkoppelingen</th>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="fa fa-times red"></span></td>
+                        <td><span class="far fa-circle yellow"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><span class="fa fa-check green"></span> = Standaard</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><span class="fa fa-times red"></span> = Niet beschikbaar</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><span class="far fa-circle yellow"></span> = Optioneel</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Inlener</th>
+                        <th>Intermediair</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">Onbeperkt human resource data</th>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Onbeperkt opdrachtdata</th>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Onbeperkte timesheet data</th>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td>v.a. &euro;0,25 per timesheet</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Onbeperkte factuurdata</th>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-check green"></span></td>
+                        <td><span class="fa fa-check green"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Onboarding</th>
+                    </tr>
+                    <tr>
+                        <td>Gratis</td>
+                        <td>Gratis</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Systeemkoppeling/data mapping</th>
+                    </tr>
+                    <tr>
+                        <td>v.a. &euro;750 per systeem</td>
+                        <td>v.a. &euro;500 per systeem</td>
+                    </tr>
+                    <tr>
+                        <td><a href="./selfservice-subscribe?sub=intbuy" class="btn-complementary">Abonneer</a></td>
+                        <td><a href="./selfservice-subscribe?sub=intsel" class="btn-complementary">Abonneer</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

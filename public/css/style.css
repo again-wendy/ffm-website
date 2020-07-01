@@ -4258,17 +4258,29 @@ form .g-recaptcha > div {
 #subscribe-ffm .table tbody th {
   text-align: left;
 }
+/* line 137, ../sass/_partials/_subscribe.scss */
+#subscribe-ffm .table tbody td .red {
+  color: #902B14;
+}
+/* line 140, ../sass/_partials/_subscribe.scss */
+#subscribe-ffm .table tbody td .green {
+  color: #0fb8ad;
+}
+/* line 143, ../sass/_partials/_subscribe.scss */
+#subscribe-ffm .table tbody td .yellow {
+  color: #ffcf00;
+}
 @media (max-width: 500px) {
-  /* line 139, ../sass/_partials/_subscribe.scss */
+  /* line 150, ../sass/_partials/_subscribe.scss */
   #subscribe-ffm .table.table-bg {
     display: none;
   }
-  /* line 142, ../sass/_partials/_subscribe.scss */
+  /* line 153, ../sass/_partials/_subscribe.scss */
   #subscribe-ffm .table.table-sm {
     display: table;
   }
 }
-/* line 146, ../sass/_partials/_subscribe.scss */
+/* line 157, ../sass/_partials/_subscribe.scss */
 #subscribe-ffm .cta-btn {
   margin-top: 25px;
 }

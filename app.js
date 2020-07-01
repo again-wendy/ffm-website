@@ -364,42 +364,18 @@ app.get('/cla-engine', (req, res) => {
 app.get('/uitzender', (req, res) => {
     res.redirect('/leverancier');
 });
-app.get('/mkb', (req, res) => { 
+app.get('/invited', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getFeaturedImage(tempBlogs);
-            res.cookie('role', 'online-software').render('onlinesoftware', {
+            res.cookie('role', 'invited').render('invited', {
                 title: "FlexForceMonkey | Online software",
-                desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
+                desc: "Ben je uitgenodigd om een account aan te maken op FlexForceMonkey? Join the collaborative flex experience",
                 img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/online-software",
+                url: "http:flexforcemonkey.com/invited",
                 blogs: blogs
             });
-            // promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-            //     .then((subRes) => {
-            //         var tempSubs = JSON.parse(subRes);
-            //         var subs = setSubType(tempSubs);
-            //         res.cookie('role', 'online-software').render('onlinesoftware', {
-            //             title: "FlexForceMonkey | Online software",
-            //             desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
-            //             img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-            //             url: "http:flexforcemonkey.com/online-software",
-            //             blogs: blogs,
-            //             subs: subs
-            //         });
-            //     })
-            //     .catch(() => {
-            //         req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-            //         res.cookie('role', 'online-software').render('onlinesoftware', {
-            //             title: "FlexForceMonkey | Online software",
-            //             desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
-            //             img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-            //             url: "http:flexforcemonkey.com/online-software",
-            //             blogs: blogs,
-            //             subs: null
-            //         });
-            //     });
         })
         .catch(() => {
             req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
@@ -429,13 +405,15 @@ app.get('/mkb', (req, res) => {
         });  
 });
 app.get('/online-software', (req, res) => {
-    res.redirect('/mkb');
+    res.redirect('/invited');
 });
 
 app.get('/freelancer', (req, res) => {
-    res.redirect('/mkb');
+    res.redirect('/invited');
 });
-
+app.get('/mkb', (req, res) => {
+    res.redirect('/invited')
+})
 app.get('/ebook', (req, res) => {
     res.render('ebookpage', {
         title: "eBook | Ontvlooien van inkoopsystemen en uitzendprocessen",
