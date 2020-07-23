@@ -24,22 +24,6 @@ const redirectHttp              = require('express-http-to-https');
 const app = express();
 const sessionStore = new session.MemoryStore;
 
-// Setup Firebase
-//https://console.firebase.google.com/project/ffm-website/overview
-// var config = {
-//     apiKey: process.env.FB_API_KEY,
-//     authDomain: process.env.FB_AUTH_DOMAIN,
-//     databaseURL: process.env.FB_DATABASE_URL,
-//     storageBucket: process.env.FB_PROCESS_BUCKET,
-//     messagingSenderId: process.env.FB_MESSAGING_SENDER_ID
-// }
-// firebase.initializeApp(config);
-// const db = firebase.database();
-// app.use((req, res, next) => {
-//     req.db = db;
-//     next();
-// });
-
 // View engine setup
 var hbs = exphbs.create({
     defaultLayout: 'main',
@@ -206,7 +190,7 @@ app.get('/opdrachtgever', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'integration-services').render('hirer', {
+                    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -221,7 +205,7 @@ app.get('/opdrachtgever', (req, res) => {
                     } else {
                         req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
                     }
-                    res.cookie('role', 'integration-services').render('hirer', {
+                    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
                         title: "FlexForceMonkey | Integration services",
                         desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -241,7 +225,7 @@ app.get('/opdrachtgever', (req, res) => {
             .then((subRes) => {
                 var tempSubs = JSON.parse(subRes);
                 var subs = setSubType(tempSubs);
-                res.cookie('role', 'integration-services').render('hirer', {
+                res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                     img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -256,7 +240,7 @@ app.get('/opdrachtgever', (req, res) => {
                 } else {
                     req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
                 }
-                res.cookie('role', 'integration-services').render('hirer', {
+                res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
                     title: "FlexForceMonkey | Integration services",
                     desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
                     img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -277,23 +261,7 @@ app.get('/hirer', (req, res) => {
 app.get('/inlener', (req, res) => {
     res.redirect('/opdrachtgever');
 });
-app.get('/selfservice-subscribe', (req, res) => {
-    let sub;
-    if(req.query.sub == 'intbuy' || req.query.sub == 'intsel' || req.query.sub == 'clabuy' || req.query.sub == 'clasel' || req.query.sub == 'selclaint') {
-        sub = req.query.sub;
-    } else {
-        sub = 'intbuy';
-    }
-    res.render('subscribe', {
-        title: "FlexForceMonkey | Subscribe",
-        desc: "Subscribe to FlexForceMonkey",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com/selfservice-subscribe",
-        year: new Date().getFullYear(),
-        layout: 'empty.handlebars',
-        sub: sub
-    });
-});
+
 app.get('/leverancier', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
@@ -303,7 +271,7 @@ app.get('/leverancier', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'cla-engine').render('supplier', {
+                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -314,7 +282,7 @@ app.get('/leverancier', (req, res) => {
                 })
                 .catch(() => {
                     req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'cla-engine').render('supplier', {
+                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "./public/images/og-img/flexforcemonkey.jpg",
@@ -330,7 +298,7 @@ app.get('/leverancier', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'cla-engine').render('supplier', {
+                    res.cookie('role', 'leverancer', { sameSite: true }).render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -341,7 +309,7 @@ app.get('/leverancier', (req, res) => {
                 })
                 .catch(() => {
                     req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'cla-engine').render('supplier', {
+                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
                         title: "FlexForceMonkey | Cao ontrafelaar",
                         desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -369,7 +337,7 @@ app.get('/invited', (req, res) => {
         .then((blogRes) => {
             var tempBlogs = JSON.parse(blogRes);
             var blogs = getFeaturedImage(tempBlogs);
-            res.cookie('role', 'invited').render('invited', {
+            res.cookie('role', 'invited', { sameSite: true }).render('invited', {
                 title: "FlexForceMonkey | Online software",
                 desc: "Ben je uitgenodigd om een account aan te maken op FlexForceMonkey? Join the collaborative flex experience",
                 img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -383,7 +351,7 @@ app.get('/invited', (req, res) => {
                 .then((subRes) => {
                     var tempSubs = JSON.parse(subRes);
                     var subs = setSubType(tempSubs);
-                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                    res.cookie('role', 'invited', { sameSite: true }).render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -393,7 +361,7 @@ app.get('/invited', (req, res) => {
                     });
                 })
                 .catch(() => {
-                    res.cookie('role', 'online-software').render('onlinesoftware', {
+                    res.cookie('role', 'invited', { sameSite: true }).render('onlinesoftware', {
                         title: "FlexForceMonkey | Online software",
                         desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
                         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
