@@ -1,3 +1,52 @@
+#new-pricemodel {
+    .table {
+        &.table-sm {
+            display: none;
+            tr th, tr td {
+                text-align: center;
+            }
+        }
+        thead tr th {
+            text-align: center;
+        }
+        tbody {
+            th {
+                text-align: left;
+            }
+            td {
+                text-align: center;
+                .red {
+                    color: $warning;
+                }
+                .green {
+                    color: $success; 
+                }
+                .yellow {
+                    color: $complementary;
+                }
+                &.big {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+            .small {
+                font-size: 14px;
+            }
+        }
+    }
+    @media(max-width: 600px) {
+        .table.table-bg {
+            display: none;
+        }
+        .table.table-sm {
+            display: table;
+        }
+    }
+    .cta-btn {
+        margin-top: 25px;
+    }
+}
+
 #pricemodel {
     background: white;
     background: url('../images/subscription-background.jpg') no-repeat;
