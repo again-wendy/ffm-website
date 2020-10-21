@@ -8,18 +8,20 @@ const exphbs                    = require('express-handlebars');
 const {check, validationResult} = require('express-validator/check');
 const {sanitizeBody}            = require('express-validator/filter');
 const path                      = require('path');
-const nodemailer                = require('nodemailer');
+//const nodemailer                = require('nodemailer');
 const i18n                      = require('i18n-express');
 const superagent                = require('superagent');
 const request                   = require('request');
 const promRequest               = require('request-promise');
 const emails                    = require('./emails');
+const ebookFile                 = require('./ebook-base64');
 const http                      = require('http');
 const https                     = require('https');
 const uri                       = require('url');
 const fs                        = require('fs');
 const mime                      = require('mime');
 const redirectHttp              = require('express-http-to-https');
+const sgMail                    = require('@sendgrid/mail');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -98,18 +100,19 @@ app.use(session({
 app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 // Settings for mail
-const transporter = nodemailer.createTransport({
-    host: "smtp.sendgrid.net",
-    secure: false,
-    port: 25,
-    auth: {
-        user: process.env.SENDGRID_USER,
-        pass: process.env.SENDGRID_PASS
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+sgMail.setApiKey(process.env.SENDGRID_API_NEW_KEY);
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.sendgrid.net",
+//     secure: false,
+//     port: 25,
+//     auth: {
+//         user: process.env.SENDGRID_USER,
+//         pass: process.env.SENDGRID_PASS
+//     },
+//     tls: {
+//         rejectUnauthorized: false
+//     }
+// });
 
 // Flash Middleware
 app.use(flash());
@@ -533,14 +536,14 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check
 
     let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact, req.body.sub);
     
-    let HelperOptions = {
-        from: '"Aanvraag" <noreply@flexforcemonkey.com>',
+    const msg = {
         to: 'doede@flexforcemonkey.com',
-        //to: 'wendy.dimmendaal@again.nl',
+        //to: 'wendy@flexforcemonkey.com',
+        from: '"Aanvraag" <noreply@flexforcemonkey.com>',
         subject: 'Aanvraag voor aansluiting',
         text: 'Test 123',
         html: output
-    };
+    }
 
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
@@ -553,15 +556,15 @@ app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check
                 req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
                 res.redirect(req.get('referer'));
             } else {
-                transporter.sendMail(HelperOptions, (errorMail, info) => {
-                    if(errorMail) {
-                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
+                sgMail.send(msg)
+                    .then(() => {
+                        req.flash('success', 'Je aanvraag is verstuurd!');
                         res.redirect(req.get('referer'));
-                    } else {
-                        req.flash('success', 'Je aanvraag is verstuurd!')
+                    })
+                    .catch((error) => {
+                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error);
                         res.redirect(req.get('referer'));
-                    }
-                });
+                    })
                 sendMailUser(req.body.email, req.cookies.ulang);
             }
         });
@@ -586,7 +589,11 @@ app.post('/download-ebook', (req, res) => {
         html: output,
         attachments: [
             {
-                path: pathBook
+                content: ebookFile.ebook,
+                filename: "ebook-uitzenden-aansluiten-op-p2p.pdf",
+                type: 'application/pdf',
+                disposition: 'attachment',
+                contentId: 'FFMEbook'
             }
         ]
     }
@@ -594,19 +601,23 @@ app.post('/download-ebook', (req, res) => {
     request(recaptcha_url, function(error, resp, body) {
         body = JSON.parse(body);
         if(body.success !== undefined && !body.success) {
+            console.log("iets mis gegaan met recaptcha")
             res.redirect(req.get('referer'));
             req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
         } else {
-            transporter.sendMail(HelperOptions, (errorMail, info) => {
-                if(errorMail) {
-                    req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + errorMail)
-                    res.redirect(req.get('referer'));
-                } else {
+            sgMail.send(HelperOptions)
+                .then(() => {
+                    console.log("Mail is verstuurd")
                     req.flash('success', 'Je aanvraag is verstuurd!');
                     sendConfirmMail(req.body);
                     res.redirect(req.get('referer'));
-                }
-            });
+                })
+                .catch((error) => {
+                    console.log("Mail is niet verstuurd");
+                    console.log(error);
+                    req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error);
+                    res.redirect(req.get('referer'));
+                })
         }
    });
 });
@@ -658,7 +669,7 @@ app.get('*', (req, res) => {
 
 var port = process.env.port || 3000;
 app.listen(port, () => {
-    console.log('Server started on  http://localhost:' + port);
+    console.log('Server started on http://localhost:' + port);
 });
 
 const sendConfirmMail = (body) => {
@@ -673,14 +684,13 @@ const sendConfirmMail = (body) => {
         <br />
     `;
     let HelperOptions = {
-        from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
         to: "doede@flexforcemonkey.com",
-        //to: "wendy.dimmendaal@again.nl",
+        //to: "wendy@flexforcemonkey.com",
+        from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
         subject: "Ebook download",
-        text: "",
         html: output
     }
-    transporter.sendMail(HelperOptions);
+    sgMail.send(HelperOptions);
 }
 
 const getFeaturedImage = (arr) => {
@@ -769,5 +779,6 @@ const sendMailUser = (email, lang) => {
         }
     }
 
-    transporter.sendMail(options);
+    //transporter.sendMail(options);
+    sgMail.send(options)
 }
