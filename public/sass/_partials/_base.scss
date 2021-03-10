@@ -7,8 +7,8 @@ body, html {
 }
 
 body {
-    font-family: $font-normal;
-    font-size: 16px;
+    font-family: $font-family;
+    font-size: 15px;
     color: $dark-grey;
     @media(max-width: 550px) {
         font-size: 18px;
@@ -20,16 +20,16 @@ img {
 }
 
 strong {
-    font-family: $font-bold;
+    font-weight: bold;
 }
 
 .bold {
     color: $primary;
-    font-family: $font-bold;
+    font-weight: bold;
 }
 
 .boldblack {
-    font-family: $font-bold;
+    font-weight: bold;
 }
 
 .flash-success {
@@ -72,33 +72,33 @@ strong {
 }
 
 h1 {
-    font-family: $font-xbold;
+    font-weight: bold;
     font-size: 3rem;
 }
 h2 {
-    font-family: $font-xbold;
+    font-weight: bold;
     font-size: 2.5rem;
 }
 h3 {
-    font-family: $font-xbold;
+    font-weight: bold;
     font-size: 2rem;
 }
 h4 {
-    font-family: $font-bold;
+    font-weight: bold;
     font-size: 2rem;
 }
 h5 {
-    font-family: $font-bold;
+    font-weight: bold;
     font-size: 1.8rem;
 }
 h6 {
-    font-family: $font-bold;
+    font-weight: bold;
     font-size: 1.5rem;
 }
 
 a, a:visited {
     color: $primary;
-    font-family: $font-bold;
+    font-weight: bold;
 }
 
 a:hover, a:focus, a:active {
@@ -124,7 +124,7 @@ a.link-sec:hover, a.link-sec:focus, a.link-sec:active {
 }
 
 label {
-    font-family: $font-bold;
+    font-weight: bold;
 }
 
 input, textarea {
@@ -139,7 +139,7 @@ input, textarea {
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 1.1rem;
-    font-family: $font-bold;
+    font-weight: bold;
     line-height: 1.42857143;
     text-align: center;
     @include prefix(white-space, normal, moz o);

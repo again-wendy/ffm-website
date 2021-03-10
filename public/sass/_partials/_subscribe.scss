@@ -30,7 +30,7 @@
                 .panel-title {
                     color: $dark-grey;
                     font-size: 16px;
-                    font-family: $font-bold;
+                    font-weight: bold;
                     padding: 0;
                 }
             }
@@ -51,7 +51,6 @@
                                 width: 100%;
                                 margin-bottom: 5px;
                                 padding-top: 0;
-                                font-family: $font-normal;
                                 font-weight: bold;
                             }
                             input, select {
@@ -83,7 +82,7 @@
                         }
                         h5 {
                             margin: 5px 0 20px 0;
-                            font-family: $font-bold;
+                            font-weight: bold;
                             width: 60%;
                             float: left;
                             font-size: 1.2rem;

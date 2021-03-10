@@ -168,7 +168,7 @@
                     margin: 0;
                     padding: 10px 0;
                     font-size: 2rem;
-                    font-family: $font-bold;
+                    font-weight: bold;
                     @media(max-width: 1335px) {
                         font-size: 1.8rem;
                     }
@@ -186,7 +186,7 @@
                         color: $dark-grey;
                     }
                     .price-rule {
-                        font-family: $font-xbold;
+                        font-weight: bold;
                         font-size: 1.8rem;
                         padding: 20px 0 8px 0;
                         @media(max-width:1255px) {
@@ -223,7 +223,7 @@
                     }
                     .other-prices {
                         height: 110px;
-                        font-family: $font-bold;
+                        font-weight: bold;
                     }
                     .desc {
                         min-height: 86px;
@@ -263,7 +263,7 @@
             padding: 20px;
             margin: 0 auto;
             background: rgba(255,255,255,0.7);
-            font-family: $font-bold;
+            font-weight: bold;
         }
     }
 }

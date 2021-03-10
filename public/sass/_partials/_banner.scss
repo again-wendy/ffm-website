@@ -71,7 +71,7 @@
         @media(max-width: 560px) {
             .banner-title {
                 font-size: 1.8rem;
-                font-family: $font-bold;
+                font-weight: bold;
             }
             a {
                 padding: 8px;
@@ -102,7 +102,7 @@
         .banner-container {
             .banner-title {
                 font-size: 2.2rem;
-                font-family: $font-bold;
+                font-weight: bold;
             }
             p {
                 font-size: 1.3rem;
@@ -115,7 +115,7 @@
         }
         p {
             color: white;
-            font-family: $font-bold;
+            font-weight: bold;
             font-size: 1.8rem;
         }
         a {
@@ -144,6 +144,28 @@
             }
             p {
                 font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+.banner.banner-whitepaper {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+        url("../images/desert.jpg") no-repeat 50% 70%;
+    height: 360px;
+    .banner-container {
+        p {
+            text-align: left;
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 500;
+            &.accent {
+                text-align: right;
+                margin: 5px 0 10px 0;
+                position: relative;
+                font-size: 1.8rem;
             }
         }
     }

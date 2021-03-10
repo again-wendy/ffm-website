@@ -101,42 +101,9 @@ app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 // Settings for mail
 sgMail.setApiKey(process.env.SENDGRID_API_NEW_KEY);
-// const transporter = nodemailer.createTransport({
-//     host: "smtp.sendgrid.net",
-//     secure: false,
-//     port: 25,
-//     auth: {
-//         user: process.env.SENDGRID_USER,
-//         pass: process.env.SENDGRID_PASS
-//     },
-//     tls: {
-//         rejectUnauthorized: false
-//     }
-// });
 
 // Flash Middleware
 app.use(flash());
-
-
-// redirect to https
-//var ignoreHosts = [/localhost:3000/]
-//app.use(redirectHttp.redirectToHTTPS(ignoreHosts));
-
-// app.use((req, res, next) => {
-//     var host = req.header("host");
-//     if(req.hostname === "localhost" || req.secure && host.match(/^www\..*/i)) {
-//         next();
-//     } else {
-//         res.redirect(301, "https://" + host);
-//     }
-// })
-// app.get('/testhome', (req, res) => {
-//     res.render('temphome', {
-//         title: "FlexForceMonkey | Business network for Flex",
-//         desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
-//         img: "./public/images/screenshot.jpg"
-//     })
-// });
 
 app.get('/', (req, res) => {
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
@@ -167,6 +134,37 @@ app.get('/', (req, res) => {
         });    
 });
 
+app.get('/en', (req, res) => {
+    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
+        .then((blogRes) => {
+            var tempBlogs = JSON.parse(blogRes);
+            var blogs = getFeaturedImage(tempBlogs);
+            res.render('english-home', {
+                title: "FlexForceMonkey | Business network for Flex",
+                desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com",
+                blogposts: blogs,
+                layout: 'empty'
+            });
+        })
+        .catch(() => {
+            if(req.cookies.ulang == "nl") {
+                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
+            } else {
+                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
+            }
+            res.render('english-home', {
+                title: "FlexForceMonkey | Business network for Flex",
+                desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com",
+                blogs: null,
+                layout: 'main-en'
+            });
+        });    
+});
+
 app.get('/partners', (req, res) => {
     res.render('partners', {
         title: "FlexForceMonkey | Partners",
@@ -187,36 +185,15 @@ app.get('/blogs', (req, res) => {
 app.get('/opdrachtgever', (req, res) => { 
     promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
         .then((blogRes) => {
-            var tempBblogs = JSON.parse(blogRes);
+            var tempBlogs = JSON.parse(blogRes);
             var blogs = getFeaturedImage(tempBlogs);
-            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-                .then((subRes) => {
-                    var tempSubs = JSON.parse(subRes);
-                    var subs = setSubType(tempSubs);
-                    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
-                        title: "FlexForceMonkey | Integration services",
-                        desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/integration-services",
-                        blogs: blogs,
-                        subs: subs
-                    });
-                })
-                .catch(() => {
-                    if(req.cookies.ulang == "nl") {
-                        req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    } else {
-                        req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-                    }
-                    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
-                        title: "FlexForceMonkey | Integration services",
-                        desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/integration-services",
-                        blogs: blogs,
-                        subs: null
-                    });
-                });
+            res.cookie('role', 'opdrachtgever', { sameSite: true }).render('opdrachtgever', {
+                title: "FlexForceMonkey | Integration services",
+                desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com/integration-services",
+                blogs: blogs
+            });
         })
         .catch(() => {
             if(req.cookies.ulang == "nl") {
@@ -224,35 +201,24 @@ app.get('/opdrachtgever', (req, res) => {
             } else {
                 req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
             }
-            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-            .then((subRes) => {
-                var tempSubs = JSON.parse(subRes);
-                var subs = setSubType(tempSubs);
-                res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
-                    title: "FlexForceMonkey | Integration services",
-                    desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                    img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                    url: "http:flexforcemonkey.com/integration-services",
-                    blogs: null,
-                    subs: subs
-                });
-            })
-            .catch(() => {
-                if(req.cookies.ulang == "nl") {
-                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                } else {
-                    req.flash('error', 'Something went wrong retrieving the data. Our apologies.');
-                }
-                res.cookie('role', 'opdrachtgever', { sameSite: true }).render('hirer', {
-                    title: "FlexForceMonkey | Integration services",
-                    desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                    img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                    url: "http:flexforcemonkey.com/integration-services",
-                    blogs: null,
-                    subs: null
-                });
+            res.cookie('role', 'opdrachtgever', { sameSite: true }).render('opdrachtgever', {
+                title: "FlexForceMonkey | Integration services",
+                desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com/integration-services",
+                blogs: null
             });
         });
+});
+
+app.get('/buyer', (req, res) => { 
+    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('buyer', {
+        title: "FlexForceMonkey | Integration services",
+        desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/integration-services",
+        layout: 'main-en'
+    });
 });
 
 app.get('/integration-services', (req, res) => {
@@ -270,63 +236,35 @@ app.get('/leverancier', (req, res) => {
         .then((blogRes) => {
             var tempBblogs = JSON.parse(blogRes);
             var blogs = getFeaturedImage(tempBlogs);
-            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-                .then((subRes) => {
-                    var tempSubs = JSON.parse(subRes);
-                    var subs = setSubType(tempSubs);
-                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
-                        title: "FlexForceMonkey | Cao ontrafelaar",
-                        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
-                        blogs: blogs,
-                        subs: subs
-                    });
-                })
-                .catch(() => {
-                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
-                        title: "FlexForceMonkey | Cao ontrafelaar",
-                        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                        img: "./public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
-                        blogs: blogs,
-                        subs: null
-                    });
-                });
+            res.cookie('role', 'leverancier', { sameSite: true }).render('leverancier', {
+                title: "FlexForceMonkey | Customer connectivity platform",
+                desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com/cla-engine",
+                blogs: blogs
+            });
         })
         .catch(() => {
             req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
-            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-                .then((subRes) => {
-                    var tempSubs = JSON.parse(subRes);
-                    var subs = setSubType(tempSubs);
-                    res.cookie('role', 'leverancer', { sameSite: true }).render('supplier', {
-                        title: "FlexForceMonkey | Cao ontrafelaar",
-                        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
-                        blogs: null,
-                        subs: subs
-                    });
-                })
-                .catch(() => {
-                    req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-                    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
-                        title: "FlexForceMonkey | Cao ontrafelaar",
-                        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/cla-engine",
-                        blogs: null,
-                        subs: null
-                    });
-                });
+            res.cookie('role', 'leverancier', { sameSite: true }).render('leverancier', {
+                title: "FlexForceMonkey | Customer connectivity platform",
+                desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
+                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+                url: "http:flexforcemonkey.com/cla-engine",
+                blogs: null
+            });
         });    
 });
-app.get('/cao-ontrafelaar', (req, res) => {
-    res.redirect('/leverancier');
+app.get('/supplier', (req, res) => { 
+    res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
+        title: "FlexForceMonkey | Customer connectivity platform",
+        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
+        img: "./public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/cla-engine",
+        layout: 'main-en'
+    });
 });
-app.get('/supplier', (req, res) => {
+app.get('/cao-ontrafelaar', (req, res) => {
     res.redirect('/leverancier');
 });
 app.get('/cla-engine', (req, res) => {

@@ -287,5 +287,19 @@
       "ADDEXTSYS": "Connect external system/data mappings",
       "SEEINT": "See integration services"
     }
+  },
+  "pricemodel": {
+    "tieredSubscription": "Tiered subscription",
+    "onlineSharingOfHRData": "Online sharing of HR data",
+    "onlineSharingOfContractData": "Online sharing of contract data",
+    "onlineSharingOfWorkedHours": "Online sharing of worked hours",
+    "onlineSharingOfInvoices": "Online sharing of invoices",
+    "fullServiceSystemIntegration": "Full-service systemintegration with you clients",
+    "customerOnboarding": "Customer onboarding",
+    "claUnraveler": "CLA unraveler",
+    "activeContracts": "# Active contracts",
+    "measuredBy": "(measured by # timesheets on average per week)",
+    "pricePerTimesheet": "Price per timesheet",
+    "dependingOn": "(depending on scale and commitment)"
   }
 }

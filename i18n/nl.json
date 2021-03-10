@@ -285,5 +285,19 @@
       "ADDEXTSYS": "Koppelen extern systeem/data mappings",
       "SEEINT": "Zie integratiediensten"
     }
+  },
+  "pricemodel": {
+    "tieredSubscription": "Gestaffeld abonnement",
+    "onlineSharingOfHRData": "Online delen van HR gegevens",
+    "onlineSharingOfContractData": "Online delen van contractgegevens",
+    "onlineSharingOfWorkedHours": "Online delen van gewerkte uren",
+    "onlineSharingOfInvoices": "Online delen van facturen",
+    "fullServiceSystemIntegration": "Full-service systeemintegratie met je opdrachtgevers",
+    "customerOnboarding": "Customer onboarding",
+    "claUnraveler": "CAO ontrafelaar",
+    "activeContracts": "# Actieve contracten (Gemeten aan # urenbriefjes gemiddeld per week)",
+    "measuredBy": "(Gemeten aan # urenbriefjes gemiddeld per week)",
+    "pricePerTimesheet": "Prijs per urenbriefje (Afhankelijk van staffel en commitment)",
+    "dependingOn": "(Afhankelijk van staffel en commitment)"
   }
 }
