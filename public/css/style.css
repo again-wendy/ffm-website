@@ -724,6 +724,30 @@ input, textarea {
   }
 }
 
+/* line 349, ../sass/_partials/_base.scss */
+#language-popup {
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+}
+/* line 356, ../sass/_partials/_base.scss */
+#language-popup .inner {
+  width: 40vw;
+  background: white;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+/* line 364, ../sass/_partials/_base.scss */
+#language-popup .inner h2 {
+  margin: 5px 0;
+  font-size: 1.8rem;
+}
+
 /* line 1, ../sass/_partials/_table.scss */
 .table {
   width: 100%;

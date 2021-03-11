@@ -22,6 +22,7 @@ const fs                        = require('fs');
 const mime                      = require('mime');
 const redirectHttp              = require('express-http-to-https');
 const sgMail                    = require('@sendgrid/mail');
+const unirest                   = require('unirest');
 
 const app = express();
 const sessionStore = new session.MemoryStore;
@@ -106,11 +107,27 @@ sgMail.setApiKey(process.env.SENDGRID_API_NEW_KEY);
 app.use(flash());
 
 app.get('/', (req, res) => {
-    res.render('home', {
-        title: "FlexForceMonkey | Business network for Flex",
-        desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
-        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-        url: "http:flexforcemonkey.com",
+    var apiCall = unirest("GET", "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/");
+
+    apiCall.headers({
+        "x-rapidapi-key": process.env.X_RAPIDAPI_KEY,
+        "x-rapidapi-host": process.env.X_RAPIDAPI_HOST,
+        "useQueryString": true
+    });
+
+    apiCall.end(function (result) {
+        if (result.error) throw new Error(result.error);
+        var notDutch = true;
+        if(result.body.country_code == "NL" || result.body.country_code == "BE") {
+            notDutch = false;
+        } 
+        res.render('home', {
+            title: "FlexForceMonkey | Business network for Flex",
+            desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
+            img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+            url: "http:flexforcemonkey.com",
+            notDutch: notDutch
+        });
     });    
 });
 
