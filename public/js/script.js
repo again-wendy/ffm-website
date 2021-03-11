@@ -7,6 +7,19 @@ $(document).ready(function() {
     //     $("#language").append('<a onclick="setLang(\'nl\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
     //     Cookies.set("ulang", "en");
     // }
+    var nlPages = ['/', '/opdrachtgever', '/leverancier'];
+    var enPages = ['/en', '/buyer', '/supplier'];
+
+    for(var i = 0; i < nlPages.length; i++) {
+        if(document.location.pathname === nlPages[i]) {
+            $("#language").append('<a onclick="goToLang(\'' + enPages[i] + '\')"><img src="./public/images/en.png" alt="English"></a>');
+        }
+    }
+    for(var j = 0; j < enPages.length; j++) {
+        if(document.location.pathname === enPages[j]) {
+            $("#language").append('<a onclick="goToLang(\'' + nlPages[j] + '\')"><img src="./public/images/nl.png" alt="Nederlands"></a>');
+        }
+    }
 
     // Don't show mobile menu on page load
     if($(window).width() < 769) {
@@ -260,6 +273,11 @@ function setLang($event) {
         var tempUrl = url.substr(0, url.length - 2);
         window.location.href = tempUrl + $event;
     }
+}
+
+function goToLang(url) {
+    var origin = document.location.origin;
+    window.location.href = origin + url; 
 }
 
 // Mobile menu toggle

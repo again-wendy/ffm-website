@@ -2626,23 +2626,24 @@ section.with-base-nav {
 }
 /* line 576, ../sass/_partials/_home.scss */
 #icons .icons .icon-container .icon {
-  border: 5px solid #27B5C6;
+  border: 8px solid #024B67;
   border-radius: 50%;
   overflow: hidden;
-  padding: 20px;
+  padding: 25px;
   margin: 0 5px;
+  background-color: #dbf5f8;
 }
-/* line 582, ../sass/_partials/_home.scss */
+/* line 583, ../sass/_partials/_home.scss */
 #icons .icons .icon-container .icon img {
   max-width: 100%;
 }
-/* line 586, ../sass/_partials/_home.scss */
+/* line 587, ../sass/_partials/_home.scss */
 #icons .icons .icon-container h4 {
   margin: 8px 0 0 0;
   font-size: 1.6rem;
   text-align: center;
 }
-/* line 593, ../sass/_partials/_home.scss */
+/* line 594, ../sass/_partials/_home.scss */
 #icons .sub-title {
   font-size: 2rem;
 }

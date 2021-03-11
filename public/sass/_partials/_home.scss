@@ -574,11 +574,12 @@
         .icon-container {
             flex: 0 1 auto;
             .icon {
-                border: 5px solid $primary;
+                border: 8px solid $secondary;
                 border-radius: 50%;
                 overflow: hidden;
-                padding: 20px;
+                padding: 25px;
                 margin: 0 5px;
+                background-color: lighten($primary, 45%);
                 img {
                     max-width: 100%;
                 }
