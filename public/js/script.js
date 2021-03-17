@@ -38,7 +38,12 @@ $(document).ready(function() {
         });
     }
 
-    getBlogs();
+    // Only get blogs on pages who need them
+    var blogPages = ['/leverancier', '/opdrachtgever', '/invited'];
+    var pathname = window.location.pathname;
+    if(blogPages.find(el => el == pathname) != undefined) {
+        getBlogs();
+    }
 
     $(window).change(function() {
         if($(window).width() < 769) {

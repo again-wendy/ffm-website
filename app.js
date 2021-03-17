@@ -132,7 +132,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/en', (req, res) => {
-    res.render('english-home', {
+    res.render('home-en', {
         title: "FlexForceMonkey | Business network for Flex",
         desc: "Eén platform waar uitzendbureau, inlener, ZZP-er en consulting bedrijf samenwerken aan een efficiënt proces",
         img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
@@ -151,40 +151,20 @@ app.get('/partners', (req, res) => {
 })
 
 app.get('/blogs', (req, res) => {
-    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {
-        var temp = JSON.parse(body);
+    request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {  
+    var temp = JSON.parse(body);
         temp = getFeaturedImage(temp);
         res.send(temp);
     });
 });
 
 app.get('/opdrachtgever', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
-        .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getFeaturedImage(tempBlogs);
-            res.cookie('role', 'opdrachtgever', { sameSite: true }).render('opdrachtgever', {
-                title: "FlexForceMonkey | Integration services",
-                desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/integration-services",
-                blogs: blogs
-            });
-        })
-        .catch(() => {
-            if(req.cookies.ulang == "nl") {
-                req.flash('error', 'Er is iets mis gegaan met het ophalen van de blogs. Onze excuses.');
-            } else {
-                req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
-            }
-            res.cookie('role', 'opdrachtgever', { sameSite: true }).render('opdrachtgever', {
-                title: "FlexForceMonkey | Integration services",
-                desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/integration-services",
-                blogs: null
-            });
-        });
+    res.cookie('role', 'opdrachtgever', { sameSite: true }).render('opdrachtgever', {
+        title: "FlexForceMonkey | Integration services",
+        desc: "Dus jij droomt van een volledig gedigitaliseerde keten? Inkoop- en verkooptransacties verwerken van zowel blue- als white-collar inhuur via één netwerk? Eén platform dat alle data-integratie afhandelt? Dat vinden wij logisch!",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/integration-services",
+    });
 });
 
 app.get('/buyer', (req, res) => { 
@@ -207,30 +187,15 @@ app.get('/inlener', (req, res) => {
     res.redirect('/opdrachtgever');
 });
 
-app.get('/leverancier', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
-        .then((blogRes) => {
-            var tempBblogs = JSON.parse(blogRes);
-            var blogs = getFeaturedImage(tempBlogs);
-            res.cookie('role', 'leverancier', { sameSite: true }).render('leverancier', {
-                title: "FlexForceMonkey | Customer connectivity platform",
-                desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/cla-engine",
-                blogs: blogs
-            });
-        })
-        .catch(() => {
-            req.flash('error', 'Something went wrong retrieving the blogs. Our apologies.');
-            res.cookie('role', 'leverancier', { sameSite: true }).render('leverancier', {
-                title: "FlexForceMonkey | Customer connectivity platform",
-                desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/cla-engine",
-                blogs: null
-            });
-        });    
+app.get('/leverancier', (req, res) => {
+    res.cookie('role', 'leverancier', { sameSite: true }).render('leverancier', {
+        title: "FlexForceMonkey | Customer connectivity platform",
+        desc: "Stop nu met losse spreadsheets en macro’s om alle binnenkomende uren terug te rekenen naar de CAO. Bouw je urenstroom om naar een soepele operatie waarbij je kunt vertrouwen op één gecheckte bron.",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/cla-engine",
+    });   
 });
+
 app.get('/supplier', (req, res) => { 
     res.cookie('role', 'leverancier', { sameSite: true }).render('supplier', {
         title: "FlexForceMonkey | Customer connectivity platform",
@@ -240,6 +205,7 @@ app.get('/supplier', (req, res) => {
         layout: 'main-en'
     });
 });
+
 app.get('/cao-ontrafelaar', (req, res) => {
     res.redirect('/leverancier');
 });
@@ -249,46 +215,16 @@ app.get('/cla-engine', (req, res) => {
 app.get('/uitzender', (req, res) => {
     res.redirect('/leverancier');
 });
+
 app.get('/invited', (req, res) => { 
-    promRequest('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts/?_embed=true&per_page=3')
-        .then((blogRes) => {
-            var tempBlogs = JSON.parse(blogRes);
-            var blogs = getFeaturedImage(tempBlogs);
-            res.cookie('role', 'invited', { sameSite: true }).render('invited', {
-                title: "FlexForceMonkey | Online software",
-                desc: "Ben je uitgenodigd om een account aan te maken op FlexForceMonkey? Join the collaborative flex experience",
-                img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                url: "http:flexforcemonkey.com/invited",
-                blogs: blogs
-            });
-        })
-        .catch(() => {
-            req.flash('error', 'Er is iets mis gegaan met het ophalen van de data. Onze excuses.');
-            promRequest('https://api.flexforcemonkey.com/api/Subscriptions')
-                .then((subRes) => {
-                    var tempSubs = JSON.parse(subRes);
-                    var subs = setSubType(tempSubs);
-                    res.cookie('role', 'invited', { sameSite: true }).render('onlinesoftware', {
-                        title: "FlexForceMonkey | Online software",
-                        desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
-                        blogs: null,
-                        subs: subs
-                    });
-                })
-                .catch(() => {
-                    res.cookie('role', 'invited', { sameSite: true }).render('onlinesoftware', {
-                        title: "FlexForceMonkey | Online software",
-                        desc: "Het draait toch om de kwaliteit van jullie uren? De administratie ervan moet eigenlijk vanzelf gaan.",
-                        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
-                        url: "http:flexforcemonkey.com/online-software",
-                        blogs: null,
-                        subs: null
-                    });
-                });
-        });  
+    res.cookie('role', 'invited', { sameSite: true }).render('invited', {
+        title: "FlexForceMonkey | Online software",
+        desc: "Ben je uitgenodigd om een account aan te maken op FlexForceMonkey? Join the collaborative flex experience",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/invited",
+    }); 
 });
+
 app.get('/online-software', (req, res) => {
     res.redirect('/invited');
 });
@@ -359,48 +295,48 @@ app.get('/feedback', (req,res) => {
 });
 
 // Request selfservice form via integration services
-app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check('avg').equals('on')], (req, res) => {
-    let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
-    recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
-    recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
-    recaptcha_url += "remoteip=" + req.connection.remoteAddress;
+// app.post('/selfservice-subscribe', [check('termsconditions').equals('on'), check('avg').equals('on')], (req, res) => {
+//     let recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
+//     recaptcha_url += "secret=" + process.env.RECAPTCHA_SECRET + "&";
+//     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
+//     recaptcha_url += "remoteip=" + req.connection.remoteAddress;
 
-    let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact, req.body.sub);
+//     let output = emails.buildSelfServiceFFMEmail(req.cookies.ulang, req.body.email, req.body.companyname, req.body.firstname, req.body.lastname, req.body.emailnewsletters, req.body.emailproductupdates, req.body.emailcomcontact, req.body.sub);
     
-    const msg = {
-        to: 'doede@flexforcemonkey.com',
-        //to: 'wendy@flexforcemonkey.com',
-        from: '"Aanvraag" <noreply@flexforcemonkey.com>',
-        subject: 'Aanvraag voor aansluiting',
-        text: 'Test 123',
-        html: output
-    }
+//     const msg = {
+//         to: 'doede@flexforcemonkey.com',
+//         //to: 'wendy@flexforcemonkey.com',
+//         from: '"Aanvraag" <noreply@flexforcemonkey.com>',
+//         subject: 'Aanvraag voor aansluiting',
+//         text: 'Test 123',
+//         html: output
+//     }
 
-    const errors = validationResult(req);
-    if(!errors.isEmpty()) {
-        req.flash('error', 'Je moet de algemene voorwaarden en bepalingen AVG lezen en accepteren voor je verder kunt gaan!')
-        res.redirect(req.get('referer'));
-    } else {
-        request(recaptcha_url, function(error, resp, body) {
-            body = JSON.parse(body);
-            if(body.success !== undefined && !body.success) {
-                req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
-                res.redirect(req.get('referer'));
-            } else {
-                sgMail.send(msg)
-                    .then(() => {
-                        req.flash('success', 'Je aanvraag is verstuurd!');
-                        res.redirect(req.get('referer'));
-                    })
-                    .catch((error) => {
-                        req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error);
-                        res.redirect(req.get('referer'));
-                    })
-                sendMailUser(req.body.email, req.cookies.ulang);
-            }
-        });
-    }
-});
+//     const errors = validationResult(req);
+//     if(!errors.isEmpty()) {
+//         req.flash('error', 'Je moet de algemene voorwaarden en bepalingen AVG lezen en accepteren voor je verder kunt gaan!')
+//         res.redirect(req.get('referer'));
+//     } else {
+//         request(recaptcha_url, function(error, resp, body) {
+//             body = JSON.parse(body);
+//             if(body.success !== undefined && !body.success) {
+//                 req.flash('error', 'Er is iets mis gegaan met de recaptcha: ' + error);
+//                 res.redirect(req.get('referer'));
+//             } else {
+//                 sgMail.send(msg)
+//                     .then(() => {
+//                         req.flash('success', 'Je aanvraag is verstuurd!');
+//                         res.redirect(req.get('referer'));
+//                     })
+//                     .catch((error) => {
+//                         req.flash('error', 'Er is iets mis gegaan met het verzenden van de email: ' + error);
+//                         res.redirect(req.get('referer'));
+//                     })
+//                 sendMailUser(req.body.email, req.cookies.ulang);
+//             }
+//         });
+//     }
+// });
 
 // Request for ebook
 app.post('/download-ebook', (req, res) => {
@@ -454,23 +390,23 @@ app.post('/download-ebook', (req, res) => {
 });
 
 //Add subscriber to Mailchimp list
-app.post('/signup', (req, res) => {
-    superagent
-        .post(process.env.MAILCHIMP_URL + 'lists/' + process.env.MAILCHIMP_LISTID + '/members/')
-        .set('Content-Type', 'application/json;charset=urf-8')
-        .set('Authorization', 'Basic ' + new Buffer('any:' + process.env.MAILCHIMP_APIKEY).toString('base64'))
-        .send({
-            'email_address': req.body.email,
-            'status': 'subscribed'
-        })
-        .end((err, res) => {
-            if(res.status < 300 || (res.status === 400 && res.body.title === "Member Exists")) {
-                req.flash('success', 'Signed up!');
-            } else {
-                req.flash('error', 'Something went wrong');
-            }
-        });
-});
+// app.post('/signup', (req, res) => {
+//     superagent
+//         .post(process.env.MAILCHIMP_URL + 'lists/' + process.env.MAILCHIMP_LISTID + '/members/')
+//         .set('Content-Type', 'application/json;charset=urf-8')
+//         .set('Authorization', 'Basic ' + new Buffer('any:' + process.env.MAILCHIMP_APIKEY).toString('base64'))
+//         .send({
+//             'email_address': req.body.email,
+//             'status': 'subscribed'
+//         })
+//         .end((err, res) => {
+//             if(res.status < 300 || (res.status === 400 && res.body.title === "Member Exists")) {
+//                 req.flash('success', 'Signed up!');
+//             } else {
+//                 req.flash('error', 'Something went wrong');
+//             }
+//         });
+// });
 
 // Fallback for wrong urls
 app.get('*', (req, res) => {
@@ -520,47 +456,30 @@ const getFeaturedImage = (arr) => {
     return arr;
 }
 
-const setSubType = (arr) => {
-    for(var i = 0; i < arr.length; i++) {
-        switch (arr[i].subscriptionType) {
-            case 0: 
-                arr[i].subscriptionTypeText = "Basic";
-                break;
-            case 1: 
-                arr[i].subscriptionTypeText = "MKB";
-                break;
-            case 4: 
-                arr[i].subscriptionTypeText = "Enterprise";
-                break;
-        }
-    }
-    arr.splice(2,2);
-    return arr;
-}
 
-const sendMailUser = (email, lang) => {
-    let options;
-    if(lang == "nl") {
-        let outputNL = emails.buildSelfServiceUserEmailNL();
+// const sendMailUser = (email, lang) => {
+//     let options;
+//     if(lang == "nl") {
+//         let outputNL = emails.buildSelfServiceUserEmailNL();
 
-        options = {
-            from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-            to: email,
-            subject: "Je aanvraag is in behandeling",
-            text: "",
-            html: outputNL
-        }
-    } else {
-        let outputEN = emails.buildSelfServiceUserEmailEN();
+//         options = {
+//             from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+//             to: email,
+//             subject: "Je aanvraag is in behandeling",
+//             text: "",
+//             html: outputNL
+//         }
+//     } else {
+//         let outputEN = emails.buildSelfServiceUserEmailEN();
 
-        options = {
-            from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
-            to: email,
-            subject: "Your request is pending",
-            text: "",
-            html: outputEN
-        }
-    }
+//         options = {
+//             from: '"FlexForceMonkey" <noreply@flexforcemonkey.com>',
+//             to: email,
+//             subject: "Your request is pending",
+//             text: "",
+//             html: outputEN
+//         }
+//     }
 
-    sgMail.send(options)
-}
+//     sgMail.send(options)
+// }

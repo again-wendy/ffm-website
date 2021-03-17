@@ -62,11 +62,10 @@
             width: 80%;
             position: absolute;
             right: -90px;
-            top: 18vh;
+            bottom: -55px;
             @media(max-width: 767px) {
                 width: 85%;
                 right: -100px;
-                top: auto;
                 bottom: 18vh;
             }
             @media(max-width: 600px) {
@@ -568,17 +567,69 @@
 }
 
 #icons {
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 10px;
+    }
     .icons {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         .icon-container {
             flex: 0 1 auto;
+            cursor: pointer;
+            .icon-inner {
+                position: relative;
+                transform: rotateY(0deg);
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                width: 250px;
+                height: 200px;
+            }
+            .icon-front {
+                position: absolute;
+                width: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                height: 200px;
+            }
+            .icon-back {
+                height: 200px;
+                transform: rotateY(180deg);
+                opacity: 1;
+                position: absolute;
+                width: 250px;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                overflow: hidden;
+                -webkit-line-clamp: 3;
+                .back-inner {
+                    height: 194px;
+                    margin: 0 30px;
+                    border: 8px solid $secondary;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    padding: 10px;
+                    background-color: lighten($primary, 45%);
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+            &:hover {
+                .icon-inner {
+                    transform: rotateY(180deg);
+                }
+            }
             .icon {
                 border: 8px solid $secondary;
                 border-radius: 50%;
                 overflow: hidden;
                 padding: 25px;
-                margin: 0 5px;
+                margin: 0 30px;
                 background-color: lighten($primary, 45%);
                 img {
                     max-width: 100%;
@@ -590,8 +641,59 @@
                 text-align: center;
             }
         }
+        @media(max-width: 991px) {
+            flex-wrap: wrap;
+            .icon-container {
+                flex: 0 1 50%;
+                margin-bottom: 10px;
+                .icon-inner {
+                    margin: 0 auto;
+                }
+            }
+        }
     }
     .sub-title {
         font-size: 2rem;
     }
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    #icons {
+        .icons {
+            .icon-container {
+                .icon-inner {
+                    transform-style: flat;
+                    overflow: hidden;
+                }
+                .icon-front {
+                    backface-visibility: visible;
+                    transition: transform 0.6s;
+                }
+                .icon-back {
+                    transform: translateX(110%);
+                    width: 100%;
+                    backface-visibility: visible;
+                    overflow: hidden;
+                    transition: transform 0.6s;
+                }
+                &:hover {
+                    .icon-inner {
+                        transform: rotate(0);
+                    }
+
+                    .icon-front {
+                        transform: translateX(-260px);
+                    }
+
+                    .icon-back {
+                        transform: translateX(0px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .icons-en, .video-en, .buyer-en, .supplier-en, .partners-en, .testimonial-en, .contact-en {
+//     background-color: lighten($primary, 45%);
+// }

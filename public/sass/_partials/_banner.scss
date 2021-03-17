@@ -169,4 +169,52 @@
             }
         }
     }
+    @media(max-width: 790px) {
+        height: auto;
+        .banner-container {
+            top: 0;
+            transform: translateY(0);
+            p {
+                font-size: 1.2rem;
+                &.accent {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.banner.banner-en {
+    background: 
+        linear-gradient(rgba(39, 181, 198, 0.1), rgba(39, 181, 198, 0.1)), 
+        url("../images/clouds.jpg") no-repeat 50% 70%;
+    height: 360px;
+    .banner-container {
+        p {
+            text-align: left;
+            margin: 0;
+            font-size: 1.5rem;
+            color: $dark-grey;
+            font-weight: 500;
+            &.accent {
+                text-align: center;
+                margin: 15px 0;
+                position: relative;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    @media(max-width: 790px) {
+        height: auto;
+        .banner-container {
+            top: 0;
+            transform: translateY(0);
+            p {
+                font-size: 1.2rem;
+                &.accent {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
 }
