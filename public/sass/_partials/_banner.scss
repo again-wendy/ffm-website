@@ -46,6 +46,13 @@
     background-image: url('../images/jungle.jpg');
 }
 
+.banner-buyer {
+    background-image: url('../images/clouds.jpg');
+    .banner-container .banner-title {
+        color: $dark-grey;
+    }
+}
+
 .banner-usecases {
     background-image: url("../images/jungle/jungle1.jpg");
     .banner-container {

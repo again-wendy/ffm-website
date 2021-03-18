@@ -11,6 +11,7 @@
         font-size: 34px;
         padding: 0 15px;
         text-align: center;
+        z-index: 99;
         @media(max-width: 991px) {
             font-size: 30px;
         }
