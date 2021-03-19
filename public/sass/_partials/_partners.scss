@@ -1,10 +1,169 @@
 #partners {
+    background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)
+        ),
+        url('../images/wood-background.jpg') 
+        no-repeat;
+    // .section-title {
+    //     color: white;
+    // }
     .section-title {
         margin-bottom: 10px;
     }
     .sub-title {
         margin-top: 0;
         margin-bottom: 30px;
+    }
+    .unslider {
+        overflow: visible;
+        position: relative;
+        .next, .prev {
+            position: absolute;
+            top: 35%;
+            color: $dark-grey;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+        .next {
+            right: 0;
+        }  
+        .unslider-nav {
+            display: none;
+        }
+    }
+    .slide-container {
+        position: relative;
+        overflow: visible;
+        height: 200px;
+        .slide {
+            list-style: none;
+            position: relative;
+            width: 100%;
+            float: left;
+            img {
+                width: 350px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.slide-1 img {
+                width: 280px;
+            }
+            &.slide-2 img {
+                width: 400px;
+            }
+            &.slide-3 img {
+                width: 150px;
+            }
+            &.slide-4 img {
+                width: 320px;
+                top: 30px;
+            }
+            &.slide-5 img {
+                width: 300px;
+                top: 20px;
+            }
+            &.slide-7 img {
+                top: 30px;
+            }
+            &.slide-8 img {
+                width: 280px;
+            }
+            @media(max-width: 600px) {
+                &.slide-1,
+                &.slide-2,
+                &.slide-4,
+                &.slide-5,
+                &.slide-6,
+                &.slide-7,
+                &.slide-8 {
+                    img {
+                        width: 250px;
+                    }
+                }
+                &.slide-2 img {
+                    top: 55px;
+                }
+                &.slide-3 img {
+                    width: 120px;
+                }
+            }
+            @media(max-width: 460px) {
+                &.slide-2,
+                &.slide-4,
+                &.slide-5,
+                &.slide-6,
+                &.slide-7,
+                &.slide-8 {
+                    img {
+                        width: 180px;
+                        top: 60px;
+                    }
+                }
+                &.slide-1 img {
+                    width: 120px;
+                    top: 65px;
+                }
+                &.slide-2 img {
+                    top: 55px;
+                }
+                &.slide-3 img {
+                    width: 120px;
+                }
+                &.slide-8 img {
+                    top: 40px;
+                }
+            }
+        }
+    }
+    &.partner-banner-en {
+        .slide-container {
+            .slide {
+                padding: 55px 30px 0 30px;
+                text-align: center;
+                img {
+                    width: 24%;
+                    margin: 0 4%;
+                    height: auto;
+                    position: relative;
+                    left: auto;
+                    transform: translateX(0);
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &.slide-1,
+                &.slide-2,
+                &.slide-3,
+                &.slide-4 {
+                    img {
+                        width: 24%;
+                    }
+                }
+                @media(max-width: 600px) {
+                    &.slide-1,
+                    &.slide-2,
+                    &.slide-3,
+                    &.slide-4 {
+                        img {
+                            width: 24%;
+                        }
+                    }
+                }
+                @media(max-width: 460px) {
+                    &.slide-1,
+                    &.slide-2,
+                    &.slide-3,
+                    &.slide-4 {
+                        img {
+                            width: 24%;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

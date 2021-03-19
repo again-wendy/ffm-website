@@ -48,8 +48,54 @@
 
 .banner-buyer {
     background-image: url('../images/clouds.jpg');
-    .banner-container .banner-title {
-        color: $dark-grey;
+    .banner-container {
+        height: 100%;
+        padding: 0;
+        .banner-title {
+            color: $dark-grey;
+            margin: 0;
+            h2 {
+                margin: 0;
+            }
+            img {
+                height: 180px;
+            }
+        }
+        @media(max-width: 768px) {
+            .banner-title {
+                img {
+                    height: 140px;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                h2 {
+                    display: inline-block;
+                    margin-top: 42px;
+                    margin-left: 15px;
+                }
+            }
+        }
+        @media(max-width: 500px) {
+            .banner-title {
+                img {
+                    height: 90px;
+                }
+                h2 {
+                    margin-top: 25px;
+                    font-size: 2rem;
+                }
+            }
+        }
+        @media(max-width: 400px) {
+            .banner-title {
+                img {
+                    margin-top: -15px;
+                }
+                h2 {
+                    margin-top: 12px;
+                }
+            }
+        }
     }
 }
 

@@ -251,3 +251,22 @@
         }
     }
 }
+
+#hero.partners-en {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/partners.jpg') 
+        no-repeat 
+        center;
+    @media (max-width: 800px) {
+        background-position: 70% 50%;
+    }
+    .hero-title {
+        width: 65%;
+        left: 3%;
+        top: 8%;
+    }
+}

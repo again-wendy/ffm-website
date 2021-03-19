@@ -150,6 +150,16 @@ app.get('/partners', (req, res) => {
     });
 })
 
+app.get('/partners-en', (req, res) => {
+    res.render('partners-en', {
+        title: "FlexForceMonkey | Partners",
+        desc: "Become our partner",
+        img: "http:flexforcemonkey.com/public/images/og-img/flexforcemonkey.jpg",
+        url: "http:flexforcemonkey.com/partners-en",
+        layout: 'main-en'
+    });
+})
+
 app.get('/blogs', (req, res) => {
     request('http://flexjungle.flexforcemonkey.com/wp-json/wp/v2/posts?_embed=true&per_page=3', (err, resp, body) => {  
     var temp = JSON.parse(body);

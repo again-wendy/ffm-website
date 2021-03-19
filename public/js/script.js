@@ -125,7 +125,7 @@ function tabActive() {
 function animationBanner() {
     $(".animation-banner .banner-title:gt(0)").hide();
     setInterval(function() {
-        $(".animation-banner :first-child").fadeOut(500).next(".banner-title").delay(800).fadeIn(500).end().appendTo(".animation-banner");
+        $(".animation-banner .banner-title:first-child").fadeOut(500).next(".banner-title").delay(800).fadeIn(500).end().appendTo(".animation-banner");
     }, 5000);
 }
 

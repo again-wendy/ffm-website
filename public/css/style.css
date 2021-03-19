@@ -839,7 +839,7 @@ input, textarea {
 /* line 8, ../sass/_partials/_navbar.scss */
 #navbar .left-menu {
   width: 35%;
-  padding: 2.5vh 0 8px 35px;
+  padding: 1.8vh 0 8px 35px;
   height: 9vh;
   float: left;
 }
@@ -1883,6 +1883,23 @@ section.with-base-nav {
   #hero.freelancer .hero-title {
     width: 90%;
   }
+}
+
+/* line 255, ../sass/_partials/_hero.scss */
+#hero.partners-en {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/partners.jpg") no-repeat center;
+}
+@media (max-width: 800px) {
+  /* line 255, ../sass/_partials/_hero.scss */
+  #hero.partners-en {
+    background-position: 70% 50%;
+  }
+}
+/* line 267, ../sass/_partials/_hero.scss */
+#hero.partners-en .hero-title {
+  width: 65%;
+  left: 3%;
+  top: 8%;
 }
 
 /* line 1, ../sass/_partials/_home.scss */
@@ -3585,146 +3602,195 @@ form .g-recaptcha > div {
   background-image: url("../images/clouds.jpg");
 }
 /* line 51, ../sass/_partials/_banner.scss */
+.banner-buyer .banner-container {
+  height: 100%;
+  padding: 0;
+}
+/* line 54, ../sass/_partials/_banner.scss */
 .banner-buyer .banner-container .banner-title {
   color: #2B2B2B;
+  margin: 0;
+}
+/* line 57, ../sass/_partials/_banner.scss */
+.banner-buyer .banner-container .banner-title h2 {
+  margin: 0;
+}
+/* line 60, ../sass/_partials/_banner.scss */
+.banner-buyer .banner-container .banner-title img {
+  height: 180px;
+}
+@media (max-width: 768px) {
+  /* line 66, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title img {
+    height: 140px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  /* line 71, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title h2 {
+    display: inline-block;
+    margin-top: 42px;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 500px) {
+  /* line 80, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title img {
+    height: 90px;
+  }
+  /* line 83, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title h2 {
+    margin-top: 25px;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 400px) {
+  /* line 91, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title img {
+    margin-top: -15px;
+  }
+  /* line 94, ../sass/_partials/_banner.scss */
+  .banner-buyer .banner-container .banner-title h2 {
+    margin-top: 12px;
+  }
 }
 
-/* line 56, ../sass/_partials/_banner.scss */
+/* line 102, ../sass/_partials/_banner.scss */
 .banner-usecases {
   background-image: url("../images/jungle/jungle1.jpg");
 }
-/* line 58, ../sass/_partials/_banner.scss */
+/* line 104, ../sass/_partials/_banner.scss */
 .banner-usecases .banner-container {
   color: white;
   text-decoration: none;
   display: block;
 }
-/* line 62, ../sass/_partials/_banner.scss */
+/* line 108, ../sass/_partials/_banner.scss */
 .banner-usecases .banner-container .banner-title {
   font-size: 3rem;
 }
-/* line 65, ../sass/_partials/_banner.scss */
+/* line 111, ../sass/_partials/_banner.scss */
 .banner-usecases .banner-container a {
   margin-top: 15px;
 }
 @media (max-width: 768px) {
-  /* line 58, ../sass/_partials/_banner.scss */
+  /* line 104, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container {
     padding: 15px 0;
   }
-  /* line 70, ../sass/_partials/_banner.scss */
+  /* line 116, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container .banner-title {
     font-size: 2.2rem;
   }
-  /* line 73, ../sass/_partials/_banner.scss */
+  /* line 119, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container a {
     margin-top: 0px;
     padding: 10px 12px;
   }
 }
 @media (max-width: 560px) {
-  /* line 79, ../sass/_partials/_banner.scss */
+  /* line 125, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container .banner-title {
     font-size: 1.8rem;
     font-weight: bold;
   }
-  /* line 83, ../sass/_partials/_banner.scss */
+  /* line 129, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container a {
     padding: 8px;
   }
 }
 @media (max-width: 560px) {
-  /* line 56, ../sass/_partials/_banner.scss */
+  /* line 102, ../sass/_partials/_banner.scss */
   .banner-usecases {
     height: 200px;
   }
 }
 @media (max-width: 380px) {
-  /* line 56, ../sass/_partials/_banner.scss */
+  /* line 102, ../sass/_partials/_banner.scss */
   .banner-usecases {
     height: 220px;
     padding: 15px;
   }
-  /* line 96, ../sass/_partials/_banner.scss */
+  /* line 142, ../sass/_partials/_banner.scss */
   .banner-usecases .banner-container a {
     font-size: 1.05rem;
   }
 }
 
-/* line 103, ../sass/_partials/_banner.scss */
+/* line 149, ../sass/_partials/_banner.scss */
 .banner.banner-ebook {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/desert.jpg") no-repeat 50% 70%;
 }
 @media (max-width: 768px) {
-  /* line 103, ../sass/_partials/_banner.scss */
+  /* line 149, ../sass/_partials/_banner.scss */
   .banner.banner-ebook {
     height: 240px;
   }
-  /* line 110, ../sass/_partials/_banner.scss */
+  /* line 156, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container .banner-title {
     font-size: 2.2rem;
     font-weight: bold;
   }
-  /* line 114, ../sass/_partials/_banner.scss */
+  /* line 160, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container p {
     font-size: 1.3rem;
   }
 }
-/* line 120, ../sass/_partials/_banner.scss */
+/* line 166, ../sass/_partials/_banner.scss */
 .banner.banner-ebook .banner-container .banner-title {
   font-size: 2.8rem;
 }
-/* line 123, ../sass/_partials/_banner.scss */
+/* line 169, ../sass/_partials/_banner.scss */
 .banner.banner-ebook .banner-container p {
   color: white;
   font-weight: bold;
   font-size: 1.8rem;
 }
-/* line 128, ../sass/_partials/_banner.scss */
+/* line 174, ../sass/_partials/_banner.scss */
 .banner.banner-ebook .banner-container a {
   margin-top: 15px;
 }
 @media (max-width: 1093px) {
-  /* line 132, ../sass/_partials/_banner.scss */
+  /* line 178, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container .banner-title {
     font-size: 2.5rem;
   }
-  /* line 135, ../sass/_partials/_banner.scss */
+  /* line 181, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container p {
     font-size: 1.5rem;
   }
 }
 @media (max-width: 945px) {
-  /* line 140, ../sass/_partials/_banner.scss */
+  /* line 186, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container p {
     margin: 15px 0;
   }
-  /* line 143, ../sass/_partials/_banner.scss */
+  /* line 189, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container a {
     margin-top: 0;
   }
 }
 @media (max-width: 520px) {
-  /* line 119, ../sass/_partials/_banner.scss */
+  /* line 165, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container {
     padding: 0;
   }
-  /* line 149, ../sass/_partials/_banner.scss */
+  /* line 195, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container .banner-title {
     font-size: 1.4rem;
   }
-  /* line 152, ../sass/_partials/_banner.scss */
+  /* line 198, ../sass/_partials/_banner.scss */
   .banner.banner-ebook .banner-container p {
     font-size: 1.1rem;
   }
 }
 
-/* line 159, ../sass/_partials/_banner.scss */
+/* line 205, ../sass/_partials/_banner.scss */
 .banner.banner-whitepaper {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/desert.jpg") no-repeat 50% 70%;
   height: 360px;
 }
-/* line 165, ../sass/_partials/_banner.scss */
+/* line 211, ../sass/_partials/_banner.scss */
 .banner.banner-whitepaper .banner-container p {
   text-align: left;
   margin: 0;
@@ -3732,7 +3798,7 @@ form .g-recaptcha > div {
   color: white;
   font-weight: 500;
 }
-/* line 171, ../sass/_partials/_banner.scss */
+/* line 217, ../sass/_partials/_banner.scss */
 .banner.banner-whitepaper .banner-container p.accent {
   text-align: right;
   margin: 5px 0 10px 0;
@@ -3740,31 +3806,31 @@ form .g-recaptcha > div {
   font-size: 1.8rem;
 }
 @media (max-width: 790px) {
-  /* line 159, ../sass/_partials/_banner.scss */
+  /* line 205, ../sass/_partials/_banner.scss */
   .banner.banner-whitepaper {
     height: auto;
   }
-  /* line 181, ../sass/_partials/_banner.scss */
+  /* line 227, ../sass/_partials/_banner.scss */
   .banner.banner-whitepaper .banner-container {
     top: 0;
     transform: translateY(0);
   }
-  /* line 184, ../sass/_partials/_banner.scss */
+  /* line 230, ../sass/_partials/_banner.scss */
   .banner.banner-whitepaper .banner-container p {
     font-size: 1.2rem;
   }
-  /* line 186, ../sass/_partials/_banner.scss */
+  /* line 232, ../sass/_partials/_banner.scss */
   .banner.banner-whitepaper .banner-container p.accent {
     font-size: 1.5rem;
   }
 }
 
-/* line 194, ../sass/_partials/_banner.scss */
+/* line 240, ../sass/_partials/_banner.scss */
 .banner.banner-en {
   background: linear-gradient(rgba(39, 181, 198, 0.1), rgba(39, 181, 198, 0.1)), url("../images/clouds.jpg") no-repeat 50% 70%;
   height: 360px;
 }
-/* line 200, ../sass/_partials/_banner.scss */
+/* line 246, ../sass/_partials/_banner.scss */
 .banner.banner-en .banner-container p {
   text-align: left;
   margin: 0;
@@ -3772,7 +3838,7 @@ form .g-recaptcha > div {
   color: #2B2B2B;
   font-weight: 500;
 }
-/* line 206, ../sass/_partials/_banner.scss */
+/* line 252, ../sass/_partials/_banner.scss */
 .banner.banner-en .banner-container p.accent {
   text-align: center;
   margin: 15px 0;
@@ -3780,20 +3846,20 @@ form .g-recaptcha > div {
   font-size: 1.8rem;
 }
 @media (max-width: 790px) {
-  /* line 194, ../sass/_partials/_banner.scss */
+  /* line 240, ../sass/_partials/_banner.scss */
   .banner.banner-en {
     height: auto;
   }
-  /* line 216, ../sass/_partials/_banner.scss */
+  /* line 262, ../sass/_partials/_banner.scss */
   .banner.banner-en .banner-container {
     top: 0;
     transform: translateY(0);
   }
-  /* line 219, ../sass/_partials/_banner.scss */
+  /* line 265, ../sass/_partials/_banner.scss */
   .banner.banner-en .banner-container p {
     font-size: 1.2rem;
   }
-  /* line 221, ../sass/_partials/_banner.scss */
+  /* line 267, ../sass/_partials/_banner.scss */
   .banner.banner-en .banner-container p.accent {
     font-size: 1.5rem;
   }
@@ -5103,52 +5169,198 @@ form .g-recaptcha > div {
   font-weight: bold;
 }
 
-/* line 2, ../sass/_partials/_partners.scss */
+/* line 1, ../sass/_partials/_partners.scss */
+#partners {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/wood-background.jpg") no-repeat;
+}
+/* line 12, ../sass/_partials/_partners.scss */
 #partners .section-title {
   margin-bottom: 10px;
 }
-/* line 5, ../sass/_partials/_partners.scss */
+/* line 15, ../sass/_partials/_partners.scss */
 #partners .sub-title {
   margin-top: 0;
   margin-bottom: 30px;
 }
+/* line 19, ../sass/_partials/_partners.scss */
+#partners .unslider {
+  overflow: visible;
+  position: relative;
+}
+/* line 22, ../sass/_partials/_partners.scss */
+#partners .unslider .next, #partners .unslider .prev {
+  position: absolute;
+  top: 35%;
+  color: #2B2B2B;
+  font-size: 3rem;
+  cursor: pointer;
+}
+/* line 29, ../sass/_partials/_partners.scss */
+#partners .unslider .next {
+  right: 0;
+}
+/* line 32, ../sass/_partials/_partners.scss */
+#partners .unslider .unslider-nav {
+  display: none;
+}
+/* line 36, ../sass/_partials/_partners.scss */
+#partners .slide-container {
+  position: relative;
+  overflow: visible;
+  height: 200px;
+}
+/* line 40, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  float: left;
+}
+/* line 45, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide img {
+  width: 350px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* line 51, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-1 img {
+  width: 280px;
+}
+/* line 54, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-2 img {
+  width: 400px;
+}
+/* line 57, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-3 img {
+  width: 150px;
+}
+/* line 60, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-4 img {
+  width: 320px;
+  top: 30px;
+}
+/* line 64, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-5 img {
+  width: 300px;
+  top: 20px;
+}
+/* line 68, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-7 img {
+  top: 30px;
+}
+/* line 71, ../sass/_partials/_partners.scss */
+#partners .slide-container .slide.slide-8 img {
+  width: 280px;
+}
+@media (max-width: 600px) {
+  /* line 82, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-1 img, #partners .slide-container .slide.slide-2 img, #partners .slide-container .slide.slide-4 img, #partners .slide-container .slide.slide-5 img, #partners .slide-container .slide.slide-6 img, #partners .slide-container .slide.slide-7 img, #partners .slide-container .slide.slide-8 img {
+    width: 250px;
+  }
+  /* line 86, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-2 img {
+    top: 55px;
+  }
+  /* line 89, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-3 img {
+    width: 120px;
+  }
+}
+@media (max-width: 460px) {
+  /* line 100, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-2 img, #partners .slide-container .slide.slide-4 img, #partners .slide-container .slide.slide-5 img, #partners .slide-container .slide.slide-6 img, #partners .slide-container .slide.slide-7 img, #partners .slide-container .slide.slide-8 img {
+    width: 180px;
+    top: 60px;
+  }
+  /* line 105, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-1 img {
+    width: 120px;
+    top: 65px;
+  }
+  /* line 109, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-2 img {
+    top: 55px;
+  }
+  /* line 112, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-3 img {
+    width: 120px;
+  }
+  /* line 115, ../sass/_partials/_partners.scss */
+  #partners .slide-container .slide.slide-8 img {
+    top: 40px;
+  }
+}
+/* line 123, ../sass/_partials/_partners.scss */
+#partners.partner-banner-en .slide-container .slide {
+  padding: 55px 30px 0 30px;
+  text-align: center;
+}
+/* line 126, ../sass/_partials/_partners.scss */
+#partners.partner-banner-en .slide-container .slide img {
+  width: 24%;
+  margin: 0 4%;
+  height: auto;
+  position: relative;
+  left: auto;
+  transform: translateX(0);
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 140, ../sass/_partials/_partners.scss */
+#partners.partner-banner-en .slide-container .slide.slide-1 img, #partners.partner-banner-en .slide-container .slide.slide-2 img, #partners.partner-banner-en .slide-container .slide.slide-3 img, #partners.partner-banner-en .slide-container .slide.slide-4 img {
+  width: 24%;
+}
+@media (max-width: 600px) {
+  /* line 149, ../sass/_partials/_partners.scss */
+  #partners.partner-banner-en .slide-container .slide.slide-1 img, #partners.partner-banner-en .slide-container .slide.slide-2 img, #partners.partner-banner-en .slide-container .slide.slide-3 img, #partners.partner-banner-en .slide-container .slide.slide-4 img {
+    width: 24%;
+  }
+}
+@media (max-width: 460px) {
+  /* line 159, ../sass/_partials/_partners.scss */
+  #partners.partner-banner-en .slide-container .slide.slide-1 img, #partners.partner-banner-en .slide-container .slide.slide-2 img, #partners.partner-banner-en .slide-container .slide.slide-3 img, #partners.partner-banner-en .slide-container .slide.slide-4 img {
+    width: 24%;
+    top: 0;
+  }
+}
 
-/* line 12, ../sass/_partials/_partners.scss */
+/* line 171, ../sass/_partials/_partners.scss */
 section.partner .section-container {
   text-align: center;
 }
 
-/* line 18, ../sass/_partials/_partners.scss */
+/* line 177, ../sass/_partials/_partners.scss */
 #ecosystem {
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/wood-background.jpg") no-repeat;
 }
-/* line 20, ../sass/_partials/_partners.scss */
+/* line 179, ../sass/_partials/_partners.scss */
 #ecosystem .section-container {
   display: flex;
   justify-content: space-between;
 }
-/* line 23, ../sass/_partials/_partners.scss */
+/* line 182, ../sass/_partials/_partners.scss */
 #ecosystem .section-container .col-left {
   width: auto;
   padding-right: 10px;
 }
-/* line 28, ../sass/_partials/_partners.scss */
+/* line 187, ../sass/_partials/_partners.scss */
 #ecosystem .section-container .col-right img {
   padding: 0;
 }
 @media (max-width: 700px) {
-  /* line 20, ../sass/_partials/_partners.scss */
+  /* line 179, ../sass/_partials/_partners.scss */
   #ecosystem .section-container {
     flex-direction: column;
     justify-content: flex-start;
   }
 }
-/* line 37, ../sass/_partials/_partners.scss */
+/* line 196, ../sass/_partials/_partners.scss */
 #ecosystem .sub-title {
   text-align: left;
   font-weight: 500;
 }
-/* line 41, ../sass/_partials/_partners.scss */
+/* line 200, ../sass/_partials/_partners.scss */
 #ecosystem .logos {
   display: flex;
   list-style-type: none;
@@ -5157,7 +5369,7 @@ section.partner .section-container {
   flex-wrap: wrap;
   width: 330px;
 }
-/* line 48, ../sass/_partials/_partners.scss */
+/* line 207, ../sass/_partials/_partners.scss */
 #ecosystem .logos .logo {
   width: 100px;
   height: 100px;
@@ -5169,7 +5381,7 @@ section.partner .section-container {
   overflow: hidden;
   position: relative;
 }
-/* line 58, ../sass/_partials/_partners.scss */
+/* line 217, ../sass/_partials/_partners.scss */
 #ecosystem .logos .logo img {
   position: relative;
   top: 50%;
@@ -5178,19 +5390,19 @@ section.partner .section-container {
   padding: 0 5px;
 }
 @media (max-width: 700px) {
-  /* line 41, ../sass/_partials/_partners.scss */
+  /* line 200, ../sass/_partials/_partners.scss */
   #ecosystem .logos {
     margin: 10px auto 0 auto;
   }
 }
 @media (max-width: 390px) {
-  /* line 41, ../sass/_partials/_partners.scss */
+  /* line 200, ../sass/_partials/_partners.scss */
   #ecosystem .logos {
     width: 220px;
   }
 }
 
-/* line 75, ../sass/_partials/_partners.scss */
+/* line 234, ../sass/_partials/_partners.scss */
 #partner-side-menu {
   position: fixed;
   bottom: 2%;
@@ -5200,7 +5412,7 @@ section.partner .section-container {
   background: rgba(255, 255, 255, 0.7);
   border-top-left-radius: 10px;
 }
-/* line 84, ../sass/_partials/_partners.scss */
+/* line 243, ../sass/_partials/_partners.scss */
 #partner-side-menu .side-container .partner-item {
   text-decoration: none;
   padding: 0 8px;
@@ -5209,13 +5421,13 @@ section.partner .section-container {
   color: #515151;
   cursor: pointer;
 }
-/* line 91, ../sass/_partials/_partners.scss */
+/* line 250, ../sass/_partials/_partners.scss */
 #partner-side-menu .side-container .partner-item:hover, #partner-side-menu .side-container .partner-item:focus, #partner-side-menu .side-container .partner-item.active {
   font-size: 1.3rem;
   color: #2B2B2B;
 }
 @media (max-width: 720px) {
-  /* line 75, ../sass/_partials/_partners.scss */
+  /* line 234, ../sass/_partials/_partners.scss */
   #partner-side-menu {
     width: 100%;
     border-top-left-radius: 0;
@@ -5226,65 +5438,65 @@ section.partner .section-container {
   }
 }
 
-/* line 109, ../sass/_partials/_partners.scss */
+/* line 268, ../sass/_partials/_partners.scss */
 .partner.full-screen {
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 112, ../sass/_partials/_partners.scss */
+/* line 271, ../sass/_partials/_partners.scss */
 .partner.full-screen .container {
   background: rgba(255, 255, 255, 0.6);
   padding: 30px 10px;
 }
-/* line 115, ../sass/_partials/_partners.scss */
+/* line 274, ../sass/_partials/_partners.scss */
 .partner.full-screen .container .section-title {
   margin-bottom: 25px;
 }
-/* line 119, ../sass/_partials/_partners.scss */
+/* line 278, ../sass/_partials/_partners.scss */
 .partner.full-screen .container .section-container p {
   font-weight: bold;
   margin-bottom: 25px;
   font-size: 18px;
 }
 @media (max-width: 720px) {
-  /* line 109, ../sass/_partials/_partners.scss */
+  /* line 268, ../sass/_partials/_partners.scss */
   .partner.full-screen {
     height: auto;
     padding: 60px 0;
   }
 }
 
-/* line 131, ../sass/_partials/_partners.scss */
+/* line 290, ../sass/_partials/_partners.scss */
 #sap {
   background: url("../../public/images/jungle/jungle1.jpg");
 }
 
-/* line 134, ../sass/_partials/_partners.scss */
+/* line 293, ../sass/_partials/_partners.scss */
 #easyflex {
   background: url("../../public/images/jungle/jungle2.jpg");
 }
 
-/* line 137, ../sass/_partials/_partners.scss */
+/* line 296, ../sass/_partials/_partners.scss */
 #flexservice {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/images/jungle/jungle3.jpg");
 }
 
-/* line 145, ../sass/_partials/_partners.scss */
+/* line 304, ../sass/_partials/_partners.scss */
 #pepflex {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../public/images/jungle/jungle4.jpg");
 }
 
-/* line 153, ../sass/_partials/_partners.scss */
+/* line 312, ../sass/_partials/_partners.scss */
 #pivoton {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/images/jungle/jungle5.jpg");
 }
 
-/* line 161, ../sass/_partials/_partners.scss */
+/* line 320, ../sass/_partials/_partners.scss */
 #overig {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/images/jungle/jungle6.jpg");
 }
 
-/* line 169, ../sass/_partials/_partners.scss */
+/* line 328, ../sass/_partials/_partners.scss */
 #afas {
   background: url("../../public/images/jungle/jungle7.jpg");
 }
