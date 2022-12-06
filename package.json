@@ -19,10 +19,10 @@
   "homepage": "https://github.com/again-wendy/ffm-website#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.3.0",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.1",
-    "express": "^4.16.3",
+    "express": "^4.18.2",
     "express-flash": "0.0.2",
     "express-handlebars": "^3.1.0",
     "express-http-to-https": "^1.1.4",
